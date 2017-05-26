@@ -1,0 +1,51 @@
+{
+  "name": "VCUIKit",
+  "version": "0.1.0",
+  "summary": "A short description of VCUIKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/ripventura/VCUIKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ripventura": "vitorcesco@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/ripventura/VCUIKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "VCUIKit/Classes/**/*",
+  "dependencies": {
+    "SwiftMessages": [
+
+    ],
+    "SWActivityIndicatorView": [
+
+    ],
+    "SnapKit": [
+
+    ],
+    "PullToRefreshSwift": [
+
+    ],
+    "FCAlertView": [
+
+    ],
+    "DKImagePickerController": [
+
+    ],
+    "EPSignature": [
+
+    ],
+    "ActionSheetPicker-3.0": [
+
+    ],
+    "DCAnimationKit": [
+
+    ]
+  }
+}

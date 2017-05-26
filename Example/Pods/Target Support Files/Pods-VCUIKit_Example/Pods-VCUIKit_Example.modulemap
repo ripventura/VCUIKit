@@ -1,0 +1,6 @@
+framework module Pods_VCUIKit_Example {
+  umbrella header "Pods-VCUIKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

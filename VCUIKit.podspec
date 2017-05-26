@@ -38,5 +38,13 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+s.dependency 'SwiftMessages'
+s.dependency 'SWActivityIndicatorView'
+s.dependency 'SnapKit'
+s.dependency 'PullToRefreshSwift'
+s.dependency 'FCAlertView'
+s.dependency 'DKImagePickerController'
+s.dependency 'EPSignature'
+s.dependency 'ActionSheetPicker-3.0'
+s.dependency 'DCAnimationKit'
 end

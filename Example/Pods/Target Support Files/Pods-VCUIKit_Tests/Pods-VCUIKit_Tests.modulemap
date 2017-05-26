@@ -1,0 +1,6 @@
+framework module Pods_VCUIKit_Tests {
+  umbrella header "Pods-VCUIKit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

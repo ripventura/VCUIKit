@@ -3,6 +3,24 @@ use_frameworks!
 target 'VCUIKit_Example' do
   pod 'VCUIKit', :path => '../'
 
+pod 'SwiftMessages'
+
+pod 'SWActivityIndicatorView'
+
+pod 'SnapKit'
+
+pod 'PullToRefreshSwift'
+
+pod 'FCAlertView'
+
+pod 'DKImagePickerController'
+
+pod 'EPSignature'
+
+pod 'ActionSheetPicker-3.0'
+
+pod 'DCAnimationKit'
+
   target 'VCUIKit_Tests' do
     inherit! :search_paths
 
