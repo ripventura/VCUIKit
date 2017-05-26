@@ -10,10 +10,10 @@ When I get some time I will update the Wiki page with detailed description of ea
 [![Platform](https://img.shields.io/cocoapods/p/VCUIKit.svg?style=flat)](http://cocoapods.org/pods/VCUIKit)
 
 ## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, simply clone the repo and open Example/VCUIKit.xcworkspace.
 
 ## Requirements
+- iOS >= 9.0
 
 ## Installation
 
