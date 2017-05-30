@@ -12,7 +12,7 @@ PODS:
   - SnapKit (3.2.0)
   - SWActivityIndicatorView (2.0.0)
   - SwiftMessages (3.1.5)
-  - VCUIKit (0.0.1):
+  - VCUIKit (0.0.2):
     - ActionSheetPicker-3.0 (~> 2.2.0)
     - DCAnimationKit (~> 0.0.6)
     - DKImagePickerController (~> 3.5.0)
@@ -49,7 +49,7 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SWActivityIndicatorView: b3d43933021d3e3ba08a814b43751e3f58031e87
   SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
-  VCUIKit: 917ecdf647fb601cf97dc8e46c3c818fe9cdfee4
+  VCUIKit: 6bd262bab276721ecf2be5ec0cd9d4e3f989d817
 
 PODFILE CHECKSUM: 5ac7c4535538a927d91e8a482e8d6cc2f00e6e91
 
