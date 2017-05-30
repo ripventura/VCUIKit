@@ -1,8 +1,8 @@
 {
   "name": "VCUIKit",
-  "version": "0.1.0",
-  "summary": "A short description of VCUIKit.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.0.1",
+  "summary": "A collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.",
+  "description": "This is a collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications. All the code was done by me, so please if you think you can contribute, lets share some thoughts!\n\nWhen I get some time I will update the Wiki page with detailed description of each class / method.",
   "homepage": "https://github.com/ripventura/VCUIKit",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ripventura/VCUIKit.git",
-    "tag": "0.1.0"
+    "tag": "0.0.1"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,31 +21,31 @@
   "source_files": "VCUIKit/Classes/**/*",
   "dependencies": {
     "SwiftMessages": [
-
+      "~> 3.1.5"
     ],
     "SWActivityIndicatorView": [
-
+      "~> 2.0.0"
     ],
     "SnapKit": [
-
+      "~> 3.2.0"
     ],
     "PullToRefreshSwift": [
-
+      "~> 3.0.3"
     ],
     "FCAlertView": [
-
+      "~> 1.3.1"
     ],
     "DKImagePickerController": [
-
+      "~> 3.5.0"
     ],
     "EPSignature": [
-
+      "~> 1.0.3"
     ],
     "ActionSheetPicker-3.0": [
-
+      "~> 2.2.0"
     ],
     "DCAnimationKit": [
-
+      "~> 0.0.6"
     ]
   }
 }
