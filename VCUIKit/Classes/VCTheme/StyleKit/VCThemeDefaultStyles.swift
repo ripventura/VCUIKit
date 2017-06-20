@@ -26,24 +26,9 @@ public class VCThemeDefaultStyles {
     var viewControllerViewTintColor : UIColor
     var viewControllerViewBackgroundColor : UIColor
     
-    var iconButtonFillColor : UIColor
-    
-    var flatButtonBackgroundColor : UIColor
-    var flatButtonShadowColor : UIColor
-    var flatButtonNormalTitleColor : UIColor
-    var flatButtonPressedTitleColor : UIColor
-    var flatButtonShadowHeight : CGFloat
-    var flatButtonCornerRadius : CGFloat
-    
-    var labelTextColor : UIColor
-    var labelBackgroundColor : UIColor
-    
     var tableViewBackgroundColor : UIColor
     
     var detailSubtitleTableViewCellSubtitleTextColor : UIColor
-    
-    var checkNoteTableViewCellCheckedHeight : CGFloat
-    var checkNoteTableViewCellUncheckedHeight : CGFloat
     
     var tableViewCellTintColor : UIColor
     var tableViewCellBackgroundColor : UIColor
@@ -75,6 +60,7 @@ public class VCThemeDefaultStyles {
     var hudTintColor : UIColor
     var hudBackgroundColor : UIColor
     
+    /** Inits with a PaintCode generated StyleKit */
     init() {
         defaultInterfaceOrientation = .allButUpsideDown
         
@@ -90,24 +76,9 @@ public class VCThemeDefaultStyles {
         viewControllerViewTintColor = VCUIKitStyleKit.viewControllerViewTintColor
         viewControllerViewBackgroundColor = VCUIKitStyleKit.viewControllerViewBackgroundColor
         
-        iconButtonFillColor = VCUIKitStyleKit.vCIconButtonFillColor
-        
-        flatButtonBackgroundColor = VCUIKitStyleKit.vCFlatUIButtonBackgroundColor
-        flatButtonShadowColor = VCUIKitStyleKit.vCFlatUIButtonShadowColor
-        flatButtonNormalTitleColor = VCUIKitStyleKit.vCFlatUIButtonNormalTitleColor
-        flatButtonPressedTitleColor = VCUIKitStyleKit.vCFlatUIButtonPressedTitleColor
-        flatButtonShadowHeight = 3.0
-        flatButtonCornerRadius = 6.0
-        
-        labelTextColor = VCUIKitStyleKit.labelTextColor
-        labelBackgroundColor = VCUIKitStyleKit.labelBackgroundColor
-        
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
         
         detailSubtitleTableViewCellSubtitleTextColor = VCUIKitStyleKit.tableViewDetailTextColor
-        
-        checkNoteTableViewCellCheckedHeight = 140
-        checkNoteTableViewCellUncheckedHeight = 60
         
         tableViewCellTintColor = VCUIKitStyleKit.tableViewCellTintColor
         tableViewCellBackgroundColor = VCUIKitStyleKit.white

@@ -19,12 +19,12 @@ import UIKit
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        _ = self.applyThemeStyle()
+        self.applyThemeStyle()
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        _ = self.applyThemeStyle()
+        self.applyThemeStyle()
     }
     
     // Applies Theme Style after loading
@@ -33,13 +33,8 @@ import UIKit
         self.backgroundColor = tableViewCellBackgroundColor
         
         self.textLabel?.textColor = tableViewCellTitleTextColor
-        self.textLabel?.adjustsFontSizeToFitWidth = true
-        self.textLabel?.minimumScaleFactor = 0.7
-        self.textLabel?.numberOfLines = 2
         
         self.detailTextLabel?.textColor = tableViewCellDetailTextColor
-        self.detailTextLabel?.adjustsFontSizeToFitWidth = true
-        self.detailTextLabel?.minimumScaleFactor = 0.7
         
         self.tintColor = tableViewCellTintColor
     }

@@ -23,7 +23,7 @@ open class VCSignaturePickerViewController: VCViewController {
     public var delegate : VCSignaturePickerViewControllerDelegate?
     
     var signatureRatio : (CGFloat)?
-    var doneButton : VCFlatButton?
+    var doneButton : UIButton?
     var identifier : String?
     
     override open func viewDidLoad() {
@@ -31,7 +31,7 @@ open class VCSignaturePickerViewController: VCViewController {
         
         signatureView = VCSignatureView(frame: CGRectDefault)
         if self.signatureRatio == nil {
-            signatureView!.addToSuperViewWithConstraints(viewSuperview: self.view, constraintInset: UIEdgeInsets.zero)
+            signatureView!.addToSuperViewWithConstraints(superview: self.view, constraintInset: UIEdgeInsets.zero)
         }
         else {
             self.view.addSubview(signatureView!)
@@ -44,9 +44,10 @@ open class VCSignaturePickerViewController: VCViewController {
             }
         }
         
-        doneButton = VCFlatButton(frame: CGRectDefault)
+        doneButton = UIButton(frame: CGRectDefault)
         doneButton!.setTitle("Done", for: .normal)
         doneButton!.addTarget(self, action: #selector(self.doneButtonPressed), for: .touchUpInside)
+        doneButton!.setTitleColor(sharedStyleManager.viewControllerViewTintColor, for: .normal)
         self.view.addSubview(doneButton!)
         doneButton!.snp.makeConstraints { make in
             make.height.equalTo(44)
@@ -78,7 +79,7 @@ open class VCSignatureView: EPSignatureView {
     @IBOutlet var signatureStrokeColor : UIColor? = sharedStyleManager.signatureViewStrokeColor
     @IBOutlet var signatureBackgroundColor : UIColor? = sharedStyleManager.signatureViewBackgroundColor
     
-    private var statusLabel : VCLabel?
+    private var statusLabel : UILabel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -102,7 +103,7 @@ open class VCSignatureView: EPSignatureView {
     }
     
     private func prepareInterface() {
-        statusLabel = VCLabel(frame: CGRectDefault)
+        statusLabel = UILabel(frame: CGRectDefault)
         statusLabel!.textAlignment = .center
         statusLabel!.alpha = 0.5
         self.addSubview(statusLabel!)

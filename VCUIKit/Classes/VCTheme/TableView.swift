@@ -34,7 +34,7 @@ import PullToRefreshSwift
         self.backgroundColor = tableViewBackgroundColor
     }
     
-    /** Adds a Pull to Refresh handler **/
+    /** Adds a Pull to Refresh handler */
     public func pullToRefresh(handler : @escaping (Void) -> (Void)) {
         self.addPullRefresh(refreshCompletion: {
             handler()
@@ -42,7 +42,7 @@ import PullToRefreshSwift
         })
     }
     
-    /** Adds a Push to Refresh handler **/
+    /** Adds a Push to Refresh handler */
     public func pushToRefresh(handler : @escaping (Void) -> (Void)) {
         self.addPushRefresh(refreshCompletion: {
             handler()

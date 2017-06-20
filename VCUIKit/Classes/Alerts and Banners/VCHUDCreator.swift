@@ -143,8 +143,8 @@ open class VCHUDCreator {
 }
 
 private class CustomHUD: UIView {
-    var messageLabel : VCLabel?
-    var cancelButton : VCIconButton?
+    var messageLabel : UILabel?
+    var cancelButton : XIconButton?
     
     func setup(message : String) {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateMessage(notification:)), name: NSNotification.Name(rawValue: "HUD_STATE_UPDATE"), object: nil)
@@ -166,8 +166,7 @@ private class CustomHUD: UIView {
             make.left.equalTo(20)
         }
         
-        cancelButton = VCIconButton(frame: CGRectDefault)
-        cancelButton?.iconType = .RoundedX
+        cancelButton = XIconButton(frame: CGRectDefault)
         self.addSubview(cancelButton!)
         cancelButton!.snp.makeConstraints { (make) -> Void in
             make.size.equalTo(CGSize(width: 30, height: 30))
@@ -175,7 +174,7 @@ private class CustomHUD: UIView {
             make.centerY.equalTo(self)
         }
         
-        messageLabel = VCLabel(frame: CGRectDefault)
+        messageLabel = UILabel(frame: CGRectDefault)
         messageLabel?.textColor = sharedStyleManager.hudMessageColor
         messageLabel?.text = message
         self.addSubview(messageLabel!)
@@ -193,5 +192,17 @@ private class CustomHUD: UIView {
         if notification.userInfo!["hiddenCancel"] as? Bool != nil {
             self.cancelButton?.isHidden = notification.userInfo!["hiddenCancel"] as! Bool
         }
+    }
+}
+
+class XIconButton: VCDrawableButton {
+    /** Override this with the Drawing method for Normal state. */
+    open override func drawNormal(rect : CGRect) {
+        VCUIKitStyleKit.drawRoundedXIcon(frame: rect, resizing: .aspectFill)
+    }
+    
+    /** Override this with the Drawing method for Pressed state. */
+    open override func drawPressed(rect : CGRect) {
+        VCUIKitStyleKit.drawRoundedXIcon(frame: rect, resizing: .aspectFill)
     }
 }

@@ -166,8 +166,8 @@ open class VCTabledViewController: VCViewController, UITableViewDelegate, UITabl
     /* BackgroundView is hidden by default */
     var backgroundView : UIView = UIView()
     var placeHolderImageView : UIImageView = UIImageView()
-    var placeholderTitleLabel : VCLabel = VCLabel()
-    var placeHolderTextLabel : VCLabel = VCLabel()
+    var placeholderTitleLabel : UILabel = UILabel()
+    var placeHolderTextLabel : UILabel = UILabel()
     
     
     override open func viewDidLoad() {
@@ -203,7 +203,7 @@ open class VCTabledViewController: VCViewController, UITableViewDelegate, UITabl
             make.bottom.equalTo(self.backgroundView.snp.centerY)
         })
         
-        self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
+        self.placeholderTitleLabel = UILabel(frame: CGRectDefault)
         self.placeholderTitleLabel.textColor = UIColor.black
         self.placeholderTitleLabel.textAlignment = .center
         self.backgroundView.addSubview(self.placeholderTitleLabel)
@@ -214,7 +214,7 @@ open class VCTabledViewController: VCViewController, UITableViewDelegate, UITabl
             make.height.equalTo(32)
         })
         
-        self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
+        self.placeHolderTextLabel = UILabel(frame: CGRectDefault)
         self.placeHolderTextLabel.textAlignment = .center
         self.placeHolderTextLabel.numberOfLines = 2
         self.backgroundView.addSubview(self.placeHolderTextLabel)

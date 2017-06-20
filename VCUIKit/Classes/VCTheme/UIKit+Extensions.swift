@@ -11,7 +11,7 @@ import SnapKit
 
 extension UITextField {
     
-    /** Sets a Done Toolbar as InputAccessoryView **/
+    /** Sets a Done Toolbar as InputAccessoryView */
     func shouldUseDoneToolbar(shouldUse : Bool) {
         if !shouldUse {
             self.inputAccessoryView = nil
@@ -32,18 +32,18 @@ extension UITextField {
 }
 
 extension UIView {
-    /** Adds the view to the given superview applying the given constraints insets**/
-    func addToSuperViewWithConstraints(viewSuperview : UIView, constraintInset : UIEdgeInsets) {
-        self.addToSuperView(viewSuperview: viewSuperview)
+    /** Adds the view to the given superview applying the given constraints insets */
+    func addToSuperViewWithConstraints(superview : UIView, constraintInset : UIEdgeInsets) {
+        self.addToSuperView(superview: superview)
         
         self.snp.makeConstraints({ make in
             make.edges.equalTo(self.superview!).inset(constraintInset)
         })
     }
     
-    /** Adds the view to the given superview **/
-    func addToSuperView(viewSuperview : UIView) {
-        viewSuperview.addSubview(self)
+    /** Adds the view to the given superview */
+    func addToSuperView(superview : UIView) {
+        superview.addSubview(self)
     }
 }
 
@@ -74,21 +74,10 @@ extension UIViewController {
         self.navigationItem.leftBarButtonItems = array
     }
     
-    /** Gets the first ViewController on the NavigationController stack **/
-    func getNavigationControllerFirstController() -> UIViewController? {
-        return self.navigationController!.viewControllers.first
-    }
-    
-    /** Gets the last ViewController on the NavigationController stack (does not include the current visible ViewController) **/
-    func getNavigationControllerLastController() -> UIViewController? {
-        return self.navigationController!.viewControllers.last
-    }
-    
     /** Resigns all views firstResponder **/
     func resignViewsFirstResponder() {
         self.view.endEditing(true)
     }
-    
     
     internal func updateBackButtonStyle() {
         //Updates the BackButton Style

@@ -104,7 +104,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     // Populates the interface elements
     func populateInterface() {
         
-        let textLabel = VCLabel(frame: CGRectDefault)
+        let textLabel = UILabel(frame: CGRectDefault)
         textLabel.textColor = UIColor.white
         textLabel.shadowColor = UIColor.black
         textLabel.textAlignment = NSTextAlignment.center
@@ -132,7 +132,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
             flashSwitch!.addTarget(self, action: #selector(VCCodeScannerViewController.flashSwitchValueChanged(sender:)), for: UIControlEvents.valueChanged)
             
             
-            let flashLabel = VCLabel(frame: CGRectDefault)
+            let flashLabel = UILabel(frame: CGRectDefault)
             flashLabel.textColor = UIColor.white
             flashLabel.shadowColor = UIColor.black
             flashLabel.textAlignment = NSTextAlignment.right
@@ -147,7 +147,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
             }
         }
         
-        let cancelButton = VCFlatButton(frame: CGRectDefault)
+        let cancelButton = UIButton(frame: CGRectDefault)
         cancelButton.setTitle("Cancel", for: UIControlState.normal)
         cancelButton.addTarget(self, action: #selector(VCCodeScannerViewController.cancelButtonPressed(sender:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(cancelButton)
