@@ -9,10 +9,9 @@
 import UIKit
 import VCUIKit
 
-class DemoViewController: VCTableViewController, VCCodeScannerProtocol, VCSignaturePickerViewControllerDelegate {
+class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
     
     var codeScannerViewController : VCCodeScannerViewController?
-    var signaturePickerViewController : VCSignaturePickerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +24,11 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol, VCSignat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
         if segue.identifier == "VCCodeScannerIdentifier" {
             self.codeScannerViewController = segue.destination as? VCCodeScannerViewController
             self.codeScannerViewController?.delegate = self
-        }
-        else if segue.identifier == "VCSignaturePickerIdentifier" {
-            self.signaturePickerViewController = segue.destination as? VCSignaturePickerViewController
-            self.signaturePickerViewController?.delegate = self
         }
     }
     
@@ -83,8 +80,6 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol, VCSignat
                         print("You selected " + images.description)
                 })
                 mediaPicker.showAnimated(animated: true, parentViewController: self)
-            case 4:
-                self.performSegue(withIdentifier: "VCSignaturePickerIdentifier", sender: nil)
             default:
                 break
             }
@@ -200,11 +195,6 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol, VCSignat
     }
     func scannerDidFailScanning(scanner: VCCodeScannerViewController) {
         print("Failed Scanning")
-    }
-    
-    // MARK: = VCSignaturePickerViewControllerDelegate
-    func signaturePickerViewController(controller: VCSignaturePickerViewController, didFinnishSigning isSigned: Bool, withSignedImage signatureImage: UIImage?) {
-        print("You " + (isSigned ? "signed with image " + signatureImage!.description : "did not sign anything"))
     }
 }
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VCUIKit'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'A collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,7 @@ When I get some time I will update the Wiki page with detailed description of ea
   s.source           = { :git => 'https://github.com/ripventura/VCUIKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'VCUIKit/Classes/**/*'
   
@@ -43,10 +43,7 @@ When I get some time I will update the Wiki page with detailed description of ea
 s.dependency 'SwiftMessages', '3.1.5'
 s.dependency 'SWActivityIndicatorView', '2.0.0'
 s.dependency 'SnapKit', '3.2.0'
-s.dependency 'PullToRefreshSwift', '3.0.3'
 s.dependency 'FCAlertView', '1.3.1'
 s.dependency 'DKImagePickerController', '3.5.0'
-s.dependency 'EPSignature', '1.0.3'
 s.dependency 'ActionSheetPicker-3.0', '2.2.0'
-s.dependency 'DCAnimationKit', '0.0.6'
 end

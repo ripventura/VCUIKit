@@ -90,11 +90,8 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DCAnimationKit/DCAnimationKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DKImagePickerController/DKImagePickerController.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/EPSignature/EPSignature.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FCAlertView/FCAlertView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PullToRefreshSwift/PullToRefreshSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWActivityIndicatorView/SWActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftMessages/SwiftMessages.framework"
@@ -102,11 +99,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/DCAnimationKit/DCAnimationKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DKImagePickerController/DKImagePickerController.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/EPSignature/EPSignature.framework"
   install_framework "$BUILT_PRODUCTS_DIR/FCAlertView/FCAlertView.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/PullToRefreshSwift/PullToRefreshSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SWActivityIndicatorView/SWActivityIndicatorView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SnapKit/SnapKit.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftMessages/SwiftMessages.framework"

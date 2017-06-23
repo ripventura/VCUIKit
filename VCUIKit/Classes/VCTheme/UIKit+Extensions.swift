@@ -12,7 +12,7 @@ import SnapKit
 extension UITextField {
     
     /** Sets a Done Toolbar as InputAccessoryView */
-    func shouldUseDoneToolbar(shouldUse : Bool) {
+    open func shouldUseDoneToolbar(shouldUse : Bool) {
         if !shouldUse {
             self.inputAccessoryView = nil
         }
@@ -33,7 +33,7 @@ extension UITextField {
 
 extension UIView {
     /** Adds the view to the given superview applying the given constraints insets */
-    func addToSuperViewWithConstraints(superview : UIView, constraintInset : UIEdgeInsets) {
+    open func addToSuperViewWithConstraints(superview : UIView, constraintInset : UIEdgeInsets) {
         self.addToSuperView(superview: superview)
         
         self.snp.makeConstraints({ make in
@@ -42,20 +42,24 @@ extension UIView {
     }
     
     /** Adds the view to the given superview */
-    func addToSuperView(superview : UIView) {
+    open func addToSuperView(superview : UIView) {
         superview.addSubview(self)
+    }
+    
+    /** Applies the custom appearance on this UIView */
+    internal func applyAppearance() -> Void {
     }
 }
 
 extension UIViewController {
     
-    /** Sets the NavigationBar Title **/
-    func setNavitagionBarTitle(title : String) {
+    /** Sets the NavigationBar Title */
+    open func setNavitagionBarTitle(title : String) {
         self.navigationItem.title = title
     }
     
-    /** Adds a UIBarButtomItem to the RightItems on the NavigationBar **/
-    func addButtomItemToNavigationBarRightItems(buttomItem : UIBarButtonItem) {
+    /** Adds a UIBarButtomItem to the RightItems on the NavigationBar */
+    open func addButtomItemToNavigationBarRightItems(buttomItem : UIBarButtonItem) {
         var array = self.navigationItem.rightBarButtonItems
         if array == nil {
             array = []
@@ -64,8 +68,8 @@ extension UIViewController {
         self.navigationItem.rightBarButtonItems = array
     }
     
-    /** Adds a UIBarButtomItem to the LeftItems on the NavigationBar **/
-    func addButtomItemToNavigationBarLeftItems(buttomItem : UIBarButtonItem) {
+    /** Adds a UIBarButtomItem to the LeftItems on the NavigationBar */
+    open func addButtomItemToNavigationBarLeftItems(buttomItem : UIBarButtonItem) {
         var array = self.navigationItem.leftBarButtonItems
         if array == nil {
             array = []
@@ -74,8 +78,8 @@ extension UIViewController {
         self.navigationItem.leftBarButtonItems = array
     }
     
-    /** Resigns all views firstResponder **/
-    func resignViewsFirstResponder() {
+    /** Resigns all views firstResponder */
+    open func resignViewsFirstResponder() {
         self.view.endEditing(true)
     }
     
@@ -86,48 +90,32 @@ extension UIViewController {
         
         self.navigationItem.backBarButtonItem = backButton
     }
+    
+    /** Applies the custom appearance on this UIView */
+    internal func applyAppearance() -> Void {
+    }
 }
 
-/** Extends the UITabBarController to apply the desired Theme to its contents **/
 extension UITabBarController {
     
-    func applyTabBarThemeStyle() {
+    override func applyAppearance() {
         //Updates Navbar Tint Color
         self.tabBar.tintColor = sharedStyleManager.tabBarTintColor
         
-        //Solid background
-        self.tabBar.isTranslucent = false
-    }
-    
-    /** This let's the Visible ViewController decide the supportedInterfaceOrientations **/
-    override open var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        if let selected = selectedViewController {
-            if  selected as? VCViewController != nil {
-                
-                return selected.supportedInterfaceOrientations
+        self.tabBar.isTranslucent = sharedStyleManager.tabBarIsTranslucent
+        
+        if let items = self.tabBar.items {
+            for item in items {
+                item.setTitleTextAttributes([NSFontAttributeName: sharedStyleManager.tabBarFont], for: .normal)
             }
         }
-        return sharedStyleManager.defaultInterfaceOrientation
-    }
-    
-    /** This let's the Visible ViewController decide if the app shouldRotate **/
-    override open var shouldAutorotate: Bool {
-        if let selected = selectedViewController {
-            if  selected as? VCViewController != nil {
-                
-                return selected.shouldAutorotate
-            }
-        }
-        return super.shouldAutorotate
     }
 }
 
-/** Extends the UINavigationController to apply the desired Theme to its contents **/
 extension UINavigationController {
     
-    func applyNavigationThemeStyle() {
-        //Solid background
-        self.navigationBar.isTranslucent = false
+    override func applyAppearance() {
+        self.navigationBar.isTranslucent = sharedStyleManager.navigationBarIsTranslucent
         
         //Updates Navbar Tint Color
         self.navigationBar.tintColor = sharedStyleManager.navigationBarTintColor
@@ -136,22 +124,9 @@ extension UINavigationController {
         self.navigationBar.barTintColor = sharedStyleManager.navigationBarBackgroundColor
         
         //Updates NavigationBar title font
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: sharedStyleManager.navigationBarTitleColor]
-    }
-    
-    /** This let's the Visible ViewController decide the supportedInterfaceOrientations **/
-    override open var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        if self.visibleViewController != nil && self.visibleViewController as? VCViewController != nil {
-            return self.visibleViewController!.supportedInterfaceOrientations
-        }
-        return sharedStyleManager.defaultInterfaceOrientation
-    }
-    
-    /** This let's the Visible ViewController decide if the app shouldRotate **/
-    override open var shouldAutorotate: Bool {
-        if self.visibleViewController != nil && self.visibleViewController as? VCViewController != nil  {
-            return self.visibleViewController!.shouldAutorotate
-        }
-        return super.shouldAutorotate
+        self.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName: sharedStyleManager.navigationBarTitleColor,
+            NSFontAttributeName: sharedStyleManager.navigationBarTitleFont
+        ]
     }
 }

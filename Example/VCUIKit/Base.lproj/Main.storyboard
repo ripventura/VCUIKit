@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OFD-5H-5CS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vDv-zE-l5f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +22,7 @@
                         <sections>
                             <tableViewSection headerTitle="Pickers and ViewControllers" id="PoX-Sh-YFP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xAT-U4-qlQ" detailTextLabel="toa-Zn-ovk" style="IBUITableViewCellStyleSubtitle" id="HO9-1R-A3u" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xAT-U4-qlQ" detailTextLabel="toa-Zn-ovk" style="IBUITableViewCellStyleSubtitle" id="HO9-1R-A3u" customClass="VCTableViewCell" customModule="VCUIKit">
                                         <rect key="frame" x="0.0" y="56" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HO9-1R-A3u" id="xne-JS-V7d">
@@ -44,7 +46,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="02g-qP-ecw" detailTextLabel="sg7-f8-GFK" style="IBUITableViewCellStyleSubtitle" id="2m7-GG-IlT" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="02g-qP-ecw" detailTextLabel="sg7-f8-GFK" style="IBUITableViewCellStyleSubtitle" id="2m7-GG-IlT" customClass="VCTableViewCell" customModule="VCUIKit">
                                         <rect key="frame" x="0.0" y="116" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2m7-GG-IlT" id="dKd-T2-rtf">
@@ -68,7 +70,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="21r-31-8LK" detailTextLabel="RNZ-lh-hOF" style="IBUITableViewCellStyleSubtitle" id="Ax1-ox-8Ex" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="21r-31-8LK" detailTextLabel="RNZ-lh-hOF" style="IBUITableViewCellStyleSubtitle" id="Ax1-ox-8Ex" customClass="VCTableViewCell" customModule="VCUIKit">
                                         <rect key="frame" x="0.0" y="176" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ax1-ox-8Ex" id="NIg-0z-iNA">
@@ -92,7 +94,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="JNB-1M-hM9" detailTextLabel="gvy-9J-dsQ" style="IBUITableViewCellStyleSubtitle" id="qJ8-Xl-nxh" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="JNB-1M-hM9" detailTextLabel="gvy-9J-dsQ" style="IBUITableViewCellStyleSubtitle" id="qJ8-Xl-nxh" customClass="VCTableViewCell" customModule="VCUIKit">
                                         <rect key="frame" x="0.0" y="236" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qJ8-Xl-nxh" id="lT2-4M-xly">
@@ -116,36 +118,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Tym-Kr-ziw" detailTextLabel="FG5-AC-Xo0" style="IBUITableViewCellStyleSubtitle" id="equ-gA-v2C" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="296" width="375" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="equ-gA-v2C" id="avY-tJ-S6a">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCSignatureViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tym-Kr-ziw">
-                                                    <rect key="frame" x="15" y="13" width="207.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Let's the user draw it's signature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FG5-AC-Xo0">
-                                                    <rect key="frame" x="15" y="33.5" width="184.5" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="ALERTS" id="xc2-sg-lfs">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="I9n-55-dnC" detailTextLabel="gBV-GI-Hzx" style="IBUITableViewCellStyleSubtitle" id="o6j-fP-Miu" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="412" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="I9n-55-dnC" detailTextLabel="gBV-GI-Hzx" style="IBUITableViewCellStyleSubtitle" id="o6j-fP-Miu" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="352" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o6j-fP-Miu" id="KET-7X-3Ps">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -168,8 +146,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="uem-mz-apo" detailTextLabel="XSt-rm-dst" style="IBUITableViewCellStyleSubtitle" id="2bX-ro-rHa" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="472" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="uem-mz-apo" detailTextLabel="XSt-rm-dst" style="IBUITableViewCellStyleSubtitle" id="2bX-ro-rHa" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="412" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bX-ro-rHa" id="fMC-V2-S6H">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -192,8 +170,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jzb-ea-b5D" detailTextLabel="VB1-2I-Cgl" style="IBUITableViewCellStyleSubtitle" id="mKN-uq-2x6" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="532" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jzb-ea-b5D" detailTextLabel="VB1-2I-Cgl" style="IBUITableViewCellStyleSubtitle" id="mKN-uq-2x6" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="472" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mKN-uq-2x6" id="teW-I9-wA7">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -216,8 +194,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vjz-r1-VTo" detailTextLabel="5xm-fj-HjK" style="IBUITableViewCellStyleSubtitle" id="Bac-Kj-Nkv" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="592" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vjz-r1-VTo" detailTextLabel="5xm-fj-HjK" style="IBUITableViewCellStyleSubtitle" id="Bac-Kj-Nkv" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="532" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bac-Kj-Nkv" id="hQ5-VO-Jgq">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -244,8 +222,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="BANNERS" id="9rZ-D4-3pD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="aRd-e7-Aif" detailTextLabel="NhT-1A-ElU" style="IBUITableViewCellStyleSubtitle" id="5Hi-9H-uIp" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="708" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="aRd-e7-Aif" detailTextLabel="NhT-1A-ElU" style="IBUITableViewCellStyleSubtitle" id="5Hi-9H-uIp" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="648" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Hi-9H-uIp" id="xh0-Cl-3f7">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -268,8 +246,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Wez-hz-UTK" detailTextLabel="0BF-WO-5ml" style="IBUITableViewCellStyleSubtitle" id="ozH-do-YGN" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="768" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Wez-hz-UTK" detailTextLabel="0BF-WO-5ml" style="IBUITableViewCellStyleSubtitle" id="ozH-do-YGN" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="708" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ozH-do-YGN" id="eXR-QY-way">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -292,8 +270,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Mib-yx-XLB" detailTextLabel="BN2-9q-d3L" style="IBUITableViewCellStyleSubtitle" id="5TZ-me-WFp" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="828" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Mib-yx-XLB" detailTextLabel="BN2-9q-d3L" style="IBUITableViewCellStyleSubtitle" id="5TZ-me-WFp" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="768" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5TZ-me-WFp" id="0Wa-ID-Ymg">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -316,8 +294,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BdO-hO-mx3" detailTextLabel="JTr-Z0-vLV" style="IBUITableViewCellStyleSubtitle" id="wZm-o2-7aw" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="888" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BdO-hO-mx3" detailTextLabel="JTr-Z0-vLV" style="IBUITableViewCellStyleSubtitle" id="wZm-o2-7aw" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="828" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wZm-o2-7aw" id="Imx-de-aSJ">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -344,8 +322,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="StatusBar Messages" id="ZR9-0S-mvJ">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ijQ-Ak-6Ki" detailTextLabel="LMf-Xf-Yin" style="IBUITableViewCellStyleSubtitle" id="PC1-as-9JA" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1004" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ijQ-Ak-6Ki" detailTextLabel="LMf-Xf-Yin" style="IBUITableViewCellStyleSubtitle" id="PC1-as-9JA" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="944" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PC1-as-9JA" id="3qg-Yb-aMV">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -368,8 +346,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="keP-iN-SFk" detailTextLabel="w0z-e8-pTl" style="IBUITableViewCellStyleSubtitle" id="Yzf-Ng-ZJu" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1064" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="keP-iN-SFk" detailTextLabel="w0z-e8-pTl" style="IBUITableViewCellStyleSubtitle" id="Yzf-Ng-ZJu" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1004" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yzf-Ng-ZJu" id="s4L-5s-Xc5">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -392,8 +370,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="CV0-tl-bnD" detailTextLabel="3jy-yU-djZ" style="IBUITableViewCellStyleSubtitle" id="Hxe-5e-Emb" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1124" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="CV0-tl-bnD" detailTextLabel="3jy-yU-djZ" style="IBUITableViewCellStyleSubtitle" id="Hxe-5e-Emb" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1064" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hxe-5e-Emb" id="IBM-FO-b5R">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -416,8 +394,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0Gl-ta-y6f" detailTextLabel="WF4-79-Vf4" style="IBUITableViewCellStyleSubtitle" id="Lng-z7-dSz" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1184" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0Gl-ta-y6f" detailTextLabel="WF4-79-Vf4" style="IBUITableViewCellStyleSubtitle" id="Lng-z7-dSz" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1124" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lng-z7-dSz" id="zyS-Wg-Sfv">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -440,8 +418,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vSZ-iw-MM9" detailTextLabel="jFA-gC-suE" style="IBUITableViewCellStyleSubtitle" id="2OM-2o-qDh" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1244" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vSZ-iw-MM9" detailTextLabel="jFA-gC-suE" style="IBUITableViewCellStyleSubtitle" id="2OM-2o-qDh" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1184" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2OM-2o-qDh" id="eqa-bO-tg3">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -468,8 +446,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="HUD" id="2a0-CD-gsB">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mo1-g6-4Co" detailTextLabel="dXk-rQ-1el" style="IBUITableViewCellStyleSubtitle" id="5iQ-wa-jk7" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1360" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mo1-g6-4Co" detailTextLabel="dXk-rQ-1el" style="IBUITableViewCellStyleSubtitle" id="5iQ-wa-jk7" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1300" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5iQ-wa-jk7" id="L9w-Vj-KAN">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -492,8 +470,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rx1-TR-f4h" detailTextLabel="Dxr-hg-NfT" style="IBUITableViewCellStyleSubtitle" id="yr7-EU-90F" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1420" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rx1-TR-f4h" detailTextLabel="Dxr-hg-NfT" style="IBUITableViewCellStyleSubtitle" id="yr7-EU-90F" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1360" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yr7-EU-90F" id="b40-dR-ACE">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -520,8 +498,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="StyleKit" footerTitle="This is already a VCTableView using VCTableViewCells" id="hsq-ai-cGP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="E1Y-eb-G2L" detailTextLabel="3br-49-s49" style="IBUITableViewCellStyleSubtitle" id="qgF-xt-Nxw" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1543" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="E1Y-eb-G2L" detailTextLabel="3br-49-s49" style="IBUITableViewCellStyleSubtitle" id="qgF-xt-Nxw" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1483" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgF-xt-Nxw" id="LqR-gU-CUS">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -551,8 +529,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="View" id="Ghd-YA-H9d">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="poH-fg-2aS" style="IBUITableViewCellStyleDefault" id="Yf2-Uf-Zv1" customClass="VCTableViewCell" customModule="VCUIKit_Example" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1671" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="poH-fg-2aS" style="IBUITableViewCellStyleDefault" id="Yf2-Uf-Zv1" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="1611" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yf2-Uf-Zv1" id="XBS-wd-15n">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -568,7 +546,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Agp-vU-OyZ" kind="show" id="rHr-rb-wl0"/>
+                                            <segue destination="7cu-lQ-cmk" kind="show" id="5Iv-Qm-897"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -582,12 +560,28 @@
                     <navigationItem key="navigationItem" title="VCUIKit" id="PeL-7J-zFp"/>
                     <connections>
                         <segue destination="xh0-Pf-KOM" kind="presentation" identifier="VCCodeScannerIdentifier" id="ZjA-PW-Q6b"/>
-                        <segue destination="2Y8-lM-zcZ" kind="presentation" identifier="VCSignaturePickerIdentifier" id="Nyv-Hn-8FM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSl-ng-oS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="423" y="829"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="z4B-V1-w0k">
+            <objects>
+                <tabBarController id="vDv-zE-l5f" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="PXw-Fn-mmP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OFD-5H-5CS" kind="relationship" relationship="viewControllers" id="FIp-05-NvV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sCv-nV-ohS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106" y="829"/>
         </scene>
         <!--Code Scanner View Controller-->
         <scene sceneID="P17-iD-SFp">
@@ -605,25 +599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfL-ao-3ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="345"/>
-        </scene>
-        <!--Signature Picker View Controller-->
-        <scene sceneID="t9D-fc-gYW">
-            <objects>
-                <viewController id="2Y8-lM-zcZ" customClass="VCSignaturePickerViewController" customModule="VCUIKit" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1hW-ow-Hre"/>
-                        <viewControllerLayoutGuide type="bottom" id="Yfb-yO-IJv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bG4-gw-4cX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AS0-Gs-yuU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1244" y="1016"/>
+            <point key="canvasLocation" x="422" y="1591"/>
         </scene>
         <!--NavigationBar Title-->
         <scene sceneID="j7l-sM-ZQv">
@@ -644,61 +620,82 @@
                                 </constraints>
                                 <state key="normal" title="UIViewController Tint"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VCLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-q5-Q2b" customClass="VCLabel" customModule="VCUIKit">
+                                <rect key="frame" x="16" y="247" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="cyY-qX-ufX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDP-ir-Nes" customClass="VCButton" customModule="VCUIKit">
+                                <rect key="frame" x="16" y="324" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cat-fk-b9D"/>
+                                </constraints>
+                                <state key="normal" title="VCButton"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cje-FM-goE" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="L58-Ri-W2D"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="centerY" secondItem="hKp-RG-ETN" secondAttribute="centerY" id="MJw-u2-yrg"/>
+                            <constraint firstItem="TWk-q5-Q2b" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="Vl5-HC-Zxv"/>
+                            <constraint firstItem="PDP-ir-Nes" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="aRT-a0-BYl"/>
+                            <constraint firstItem="PDP-ir-Nes" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="q2z-QV-ams"/>
+                            <constraint firstItem="cje-FM-goE" firstAttribute="top" secondItem="TWk-q5-Q2b" secondAttribute="bottom" constant="8" id="sfd-r4-NQF"/>
+                            <constraint firstItem="TWk-q5-Q2b" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="t4v-Gm-Jnb"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="t9R-ar-bcG"/>
+                            <constraint firstItem="PDP-ir-Nes" firstAttribute="top" secondItem="cje-FM-goE" secondAttribute="bottom" constant="8" id="yia-9y-J0C"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NavigationBar Title" id="Cmn-Zb-Ms2">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="J1b-iL-sOp"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" id="J1b-iL-sOp"/>
+                            <barButtonItem systemItem="action" id="auC-9Q-WrF"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbd-ni-euT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="1865"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="828.93553223388312"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="QCr-kp-luS">
+        <scene sceneID="yOm-Ao-OOK">
             <objects>
-                <viewController id="Agp-vU-OyZ" sceneMemberID="viewController">
+                <viewController id="7cu-lQ-cmk" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I8J-7M-NGm"/>
-                        <viewControllerLayoutGuide type="bottom" id="AP4-jK-3Hi"/>
+                        <viewControllerLayoutGuide type="top" id="a9w-s6-39o"/>
+                        <viewControllerLayoutGuide type="bottom" id="8et-U2-zCG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wo8-1S-6Z4">
+                    <view key="view" contentMode="scaleToFill" id="PJ9-2z-xpT">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVy-Co-KsB" customClass="DemoXIBView" customModule="VCUIKit_Example" customModuleProvider="target">
-                                <rect key="frame" x="87" y="201" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipx-uv-mKe" customClass="DemoXIBView" customModule="VCUIKit_Example" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="U6S-VF-G2V"/>
-                                    <constraint firstAttribute="height" constant="200" id="mvm-9B-boL"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="xibName" value="DemoXIBView"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZVy-Co-KsB" firstAttribute="centerY" secondItem="Wo8-1S-6Z4" secondAttribute="centerY" id="BZj-kn-YjC"/>
-                            <constraint firstItem="ZVy-Co-KsB" firstAttribute="centerX" secondItem="Wo8-1S-6Z4" secondAttribute="centerX" id="MkG-bT-i1H"/>
+                            <constraint firstItem="8et-U2-zCG" firstAttribute="top" secondItem="ipx-uv-mKe" secondAttribute="bottom" id="mNm-P0-6tQ"/>
+                            <constraint firstItem="ipx-uv-mKe" firstAttribute="leading" secondItem="PJ9-2z-xpT" secondAttribute="leading" id="mOv-qJ-AuM"/>
+                            <constraint firstAttribute="trailing" secondItem="ipx-uv-mKe" secondAttribute="trailing" id="whY-BQ-JO3"/>
+                            <constraint firstItem="ipx-uv-mKe" firstAttribute="top" secondItem="a9w-s6-39o" secondAttribute="bottom" id="x98-NR-Mr7"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Blp-Bk-xfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zyB-WC-zvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="1864.3178410794603"/>
+            <point key="canvasLocation" x="1214" y="1591"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="lTg-Et-zzo">
             <objects>
                 <navigationController id="OFD-5H-5CS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="z7F-K6-tXm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="seC-Y3-XT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -709,7 +706,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jt4-Oa-CH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-529" y="829"/>
+            <point key="canvasLocation" x="-351" y="829"/>
         </scene>
     </scenes>
 </document>

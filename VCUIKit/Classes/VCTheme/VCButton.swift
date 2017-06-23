@@ -8,8 +8,31 @@
 
 import UIKit
 
+open class VCButton : UIButton {
+    /** Wheter the appearance is being set manually on Storyboard */
+    @IBInspectable var storyboardAppearance: Bool = false
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.applyAppearance()
+    }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.applyAppearance()
+    }
+    
+    override func applyAppearance() -> Void {
+        if !storyboardAppearance {
+            self.titleLabel?.font = sharedStyleManager.buttonFont
+            self.setTitleColor(sharedStyleManager.buttonTextColor, for: .normal)
+        }
+    }
+}
+
 /** A UIButton that draws itself. Should be used with PaintCode drawings. */
-@IBDesignable open class VCDrawableButton : UIButton {
+@IBDesignable open class VCDrawableButton : VCButton {
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
