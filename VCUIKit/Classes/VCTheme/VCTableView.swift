@@ -45,7 +45,7 @@ open class VCTableView: UITableView {
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.backgroundColor = sharedStyleManager.tableViewBackgroundColor
+            self.backgroundColor = sharedAppearance.tableViewBackgroundColor
         }
     }
     

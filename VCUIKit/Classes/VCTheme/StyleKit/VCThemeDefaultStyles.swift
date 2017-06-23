@@ -1,5 +1,5 @@
 //
-//  VCThemeDefaultStyles.swift
+//  VCAppearanceManager.swift
 //  VCLibrary
 //
 //  Created by Vitor Cesco on 5/17/16.
@@ -10,69 +10,69 @@ import UIKit
 
 public let CGRectDefault = CGRect(x: 0, y: 0, width: 100, height: 100)
 
-public var sharedStyleManager = VCThemeDefaultStyles()
+public var sharedAppearance = VCAppearanceManager()
 
-public class VCThemeDefaultStyles {
-    var labelTextColor : UIColor
-    var labelFont : UIFont
+open class VCAppearanceManager {
+    open var labelTextColor : UIColor
+    open var labelFont : UIFont
     
-    var buttonTextColor : UIColor
-    var buttonFont : UIFont
+    open var buttonTextColor : UIColor
+    open var buttonFont : UIFont
     
-    var tableViewCellTintColor : UIColor
-    var tableViewCellBackgroundColor : UIColor
-    var tableViewCellTitleTextColor : UIColor
-    var tableViewCellTitleFont : UIFont
-    var tableViewCellDetailTextColor : UIColor
-    var tableViewCellDetailFont : UIFont
+    open var tableViewCellTintColor : UIColor
+    open var tableViewCellBackgroundColor : UIColor
+    open var tableViewCellTitleTextColor : UIColor
+    open var tableViewCellTitleFont : UIFont
+    open var tableViewCellDetailTextColor : UIColor
+    open var tableViewCellDetailFont : UIFont
     
-    var tableViewBackgroundColor : UIColor
+    open var tableViewBackgroundColor : UIColor
     
-    var applicationStatusBarStyle : UIStatusBarStyle
+    open var applicationStatusBarStyle : UIStatusBarStyle
     
-    var navigationBarTintColor : UIColor
-    var navigationBarBackgroundColor : UIColor
-    var navigationBarTitleColor : UIColor
-    var navigationBarTitleFont : UIFont
-    var navigationBarBackButtonTitle : String
-    var navigationBarIsTranslucent : Bool
+    open var navigationBarTintColor : UIColor
+    open var navigationBarBackgroundColor : UIColor
+    open var navigationBarTitleColor : UIColor
+    open var navigationBarTitleFont : UIFont
+    open var navigationBarBackButtonTitle : String
+    open var navigationBarIsTranslucent : Bool
     
-    var viewControllerViewTintColor : UIColor
-    var viewControllerViewBackgroundColor : UIColor
+    open var viewControllerViewTintColor : UIColor
+    open var viewControllerViewBackgroundColor : UIColor
     
-    var tabledViewControllerPlaceholderTextColor : UIColor
-    var tabledViewControllerPlaceholderTextFont : UIFont
-    var tabledViewControllerPlaceholderTitleColor : UIColor
-    var tabledViewControllerPlaceholderTitleFont : UIFont
+    open var tabledViewControllerPlaceholderTextColor : UIColor
+    open var tabledViewControllerPlaceholderTextFont : UIFont
+    open var tabledViewControllerPlaceholderTitleColor : UIColor
+    open var tabledViewControllerPlaceholderTitleFont : UIFont
     
-    var tabBarTintColor : UIColor
-    var tabBarBackgroundColor : UIColor
-    var tabBarFont : UIFont
-    var tabBarIsTranslucent : Bool
+    open var tabBarTintColor : UIColor
+    open var tabBarBackgroundColor : UIColor
+    open var tabBarFont : UIFont
+    open var tabBarIsTranslucent : Bool
         
-    var bannerSuccessBackgroundColor : UIColor
-    var bannerErrorBackgroundColor : UIColor
-    var bannerInfoBackgroundColor : UIColor
-    var bannerFont : UIFont
+    open var bannerSuccessBackgroundColor : UIColor
+    open var bannerErrorBackgroundColor : UIColor
+    open var bannerInfoBackgroundColor : UIColor
+    open var bannerFont : UIFont
     
-    var alertTitleColor : UIColor
-    var alertTitleFont : UIFont
-    var alertMessageColor : UIColor
-    var alertMessageFont : UIFont
-    var alertViewTintColor : UIColor
-    var alertBackgroundColor : UIColor
-    var alertCancelButtonColor : UIColor
-    var alertCancelButtonTitleColor : UIColor
-    var alertCancelButtonTitleFont : UIFont
-    var alertButtonColor : UIColor
-    var alertButtonTitleColor : UIColor
-    var alertButtonTitleFont : UIFont
-    var alertCornerRadius : CGFloat
-    var alertButtonCornerRadius : CGFloat
+    open var alertTitleColor : UIColor
+    open var alertTitleFont : UIFont
+    open var alertMessageColor : UIColor
+    open var alertMessageFont : UIFont
+    open var alertViewTintColor : UIColor
+    open var alertBackgroundColor : UIColor
+    open var alertCancelButtonColor : UIColor
+    open var alertCancelButtonTitleColor : UIColor
+    open var alertCancelButtonTitleFont : UIFont
+    open var alertButtonColor : UIColor
+    open var alertButtonTitleColor : UIColor
+    open var alertButtonTitleFont : UIFont
+    open var alertCornerRadius : CGFloat
+    open var alertButtonCornerRadius : CGFloat
     
-    var hudMessageColor : UIColor
-    var hudTintColor : UIColor
-    var hudBackgroundColor : UIColor
+    open var hudMessageColor : UIColor
+    open var hudTintColor : UIColor
+    open var hudBackgroundColor : UIColor
     
     init() {
         // MARK: - VCLabel

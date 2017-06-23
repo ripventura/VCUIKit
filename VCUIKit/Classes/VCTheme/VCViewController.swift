@@ -21,7 +21,7 @@ open class VCViewController: UIViewController {
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
-        sharedStyleManager = VCThemeDefaultStyles()
+        sharedAppearance = VCAppearanceManager()
     }
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,14 +32,14 @@ open class VCViewController: UIViewController {
     
     override func applyAppearance() -> Void {
         //Updates StatusBar Style
-        UIApplication.shared.statusBarStyle = sharedStyleManager.applicationStatusBarStyle
+        UIApplication.shared.statusBarStyle = sharedAppearance.applicationStatusBarStyle
         
         //Updates NavigationBar appearance
         self.navigationController?.applyAppearance()
     
         if !storyboardAppearance {
-            self.view.tintColor = sharedStyleManager.viewControllerViewTintColor
-            self.view.backgroundColor = sharedStyleManager.viewControllerViewBackgroundColor
+            self.view.tintColor = sharedAppearance.viewControllerViewTintColor
+            self.view.backgroundColor = sharedAppearance.viewControllerViewBackgroundColor
         }
         
         //Updates TabBar colors
@@ -79,7 +79,7 @@ open class VCTabledViewController: VCViewController {
     //Switches the hidden state between Background View and TableView
     func setHiddenPlaceholder(hidden : Bool) -> Void {
         self.backgroundView.isHidden = hidden
-        self.tableView?.backgroundColor = hidden ? sharedStyleManager.viewControllerViewBackgroundColor : .clear
+        self.tableView?.backgroundColor = hidden ? sharedAppearance.viewControllerViewBackgroundColor : .clear
     }
     
     /** Populates the Interface with its UI Objects */
@@ -108,8 +108,8 @@ open class VCTabledViewController: VCViewController {
         })
         
         self.placeholderTitleLabel = UILabel(frame: CGRectDefault)
-        self.placeholderTitleLabel.textColor = sharedStyleManager.tabledViewControllerPlaceholderTitleColor
-        self.placeholderTitleLabel.font = sharedStyleManager.tabledViewControllerPlaceholderTitleFont
+        self.placeholderTitleLabel.textColor = sharedAppearance.tabledViewControllerPlaceholderTitleColor
+        self.placeholderTitleLabel.font = sharedAppearance.tabledViewControllerPlaceholderTitleFont
         self.placeholderTitleLabel.textAlignment = .center
         self.backgroundView.addSubview(self.placeholderTitleLabel)
         placeholderTitleLabel.snp.makeConstraints({make in
@@ -120,8 +120,8 @@ open class VCTabledViewController: VCViewController {
         })
         
         self.placeHolderTextLabel = UILabel(frame: CGRectDefault)
-        self.placeHolderTextLabel.textColor = sharedStyleManager.tabledViewControllerPlaceholderTextColor
-        self.placeHolderTextLabel.font = sharedStyleManager.tabledViewControllerPlaceholderTextFont
+        self.placeHolderTextLabel.textColor = sharedAppearance.tabledViewControllerPlaceholderTextColor
+        self.placeHolderTextLabel.font = sharedAppearance.tabledViewControllerPlaceholderTextFont
         self.placeHolderTextLabel.textAlignment = .center
         self.placeHolderTextLabel.numberOfLines = 2
         self.backgroundView.addSubview(self.placeHolderTextLabel)
@@ -161,7 +161,7 @@ open class VCTableViewController: UITableViewController {
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     func willSetDefaultStyles() {
-        sharedStyleManager = VCThemeDefaultStyles()
+        sharedAppearance = VCAppearanceManager()
     }
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -172,14 +172,14 @@ open class VCTableViewController: UITableViewController {
     
     override func applyAppearance() -> Void {
         //Updates StatusBar Style
-        UIApplication.shared.statusBarStyle = sharedStyleManager.applicationStatusBarStyle
+        UIApplication.shared.statusBarStyle = sharedAppearance.applicationStatusBarStyle
         
         //Updates NavigationBar appearance
         self.navigationController?.applyAppearance()
         
         if !storyboardAppearance {
-            self.view.tintColor = sharedStyleManager.viewControllerViewTintColor
-            self.view.backgroundColor = sharedStyleManager.viewControllerViewBackgroundColor
+            self.view.tintColor = sharedAppearance.viewControllerViewTintColor
+            self.view.backgroundColor = sharedAppearance.viewControllerViewBackgroundColor
         }
         
         //Updates TabBar colors

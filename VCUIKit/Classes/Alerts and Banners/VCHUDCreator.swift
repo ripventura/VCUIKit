@@ -150,14 +150,14 @@ private class CustomHUD: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateMessage(notification:)), name: NSNotification.Name(rawValue: "HUD_STATE_UPDATE"), object: nil)
         
         
-        self.backgroundColor = sharedStyleManager.hudBackgroundColor
-        self.tintColor = sharedStyleManager.hudTintColor
+        self.backgroundColor = sharedAppearance.hudBackgroundColor
+        self.tintColor = sharedAppearance.hudTintColor
         
         let spinner = SWActivityIndicatorView(frame: CGRectDefault)
         spinner.lineWidth = 3
         spinner.autoStartAnimating = true
         spinner.hidesWhenStopped = false
-        spinner.color = sharedStyleManager.hudTintColor
+        spinner.color = sharedAppearance.hudTintColor
         spinner.backgroundColor = UIColor.clear
         self.addSubview(spinner)
         spinner.snp.makeConstraints { (make) -> Void in
@@ -175,7 +175,7 @@ private class CustomHUD: UIView {
         }
         
         messageLabel = UILabel(frame: CGRectDefault)
-        messageLabel?.textColor = sharedStyleManager.hudMessageColor
+        messageLabel?.textColor = sharedAppearance.hudMessageColor
         messageLabel?.text = message
         self.addSubview(messageLabel!)
         messageLabel!.snp.makeConstraints { (make) -> Void in
