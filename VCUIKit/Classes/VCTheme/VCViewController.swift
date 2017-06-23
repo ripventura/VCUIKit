@@ -62,13 +62,13 @@ extension VCViewController: UITextFieldDelegate {
  instead of having a UITableView directly as subview.*/
 open class VCTabledViewController: VCViewController {
     
-    @IBOutlet weak var tableView : VCTableView?
+    @IBOutlet open weak var tableView : VCTableView?
     
     //BackgroundView is hidden by default
-    var backgroundView : UIView = UIView()
-    var placeHolderImageView : UIImageView = UIImageView()
-    var placeholderTitleLabel : UILabel = UILabel()
-    var placeHolderTextLabel : UILabel = UILabel()
+    open var backgroundView : UIView = UIView()
+    open var placeHolderImageView : UIImageView = UIImageView()
+    open var placeholderTitleLabel : UILabel = UILabel()
+    open var placeHolderTextLabel : UILabel = UILabel()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +77,7 @@ open class VCTabledViewController: VCViewController {
     }
     
     //Switches the hidden state between Background View and TableView
-    func setHiddenPlaceholder(hidden : Bool) -> Void {
+    open func setHiddenPlaceholder(hidden : Bool) -> Void {
         self.backgroundView.isHidden = hidden
         self.tableView?.backgroundColor = hidden ? sharedAppearance.viewControllerViewBackgroundColor : .clear
     }
@@ -160,7 +160,7 @@ open class VCTableViewController: UITableViewController {
     }
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
-    func willSetDefaultStyles() {
+    open func willSetDefaultStyles() {
         sharedAppearance = VCAppearanceManager()
     }
     

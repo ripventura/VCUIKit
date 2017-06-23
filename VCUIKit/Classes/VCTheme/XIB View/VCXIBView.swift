@@ -10,7 +10,7 @@ import UIKit
 
 open class VCXIBView: UIView {
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet open var contentView: UIView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
