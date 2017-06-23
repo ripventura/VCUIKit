@@ -74,7 +74,7 @@ open class VCAppearanceManager {
     open var hudTintColor : UIColor
     open var hudBackgroundColor : UIColor
     
-    init() {
+    public init() {
         // MARK: - VCLabel
         labelTextColor = VCUIKitStyleKit.labelTextColor
         labelFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
