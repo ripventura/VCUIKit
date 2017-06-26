@@ -52,8 +52,13 @@ extension UIView {
 
 extension UIViewController {
     /** Sets the NavigationBar Title */
-    open func setNavitagionBarTitle(title : String) {
+    open func setNavitagionBarTitle(title : String?) {
         self.navigationItem.title = title
+    }
+    
+    /** Sets the NavigationBar Title View */
+    open func setNavitagionBarTitleView(view : UIView?) {
+        self.navigationItem.titleView = view
     }
     
     /** Adds a UIBarButtomItem to the RightItems on the NavigationBar */

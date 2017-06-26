@@ -69,9 +69,10 @@ extension VCViewController: UITextFieldDelegate {
     
     open var pullRefreshControl: UIRefreshControl?
     
+    open var searchController: UISearchController = UISearchController(searchResultsController: nil)
+    
     @IBOutlet open weak var tableView : VCTableView?
     
-    //BackgroundView is hidden by default
     open var backgroundView : UIView = UIView()
     open var placeHolderImageView : UIImageView = UIImageView()
     open var placeholderTitleLabel : UILabel = UILabel()
@@ -83,12 +84,6 @@ extension VCViewController: UITextFieldDelegate {
         self.populateInterface()
         
         self.setupRefreshControl()
-    }
-    
-    //Switches the hidden state between Background View and TableView
-    open func setHiddenPlaceholder(hidden : Bool) -> Void {
-        self.backgroundView.isHidden = hidden
-        self.tableView?.backgroundColor = hidden ? sharedAppearanceManager.viewControllerViewBackgroundColor : .clear
     }
     
     /** Populates the Interface with its UI Objects */
@@ -142,6 +137,14 @@ extension VCViewController: UITextFieldDelegate {
         })
     }
     
+    // MARK: - Placeholders
+    
+    //Switches the hidden state between Background View and TableView
+    open func setHiddenPlaceholder(hidden : Bool) -> Void {
+        self.backgroundView.isHidden = hidden
+        self.tableView?.backgroundColor = hidden ? sharedAppearanceManager.viewControllerViewBackgroundColor : .clear
+    }
+    
     // MARK: - Refresh Control
     
     internal func setupRefreshControl() -> Void {
@@ -154,6 +157,42 @@ extension VCViewController: UITextFieldDelegate {
     
     /** Called after the PullRefreshControl is triggered */
     open func didPullRefreshControl() -> Void {
+    }
+    
+    // MARK: - Search Control
+    
+    /** Configures the SearchControl. Override this calling super for any custom properties. */
+    open func configureSearchControl() -> Void {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = false
+        
+        searchController.searchBar.placeholder = "Search..."
+        searchController.searchBar.keyboardType = .default
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.showsCancelButton = true
+        searchController.searchBar.delegate = self
+    }
+    
+    /** Enables / Disables the Search Control on this ViewController */
+    open func updateSearchControl(enable: Bool) -> Void {
+        if enable {
+            self.setNavitagionBarTitleView(view: searchController.searchBar)
+            searchController.searchBar.becomeFirstResponder()
+        } else {
+            searchController.searchBar.resignFirstResponder()
+            self.setNavitagionBarTitleView(view: nil)
+        }
+    }
+    
+    /** Called after text is typed on the SearchBar */
+    open func didSearch(text: String) -> Void {
+        
+    }
+    
+    /** Called after the Search is cancelled */
+    open func didCancelSearch() -> Void {
     }
 }
 extension VCTabledViewController: UITableViewDelegate {
@@ -168,6 +207,16 @@ extension VCTabledViewController: UITableViewDelegate {
 extension VCTabledViewController: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+}
+extension VCTabledViewController: UISearchResultsUpdating {
+    open func updateSearchResults(for searchController: UISearchController) {
+        self.didSearch(text: searchController.searchBar.text!)
+    }
+}
+extension VCTabledViewController: UISearchBarDelegate {
+    open func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.didCancelSearch()
     }
 }
 
