@@ -84,6 +84,8 @@ extension VCViewController: UITextFieldDelegate {
         self.populateInterface()
         
         self.setupRefreshControl()
+        
+        self.configureSearchControl()
     }
     
     /** Populates the Interface with its UI Objects */
@@ -193,6 +195,7 @@ extension VCViewController: UITextFieldDelegate {
     
     /** Called after the Search is cancelled */
     open func didCancelSearch() -> Void {
+        self.updateSearchControl(enable: false)
     }
 }
 extension VCTabledViewController: UITableViewDelegate {
