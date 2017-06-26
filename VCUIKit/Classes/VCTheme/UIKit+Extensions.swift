@@ -86,7 +86,7 @@ extension UIViewController {
     internal func updateBackButtonStyle() {
         //Updates the BackButton Style
         let backButton = UIBarButtonItem()
-        backButton.title = sharedAppearance.navigationBarBackButtonTitle
+        backButton.title = sharedAppearanceManager.navigationBarBackButtonTitle
         
         self.navigationItem.backBarButtonItem = backButton
     }
@@ -100,13 +100,13 @@ extension UITabBarController {
     
     override func applyAppearance() {
         //Updates Navbar Tint Color
-        self.tabBar.tintColor = sharedAppearance.tabBarTintColor
+        self.tabBar.tintColor = sharedAppearanceManager.tabBarTintColor
         
-        self.tabBar.isTranslucent = sharedAppearance.tabBarIsTranslucent
+        self.tabBar.isTranslucent = sharedAppearanceManager.tabBarIsTranslucent
         
         if let items = self.tabBar.items {
             for item in items {
-                item.setTitleTextAttributes([NSFontAttributeName: sharedAppearance.tabBarFont], for: .normal)
+                item.setTitleTextAttributes([NSFontAttributeName: sharedAppearanceManager.tabBarFont], for: .normal)
             }
         }
     }
@@ -115,18 +115,18 @@ extension UITabBarController {
 extension UINavigationController {
     
     override func applyAppearance() {
-        self.navigationBar.isTranslucent = sharedAppearance.navigationBarIsTranslucent
+        self.navigationBar.isTranslucent = sharedAppearanceManager.navigationBarIsTranslucent
         
         //Updates Navbar Tint Color
-        self.navigationBar.tintColor = sharedAppearance.navigationBarTintColor
+        self.navigationBar.tintColor = sharedAppearanceManager.navigationBarTintColor
         
         //Updates Navbar Background Color
-        self.navigationBar.barTintColor = sharedAppearance.navigationBarBackgroundColor
+        self.navigationBar.barTintColor = sharedAppearanceManager.navigationBarBackgroundColor
         
         //Updates NavigationBar title font
         self.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: sharedAppearance.navigationBarTitleColor,
-            NSFontAttributeName: sharedAppearance.navigationBarTitleFont
+            NSForegroundColorAttributeName: sharedAppearanceManager.navigationBarTitleColor,
+            NSFontAttributeName: sharedAppearanceManager.navigationBarTitleFont
         ]
     }
 }

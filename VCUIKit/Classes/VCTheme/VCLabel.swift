@@ -25,8 +25,8 @@ open class VCLabel: UILabel {
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.font = sharedAppearance.labelFont
-            self.textColor = sharedAppearance.labelTextColor
+            self.font = sharedAppearanceManager.labelFont
+            self.textColor = sharedAppearanceManager.labelTextColor
         }
     }
 }

@@ -25,16 +25,16 @@ open class VCTableViewCell: UITableViewCell {
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.contentView.backgroundColor = sharedAppearance.tableViewCellBackgroundColor
-            self.backgroundColor = sharedAppearance.tableViewCellBackgroundColor
+            self.contentView.backgroundColor = sharedAppearanceManager.tableViewCellBackgroundColor
+            self.backgroundColor = sharedAppearanceManager.tableViewCellBackgroundColor
             
-            self.textLabel?.textColor = sharedAppearance.tableViewCellTitleTextColor
-            self.textLabel?.font = sharedAppearance.tableViewCellTitleFont
+            self.textLabel?.textColor = sharedAppearanceManager.tableViewCellTitleTextColor
+            self.textLabel?.font = sharedAppearanceManager.tableViewCellTitleFont
             
-            self.detailTextLabel?.textColor = sharedAppearance.tableViewCellDetailTextColor
-            self.textLabel?.font = sharedAppearance.tableViewCellDetailFont
+            self.detailTextLabel?.textColor = sharedAppearanceManager.tableViewCellDetailTextColor
+            self.textLabel?.font = sharedAppearanceManager.tableViewCellDetailFont
             
-            self.tintColor = sharedAppearance.tableViewCellTintColor
+            self.tintColor = sharedAppearanceManager.tableViewCellTintColor
         }
     }
 }

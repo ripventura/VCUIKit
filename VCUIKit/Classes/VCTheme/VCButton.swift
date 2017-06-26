@@ -25,8 +25,8 @@ open class VCButton : UIButton {
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.titleLabel?.font = sharedAppearance.buttonFont
-            self.setTitleColor(sharedAppearance.buttonTextColor, for: .normal)
+            self.titleLabel?.font = sharedAppearanceManager.buttonFont
+            self.setTitleColor(sharedAppearanceManager.buttonTextColor, for: .normal)
         }
     }
 }
