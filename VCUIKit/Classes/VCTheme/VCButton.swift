@@ -10,7 +10,11 @@ import UIKit
 
 open class VCButton : UIButton {
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable var storyboardAppearance: Bool = false
+    @IBInspectable var storyboardAppearance: Bool = false {
+        didSet {
+            self.applyAppearance()
+        }
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,6 +23,9 @@ open class VCButton : UIButton {
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    open override func awakeFromNib() {
+        super.awakeFromNib()
         
         self.applyAppearance()
     }

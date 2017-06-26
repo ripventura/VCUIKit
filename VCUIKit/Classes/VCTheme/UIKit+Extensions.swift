@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 
 extension UITextField {
-    
     /** Sets a Done Toolbar as InputAccessoryView */
     open func shouldUseDoneToolbar(shouldUse : Bool) {
         if !shouldUse {
@@ -52,7 +51,6 @@ extension UIView {
 }
 
 extension UIViewController {
-    
     /** Sets the NavigationBar Title */
     open func setNavitagionBarTitle(title : String) {
         self.navigationItem.title = title
@@ -97,7 +95,6 @@ extension UIViewController {
 }
 
 extension UITabBarController {
-    
     override func applyAppearance() {
         //Updates Navbar Tint Color
         self.tabBar.tintColor = sharedAppearanceManager.tabBarTintColor
@@ -113,7 +110,6 @@ extension UITabBarController {
 }
 
 extension UINavigationController {
-    
     override func applyAppearance() {
         self.navigationBar.isTranslucent = sharedAppearanceManager.navigationBarIsTranslucent
         

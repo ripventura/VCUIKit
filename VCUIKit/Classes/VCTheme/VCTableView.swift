@@ -10,10 +10,19 @@ import UIKit
 
 open class VCTableView: UITableView {
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable open var storyboardAppearance: Bool = false
-    /** Wheter this TableView should have a RefreshControl (iOS >= 10.0) */
-    @IBInspectable open var hasRefreshControl: Bool = false
+    @IBInspectable var storyboardAppearance: Bool = false {
+        didSet {
+            self.applyAppearance()
+        }
+    }
+    /** Wheter this TableView should have a RefreshControl */
+    @IBInspectable open var pullToRefresh: Bool = false {
+        didSet {
+            self.setupRefreshControl()
+        }
+    }
     
+    open var pullRefreshControl: UIRefreshControl?
     open var refreshDelegate: VCTableViewRefreshDelegate?
     
     override init(frame: CGRect, style: UITableViewStyle) {
@@ -23,20 +32,19 @@ open class VCTableView: UITableView {
         
         self.setupNotifications()
         
-        if #available(iOS 10.0, *) {
-            self.setupRefreshControl()
-        }
+        self.setupRefreshControl()
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    open override func awakeFromNib() {
+        super.awakeFromNib()
         
         self.applyAppearance()
         
         self.setupNotifications()
         
-        if #available(iOS 10.0, *) {
-            self.setupRefreshControl()
-        }
+        self.setupRefreshControl()
     }
     
     deinit {
@@ -51,19 +59,17 @@ open class VCTableView: UITableView {
     
     // MARK: - Refresh Control
     
-    @available(iOS 10.0, *)
     internal func setupRefreshControl() -> Void {
-        if self.hasRefreshControl {
-            self.refreshControl = UIRefreshControl()
-            self.refreshControl?.addTarget(self, action: #selector(self.didRefreshControl), for: .valueChanged)
+        if self.pullToRefresh {
+            self.pullRefreshControl = UIRefreshControl()
+            self.pullRefreshControl?.addTarget(self, action: #selector(self.didRefreshControl), for: .valueChanged)
+            self.addSubview(self.pullRefreshControl!)
         }
     }
     
     internal func didRefreshControl() -> Void {
-        if #available(iOS 10.0, *) {
-            self.refreshControl?.beginRefreshing()
-            self.refreshDelegate?.tableViewDidRefreshControl(tableView: self)
-        }
+        self.pullRefreshControl?.beginRefreshing()
+        self.refreshDelegate?.tableViewDidPullToRefresh(tableView: self)
     }
     
     // MARK: - Keyboard Notifications
@@ -94,5 +100,5 @@ open class VCTableView: UITableView {
 }
 
 public protocol VCTableViewRefreshDelegate {
-    func tableViewDidRefreshControl(tableView: VCTableView)
+    func tableViewDidPullToRefresh(tableView: VCTableView)
 }

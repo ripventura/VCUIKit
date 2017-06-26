@@ -10,7 +10,7 @@ import UIKit
 
 open class VCViewController: UIViewController {
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable open var storyboardAppearance: Bool = false
+    @IBInspectable var storyboardAppearance: Bool = false
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,7 +59,7 @@ extension VCViewController: UITextFieldDelegate {
  VCViewController simulating a UITableViewController.
  This allows you to use a view normally as you would on a regular ViewController,
  instead of having a UITableView directly as subview.*/
-open class VCTabledViewController: VCViewController {
+@IBDesignable open class VCTabledViewController: VCViewController {
     
     @IBOutlet open weak var tableView : VCTableView?
     
@@ -147,9 +147,9 @@ extension VCTabledViewController: UITableViewDataSource {
     }
 }
 
-open class VCTableViewController: UITableViewController {
+@IBDesignable open class VCTableViewController: UITableViewController {
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable open var storyboardAppearance: Bool = false
+    @IBInspectable var storyboardAppearance: Bool = false
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

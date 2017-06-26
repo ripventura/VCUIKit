@@ -10,7 +10,11 @@ import UIKit
 
 open class VCTableViewCell: UITableViewCell {
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable var storyboardAppearance: Bool = false
+    @IBInspectable var storyboardAppearance: Bool = false {
+        didSet {
+            self.applyAppearance()
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -19,6 +23,9 @@ open class VCTableViewCell: UITableViewCell {
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    open override func awakeFromNib() {
+        super.awakeFromNib()
         
         self.applyAppearance()
     }
