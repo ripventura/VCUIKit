@@ -9,13 +9,10 @@
 import UIKit
 import ActionSheetPicker_3_0
 
-public let defaultActionSheetPicker : VCActionSheetPicker = VCActionSheetPicker()
-
-
 open class VCActionSheetPicker: NSObject {
     
-    //** Shows a String picker with the given options **/
-    public func showStringPicker(
+    /** Shows a String picker with the given options */
+    open static func showStringPicker(
         title : String,
         stringOptions : [String],
         initialSelection : Int,
@@ -34,8 +31,8 @@ open class VCActionSheetPicker: NSObject {
                 }}, origin: originView)
     }
     
-    //** Shows a Date picker with the given options **/
-    public func showDatePicker(
+    /** Shows a Date picker with the given options */
+    open static func showDatePicker(
         title : String,
         pickerMode : UIDatePickerMode,
         selectedDate : Date,

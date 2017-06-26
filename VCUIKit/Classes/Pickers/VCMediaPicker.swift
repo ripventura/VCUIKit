@@ -11,23 +11,24 @@ import DKImagePickerController
 
 open class VCMediaPicker: NSObject {
     
-    //Video currently not supported (completionHandler implications)
-    /*enum MediaKind : Int {
-        case Photo, Video, All
-    }*/
+    
     public enum MediaKind : Int {
-        case Photo
+        //Video currently not supported (completionHandler implications)
+        //case Photo, Video, All
+        case photo
     }
     
     public enum MediaSource : Int {
-        case Camera, Library, Both
+        case camera, library, both
     }
     
-    let pickerController : DKImagePickerController
-    
-    public init(maxSelections : Int, withMediaKind mediaKind : MediaKind, withMediaSource mediaSource : MediaSource, withCompletionnHandler completionHandler : @escaping ([UIImage]) ->Void) {
+    public static func showMediaPicker(maxSelections : Int,
+                                       mediaKind : MediaKind,
+                                       mediaSource : MediaSource,
+                                       parentViewController: UIViewController,
+                                       completionHandler : @escaping ([UIImage]) ->Void) {
         
-        self.pickerController = DKImagePickerController()
+        let pickerController : DKImagePickerController = DKImagePickerController()
         
         pickerController.assetType = DKImagePickerControllerAssetType(rawValue: mediaKind.rawValue)!
         pickerController.maxSelectableCount = maxSelections
@@ -36,7 +37,6 @@ open class VCMediaPicker: NSObject {
         if maxSelections < 2 {
             pickerController.singleSelect = true
         }
-        
         
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             
@@ -52,9 +52,9 @@ open class VCMediaPicker: NSObject {
             
             completionHandler(imageArray)
         }
-    }
-    
-    public func showAnimated(animated : Bool, parentViewController : UIViewController) {
-        parentViewController.present(pickerController, animated: animated, completion: nil)
+        
+        parentViewController.present(pickerController,
+                                     animated: true,
+                                     completion: nil)
     }
 }

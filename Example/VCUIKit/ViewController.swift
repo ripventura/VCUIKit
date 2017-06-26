@@ -42,72 +42,65 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
             case 0:
                 self.performSegue(withIdentifier: "VCCodeScannerIdentifier", sender: nil)
             case 1:
-                let stringPicker = VCActionSheetPicker()
-                stringPicker.showStringPicker(title: "Picking Strings",
-                                              stringOptions: ["Dog", "Cat", "Bird", "Turtle"],
-                                              initialSelection: 2,
-                                              originView: self.view,
-                                              completionHandler:
-                    {index, value in
-                        print("You selected " + value + " at index " + String(format: "%d", index))
+                VCActionSheetPicker.showStringPicker(title: "Picking Strings",
+                                                     stringOptions: ["Dog", "Cat", "Bird", "Turtle"],
+                                                     initialSelection: 2,
+                                                     originView: self.view,
+                                                     completionHandler: {index, value in
+                                                        print("You selected " + value + " at index " + String(format: "%d", index))
                 },
-                                              cancelHandler:
-                    {
-                        print("String picker has been canceled")
+                                                     cancelHandler: {
+                                                        print("String picker has been canceled")
                 })
             case 2:
-                let datePicker = VCActionSheetPicker()
-                datePicker.showDatePicker(title: "Picking Dates",
-                                          pickerMode: .date,
-                                          selectedDate: Date(),
-                                          minimumDate: Date().addingTimeInterval(-25920000),
-                                          maximumDate: Date().addingTimeInterval(25920000),
-                                          originView: self.view,
-                                          completionHandler:
-                    {date in
-                        print("You selected " + date.description)
+                VCActionSheetPicker.showDatePicker(title: "Picking Dates",
+                                                   pickerMode: .date,
+                                                   selectedDate: Date(),
+                                                   minimumDate: Date().addingTimeInterval(-25920000),
+                                                   maximumDate: Date().addingTimeInterval(25920000),
+                                                   originView: self.view,
+                                                   completionHandler: {date in
+                                                    print("You selected " + date.description)
                 },
-                                          cancelHandler:
-                    {
-                        print("Date picker has been canceled")
+                                                   cancelHandler: {
+                                                    print("Date picker has been canceled")
                 })
             case 3:
-                let mediaPicker = VCMediaPicker(maxSelections: 2,
-                                                withMediaKind: .Photo,
-                                                withMediaSource: .Both,
-                                                withCompletionnHandler:
-                    { images in
-                        print("You selected " + images.description)
+                VCMediaPicker.showMediaPicker(maxSelections: 2,
+                                              mediaKind: .photo,
+                                              mediaSource: .both,
+                                              parentViewController: self,
+                                              completionHandler: { images in
+                                                print("You selected " + images.description)
                 })
-                mediaPicker.showAnimated(animated: true, parentViewController: self)
             default:
                 break
             }
         case 1:
             switch indexPath.row {
             case 0:
-                VCAlertCreator().showAlert(style: .Success,
+                VCAlertCreator.showAlert(style: .Success,
                                            title: "Success!",
                                            message: "This is a success message",
                                            iconImage: nil,
                                            doneButton: VCAlertCreator.AlertButton.init(title: "Roger that!", handler: {print("Dismiss button pressed")}),
                                            buttons: [])
             case 1:
-                VCAlertCreator().showAlert(style: .Error,
+                VCAlertCreator.showAlert(style: .Error,
                                            title: "Error",
                                            message: "This is an error message",
                                            iconImage: nil,
                                            doneButton: VCAlertCreator.AlertButton.init(title: "Oh dear :(", handler: {print("Dismiss button pressed")}),
                                            buttons: [])
             case 2:
-                VCAlertCreator().showAlert(style: .Warning,
+                VCAlertCreator.showAlert(style: .Warning,
                                            title: "Warning!",
                                            message: "This is a warning message",
                                            iconImage: nil,
                                            doneButton: VCAlertCreator.AlertButton.init(title: "Jeez...", handler: {print("Dismiss button pressed")}),
                                            buttons: [])
             case 3:
-                VCAlertCreator().showAlert(message: "This is a normal message")
+                VCAlertCreator.showAlert(message: "This is a normal message")
             default:
                 break
             }

@@ -10,14 +10,6 @@ import UIKit
 import FCAlertView
 
 open class VCAlertCreator {
-    
-    public enum CommonErros: String {
-        case ConnectionFailed = "Could not connect to server. Please try again."
-        case UnknownServerResponse = "There was a problem with the server result. Please try again."
-        case InvalidLogin = "Incorrect username or password."
-        case Unauthorized = "Unauthorized to access this information. Please try again."
-    }
-    
     public enum Style {
         case Success
         case Error
@@ -43,7 +35,7 @@ open class VCAlertCreator {
      * DoneButton: The AlertButton representing the done (default) button
      * Buttons: An Array of extra AlertButton to be used
      */
-    public func showAlert (
+    static open func showAlert (
         style : Style? = nil,
         title : String? = nil,
         message : String,
@@ -99,9 +91,5 @@ open class VCAlertCreator {
                 alert.makeAlertTypeCaution()
             }
         }
-    }
-    
-    public init() {
-        
     }
 }
