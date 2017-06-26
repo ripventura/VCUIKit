@@ -68,7 +68,6 @@ open class VCTableView: UITableView {
     }
     
     internal func didRefreshControl() -> Void {
-        self.pullRefreshControl?.beginRefreshing()
         self.refreshDelegate?.tableViewDidPullToRefresh(tableView: self)
     }
     
