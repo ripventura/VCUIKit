@@ -15,15 +15,6 @@ open class VCTableView: UITableView {
             self.applyAppearance()
         }
     }
-    /** Wheter this TableView should have a RefreshControl */
-    @IBInspectable open var pullToRefresh: Bool = false {
-        didSet {
-            self.setupRefreshControl()
-        }
-    }
-    
-    open var pullRefreshControl: UIRefreshControl?
-    open var refreshDelegate: VCTableViewRefreshDelegate?
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -31,8 +22,6 @@ open class VCTableView: UITableView {
         self.applyAppearance()
         
         self.setupNotifications()
-        
-        self.setupRefreshControl()
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -43,8 +32,6 @@ open class VCTableView: UITableView {
         self.applyAppearance()
         
         self.setupNotifications()
-        
-        self.setupRefreshControl()
     }
     
     deinit {
@@ -55,20 +42,6 @@ open class VCTableView: UITableView {
         if !storyboardAppearance {
             self.backgroundColor = sharedAppearanceManager.tableViewBackgroundColor
         }
-    }
-    
-    // MARK: - Refresh Control
-    
-    internal func setupRefreshControl() -> Void {
-        if self.pullToRefresh {
-            self.pullRefreshControl = UIRefreshControl()
-            self.pullRefreshControl?.addTarget(self, action: #selector(self.didRefreshControl), for: .valueChanged)
-            self.addSubview(self.pullRefreshControl!)
-        }
-    }
-    
-    internal func didRefreshControl() -> Void {
-        self.refreshDelegate?.tableViewDidPullToRefresh(tableView: self)
     }
     
     // MARK: - Keyboard Notifications
@@ -96,8 +69,4 @@ open class VCTableView: UITableView {
         
         self.contentInset = UIEdgeInsetsMake(self.contentInset.top, self.contentInset.left, self.contentInset.bottom >= keyboardHeight ? self.contentInset.bottom - keyboardHeight : self.contentInset.bottom, self.contentInset.right)
     }
-}
-
-public protocol VCTableViewRefreshDelegate {
-    func tableViewDidPullToRefresh(tableView: VCTableView)
 }

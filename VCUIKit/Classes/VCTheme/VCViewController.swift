@@ -60,6 +60,14 @@ extension VCViewController: UITextFieldDelegate {
  This allows you to use a view normally as you would on a regular ViewController,
  instead of having a UITableView directly as subview.*/
 @IBDesignable open class VCTabledViewController: VCViewController {
+    /** Wheter the TableView should have a RefreshControl */
+    @IBInspectable open var pullToRefresh: Bool = false {
+        didSet {
+            self.setupRefreshControl()
+        }
+    }
+    
+    open var pullRefreshControl: UIRefreshControl?
     
     @IBOutlet open weak var tableView : VCTableView?
     
@@ -73,6 +81,8 @@ extension VCViewController: UITextFieldDelegate {
         super.viewDidLoad()
         
         self.populateInterface()
+        
+        self.setupRefreshControl()
     }
     
     //Switches the hidden state between Background View and TableView
@@ -130,6 +140,20 @@ extension VCViewController: UITextFieldDelegate {
             make.top.equalTo(self.placeholderTitleLabel.snp.bottom)
             make.bottom.equalTo(self.backgroundView)
         })
+    }
+    
+    // MARK: - Refresh Control
+    
+    internal func setupRefreshControl() -> Void {
+        if self.pullToRefresh {
+            self.pullRefreshControl = UIRefreshControl()
+            self.pullRefreshControl?.addTarget(self, action: #selector(self.didPullRefreshControl), for: .valueChanged)
+            self.tableView?.addSubview(self.pullRefreshControl!)
+        }
+    }
+    
+    /** Called after the PullRefreshControl is triggered */
+    open func didPullRefreshControl() -> Void {
     }
 }
 extension VCTabledViewController: UITableViewDelegate {
