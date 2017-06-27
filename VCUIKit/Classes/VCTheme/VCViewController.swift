@@ -61,11 +61,7 @@ extension VCViewController: UITextFieldDelegate {
  instead of having a UITableView directly as subview.*/
 @IBDesignable open class VCTabledViewController: VCViewController {
     /** Wheter the TableView should have a RefreshControl */
-    @IBInspectable open var pullToRefresh: Bool = false {
-        didSet {
-            self.setupRefreshControl()
-        }
-    }
+    @IBInspectable open var pullToRefresh: Bool = false
     
     open var pullRefreshControl: UIRefreshControl?
     
@@ -106,6 +102,7 @@ extension VCViewController: UITextFieldDelegate {
         })
         
         self.backgroundView.addSubview(self.placeHolderImageView)
+        self.view.sendSubview(toBack: self.backgroundView)
         placeHolderImageView.snp.makeConstraints({make in
             make.left.equalTo(self.backgroundView)
             make.right.equalTo(self.backgroundView)

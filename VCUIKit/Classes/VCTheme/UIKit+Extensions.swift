@@ -31,6 +31,35 @@ extension UITextField {
 }
 
 extension UIView {
+    /** View's Corner Radius */
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    /** View's Border Width */
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    /** View's Border Color */
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return layer.borderColor != nil ? UIColor(cgColor: layer.borderColor!) : nil
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
     /** Adds the view to the given superview applying the given constraints insets */
     open func addToSuperViewWithConstraints(superview : UIView, constraintInset : UIEdgeInsets) {
         self.addToSuperView(superview: superview)

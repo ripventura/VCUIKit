@@ -10,11 +10,7 @@ import UIKit
 
 open class VCTableViewCell: UITableViewCell {
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable var storyboardAppearance: Bool = false {
-        didSet {
-            self.applyAppearance()
-        }
-    }
+    @IBInspectable var storyboardAppearance: Bool = false
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
