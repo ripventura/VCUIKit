@@ -69,7 +69,7 @@ extension VCViewController: UITextFieldDelegate {
     
     @IBOutlet open weak var tableView : VCTableView?
     
-    open var backgroundView : UIView = UIView()
+    open var placeholderView : UIView = UIView()
     open var placeHolderImageView : UIImageView = UIImageView()
     open var placeholderTitleLabel : UILabel = UILabel()
     open var placeHolderTextLabel : UILabel = UILabel()
@@ -93,32 +93,32 @@ extension VCViewController: UITextFieldDelegate {
                                                           constraintInset: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         
-        self.view.addSubview(self.backgroundView)
-        backgroundView.snp.makeConstraints({make in
+        self.view.addSubview(self.placeholderView)
+        self.view.sendSubview(toBack: self.placeholderView)
+        placeholderView.snp.makeConstraints({make in
             make.left.equalTo(self.view).offset(40)
             make.right.equalTo(self.view).offset(-40)
             make.height.equalTo(150)
             make.centerY.equalTo(self.view)
         })
         
-        self.backgroundView.addSubview(self.placeHolderImageView)
-        self.view.sendSubview(toBack: self.backgroundView)
+        self.placeholderView.addSubview(self.placeHolderImageView)
         placeHolderImageView.snp.makeConstraints({make in
-            make.left.equalTo(self.backgroundView)
-            make.right.equalTo(self.backgroundView)
-            make.top.equalTo(self.backgroundView)
-            make.bottom.equalTo(self.backgroundView.snp.centerY)
+            make.left.equalTo(self.placeholderView)
+            make.right.equalTo(self.placeholderView)
+            make.top.equalTo(self.placeholderView)
+            make.bottom.equalTo(self.placeholderView.snp.centerY)
         })
         
         self.placeholderTitleLabel = UILabel(frame: CGRectDefault)
         self.placeholderTitleLabel.textColor = sharedAppearanceManager.tabledViewControllerPlaceholderTitleColor
         self.placeholderTitleLabel.font = sharedAppearanceManager.tabledViewControllerPlaceholderTitleFont
         self.placeholderTitleLabel.textAlignment = .center
-        self.backgroundView.addSubview(self.placeholderTitleLabel)
+        self.placeholderView.addSubview(self.placeholderTitleLabel)
         placeholderTitleLabel.snp.makeConstraints({make in
-            make.left.equalTo(self.backgroundView).offset(20)
-            make.right.equalTo(self.backgroundView).offset(-20)
-            make.top.equalTo(self.backgroundView.snp.centerY)
+            make.left.equalTo(self.placeholderView).offset(20)
+            make.right.equalTo(self.placeholderView).offset(-20)
+            make.top.equalTo(self.placeholderView.snp.centerY)
             make.height.equalTo(32)
         })
         
@@ -127,21 +127,21 @@ extension VCViewController: UITextFieldDelegate {
         self.placeHolderTextLabel.font = sharedAppearanceManager.tabledViewControllerPlaceholderTextFont
         self.placeHolderTextLabel.textAlignment = .center
         self.placeHolderTextLabel.numberOfLines = 2
-        self.backgroundView.addSubview(self.placeHolderTextLabel)
+        self.placeholderView.addSubview(self.placeHolderTextLabel)
         placeHolderTextLabel.snp.makeConstraints({make in
-            make.left.equalTo(self.backgroundView).offset(20)
-            make.right.equalTo(self.backgroundView).offset(-20)
+            make.left.equalTo(self.placeholderView).offset(20)
+            make.right.equalTo(self.placeholderView).offset(-20)
             make.top.equalTo(self.placeholderTitleLabel.snp.bottom)
-            make.bottom.equalTo(self.backgroundView)
+            make.bottom.equalTo(self.placeholderView)
         })
     }
     
     // MARK: - Placeholders
     
-    //Switches the hidden state between Background View and TableView
-    open func setHiddenPlaceholder(hidden : Bool) -> Void {
-        self.backgroundView.isHidden = hidden
-        self.tableView?.backgroundColor = hidden ? sharedAppearanceManager.viewControllerViewBackgroundColor : .clear
+    /** Enables / Disables the Placeholder View */
+    open func placeholder(enable : Bool) -> Void {
+        self.placeholderView.isHidden = !enable
+        self.tableView?.isHidden = enable
     }
     
     // MARK: - Refresh Control
@@ -175,7 +175,7 @@ extension VCViewController: UITextFieldDelegate {
     }
     
     /** Enables / Disables the Search Control on this ViewController */
-    open func updateSearchControl(enable: Bool) -> Void {
+    open func searchControl(enable: Bool) -> Void {
         if enable {
             self.setNavitagionBarTitleView(view: searchController.searchBar)
             searchController.searchBar.becomeFirstResponder()
