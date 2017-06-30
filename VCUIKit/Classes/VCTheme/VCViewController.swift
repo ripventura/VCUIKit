@@ -70,9 +70,10 @@ extension VCViewController: UITextFieldDelegate {
     @IBOutlet open weak var tableView : VCTableView?
     
     open var placeholderView : UIView = UIView()
-    open var placeHolderImageView : UIImageView = UIImageView()
-    open var placeholderTitleLabel : UILabel = UILabel()
-    open var placeHolderTextLabel : UILabel = UILabel()
+    open var placeHolderImageView : VCImageView = VCImageView()
+    open var placeholderTitleLabel : VCLabel = VCLabel()
+    open var placeHolderTextLabel : VCLabel = VCLabel()
+    open var placeHolderActionButton : VCDrawableButton = VCDrawableButton()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -93,46 +94,58 @@ extension VCViewController: UITextFieldDelegate {
                                                           constraintInset: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         
+        let centerYOffset = -80
+        
         self.view.addSubview(self.placeholderView)
         self.view.sendSubview(toBack: self.placeholderView)
         placeholderView.snp.makeConstraints({make in
-            make.left.equalTo(self.view).offset(40)
-            make.right.equalTo(self.view).offset(-40)
-            make.height.equalTo(150)
-            make.centerY.equalTo(self.view)
+            make.left.equalTo(self.view).offset(20)
+            make.right.equalTo(self.view).offset(-20)
+            make.top.equalTo(self.view).offset(20)
+            make.bottom.equalTo(self.view).offset(-20)
         })
         
         self.placeholderView.addSubview(self.placeHolderImageView)
         placeHolderImageView.snp.makeConstraints({make in
-            make.left.equalTo(self.placeholderView)
-            make.right.equalTo(self.placeholderView)
-            make.top.equalTo(self.placeholderView)
-            make.bottom.equalTo(self.placeholderView.snp.centerY)
+            make.centerX.equalTo(self.placeholderView)
+            make.bottom.equalTo(self.placeholderView.snp.centerY).offset(centerYOffset)
+            make.width.equalTo(100)
+            make.height.equalTo(100)
         })
         
-        self.placeholderTitleLabel = UILabel(frame: CGRectDefault)
+        self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
         self.placeholderTitleLabel.textColor = sharedAppearanceManager.tabledViewControllerPlaceholderTitleColor
         self.placeholderTitleLabel.font = sharedAppearanceManager.tabledViewControllerPlaceholderTitleFont
         self.placeholderTitleLabel.textAlignment = .center
+        self.placeholderTitleLabel.numberOfLines = 0
         self.placeholderView.addSubview(self.placeholderTitleLabel)
         placeholderTitleLabel.snp.makeConstraints({make in
-            make.left.equalTo(self.placeholderView).offset(20)
-            make.right.equalTo(self.placeholderView).offset(-20)
-            make.top.equalTo(self.placeholderView.snp.centerY)
-            make.height.equalTo(32)
+            make.left.equalTo(self.placeholderView)
+            make.right.equalTo(self.placeholderView)
+            make.top.equalTo(self.placeholderView.snp.centerY).offset(centerYOffset + 20)
+            make.height.greaterThanOrEqualTo(40)
         })
         
-        self.placeHolderTextLabel = UILabel(frame: CGRectDefault)
+        self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
         self.placeHolderTextLabel.textColor = sharedAppearanceManager.tabledViewControllerPlaceholderTextColor
         self.placeHolderTextLabel.font = sharedAppearanceManager.tabledViewControllerPlaceholderTextFont
         self.placeHolderTextLabel.textAlignment = .center
-        self.placeHolderTextLabel.numberOfLines = 2
+        self.placeHolderTextLabel.numberOfLines = 0
         self.placeholderView.addSubview(self.placeHolderTextLabel)
         placeHolderTextLabel.snp.makeConstraints({make in
-            make.left.equalTo(self.placeholderView).offset(20)
-            make.right.equalTo(self.placeholderView).offset(-20)
+            make.left.equalTo(self.placeholderView)
+            make.right.equalTo(self.placeholderView)
             make.top.equalTo(self.placeholderTitleLabel.snp.bottom)
-            make.bottom.equalTo(self.placeholderView)
+            make.height.greaterThanOrEqualTo(40)
+        })
+        
+        self.placeHolderActionButton = self.actionButton()
+        self.placeholderView.addSubview(self.placeHolderActionButton)
+        placeHolderActionButton.snp.makeConstraints({make in
+            make.width.equalTo(200)
+            make.height.equalTo(40)
+            make.centerX.equalTo(self.placeholderView)
+            make.top.equalTo(self.placeHolderTextLabel.snp.bottom).offset(8)
         })
     }
     
@@ -142,6 +155,11 @@ extension VCViewController: UITextFieldDelegate {
     open func placeholder(enable : Bool) -> Void {
         self.placeholderView.isHidden = !enable
         self.tableView?.isHidden = enable
+    }
+    
+    /** Initializes the Placeholder ActionButton. Override this to use custom Buttons. */
+    open func actionButton() -> VCDrawableButton {
+        return VCDrawableButton(frame: CGRectDefault)
     }
     
     // MARK: - Refresh Control
