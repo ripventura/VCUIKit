@@ -192,7 +192,7 @@ extension VCViewController: UITextFieldDelegate {
     
     /** Called after the Search is cancelled */
     open func didCancelSearch() -> Void {
-        self.updateSearchControl(enable: false)
+        self.searchControl(enable: false)
     }
 }
 extension VCTabledViewController: UITableViewDelegate {

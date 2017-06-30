@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VCUIKit'
-  s.version          = '0.0.17'
+  s.version          = '0.0.18'
   s.summary          = 'A collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.'
 
 # This description is used to generate tags and improve search results.
