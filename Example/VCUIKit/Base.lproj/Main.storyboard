@@ -786,6 +786,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zOo-Zh-FHf" customClass="VCTableView" customModule="VCUIKit">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="storyboardAppearance" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="S5t-0T-lgj" id="0bS-v4-AEI"/>
                                     <outlet property="delegate" destination="S5t-0T-lgj" id="qpY-ce-2nT"/>
@@ -803,7 +806,6 @@
                     <navigationItem key="navigationItem" title="Pull to refresh" id="ESZ-zp-txe"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="pullToRefresh" value="YES"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="storyboardAppearance" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tableView" destination="zOo-Zh-FHf" id="uLz-Hs-EEe"/>

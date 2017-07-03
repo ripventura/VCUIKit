@@ -222,8 +222,9 @@ extension VCTabledViewController: UITableViewDelegate {
         return VCTableViewCell(style: .default, reuseIdentifier: nil)
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.storyboardAppearance ? tableView.rowHeight : sharedAppearanceManager.tableViewCellHeight
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let appearance = (tableView as? VCTableView)?.storyboardAppearance
+        return appearance != nil ? (appearance! ? tableView.rowHeight : sharedAppearanceManager.tableViewCellHeight) : tableView.rowHeight
     }
 }
 extension VCTabledViewController: UITableViewDataSource {
