@@ -221,6 +221,10 @@ extension VCTabledViewController: UITableViewDelegate {
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return VCTableViewCell(style: .default, reuseIdentifier: nil)
     }
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.storyboardAppearance ? tableView.rowHeight : sharedAppearanceManager.tableViewCellHeight
+    }
 }
 extension VCTabledViewController: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

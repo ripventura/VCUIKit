@@ -25,6 +25,7 @@ open class VCAppearanceManager {
     open var tableViewCellTitleFont : UIFont
     open var tableViewCellDetailTextColor : UIColor
     open var tableViewCellDetailFont : UIFont
+    open var tableViewCellHeight: CGFloat
     
     open var tableViewBackgroundColor : UIColor
     
@@ -90,6 +91,7 @@ open class VCAppearanceManager {
         tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tableViewCellDetailTextColor = VCUIKitStyleKit.tableViewDetailTextColor
         tableViewCellDetailFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        tableViewCellHeight = 60
         
         // MARK: - VCTableView
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
