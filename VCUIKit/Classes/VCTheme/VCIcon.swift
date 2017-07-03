@@ -9,20 +9,20 @@
 import UIKit
 
 /** UIView that draws itself, simulating an Icon (single colored).*/
-@IBDesignable class VCIcon: UIView {
-    @IBInspectable var fillColor: UIColor = .black {
+@IBDesignable open class VCIcon: UIView {
+    @IBInspectable open var fillColor: UIColor = .black {
         didSet {
             self.setNeedsDisplay()
         }
     }
     
     /** Initialize this Icon with a custom Fill Color */
-    convenience init(fillColor: UIColor, frame: CGRect) {
+    public convenience init(fillColor: UIColor, frame: CGRect) {
         self.init(frame: frame)
         self.fillColor = fillColor
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -30,7 +30,7 @@ import UIKit
         super.init(frame: frame)
     }
     
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         self.layoutIfNeeded()
@@ -39,7 +39,7 @@ import UIKit
     // MAKR: - Drawing
     
     // Override this with the sub-class custom Icon drawing.
-    override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         super.draw(rect)
     }
 }
