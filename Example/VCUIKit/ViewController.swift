@@ -79,41 +79,41 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         case 1:
             switch indexPath.row {
             case 0:
-                VCAlertCreator.showAlert(style: .Success,
+                VCAlertView.showAlert(style: .Success,
                                            title: "Success!",
                                            message: "This is a success message",
                                            iconImage: nil,
-                                           doneButton: VCAlertCreator.AlertButton.init(title: "Roger that!", handler: {print("Dismiss button pressed")}),
+                                           doneButton: VCAlertView.AlertButton.init(title: "Roger that!", handler: {print("Dismiss button pressed")}),
                                            buttons: [])
             case 1:
-                VCAlertCreator.showAlert(style: .Error,
+                VCAlertView.showAlert(style: .Error,
                                            title: "Error",
                                            message: "This is an error message",
                                            iconImage: nil,
-                                           doneButton: VCAlertCreator.AlertButton.init(title: "Oh dear :(", handler: {print("Dismiss button pressed")}),
+                                           doneButton: VCAlertView.AlertButton.init(title: "Oh dear :(", handler: {print("Dismiss button pressed")}),
                                            buttons: [])
             case 2:
-                VCAlertCreator.showAlert(style: .Warning,
+                VCAlertView.showAlert(style: .Warning,
                                            title: "Warning!",
                                            message: "This is a warning message",
                                            iconImage: nil,
-                                           doneButton: VCAlertCreator.AlertButton.init(title: "Jeez...", handler: {print("Dismiss button pressed")}),
+                                           doneButton: VCAlertView.AlertButton.init(title: "Jeez...", handler: {print("Dismiss button pressed")}),
                                            buttons: [])
             case 3:
-                VCAlertCreator.showAlert(message: "This is a normal message")
+                VCAlertView.showAlert(message: "This is a normal message")
             default:
                 break
             }
         case 2:
             switch indexPath.row {
             case 0:
-                sharedBannerCreator.showBannerWithTheme(theme: .success,
+                sharedBannerCreator.showBanner(theme: .success,
                                                         message: "Success message")
             case 1:
-                sharedBannerCreator.showBannerWithTheme(theme: .error,
+                sharedBannerCreator.showBanner(theme: .error,
                                                         message: "Error message")
             case 2:
-                sharedBannerCreator.showBannerWithTheme(theme: .info,
+                sharedBannerCreator.showBanner(theme: .info,
                                                         message: "Info message")
             case 3:
                 let customView = UIView(frame: CGRectDefault)
@@ -161,19 +161,33 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         case 4:
             switch indexPath.row {
             case 0:
-                sharedHUDCreator.showHUD(message: "Normal message")
-                
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                    sharedHUDCreator.hideHUD()
-                })
-            case 1:
-                sharedHUDCreator.showHUD(message: "Cancelable message", hiddenCancel: false, cancelHandler: {
-                    print("HUD has been canceled")
+                sharedHUD.show(progress: nil,
+                               message: "Loading indeterminate. Tap to stop.",
+                               cancelHandler: {
+                                sharedBannerCreator.showStatusBarMessage(message: "HUD canceled")
                 })
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4, execute: {
-                    sharedHUDCreator.hideHUD()
+                    sharedHUD.dismiss(completion: nil)
                 })
+            case 1:
+                sharedHUD.show(progress: 0.0,
+                               message: "Loading with progress")
+                
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
+                    sharedHUD.update(progress: 0.75)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                        sharedHUD.show(customStyle: .success,
+                                       message: "Success!")
+                    })
+                })
+            case 2:
+                sharedHUD.show(customStyle: .success,
+                               message: "Success!")
+            case 3:
+                sharedHUD.show(customStyle: .error,
+                               message: "Error :(")
             default:
                 break
             }

@@ -9,7 +9,7 @@
 import UIKit
 import FCAlertView
 
-open class VCAlertCreator {
+open class VCAlertView {
     public enum Style {
         case Success
         case Error

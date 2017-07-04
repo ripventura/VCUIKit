@@ -72,8 +72,12 @@ open class VCAppearanceManager {
     open var alertButtonCornerRadius : CGFloat
     
     open var hudMessageColor : UIColor
+    open var hudMessageFont : UIFont
     open var hudTintColor : UIColor
+    open var hudCircleSize : CGFloat
+    open var hudLineWidth : CGFloat
     open var hudBackgroundColor : UIColor
+    open var hudFullScreen : Bool
     
     public init() {
         // MARK: - VCLabel
@@ -144,5 +148,9 @@ open class VCAppearanceManager {
         hudMessageColor = VCUIKitStyleKit.hUDMessageTextColor
         hudTintColor = VCUIKitStyleKit.hUDTintColor
         hudBackgroundColor = VCUIKitStyleKit.hUDBackgroundColor
+        hudMessageFont = UIFont.systemFont(ofSize: 14)
+        hudCircleSize = 50.0
+        hudLineWidth = 2.0
+        hudFullScreen = false
     }
 }
