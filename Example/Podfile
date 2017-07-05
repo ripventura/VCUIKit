@@ -15,6 +15,8 @@ pod 'DKImagePickerController', '3.5.0'
 
 pod 'ActionSheetPicker-3.0', '2.2.0'
 
+pod 'SVProgressHUD', '2.1.2'
+
   target 'VCUIKit_Tests' do
     inherit! :search_paths
 

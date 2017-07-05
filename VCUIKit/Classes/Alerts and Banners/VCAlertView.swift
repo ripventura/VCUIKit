@@ -9,7 +9,7 @@
 import UIKit
 import FCAlertView
 
-open class VCAlertCreator {
+open class VCAlertView {
     public enum Style {
         case Success
         case Error
@@ -44,7 +44,6 @@ open class VCAlertCreator {
         buttons : [AlertButton] = []) -> Void {
         
         sharedBannerCreator.hideBanners()
-        sharedHUDCreator.hideHUD()
         
         let alert = FCAlertView()
         

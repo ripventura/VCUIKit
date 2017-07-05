@@ -25,30 +25,31 @@ open class VCBannerCreator {
         bannerMessager.pauseBetweenMessages = 2
     }
     
-    /**
-     * Shows a Banner with the given parameters
-     *
-     * Theme: Success, Info, Error
-     * Message: Message being displayed
-     * Title: Title being displayed
-     * IconImage: Custom image to be used as Icon on the left
-     * Duration: Duration to display de Banner. 0 means forever
-     * DismissesOnTap: Wheter the banner hides on tap / pan gesture
-     * DropShadow: Wheter the banner should have a shadow along it's borders
-     * WindowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade)
-     * PresentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar)
-     * PresentationDirection: Where the Banner should appear. Top, Bottom.
-     */
-    public func showBannerWithTheme(theme : Theme,
-                             message : String,
-                             title : String? = nil,
-                             iconImage : UIImage? = nil,
-                             duration : TimeInterval = 3,
-                             dismissesOnTap : Bool = true,
-                             dropShadow : Bool = true,
-                             windowDimMode : SwiftMessages.DimMode = .none,
-                             presentationContext : SwiftMessages.PresentationContext = .window(windowLevel: UIWindowLevelStatusBar),
-                             presentationDirection : SwiftMessages.PresentationStyle = .top) {
+    /** 
+     Shows a Banner.
+     
+     - Parameters:
+        - theme: Success, Info, Error.
+        - message: Message being displayed.
+        - title: Title being displayed.
+        - icon: Custom image to be used as Icon on the left.
+        - duration: Duration to display de Banner. 0 means forever.
+        - dismissesOnTap: Wheter the banner hides on tap / pan gesture.
+        - dropShadow: Wheter the banner should have a shadow along it's borders.
+        - windowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade).
+        - presentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar).
+        - presentationDirection: Where the Banner should appear. Top, Bottom.
+    */
+    public func showBanner(theme : Theme,
+                           message : String,
+                           title : String? = nil,
+                           icon : UIImage? = nil,
+                           duration : TimeInterval = 3,
+                           dismissesOnTap : Bool = true,
+                           dropShadow : Bool = true,
+                           windowDimMode : SwiftMessages.DimMode = .none,
+                           presentationContext : SwiftMessages.PresentationContext = .window(windowLevel: UIWindowLevelStatusBar),
+                           presentationDirection : SwiftMessages.PresentationStyle = .top) {
         
         var config = SwiftMessages.Config()
         // Slide up from the top
@@ -112,12 +113,13 @@ open class VCBannerCreator {
     }
     
     /**
-     * Shows a StatusBar Message with the given parameters
-     *
-     * Theme: Success, Info, Error, Nil (uses default NavigationBar styles)
-     * Message: Message being displayed
-     * Duration: Duration to display de Banner. 0 means forever
-     * Tallbar: Wheter the "banner" should cover double the StatusBar height
+     Shows a StatusBar Message.
+     
+     - Parameters:
+        - theme: Success, Info, Error.
+        - message: Message being displayed.
+        - duration: Duration to display de Banner. 0 means forever.
+        - tallbar: Wheter the "banner" should cover double the StatusBar height
      */
     public func showStatusBarMessage(theme : Theme? = nil,
                               message : String,
@@ -168,17 +170,17 @@ open class VCBannerCreator {
         }
     }
     
-    
     /**
-     * Shows a Banner with the given parameters
-     *
-     * ContentView: Custom UIView to be displayed inside the Banner
-     * Duration: Duration to display de Banner. 0 means forever
-     * DismissesOnTap: Wheter the banner hides on tap / pan gesture
-     * DropShadow: Wheter the banner should have a shadow along it's borders
-     * WindowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade)
-     * PresentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar)
-     * PresentationDirection: Where the Banner should appear. Top, Bottom.
+     Shows a Custom Banner.
+     
+     - Parameters:
+        - contentView: Custom UIView to be displayed inside the Banner.
+        - duration: Duration to display de Banner. 0 means forever.
+        - dismissesOnTap: Wheter the banner hides on tap / pan gesture.
+        - dropShadow: Wheter the banner should have a shadow along it's borders.
+        - windowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade).
+        - presentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar).
+        - presentationDirection: Where the Banner should appear. Top, Bottom.
      */
     public func showCustomBanner(contentView : UIView,
                           duration : TimeInterval = 0,
