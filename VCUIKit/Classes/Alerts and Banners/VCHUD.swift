@@ -7,76 +7,48 @@
 //
 
 import UIKit
-import KVNProgress
+import SVProgressHUD
 
 public let sharedHUD = VCHUD()
 
 open class VCHUD {
-    /** Standard configuration based on the Appearance Manager */
-    private func configuration(stopHandler: ((Void) -> Void)?) -> KVNProgressConfiguration {
-        let configuration = KVNProgressConfiguration()
-        
-        //configuration.statusColor = sharedAppearanceManager.hudMessageColor
-        configuration.statusFont = sharedAppearanceManager.hudMessageFont
-        //configuration.circleStrokeForegroundColor = .red
-        //configuration.circleStrokeBackgroundColor = .blue
-        //configuration.circleFillBackgroundColor = .purple
-        //configuration.backgroundFillColor = .orange
-        //configuration.backgroundTintColor = .yellow
-        //configuration.successColor = .green
-        //configuration.errorColor = .brown
-        configuration.stopColor = sharedAppearanceManager.hudTintColor
-        configuration.circleSize = sharedAppearanceManager.hudCircleSize
-        configuration.lineWidth = sharedAppearanceManager.hudLineWidth
-        configuration.isFullScreen = sharedAppearanceManager.hudFullScreen
-        
-        if let stopHandler = stopHandler {
-            configuration.doesShowStop = true
-            configuration.tapBlock = {progress in
-                self.dismiss(completion: {
-                    stopHandler()
-                })
-            }
-            
-        } else {
-            configuration.doesShowStop = false
-        }
-        configuration.stopRelativeHeight = 0.4
-        
-        return configuration
-    }
-    
-    public enum CustomStyle: String {
+    public enum Context: String {
         case success = "Success"
         case error = "Error"
+        case info = "Info"
     }
     
-    // MARK: - Show
+    var message : String?
+    
+    init() {
+        self.configureAppearance()
+    }
+    
+    private func configureAppearance() -> Void {
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.light)
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
+        SVProgressHUD.setMinimumDismissTimeInterval(2)
+        
+        SVProgressHUD.setRingThickness(sharedAppearanceManager.hudRingWidth)
+        SVProgressHUD.setCornerRadius(sharedAppearanceManager.hudCornerRadius)
+        SVProgressHUD.setFont(sharedAppearanceManager.hudMessageFont)
+    }
     
     /**
      Shows a HUD with a Custom Style.
      
      - Parameters:
-        - customStyle: The desired CustomStyle.
+        - context: The desired Context.
         - message: The message to be displayed.
-        - onView: A parent view to hold the HUD (default is window).
-        - configuration: Custom configuration to be used.
      */
-    open func show(customStyle: CustomStyle, message: String, onView: UIView? = nil, configuration: KVNProgressConfiguration? = nil) -> Void {
-        KVNProgress.setConfiguration(configuration != nil ? configuration! : self.configuration(stopHandler: nil))
-        
-        if let onView = onView {
-            if customStyle == .success {
-                KVNProgress.showSuccess(withStatus: message, on: onView)
-            } else if customStyle == .error {
-                KVNProgress.showError(withStatus: message, on: onView)
-            }
-        } else {
-            if customStyle == .success {
-                KVNProgress.showSuccess(withStatus: message)
-            } else if customStyle == .error {
-                KVNProgress.showError(withStatus: message)
-            }
+    open func show(context: Context, message: String) -> Void {
+        switch context {
+        case .error:
+            SVProgressHUD.showError(withStatus: message)
+        case .success:
+            SVProgressHUD.showSuccess(withStatus: message)
+        case .info:
+            SVProgressHUD.showInfo(withStatus: message)
         }
     }
     
@@ -86,60 +58,37 @@ open class VCHUD {
      - Parameters:
         - progress: The progress. Use nil for indeterminate progress.
         - message: The message to be displayed.
-        - onView: A parent view to hold the HUD (default is window).
-        - configuration: Custom configuration to be used.
      */
-    open func show(progress: CGFloat?, message: String, onView: UIView? = nil, configuration: KVNProgressConfiguration? = nil, cancelHandler: ((Void) -> Void)? = nil) -> Void {
-        KVNProgress.setConfiguration(configuration != nil ? configuration! : self.configuration(stopHandler: cancelHandler))
-        
-        if let onView = onView {
-            if let progress = progress {
-                KVNProgress.show(progress, status: message, on: onView)
-            } else {
-                KVNProgress.show(withStatus: message, on: onView)
-            }
+    open func show(progress: Float?, message: String?) -> Void {
+        self.message = message
+        if let progress = progress {
+            SVProgressHUD.showProgress(progress, status: message)
         } else {
-            if let progress = progress {
-                KVNProgress.show(progress, status: message)
-            } else {
-                KVNProgress.show(withStatus: message)
-            }
+            SVProgressHUD.show(withStatus: message)
         }
     }
     
-    // MARK: - Update
-    
     /**
-     Updates the progress HUD.
+     Updates a HUD with a progress / indeterminate state.
      
      - Parameters:
         - progress: The progress. Use nil for indeterminate progress.
      */
-    open func update(progress: CGFloat) -> Void {
-        KVNProgress.update(progress, animated: true)
+    open func update(progress: Float?) -> Void {
+        if let progress = progress {
+            SVProgressHUD.showProgress(progress, status: self.message)
+        } else {
+            SVProgressHUD.show(withStatus: self.message)
+        }
     }
     
     /**
-     Updates the HUD status.
-     
-     - Parameters:
-        - message: The message to be displayed.
-     */
-    open func update(message: String) -> Void {
-        KVNProgress.updateStatus(message)
-    }
-    
-    // MARK: - Dismiss
-    
-    /**
-     Dismiss the current HUD.
+     Dismisses the current HUD.
  
      - Parameters:
         - completion: Block called after the HUD is dismissed. 
      */
     open func dismiss(completion: ((Void) -> Void)?) -> Void {
-        KVNProgress.dismiss(completion: {
-            completion?()
-        })
+        SVProgressHUD.dismiss(completion: completion)
     }
 }

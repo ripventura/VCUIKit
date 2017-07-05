@@ -44,7 +44,6 @@ open class VCAlertView {
         buttons : [AlertButton] = []) -> Void {
         
         sharedBannerCreator.hideBanners()
-        sharedHUDCreator.hideHUD()
         
         let alert = FCAlertView()
         

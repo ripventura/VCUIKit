@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VCUIKit'
-  s.version          = '0.0.24'
+  s.version          = '0.0.25'
   s.summary          = 'A collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.'
 
 # This description is used to generate tags and improve search results.
@@ -46,5 +46,5 @@ s.dependency 'SnapKit', '3.2.0'
 s.dependency 'FCAlertView', '1.3.1'
 s.dependency 'DKImagePickerController', '3.5.0'
 s.dependency 'ActionSheetPicker-3.0', '2.2.0'
-s.dependency 'KVNProgress', '2.3.1'
+s.dependency 'SVProgressHUD', '2.1.2'
 end

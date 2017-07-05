@@ -161,11 +161,7 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         case 4:
             switch indexPath.row {
             case 0:
-                sharedHUD.show(progress: nil,
-                               message: "Loading indeterminate. Tap to stop.",
-                               cancelHandler: {
-                                sharedBannerCreator.showStatusBarMessage(message: "HUD canceled")
-                })
+                sharedHUD.show(progress: nil, message: "Loading indeterminate")
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4, execute: {
                     sharedHUD.dismiss(completion: nil)
@@ -175,19 +171,24 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
                                message: "Loading with progress")
                 
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
-                    sharedHUD.update(progress: 0.75)
+                    sharedHUD.update(progress: 0.50)
                     
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                        sharedHUD.show(customStyle: .success,
-                                       message: "Success!")
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5, execute: {
+                        sharedHUD.update(progress: 0.75)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                            sharedHUD.update(progress: 1.0)
+                            
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.5, execute: {
+                                sharedHUD.show(context: .success, message: "Finished loading :D")
+                            })
+                        })
                     })
                 })
             case 2:
-                sharedHUD.show(customStyle: .success,
-                               message: "Success!")
+                sharedHUD.show(context: .success, message: "Success!")
             case 3:
-                sharedHUD.show(customStyle: .error,
-                               message: "Error :(")
+                sharedHUD.show(context: .error, message: "Error :(")
             default:
                 break
             }
