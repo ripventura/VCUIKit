@@ -16,12 +16,12 @@ open class VCAppearanceManager {
     open var labelTextColor : UIColor
     open var labelFont : UIFont
     
-    open var buttonTextColor : UIColor
+    open var buttonTintColor : UIColor = .black
     open var buttonFont : UIFont
     
-    open var segmentedControlTintColor : UIColor
+    open var segmentedControlTintColor : UIColor = .black
     
-    open var tableViewCellTintColor : UIColor
+    open var tableViewCellTintColor : UIColor = .black
     open var tableViewCellBackgroundColor : UIColor
     open var tableViewCellTitleTextColor : UIColor
     open var tableViewCellTitleFont : UIFont
@@ -40,7 +40,11 @@ open class VCAppearanceManager {
     open var navigationBarBackButtonTitle : String
     open var navigationBarIsTranslucent : Bool
     
-    open var viewControllerViewTintColor : UIColor
+    open var viewControllerViewTintColor : UIColor {
+        didSet {
+            self.updateTintColors()
+        }
+    }
     open var viewControllerViewBackgroundColor : UIColor
     
     open var tabledViewControllerPlaceholderTextColor : UIColor
@@ -48,7 +52,7 @@ open class VCAppearanceManager {
     open var tabledViewControllerPlaceholderTitleColor : UIColor
     open var tabledViewControllerPlaceholderTitleFont : UIFont
     
-    open var tabBarTintColor : UIColor
+    open var tabBarTintColor : UIColor = .black
     open var tabBarBackgroundColor : UIColor
     open var tabBarFont : UIFont
     open var tabBarIsTranslucent : Bool
@@ -83,14 +87,9 @@ open class VCAppearanceManager {
         labelFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         
         // MARK: - VCButton
-        buttonTextColor = VCUIKitStyleKit.viewControllerViewTintColor
         buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
         
-        // MARK: - VCSegmentedControl
-        segmentedControlTintColor = VCUIKitStyleKit.viewControllerViewTintColor
-        
         // MARK: - VCTableViewCell
-        tableViewCellTintColor = VCUIKitStyleKit.tableViewCellTintColor
         tableViewCellBackgroundColor = VCUIKitStyleKit.white
         tableViewCellTitleTextColor = VCUIKitStyleKit.tableViewCellTitleTextColor
         tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
@@ -101,10 +100,10 @@ open class VCAppearanceManager {
         // MARK: - VCTableView
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
         
-        // MARK: - Controller
+        // MARK: - UIStatusBar
         applicationStatusBarStyle = UIStatusBarStyle.lightContent
         
-        //Affects UIBarButtonItems
+        // MARk: - UINavigationBar
         navigationBarTintColor = VCUIKitStyleKit.navigationBarTintColor
         navigationBarBackgroundColor = VCUIKitStyleKit.navigationBarBackgroundColor
         navigationBarTitleColor = VCUIKitStyleKit.white
@@ -112,25 +111,29 @@ open class VCAppearanceManager {
         navigationBarBackButtonTitle = ""
         navigationBarIsTranslucent = false
         
+        // MARK: - VCViewController
         viewControllerViewTintColor = VCUIKitStyleKit.viewControllerViewTintColor
         viewControllerViewBackgroundColor = VCUIKitStyleKit.viewControllerViewBackgroundColor
         
+        // MARK: - VCTabledViewController
         tabledViewControllerPlaceholderTextColor = VCUIKitStyleKit.labelTextColor
         tabledViewControllerPlaceholderTextFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tabledViewControllerPlaceholderTitleColor = VCUIKitStyleKit.labelTextColor
         tabledViewControllerPlaceholderTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         
+        // MARK: - UITabBar
         tabBarTintColor = VCUIKitStyleKit.tabBarTintColor
         tabBarBackgroundColor = VCUIKitStyleKit.viewControllerViewBackgroundColor
         tabBarFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         tabBarIsTranslucent = false
         
-        // MARK: - Banner
+        // MARK: - VCBannerCreator
         bannerSuccessBackgroundColor = VCUIKitStyleKit.bannerSuccessBackgroundColor
         bannerErrorBackgroundColor = VCUIKitStyleKit.bannerDangerBackgroundColor
         bannerInfoBackgroundColor = VCUIKitStyleKit.bannerInfoBackgroundColor
         bannerFont = UIFont.systemFont(ofSize: 12)
         
+        // MARK: - VCAlertView
         alertTitleColor = VCUIKitStyleKit.alertTitleTextColor
         alertTitleFont = UIFont.systemFont(ofSize: 14)
         alertMessageColor = VCUIKitStyleKit.alertMessageTextColor
@@ -146,8 +149,20 @@ open class VCAppearanceManager {
         alertCornerRadius = 16.0
         alertButtonCornerRadius = 16.0
         
+        // MARK: - VCHUD
         hudMessageFont = UIFont.systemFont(ofSize: 14)
         hudRingWidth = 2
         hudCornerRadius = 14
+        
+        self.updateTintColors()
+    }
+    
+    /** Updates all the TintColor from elements that inherit from the Parent ViewController */
+    private func updateTintColors() -> Void {
+        buttonTintColor = self.viewControllerViewTintColor
+        
+        segmentedControlTintColor = self.viewControllerViewTintColor
+        
+        tableViewCellTintColor = self.viewControllerViewTintColor
     }
 }
