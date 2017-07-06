@@ -19,6 +19,8 @@ open class VCAppearanceManager {
     open var buttonTextColor : UIColor
     open var buttonFont : UIFont
     
+    open var segmentedControlTintColor : UIColor
+    
     open var tableViewCellTintColor : UIColor
     open var tableViewCellBackgroundColor : UIColor
     open var tableViewCellTitleTextColor : UIColor
@@ -83,6 +85,9 @@ open class VCAppearanceManager {
         // MARK: - VCButton
         buttonTextColor = VCUIKitStyleKit.viewControllerViewTintColor
         buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+        
+        // MARK: - VCSegmentedControl
+        segmentedControlTintColor = VCUIKitStyleKit.viewControllerViewTintColor
         
         // MARK: - VCTableViewCell
         tableViewCellTintColor = VCUIKitStyleKit.tableViewCellTintColor

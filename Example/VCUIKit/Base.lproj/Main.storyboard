@@ -782,10 +782,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Jbe-Hj-TjG" customClass="VCSegmentedControl" customModule="VCUIKit">
+                                <rect key="frame" x="16" y="420" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="KaY-Kn-v8E"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="VC"/>
+                                    <segment title="SegmentedControl"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="leading" secondItem="N8T-X1-Ixc" secondAttribute="trailing" constant="8" id="02X-Nr-6ww"/>
+                            <constraint firstItem="Jbe-Hj-TjG" firstAttribute="top" secondItem="wcb-RR-Doj" secondAttribute="bottom" constant="8" id="1gB-no-NDQ"/>
                             <constraint firstItem="Gr0-jl-Lwh" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="8Uh-kY-mUd"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="leading" secondItem="rg3-Kf-Ipn" secondAttribute="trailing" constant="8" id="AIc-lD-uYk"/>
                             <constraint firstItem="wcb-RR-Doj" firstAttribute="leading" secondItem="goU-IU-hqx" secondAttribute="trailing" constant="8" id="HZt-4c-Lac"/>
@@ -799,7 +810,9 @@
                             <constraint firstItem="N8T-X1-Ixc" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="Xew-6O-trw"/>
                             <constraint firstItem="PDP-ir-Nes" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="aRT-a0-BYl"/>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="f7B-aH-nEV"/>
+                            <constraint firstItem="Jbe-Hj-TjG" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="h66-42-41D"/>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="jzw-iF-u74"/>
+                            <constraint firstItem="Jbe-Hj-TjG" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="nl2-Sy-dEf"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="nqF-I8-D0X"/>
                             <constraint firstItem="PDP-ir-Nes" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="q2z-QV-ams"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="top" secondItem="TWk-q5-Q2b" secondAttribute="bottom" constant="8" id="sfd-r4-NQF"/>
@@ -817,7 +830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbd-ni-euT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="65"/>
+            <point key="canvasLocation" x="1213.5999999999999" y="64.31784107946028"/>
         </scene>
         <!--Pull to refresh-->
         <scene sceneID="cqD-ej-flb">
