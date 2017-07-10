@@ -50,10 +50,10 @@ open class VCImageView: UIImageView {
         
         self.visualEffectView = UIVisualEffectView(effect: effect)
         
-        self.visualEffectView.addToSuperViewWithConstraints(superview : self,
-                                                            constraintInset : UIEdgeInsets(top: 0,
-                                                                                           left: 0,
-                                                                                           bottom: 0,
-                                                                                           right: 0))
+        self.visualEffectView.addToSuperview(superview : self,
+                                             withConstraint : UIEdgeInsets(top: 0,
+                                                                           left: 0,
+                                                                           bottom: 0,
+                                                                           right: 0))
     }
 }

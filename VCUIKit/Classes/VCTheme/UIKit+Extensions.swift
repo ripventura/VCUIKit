@@ -60,8 +60,8 @@ extension UIView {
         }
     }
     
-    /** Adds the view to the given superview applying the given constraints insets */
-    open func addToSuperViewWithConstraints(superview : UIView, constraintInset : UIEdgeInsets) {
+    /** Adds the view to a given superview applying the given constraints */
+    open func addToSuperview(superview : UIView, withConstraint constraintInset : UIEdgeInsets) {
         self.addToSuperView(superview: superview)
         
         self.snp.makeConstraints({ make in

@@ -88,10 +88,10 @@ extension VCViewController: UITextFieldDelegate {
     /** Populates the Interface with its UI Objects */
     private func populateInterface() {
         if self.tableView == nil {
-            self.tableView = VCTableView()
+            self.tableView = VCTableView(frame: CGRectDefault, style: .grouped)
             self.tableView?.delegate = self
-            self.tableView?.addToSuperViewWithConstraints(superview: self.view,
-                                                          constraintInset: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+            self.tableView?.addToSuperview(superview: self.view,
+                                           withConstraint: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         
         let centerYOffset = -80
@@ -141,6 +141,7 @@ extension VCViewController: UITextFieldDelegate {
         
         self.placeHolderActionButton = self.actionButton()
         self.placeholderView.addSubview(self.placeHolderActionButton)
+        self.placeHolderActionButton.addTarget(self, action: #selector(self.placeholderActionButtonPressed(_:)), for: .touchUpInside)
         placeHolderActionButton.snp.makeConstraints({make in
             make.width.equalTo(200)
             make.height.equalTo(40)
@@ -160,6 +161,11 @@ extension VCViewController: UITextFieldDelegate {
     /** Initializes the Placeholder ActionButton. Override this to use custom Buttons. */
     open func actionButton() -> VCDrawableButton {
         return VCDrawableButton(frame: CGRectDefault)
+    }
+    
+    /** Called after the placeHolderActionButton is pressed */
+    open func placeholderActionButtonPressed(_ sender: Any) -> Void {
+        
     }
     
     // MARK: - Refresh Control
