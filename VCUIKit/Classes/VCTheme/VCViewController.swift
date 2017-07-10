@@ -67,7 +67,7 @@ extension VCViewController: UITextFieldDelegate {
     
     open var searchController: UISearchController = UISearchController(searchResultsController: nil)
     
-    @IBOutlet open weak var tableView : VCTableView?
+    @IBOutlet open var tableView : VCTableView?
     
     open var placeholderView : UIView = UIView()
     open var placeHolderImageView : VCImageView = VCImageView()
@@ -90,6 +90,7 @@ extension VCViewController: UITextFieldDelegate {
         if self.tableView == nil {
             self.tableView = VCTableView(frame: CGRectDefault, style: .grouped)
             self.tableView?.delegate = self
+            self.tableView?.dataSource = self
             self.tableView?.addToSuperview(superview: self.view,
                                            withConstraint: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
