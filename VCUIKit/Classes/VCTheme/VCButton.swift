@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class VCButton : UIButton {
+@IBDesignable open class VCButton : UIButton {
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
@@ -22,6 +22,11 @@ open class VCButton : UIButton {
     }
     open override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.applyAppearance()
+    }
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         
         self.applyAppearance()
     }

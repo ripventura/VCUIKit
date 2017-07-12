@@ -9,7 +9,7 @@
 import UIKit
 
 /** UIView that draws itself, simulating an Icon (single colored).*/
-@IBDesignable open class VCIcon: UIView {
+@IBDesignable open class VCIcon: VCView {
     @IBInspectable open var fillColor: UIColor = .black {
         didSet {
             self.setNeedsDisplay()
@@ -20,20 +20,6 @@ import UIKit
     public convenience init(fillColor: UIColor, frame: CGRect) {
         self.init(frame: frame)
         self.fillColor = fillColor
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    override open func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.layoutIfNeeded()
     }
     
     // MAKR: - Drawing

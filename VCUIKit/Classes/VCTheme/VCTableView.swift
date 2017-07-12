@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class VCTableView: UITableView {
+@IBDesignable open class VCTableView: UITableView {
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
@@ -29,6 +29,12 @@ open class VCTableView: UITableView {
         
         self.setupNotifications()
     }
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        self.applyAppearance()
+    }
+    
     
     deinit {
         self.removeNotifications()

@@ -8,8 +8,8 @@
 
 import UIKit
 
-open class VCImageView: UIImageView {
-    /** Manually set the Blur Effect Style on Storyboard. 
+@IBDesignable open class VCImageView: UIImageView {
+    /** Manually set the Blur Effect Style on Storyboard.
      
      extraLight = 0
      
@@ -23,12 +23,47 @@ open class VCImageView: UIImageView {
      @available(iOS 10.0, *)
      prominent = 4 // Adapts to user interface style
      */
-    @IBInspectable open var blurEffectStyle: Int = -1
+    @IBInspectable open var blurEffectStyle: Int = -1 {
+        didSet {
+            if blurEffectStyle >= 0 {
+                self.applyBlurEffect(style: UIBlurEffectStyle(rawValue: blurEffectStyle)!)
+            }
+        }
+    }
     
     var visualEffectView : UIVisualEffectView = UIVisualEffectView(effect: nil)
     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.applyAppearance()
+    }
+    public override init(image: UIImage?) {
+        super.init(image: image)
+        
+        self.applyAppearance()
+    }
+    public override init(image: UIImage?, highlightedImage: UIImage?) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        
+        self.applyAppearance()
+    }
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     open override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.applyAppearance()
+    }
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        self.applyAppearance()
+    }
+    
+    override func applyAppearance() {
+        super.applyAppearance()
         
         if blurEffectStyle >= 0 {
             self.applyBlurEffect(style: UIBlurEffectStyle(rawValue: blurEffectStyle)!)
@@ -50,10 +85,10 @@ open class VCImageView: UIImageView {
         
         self.visualEffectView = UIVisualEffectView(effect: effect)
         
-        self.visualEffectView.addToSuperview(superview : self,
-                                             withConstraint : UIEdgeInsets(top: 0,
-                                                                           left: 0,
-                                                                           bottom: 0,
-                                                                           right: 0))
+        self.visualEffectView.addTo(superView: self,
+                                    withConstraint:  UIEdgeInsets(top: 0,
+                                                                  left: 0,
+                                                                  bottom: 0,
+                                                                  right: 0))
     }
 }

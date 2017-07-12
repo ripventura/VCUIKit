@@ -9,7 +9,24 @@
 import UIKit
 import AVFoundation
 
-public protocol VCCodeScannerProtocol {
+open class VCCodeScanner: NSObject {
+    
+    /** Shows a VCCodeScannerViewController.
+     
+     - Parameters
+        - parentViewController: A viewController resposible for presenting the new one.
+        - delegate: The VCCodeScannerDelegate to handle scanning calls.
+        - scannerViewController: An optional sublclass from VCCodeScannerViewController.
+     */
+    open static func showScanner(parentViewController: UIViewController,
+                                 delegate: VCCodeScannerDelegate,
+                                 scannerViewController: VCCodeScannerViewController = VCCodeScannerViewController()) -> Void {
+        scannerViewController.delegate = delegate
+        parentViewController.present(scannerViewController, animated: true, completion: nil)
+    }
+}
+
+public protocol VCCodeScannerDelegate {
     /**
      * Called when the scanner scans a valid Code
      */
@@ -30,7 +47,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     
     var flashSwitch : UISwitch?
     
-    public var delegate : VCCodeScannerProtocol?
+    public var delegate : VCCodeScannerDelegate?
     
     let supportedCodeTypes = [AVMetadataObjectTypeUPCECode,
                               AVMetadataObjectTypeCode39Code,

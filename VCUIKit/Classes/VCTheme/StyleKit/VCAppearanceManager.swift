@@ -62,20 +62,9 @@ open class VCAppearanceManager {
     open var bannerInfoBackgroundColor : UIColor
     open var bannerFont : UIFont
     
-    open var alertTitleColor : UIColor
     open var alertTitleFont : UIFont
-    open var alertMessageColor : UIColor
     open var alertMessageFont : UIFont
-    open var alertViewTintColor : UIColor
-    open var alertBackgroundColor : UIColor
-    open var alertCancelButtonColor : UIColor
-    open var alertCancelButtonTitleColor : UIColor
-    open var alertCancelButtonTitleFont : UIFont
-    open var alertButtonColor : UIColor
-    open var alertButtonTitleColor : UIColor
-    open var alertButtonTitleFont : UIFont
     open var alertCornerRadius : CGFloat
-    open var alertButtonCornerRadius : CGFloat
     
     open var hudMessageFont : UIFont
     open var hudRingWidth : CGFloat
@@ -134,25 +123,14 @@ open class VCAppearanceManager {
         bannerFont = UIFont.systemFont(ofSize: 12)
         
         // MARK: - VCAlertView
-        alertTitleColor = VCUIKitStyleKit.alertTitleTextColor
-        alertTitleFont = UIFont.systemFont(ofSize: 14)
-        alertMessageColor = VCUIKitStyleKit.alertMessageTextColor
-        alertMessageFont = UIFont.systemFont(ofSize: 12)
-        alertViewTintColor = VCUIKitStyleKit.alertViewTintColor
-        alertBackgroundColor = VCUIKitStyleKit.alertBackgroundColor
-        alertCancelButtonColor = VCUIKitStyleKit.alertCancelButtonBackgroundColor
-        alertCancelButtonTitleColor = VCUIKitStyleKit.alertCancelButtonTitleColor
-        alertCancelButtonTitleFont = UIFont.systemFont(ofSize: 12)
-        alertButtonColor = VCUIKitStyleKit.alertCancelButtonBackgroundColor
-        alertButtonTitleColor = VCUIKitStyleKit.alertCancelButtonTitleColor
-        alertButtonTitleFont = UIFont.systemFont(ofSize: 12)
-        alertCornerRadius = 16.0
-        alertButtonCornerRadius = 16.0
+        alertTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        alertMessageFont = UIFont.systemFont(ofSize: 14)
+        alertCornerRadius = 12.0
         
         // MARK: - VCHUD
         hudMessageFont = UIFont.systemFont(ofSize: 14)
         hudRingWidth = 2
-        hudCornerRadius = 14
+        hudCornerRadius = 12
         
         self.updateTintColors()
     }

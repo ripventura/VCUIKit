@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class VCSegmentedControl : UISegmentedControl {
+@IBDesignable open class VCSegmentedControl : UISegmentedControl {
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
@@ -27,6 +27,11 @@ open class VCSegmentedControl : UISegmentedControl {
     }
     open override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.applyAppearance()
+    }
+    open override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         
         self.applyAppearance()
     }

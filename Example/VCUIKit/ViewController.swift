@@ -9,7 +9,7 @@
 import UIKit
 import VCUIKit
 
-class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
+class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
     
     var codeScannerViewController : VCCodeScannerViewController?
     
@@ -23,16 +23,9 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        if segue.identifier == "VCCodeScannerIdentifier" {
-            self.codeScannerViewController = segue.destination as? VCCodeScannerViewController
-            self.codeScannerViewController?.delegate = self
-        }
-    }
     
     // MARK: - UITableViewDelegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -40,7 +33,8 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         case 0:
             switch indexPath.row {
             case 0:
-                self.performSegue(withIdentifier: "VCCodeScannerIdentifier", sender: nil)
+                VCCodeScanner.showScanner(parentViewController: self,
+                                          delegate: self)
             case 1:
                 VCActionSheetPicker.showStringPicker(title: "Picking Strings",
                                                      stringOptions: ["Dog", "Cat", "Bird", "Turtle"],
@@ -79,28 +73,30 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         case 1:
             switch indexPath.row {
             case 0:
-                VCAlertView.showAlert(style: .Success,
-                                           title: "Success!",
-                                           message: "This is a success message",
-                                           iconImage: nil,
-                                           doneButton: VCAlertView.AlertButton.init(title: "Roger that!", handler: {print("Dismiss button pressed")}),
-                                           buttons: [])
+                VCAlertView.showAlert(style: .success,
+                                      title: "Success!",
+                                      message: "This is a success message")
             case 1:
-                VCAlertView.showAlert(style: .Error,
-                                           title: "Error",
-                                           message: "This is an error message",
-                                           iconImage: nil,
-                                           doneButton: VCAlertView.AlertButton.init(title: "Oh dear :(", handler: {print("Dismiss button pressed")}),
-                                           buttons: [])
+                VCAlertView.showAlert(style: .error,
+                                      title: "Error!",
+                                      message: "This is an error message")
             case 2:
-                VCAlertView.showAlert(style: .Warning,
-                                           title: "Warning!",
-                                           message: "This is a warning message",
-                                           iconImage: nil,
-                                           doneButton: VCAlertView.AlertButton.init(title: "Jeez...", handler: {print("Dismiss button pressed")}),
-                                           buttons: [])
+                VCAlertView.showAlert(style: .warning,
+                                      title: "Warning!",
+                                      message: "This is a warning message",
+                                      defaultButton: .init(title: "Logout", handler: {}),
+                                      extraButtons: [.init(title: "Cancel", handler: {})])
             case 3:
                 VCAlertView.showAlert(message: "This is a normal message")
+            case 4:
+                VCAlertView.showAlert(message: "This is a custom icon",
+                                      icon: VCAlertView.AlertIcon(image: UIImage(named: "VCAlertView Cusom Icon Image")))
+            case 5:
+                VCAlertView.showAlert(message: "This is a TextField example",
+                                      textFields: [
+                                        VCAlertView.AlertTextfield(placeholder: "Feedback", didReturn: {text in
+                                            sharedBannerCreator.showStatusBarMessage(message: "Your feedback: " + (text != nil ? text! : ""))
+                                        })])
             default:
                 break
             }
@@ -197,7 +193,8 @@ class DemoViewController: VCTableViewController, VCCodeScannerProtocol {
         }
     }
     
-    // MARK: - VCCodeScannerProtocol
+    // MARK: - VCCodeScannerDelegate
+    
     func scanner(scanner: VCCodeScannerViewController, didFinnishScanningWithResult result: String) {
         print(result)
     }

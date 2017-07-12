@@ -60,18 +60,50 @@ extension UIView {
         }
     }
     
-    /** Adds the view to a given superview applying the given constraints */
-    open func addToSuperview(superview : UIView, withConstraint constraintInset : UIEdgeInsets) {
-        self.addToSuperView(superview: superview)
+    /** Adds the View to a given UIView, creating constraints based on the UIEdgeInsets */
+    func addTo(superView: UIView, withConstraint constraintInset: UIEdgeInsets) -> Void {
         
-        self.snp.makeConstraints({ make in
-            make.edges.equalTo(self.superview!).inset(constraintInset)
+        superView.addSubview(self)
+        
+        /*let horizonalContraintLeft = NSLayoutConstraint(item: self,
+                                                        attribute: .leadingMargin,
+                                                        relatedBy: .equal,
+                                                        toItem: superView,
+                                                        attribute: .leadingMargin,
+                                                        multiplier: 1.0,
+                                                        constant: constraintInset.left)
+        
+        let horizonalContraintRight = NSLayoutConstraint(item: self,
+                                                         attribute: .trailingMargin,
+                                                         relatedBy: .equal,
+                                                         toItem: superView,
+                                                         attribute: .trailingMargin,
+                                                         multiplier: 1.0,
+                                                         constant: -constraintInset.right)
+        
+        let verticalConstraintTop = NSLayoutConstraint(item: self,
+                                                       attribute: .topMargin,
+                                                       relatedBy: .equal,
+                                                       toItem: superView,
+                                                       attribute: .top,
+                                                       multiplier: 1.0,
+                                                       constant: constraintInset.top)
+        
+        let verticalConstraintBottom = NSLayoutConstraint(item: self,
+                                                          attribute: .bottomMargin,
+                                                          relatedBy: .equal,
+                                                          toItem: superView,
+                                                          attribute: .bottom,
+                                                          multiplier: 1.0,
+                                                          constant: constraintInset.bottom)
+        
+        NSLayoutConstraint.activate([horizonalContraintLeft,
+                                     horizonalContraintRight,
+                                     verticalConstraintTop,
+                                     verticalConstraintBottom])*/
+        self.snp.makeConstraints({make in
+            make.edges.equalTo(superView).inset(constraintInset)
         })
-    }
-    
-    /** Adds the view to the given superview */
-    open func addToSuperView(superview : UIView) {
-        superview.addSubview(self)
     }
     
     /** Applies the custom appearance on this UIView */

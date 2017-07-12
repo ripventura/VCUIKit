@@ -10,8 +10,6 @@ import Foundation
 import DKImagePickerController
 
 open class VCMediaPicker: NSObject {
-    
-    
     public enum MediaKind : Int {
         //Video currently not supported (completionHandler implications)
         //case Photo, Video, All
@@ -22,7 +20,8 @@ open class VCMediaPicker: NSObject {
         case camera, library, both
     }
     
-    public static func showMediaPicker(maxSelections : Int,
+    /** Shows a Media Picker */
+    open static func showMediaPicker(maxSelections : Int,
                                        mediaKind : MediaKind,
                                        mediaSource : MediaSource,
                                        parentViewController: UIViewController,

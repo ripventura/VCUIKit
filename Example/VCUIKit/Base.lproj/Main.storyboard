@@ -22,21 +22,21 @@
                             <tableViewSection headerTitle="Pickers and ViewControllers" id="PoX-Sh-YFP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xAT-U4-qlQ" detailTextLabel="toa-Zn-ovk" style="IBUITableViewCellStyleSubtitle" id="HO9-1R-A3u" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HO9-1R-A3u" id="xne-JS-V7d">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCCodeScannerViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xAT-U4-qlQ">
-                                                    <rect key="frame" x="15" y="13" width="239" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="201.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Scans a variety of codes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="toa-Zn-ovk">
-                                                    <rect key="frame" x="15" y="33.5" width="138.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="138.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -46,21 +46,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="02g-qP-ecw" detailTextLabel="sg7-f8-GFK" style="IBUITableViewCellStyleSubtitle" id="2m7-GG-IlT" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="115.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2m7-GG-IlT" id="dKd-T2-rtf">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCActionSheetPicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="02g-qP-ecw">
-                                                    <rect key="frame" x="15" y="13" width="162.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="137.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Displays an Action Sheet for picking Strings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sg7-f8-GFK">
-                                                    <rect key="frame" x="15" y="33.5" width="247" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="247" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -70,21 +70,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="21r-31-8LK" detailTextLabel="RNZ-lh-hOF" style="IBUITableViewCellStyleSubtitle" id="Ax1-ox-8Ex" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="176" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="175.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ax1-ox-8Ex" id="NIg-0z-iNA">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCActionSheetPicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="21r-31-8LK">
-                                                    <rect key="frame" x="15" y="13" width="162.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="137.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Displays an Action Sheet for picking Dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RNZ-lh-hOF">
-                                                    <rect key="frame" x="15" y="33.5" width="239.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="239.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -94,21 +94,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="JNB-1M-hM9" detailTextLabel="gvy-9J-dsQ" style="IBUITableViewCellStyleSubtitle" id="qJ8-Xl-nxh" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="236" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="235.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qJ8-Xl-nxh" id="lT2-4M-xly">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCMediaPicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JNB-1M-hM9">
-                                                    <rect key="frame" x="15" y="13" width="116.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="98" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Select photos from the camera or photo library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gvy-9J-dsQ">
-                                                    <rect key="frame" x="15" y="33.5" width="265.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="265.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -122,21 +122,21 @@
                             <tableViewSection headerTitle="ALERTS" id="xc2-sg-lfs">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="I9n-55-dnC" detailTextLabel="gBV-GI-Hzx" style="IBUITableViewCellStyleSubtitle" id="o6j-fP-Miu" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="352" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o6j-fP-Miu" id="KET-7X-3Ps">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I9n-55-dnC">
-                                                    <rect key="frame" x="15" y="13" width="116.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I9n-55-dnC">
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gBV-GI-Hzx">
-                                                    <rect key="frame" x="15" y="33.5" width="77" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="77" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -146,21 +146,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="uem-mz-apo" detailTextLabel="XSt-rm-dst" style="IBUITableViewCellStyleSubtitle" id="2bX-ro-rHa" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="412" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="411.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2bX-ro-rHa" id="fMC-V2-S6H">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uem-mz-apo">
-                                                    <rect key="frame" x="15" y="13" width="116.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uem-mz-apo">
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XSt-rm-dst">
-                                                    <rect key="frame" x="15" y="33.5" width="57.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="57.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -170,21 +170,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jzb-ea-b5D" detailTextLabel="VB1-2I-Cgl" style="IBUITableViewCellStyleSubtitle" id="mKN-uq-2x6" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="472" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="471.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mKN-uq-2x6" id="teW-I9-wA7">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jzb-ea-b5D">
-                                                    <rect key="frame" x="15" y="13" width="116.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jzb-ea-b5D">
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Warning alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VB1-2I-Cgl">
-                                                    <rect key="frame" x="15" y="33.5" width="76" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="76" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -194,21 +194,69 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vjz-r1-VTo" detailTextLabel="5xm-fj-HjK" style="IBUITableViewCellStyleSubtitle" id="Bac-Kj-Nkv" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="532" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="531.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bac-Kj-Nkv" id="hQ5-VO-Jgq">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjz-r1-VTo">
-                                                    <rect key="frame" x="15" y="13" width="116.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjz-r1-VTo">
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5xm-fj-HjK">
-                                                    <rect key="frame" x="15" y="33.5" width="70" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="70" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wdC-3E-xaW" detailTextLabel="Wxf-WE-6H6" style="IBUITableViewCellStyleSubtitle" id="jVw-VC-5OF" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="591.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jVw-VC-5OF" id="YIj-Vt-S27">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wdC-3E-xaW">
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert with custom Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wxf-WE-6H6">
+                                                    <rect key="frame" x="15" y="31" width="170" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="IVi-PY-jUO" detailTextLabel="nLW-1v-YwA" style="IBUITableViewCellStyleSubtitle" id="g46-WF-DKV" customClass="VCTableViewCell" customModule="VCUIKit">
+                                        <rect key="frame" x="0.0" y="651.5" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g46-WF-DKV" id="RaL-Qh-Efs">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IVi-PY-jUO">
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert with TextField" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nLW-1v-YwA">
+                                                    <rect key="frame" x="15" y="31" width="151.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -222,21 +270,21 @@
                             <tableViewSection headerTitle="BANNERS" id="9rZ-D4-3pD">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="aRd-e7-Aif" detailTextLabel="NhT-1A-ElU" style="IBUITableViewCellStyleSubtitle" id="5Hi-9H-uIp" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="648" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="767.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Hi-9H-uIp" id="xh0-Cl-3f7">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aRd-e7-Aif">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NhT-1A-ElU">
-                                                    <rect key="frame" x="15" y="33.5" width="90.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="90.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -246,21 +294,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Wez-hz-UTK" detailTextLabel="0BF-WO-5ml" style="IBUITableViewCellStyleSubtitle" id="ozH-do-YGN" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="708" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="827.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ozH-do-YGN" id="eXR-QY-way">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wez-hz-UTK">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0BF-WO-5ml">
-                                                    <rect key="frame" x="15" y="33.5" width="71" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="71" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -270,21 +318,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Mib-yx-XLB" detailTextLabel="BN2-9q-d3L" style="IBUITableViewCellStyleSubtitle" id="5TZ-me-WFp" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="768" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="887.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5TZ-me-WFp" id="0Wa-ID-Ymg">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mib-yx-XLB">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Info banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BN2-9q-d3L">
-                                                    <rect key="frame" x="15" y="33.5" width="64.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="64.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -294,21 +342,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BdO-hO-mx3" detailTextLabel="JTr-Z0-vLV" style="IBUITableViewCellStyleSubtitle" id="wZm-o2-7aw" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="828" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="947.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wZm-o2-7aw" id="Imx-de-aSJ">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BdO-hO-mx3">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Custom banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JTr-Z0-vLV">
-                                                    <rect key="frame" x="15" y="33.5" width="86.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="86.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -322,21 +370,21 @@
                             <tableViewSection headerTitle="StatusBar Messages" id="ZR9-0S-mvJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ijQ-Ak-6Ki" detailTextLabel="LMf-Xf-Yin" style="IBUITableViewCellStyleSubtitle" id="PC1-as-9JA" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="944" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1063.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PC1-as-9JA" id="3qg-Yb-aMV">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ijQ-Ak-6Ki">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LMf-Xf-Yin">
-                                                    <rect key="frame" x="15" y="33.5" width="101.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="101.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -346,21 +394,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="keP-iN-SFk" detailTextLabel="w0z-e8-pTl" style="IBUITableViewCellStyleSubtitle" id="Yzf-Ng-ZJu" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1004" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1123.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yzf-Ng-ZJu" id="s4L-5s-Xc5">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="keP-iN-SFk">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w0z-e8-pTl">
-                                                    <rect key="frame" x="15" y="33.5" width="82" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="82" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -370,21 +418,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="CV0-tl-bnD" detailTextLabel="3jy-yU-djZ" style="IBUITableViewCellStyleSubtitle" id="Hxe-5e-Emb" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1064" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1183.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hxe-5e-Emb" id="IBM-FO-b5R">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CV0-tl-bnD">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Info message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3jy-yU-djZ">
-                                                    <rect key="frame" x="15" y="33.5" width="75.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="75.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -394,21 +442,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="0Gl-ta-y6f" detailTextLabel="WF4-79-Vf4" style="IBUITableViewCellStyleSubtitle" id="Lng-z7-dSz" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1124" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1243.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lng-z7-dSz" id="zyS-Wg-Sfv">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Gl-ta-y6f">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WF4-79-Vf4">
-                                                    <rect key="frame" x="15" y="33.5" width="95" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="95" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -418,21 +466,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="vSZ-iw-MM9" detailTextLabel="jFA-gC-suE" style="IBUITableViewCellStyleSubtitle" id="2OM-2o-qDh" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1184" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1303.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2OM-2o-qDh" id="eqa-bO-tg3">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSZ-iw-MM9">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tall message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jFA-gC-suE">
-                                                    <rect key="frame" x="15" y="33.5" width="73.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="73.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -446,21 +494,21 @@
                             <tableViewSection headerTitle="HUD" id="2a0-CD-gsB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="mo1-g6-4Co" detailTextLabel="dXk-rQ-1el" style="IBUITableViewCellStyleSubtitle" id="5iQ-wa-jk7" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1300" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1419.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5iQ-wa-jk7" id="L9w-Vj-KAN">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mo1-g6-4Co">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Indeterminate state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dXk-rQ-1el">
-                                                    <rect key="frame" x="15" y="33.5" width="110.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="110.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -470,21 +518,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="rx1-TR-f4h" detailTextLabel="Dxr-hg-NfT" style="IBUITableViewCellStyleSubtitle" id="yr7-EU-90F" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1360" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1479.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yr7-EU-90F" id="b40-dR-ACE">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rx1-TR-f4h">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Progress state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dxr-hg-NfT">
-                                                    <rect key="frame" x="15" y="33.5" width="82" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="82" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -494,21 +542,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Abx-4U-qap" detailTextLabel="YPb-vS-Mxq" style="IBUITableViewCellStyleSubtitle" id="kCN-fN-yXz" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1420" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1539.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kCN-fN-yXz" id="nsC-U3-jwq">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Abx-4U-qap">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YPb-vS-Mxq">
-                                                    <rect key="frame" x="15" y="33.5" width="47.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="47.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -518,21 +566,21 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BJb-Rl-phl" detailTextLabel="Ifz-6Q-n6V" style="IBUITableViewCellStyleSubtitle" id="xOG-LY-hZH" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1480" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1599.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xOG-LY-hZH" id="Wi7-hB-SBM">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BJb-Rl-phl">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ifz-6Q-n6V">
-                                                    <rect key="frame" x="15" y="33.5" width="28" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="28" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -546,21 +594,21 @@
                             <tableViewSection headerTitle="StyleKit" footerTitle="This is already a VCTableView using VCTableViewCells" id="hsq-ai-cGP">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="E1Y-eb-G2L" detailTextLabel="3br-49-s49" style="IBUITableViewCellStyleSubtitle" id="qgF-xt-Nxw" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1603" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1723" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qgF-xt-Nxw" id="LqR-gU-CUS">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="NavigationBar + UIViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E1Y-eb-G2L">
-                                                    <rect key="frame" x="15" y="13" width="255.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="216" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="StyleKit for UINavigationBar and UIViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3br-49-s49">
-                                                    <rect key="frame" x="15" y="33.5" width="281" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="281" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -573,7 +621,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ilV-6S-jwM" style="IBUITableViewCellStyleDefault" id="YUk-pY-Nmg" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1663" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1783" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YUk-pY-Nmg" id="TLs-hV-ob0">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -597,7 +645,7 @@
                             <tableViewSection headerTitle="View" id="Ghd-YA-H9d">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="poH-fg-2aS" style="IBUITableViewCellStyleDefault" id="Yf2-Uf-Zv1" customClass="VCTableViewCell" customModule="VCUIKit">
-                                        <rect key="frame" x="0.0" y="1791" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="1911" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yf2-Uf-Zv1" id="XBS-wd-15n">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
@@ -625,13 +673,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="VCUIKit" id="PeL-7J-zFp"/>
-                    <connections>
-                        <segue destination="xh0-Pf-KOM" kind="presentation" identifier="VCCodeScannerIdentifier" id="ZjA-PW-Q6b"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSl-ng-oS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="829"/>
+            <point key="canvasLocation" x="421.60000000000002" y="828.93553223388312"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="z4B-V1-w0k">
@@ -650,24 +695,6 @@
             </objects>
             <point key="canvasLocation" x="-1106" y="829"/>
         </scene>
-        <!--Code Scanner View Controller-->
-        <scene sceneID="P17-iD-SFp">
-            <objects>
-                <viewController id="xh0-Pf-KOM" customClass="VCCodeScannerViewController" customModule="VCUIKit" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fz8-qo-ddu"/>
-                        <viewControllerLayoutGuide type="bottom" id="v9i-VL-4Za"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JY3-P4-C5K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tfL-ao-3ss" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="422" y="1591"/>
-        </scene>
         <!--NavigationBar Title-->
         <scene sceneID="j7l-sM-ZQv">
             <objects>
@@ -680,12 +707,17 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cje-FM-goE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cje-FM-goE" customClass="VCButton" customModule="VCUIKit">
                                 <rect key="frame" x="16" y="286" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="mFb-Ku-8tb"/>
                                 </constraints>
-                                <state key="normal" title="UIViewController Tint"/>
+                                <state key="normal" title="UIViewController Tint">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="storyboardAppearance" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VCLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-q5-Q2b" customClass="VCLabel" customModule="VCUIKit">
                                 <rect key="frame" x="16" y="247" width="343" height="31"/>
@@ -701,21 +733,34 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Cat-fk-b9D"/>
                                 </constraints>
-                                <state key="normal" title="VCButton"/>
+                                <state key="normal" title="VCButton">
+                                    <color key="titleColor" red="0.91738331319999999" green="0.30880561470000001" blue="0.2184101641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.91738331319999999" green="0.30880561470000001" blue="0.2184101641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="storyboardAppearance" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-jl-Lwh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-jl-Lwh" customClass="VCView" customModule="VCUIKit">
                                 <rect key="frame" x="123" y="111" width="128" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="KvZ-nc-gX0"/>
                                     <constraint firstAttribute="width" constant="128" id="v2f-7G-UhF"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="50"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="1" green="0.58823529409999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -791,6 +836,7 @@
                                     <segment title="VC"/>
                                     <segment title="SegmentedControl"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -904,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zyB-WC-zvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="1591"/>
+            <point key="canvasLocation" x="422" y="1564"/>
         </scene>
         <!--Item-->
         <scene sceneID="lTg-Et-zzo">

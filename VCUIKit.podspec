@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VCUIKit'
-  s.version          = '0.0.30'
+  s.version          = '0.0.31'
   s.summary          = 'A collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.'
 
 # This description is used to generate tags and improve search results.
@@ -41,7 +41,6 @@ When I get some time I will update the Wiki page with detailed description of ea
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
 s.dependency 'SwiftMessages', '3.1.5'
-s.dependency 'SWActivityIndicatorView', '2.0.0'
 s.dependency 'SnapKit', '3.2.0'
 s.dependency 'FCAlertView', '1.3.1'
 s.dependency 'DKImagePickerController', '3.5.0'

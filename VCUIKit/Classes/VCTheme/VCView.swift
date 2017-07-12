@@ -1,16 +1,14 @@
 //
-//  VCLabel.swift
+//  VCView.swift
 //  Pods
 //
-//  Created by Vitor Cesco on 23/06/17.
+//  Created by Vitor Cesco on 11/07/17.
 //
 //
 
 import UIKit
 
-@IBDesignable open class VCLabel: UILabel {
-    /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable var storyboardAppearance: Bool = false
+@IBDesignable open class VCView : UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +23,7 @@ import UIKit
         
         self.applyAppearance()
     }
+    
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
@@ -32,9 +31,5 @@ import UIKit
     }
     
     override func applyAppearance() -> Void {
-        if !storyboardAppearance {
-            self.font = sharedAppearanceManager.labelFont
-            self.textColor = sharedAppearanceManager.labelTextColor
-        }
     }
 }
