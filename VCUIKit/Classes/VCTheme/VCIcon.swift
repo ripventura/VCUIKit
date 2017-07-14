@@ -8,7 +8,7 @@
 
 import UIKit
 
-/** UIView that draws itself, simulating an Icon (single colored).*/
+/** UIView that draws itself, simulating an Icon.*/
 @IBDesignable open class VCIcon: VCView {
     @IBInspectable open var fillColor: UIColor = .black {
         didSet {
