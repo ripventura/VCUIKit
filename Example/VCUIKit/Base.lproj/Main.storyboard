@@ -838,10 +838,18 @@
                                 </segments>
                                 <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yqw-rf-Mju" customClass="VCSwitch" customModule="VCUIKit">
+                                <rect key="frame" x="163" y="456" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="TgF-MF-Bok"/>
+                                    <constraint firstAttribute="width" constant="49" id="nco-M6-gRM"/>
+                                </constraints>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="leading" secondItem="N8T-X1-Ixc" secondAttribute="trailing" constant="8" id="02X-Nr-6ww"/>
+                            <constraint firstItem="Yqw-rf-Mju" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="0yD-7q-Tah"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="top" secondItem="wcb-RR-Doj" secondAttribute="bottom" constant="8" id="1gB-no-NDQ"/>
                             <constraint firstItem="Gr0-jl-Lwh" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="8Uh-kY-mUd"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="leading" secondItem="rg3-Kf-Ipn" secondAttribute="trailing" constant="8" id="AIc-lD-uYk"/>
@@ -865,6 +873,7 @@
                             <constraint firstItem="TWk-q5-Q2b" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="t4v-Gm-Jnb"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="t9R-ar-bcG"/>
                             <constraint firstItem="PDP-ir-Nes" firstAttribute="top" secondItem="cje-FM-goE" secondAttribute="bottom" constant="8" id="yia-9y-J0C"/>
+                            <constraint firstItem="Yqw-rf-Mju" firstAttribute="top" secondItem="Jbe-Hj-TjG" secondAttribute="bottom" constant="8" id="zrN-YG-yV4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NavigationBar Title" id="Cmn-Zb-Ms2">
