@@ -79,7 +79,7 @@ extension VCViewController: UITextFieldDelegate {
     @IBOutlet open var tableView : VCTableView?
     
     open var placeholderView : UIView = UIView()
-    open var placeHolderIconView : UIView = UIView()
+    open var placeHolderImageView : UIImageView = UIImageView()
     open var placeholderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
     open var placeHolderActionButton : VCDrawableButton = VCDrawableButton()
@@ -115,9 +115,8 @@ extension VCViewController: UITextFieldDelegate {
             make.bottom.equalTo(self.view).offset(-20)
         })
         
-        self.placeHolderIconView = self.iconView()
-        self.placeholderView.addSubview(self.placeHolderIconView)
-        placeHolderIconView.snp.makeConstraints({make in
+        self.placeholderView.addSubview(self.placeHolderImageView)
+        placeHolderImageView.snp.makeConstraints({make in
             make.centerX.equalTo(self.placeholderView)
             make.bottom.equalTo(self.placeholderView.snp.centerY).offset(centerYOffset)
             make.width.equalTo(100)
@@ -172,11 +171,6 @@ extension VCViewController: UITextFieldDelegate {
     /** Initializes the Placeholder ActionButton. Override this to use custom Buttons. */
     open func actionButton() -> VCDrawableButton {
         return VCDrawableButton(frame: CGRectDefault)
-    }
-    
-    /** Initializes the Placeholder Icon View. Override this to use custom Views. */
-    open func iconView() -> UIView {
-        return VCIcon(frame: CGRectDefault)
     }
     
     /** Called after the placeHolderActionButton is pressed */
