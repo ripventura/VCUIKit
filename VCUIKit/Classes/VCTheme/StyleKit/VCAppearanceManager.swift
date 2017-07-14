@@ -22,7 +22,6 @@ open class VCAppearanceManager {
     open var segmentedControlTintColor : UIColor = .black
     
     open var switchTintColor : UIColor = .black
-    open var switchThumbColor : UIColor
     
     open var tableViewCellTintColor : UIColor = .black
     open var tableViewCellBackgroundColor : UIColor
@@ -80,9 +79,6 @@ open class VCAppearanceManager {
         
         // MARK: - VCButton
         buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
-        
-        // MARK: - VCSwitch
-        switchThumbColor = .white
         
         // MARK: - VCTableViewCell
         tableViewCellBackgroundColor = VCUIKitStyleKit.white

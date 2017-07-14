@@ -33,7 +33,6 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.thumbTintColor = sharedAppearanceManager.switchThumbColor
             self.onTintColor = sharedAppearanceManager.switchTintColor
         }
     }
