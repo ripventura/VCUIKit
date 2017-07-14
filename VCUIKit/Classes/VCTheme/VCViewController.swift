@@ -12,6 +12,11 @@ import UIKit
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.updateBackButtonStyle()
+    }
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -31,23 +36,6 @@ import UIKit
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        
-        self.updateBackButtonStyle()
-    }
-    open override func show(_ vc: UIViewController, sender: Any?) {
-        super.show(vc, sender: sender)
-        
-        self.updateBackButtonStyle()
-    }
-    open override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-        super.present(viewControllerToPresent, animated: flag, completion: completion)
-        
-        self.updateBackButtonStyle()
-    }
-    open override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
-        super.show(vc, sender: sender)
-        
-        self.updateBackButtonStyle()
     }
     
     override func applyAppearance() -> Void {
@@ -275,6 +263,12 @@ extension VCTabledViewController: UISearchBarDelegate {
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.updateBackButtonStyle()
+    }
+    
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -294,23 +288,6 @@ extension VCTabledViewController: UISearchBarDelegate {
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        
-        self.updateBackButtonStyle()
-    }
-    open override func show(_ vc: UIViewController, sender: Any?) {
-        super.show(vc, sender: sender)
-        
-        self.updateBackButtonStyle()
-    }
-    open override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
-        super.present(viewControllerToPresent, animated: flag, completion: completion)
-        
-        self.updateBackButtonStyle()
-    }
-    open override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
-        super.show(vc, sender: sender)
-        
-        self.updateBackButtonStyle()
     }
     
     override func applyAppearance() -> Void {
