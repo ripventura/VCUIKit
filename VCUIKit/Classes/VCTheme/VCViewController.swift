@@ -34,6 +34,21 @@ import UIKit
         
         self.updateBackButtonStyle()
     }
+    open override func show(_ vc: UIViewController, sender: Any?) {
+        super.show(vc, sender: sender)
+        
+        self.updateBackButtonStyle()
+    }
+    open override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.present(viewControllerToPresent, animated: flag, completion: completion)
+        
+        self.updateBackButtonStyle()
+    }
+    open override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
+        super.show(vc, sender: sender)
+        
+        self.updateBackButtonStyle()
+    }
     
     override func applyAppearance() -> Void {
         //Updates StatusBar Style
@@ -279,6 +294,21 @@ extension VCTabledViewController: UISearchBarDelegate {
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        
+        self.updateBackButtonStyle()
+    }
+    open override func show(_ vc: UIViewController, sender: Any?) {
+        super.show(vc, sender: sender)
+        
+        self.updateBackButtonStyle()
+    }
+    open override func present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.present(viewControllerToPresent, animated: flag, completion: completion)
+        
+        self.updateBackButtonStyle()
+    }
+    open override func showDetailViewController(_ vc: UIViewController, sender: Any?) {
+        super.show(vc, sender: sender)
         
         self.updateBackButtonStyle()
     }
