@@ -80,7 +80,7 @@ extension VCViewController: UITextFieldDelegate {
     
     private var placeholderView : UIView = UIView()
     open var placeHolderImageView : UIImageView = UIImageView()
-    open var placeHolderActivityIndicatorView : UIActivityIndicatorView = UIActivityIndicatorView()
+    open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView()
     open var placeholderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
     open var placeHolderActionButton : VCDrawableButton = VCDrawableButton()
