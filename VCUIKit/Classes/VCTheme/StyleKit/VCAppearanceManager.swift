@@ -23,6 +23,8 @@ open class VCAppearanceManager {
     
     open var switchTintColor : UIColor = .black
     
+    open var activityIndicatorTintColor : UIColor = .black
+    
     open var tableViewCellTintColor : UIColor = .black
     open var tableViewCellBackgroundColor : UIColor
     open var tableViewCellTitleTextColor : UIColor
@@ -144,6 +146,8 @@ open class VCAppearanceManager {
         segmentedControlTintColor = self.viewControllerViewTintColor
         
         switchTintColor = self.viewControllerViewTintColor
+        
+        activityIndicatorTintColor = self.viewControllerViewTintColor
         
         tableViewCellTintColor = self.viewControllerViewTintColor
     }

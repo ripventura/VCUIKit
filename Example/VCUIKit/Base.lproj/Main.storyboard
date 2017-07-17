@@ -29,14 +29,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCCodeScannerViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xAT-U4-qlQ">
-                                                    <rect key="frame" x="15" y="13" width="239" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="201.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Scans a variety of codes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="toa-Zn-ovk">
-                                                    <rect key="frame" x="15" y="33.5" width="138.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="138.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -53,14 +53,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCActionSheetPicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="02g-qP-ecw">
-                                                    <rect key="frame" x="15" y="13" width="162.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="137.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Displays an Action Sheet for picking Strings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sg7-f8-GFK">
-                                                    <rect key="frame" x="15" y="33.5" width="247" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="247" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -77,14 +77,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCActionSheetPicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="21r-31-8LK">
-                                                    <rect key="frame" x="15" y="13" width="162.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="137.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Displays an Action Sheet for picking Dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RNZ-lh-hOF">
-                                                    <rect key="frame" x="15" y="33.5" width="239.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="239.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -101,14 +101,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCMediaPicker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JNB-1M-hM9">
-                                                    <rect key="frame" x="15" y="13" width="116.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="98" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Select photos from the camera or photo library" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gvy-9J-dsQ">
-                                                    <rect key="frame" x="15" y="33.5" width="265.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="265.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -129,14 +129,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I9n-55-dnC">
-                                                    <rect key="frame" x="15" y="13" width="96" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gBV-GI-Hzx">
-                                                    <rect key="frame" x="15" y="33.5" width="77" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="77" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -153,14 +153,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uem-mz-apo">
-                                                    <rect key="frame" x="15" y="13" width="96" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XSt-rm-dst">
-                                                    <rect key="frame" x="15" y="33.5" width="57.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="57.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -177,14 +177,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jzb-ea-b5D">
-                                                    <rect key="frame" x="15" y="13" width="96" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Warning alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VB1-2I-Cgl">
-                                                    <rect key="frame" x="15" y="33.5" width="76" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="76" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -201,14 +201,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vjz-r1-VTo">
-                                                    <rect key="frame" x="15" y="13" width="96" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5xm-fj-HjK">
-                                                    <rect key="frame" x="15" y="33.5" width="70" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="70" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -225,14 +225,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wdC-3E-xaW">
-                                                    <rect key="frame" x="15" y="13" width="96" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert with custom Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wxf-WE-6H6">
-                                                    <rect key="frame" x="15" y="33.5" width="170" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="170" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -249,14 +249,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IVi-PY-jUO">
-                                                    <rect key="frame" x="15" y="13" width="96" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert with TextField" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nLW-1v-YwA">
-                                                    <rect key="frame" x="15" y="33.5" width="151.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="151.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -277,14 +277,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aRd-e7-Aif">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NhT-1A-ElU">
-                                                    <rect key="frame" x="15" y="33.5" width="90.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="90.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -301,14 +301,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wez-hz-UTK">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0BF-WO-5ml">
-                                                    <rect key="frame" x="15" y="33.5" width="71" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="71" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -325,14 +325,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mib-yx-XLB">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Info banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BN2-9q-d3L">
-                                                    <rect key="frame" x="15" y="33.5" width="64.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="64.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -349,14 +349,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BdO-hO-mx3">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Custom banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JTr-Z0-vLV">
-                                                    <rect key="frame" x="15" y="33.5" width="86.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="86.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -377,14 +377,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ijQ-Ak-6Ki">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LMf-Xf-Yin">
-                                                    <rect key="frame" x="15" y="33.5" width="101.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="101.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -401,14 +401,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="keP-iN-SFk">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w0z-e8-pTl">
-                                                    <rect key="frame" x="15" y="33.5" width="82" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="82" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -425,14 +425,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CV0-tl-bnD">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Info message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3jy-yU-djZ">
-                                                    <rect key="frame" x="15" y="33.5" width="75.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="75.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -449,14 +449,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Gl-ta-y6f">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WF4-79-Vf4">
-                                                    <rect key="frame" x="15" y="33.5" width="95" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="95" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -473,14 +473,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCBannerCreator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vSZ-iw-MM9">
-                                                    <rect key="frame" x="15" y="13" width="134" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="113" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tall message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jFA-gC-suE">
-                                                    <rect key="frame" x="15" y="33.5" width="73.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="73.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -501,14 +501,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mo1-g6-4Co">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Indeterminate state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dXk-rQ-1el">
-                                                    <rect key="frame" x="15" y="33.5" width="110.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="110.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -525,14 +525,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rx1-TR-f4h">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Progress state" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dxr-hg-NfT">
-                                                    <rect key="frame" x="15" y="33.5" width="82" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="82" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -549,14 +549,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Abx-4U-qap">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YPb-vS-Mxq">
-                                                    <rect key="frame" x="15" y="33.5" width="47.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="47.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -573,14 +573,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCHUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BJb-Rl-phl">
-                                                    <rect key="frame" x="15" y="13" width="59" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="49.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ifz-6Q-n6V">
-                                                    <rect key="frame" x="15" y="33.5" width="28" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="28" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -601,14 +601,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="NavigationBar + UIViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E1Y-eb-G2L">
-                                                    <rect key="frame" x="15" y="13" width="255.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="14" width="216" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="StyleKit for UINavigationBar and UIViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3br-49-s49">
-                                                    <rect key="frame" x="15" y="33.5" width="281" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="281" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -845,14 +845,23 @@
                                     <constraint firstAttribute="width" constant="49" id="nco-M6-gRM"/>
                                 </constraints>
                             </switch>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="go5-Vn-fOt" customClass="VCActivityIndicatorView" customModule="VCUIKit">
+                                <rect key="frame" x="177" y="495" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4Qc-zg-yij"/>
+                                    <constraint firstAttribute="width" constant="20" id="dPd-Nd-OYU"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="leading" secondItem="N8T-X1-Ixc" secondAttribute="trailing" constant="8" id="02X-Nr-6ww"/>
                             <constraint firstItem="Yqw-rf-Mju" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="0yD-7q-Tah"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="top" secondItem="wcb-RR-Doj" secondAttribute="bottom" constant="8" id="1gB-no-NDQ"/>
+                            <constraint firstItem="go5-Vn-fOt" firstAttribute="top" secondItem="Yqw-rf-Mju" secondAttribute="bottom" constant="8" id="4os-1B-BVh"/>
                             <constraint firstItem="Gr0-jl-Lwh" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="8Uh-kY-mUd"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="leading" secondItem="rg3-Kf-Ipn" secondAttribute="trailing" constant="8" id="AIc-lD-uYk"/>
+                            <constraint firstItem="go5-Vn-fOt" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="AN1-cX-mj5"/>
                             <constraint firstItem="wcb-RR-Doj" firstAttribute="leading" secondItem="goU-IU-hqx" secondAttribute="trailing" constant="8" id="HZt-4c-Lac"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="L58-Ri-W2D"/>
                             <constraint firstItem="TWk-q5-Q2b" firstAttribute="top" secondItem="Gr0-jl-Lwh" secondAttribute="bottom" constant="8" id="Ll9-Ra-bjn"/>

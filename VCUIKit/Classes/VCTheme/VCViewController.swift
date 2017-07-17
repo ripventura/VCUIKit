@@ -78,8 +78,9 @@ extension VCViewController: UITextFieldDelegate {
     
     @IBOutlet open var tableView : VCTableView?
     
-    open var placeholderView : UIView = UIView()
+    private var placeholderView : UIView = UIView()
     open var placeHolderImageView : UIImageView = UIImageView()
+    open var placeHolderActivityIndicatorView : UIActivityIndicatorView = UIActivityIndicatorView()
     open var placeholderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
     open var placeHolderActionButton : VCDrawableButton = VCDrawableButton()
@@ -122,6 +123,13 @@ extension VCViewController: UITextFieldDelegate {
             make.width.equalTo(100)
             make.height.equalTo(100)
         })
+        
+        self.placeholderView.addSubview(self.placeHolderActivityIndicatorView)
+        self.placeHolderActivityIndicatorView.hidesWhenStopped = true
+        placeHolderActivityIndicatorView.snp.makeConstraints({make in
+            make.centerX.equalTo(self.placeHolderImageView)
+            make.centerY.equalTo(self.placeHolderImageView)
+        })
          
         self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
         self.placeholderTitleLabel.textColor = sharedAppearanceManager.tabledViewControllerPlaceholderTitleColor
@@ -163,9 +171,18 @@ extension VCViewController: UITextFieldDelegate {
     // MARK: - Placeholders
     
     /** Enables / Disables the Placeholder View */
-    open func placeholder(enable : Bool) -> Void {
+    open func placeholder(enable : Bool, title: String? = nil, text: String? = nil, image: UIImage? = nil, activity: Bool = false) -> Void {
         self.placeholderView.isHidden = !enable
         self.tableView?.isHidden = enable
+        
+        self.placeholderTitleLabel.text = title
+        self.placeHolderTextLabel.text = text
+        self.placeHolderImageView.image = image
+        if activity {
+            self.placeHolderActivityIndicatorView.startAnimating()
+        } else {
+            self.placeHolderActivityIndicatorView.stopAnimating()
+        }
     }
     
     /** Initializes the Placeholder ActionButton. Override this to use custom Buttons. */
