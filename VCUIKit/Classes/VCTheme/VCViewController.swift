@@ -80,7 +80,7 @@ extension VCViewController: UITextFieldDelegate {
     
     private var placeholderView : UIView = UIView()
     open var placeHolderImageView : UIImageView = UIImageView()
-    open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView()
+    open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     open var placeholderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
     open var placeHolderActionButton : VCDrawableButton = VCDrawableButton()
@@ -171,7 +171,7 @@ extension VCViewController: UITextFieldDelegate {
     // MARK: - Placeholders
     
     /** Enables / Disables the Placeholder View */
-    open func placeholder(enable : Bool, title: String? = nil, text: String? = nil, image: UIImage? = nil, activity: Bool = false) -> Void {
+    open func placeholder(enable : Bool, title: String? = nil, text: String? = nil, image: UIImage? = nil, activity: Bool = false, buttonTitle: String? = nil, isButtonHidden: Bool = true) -> Void {
         self.placeholderView.isHidden = !enable
         self.tableView?.isHidden = enable
         
@@ -183,6 +183,8 @@ extension VCViewController: UITextFieldDelegate {
         } else {
             self.placeHolderActivityIndicatorView.stopAnimating()
         }
+        self.placeHolderActionButton.setTitle(buttonTitle, for: .normal)
+        self.placeHolderActionButton.isHidden = isButtonHidden
     }
     
     /** Initializes the Placeholder ActionButton. Override this to use custom Buttons. */
