@@ -22,6 +22,7 @@
 		16BC15891C8451BF997901F5944BD780 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA480FABB6D0F39C3351A78E711577C /* ConstraintRelation.swift */; };
 		182BA2167DF9E31FDD15A4BCDC5010D8 /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC02DD78FDD81C68EAC81DA7C2D3EB46 /* TabView.xib */; };
 		18B1EB241F1CFE7700740EEB /* VCActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1EB221F1CFDC600740EEB /* VCActivityIndicatorView.swift */; };
+		18E193021F1FAC39009BCFEA /* VCAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E193011F1FAC39009BCFEA /* VCAlert.swift */; };
 		192B75717AF37AE68AE7C8496748218C /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0995352828011FB5BB7BE36298B819CA /* DKCameraResource.bundle */; };
 		1A0130E51AF422F68818416677EE6595 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B3595BA0517B5751F825DB0EE642D /* ActionSheetDatePicker.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		1D7F790DE84B5951F9D2F4F086D07261 /* DKAssetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1524C091F7B7E5DD0F0CEC108FBE4 /* DKAssetGroup.swift */; };
@@ -313,6 +314,7 @@
 		157C762D70C70D415589A8F71BDA620B /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		17B13F928206DACE4BCF71609DBB8B0F /* Presenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = SwiftMessages/Presenter.swift; sourceTree = "<group>"; };
 		18B1EB221F1CFDC600740EEB /* VCActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCActivityIndicatorView.swift; sourceTree = "<group>"; };
+		18E193011F1FAC39009BCFEA /* VCAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCAlert.swift; sourceTree = "<group>"; };
 		1A0218BC2654B8DBB046E9B8339D2205 /* DKPermissionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPermissionView.swift; path = DKImagePickerController/View/DKPermissionView.swift; sourceTree = "<group>"; };
 		1C85016056BA0E0D07DB8FD35AB7B167 /* FCAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FCAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC78F6711DBF0B830FD5EC9651F7E2F /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ActionSheetDatePicker.h; path = Pickers/ActionSheetDatePicker.h; sourceTree = "<group>"; };
@@ -1084,6 +1086,7 @@
 			isa = PBXGroup;
 			children = (
 				BA81D9DC3952FC532A404C44ACCC8213 /* VCAlertView.swift */,
+				18E193011F1FAC39009BCFEA /* VCAlert.swift */,
 				79C9ED43503844195F7A8EDA29B26116 /* VCBannerCreator.swift */,
 				4BE9796977286146EC5AB5F9793531D3 /* VCHUD.swift */,
 			);
@@ -1553,6 +1556,7 @@
 				2CFDB867008FE1525DAAF43F52BF1A42 /* VCCodeScanner.swift in Sources */,
 				6A549E273CD0B099DE816E5E7F4831DA /* VCHUD.swift in Sources */,
 				85A4095A9AC2FFF99C63A7A151CD4B5E /* VCIcon.swift in Sources */,
+				18E193021F1FAC39009BCFEA /* VCAlert.swift in Sources */,
 				503C7900414D30F05CA5D6F22BDDCEC1 /* VCImageView.swift in Sources */,
 				687528904DFC19F022D2F493D763C173 /* VCLabel.swift in Sources */,
 				18B1EB241F1CFE7700740EEB /* VCActivityIndicatorView.swift in Sources */,
