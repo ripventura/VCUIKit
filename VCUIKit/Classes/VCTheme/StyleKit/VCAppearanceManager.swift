@@ -14,9 +14,9 @@ public let CGRectDefault = CGRect(x: 0, y: 0, width: 100, height: 100)
 public var sharedAppearanceManager = VCAppearanceManager()
 
 open class VCAppearanceManager {
-    var appearance: VCAppearance
+    open var appearance: VCAppearance
     
-    init(appearance: VCAppearance = defaultAppearance) {
+    public init(appearance: VCAppearance = defaultAppearance) {
         self.appearance = appearance
     }
 }

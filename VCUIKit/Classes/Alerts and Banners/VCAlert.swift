@@ -22,13 +22,18 @@ open class VCAlert {
     static open func show(style: UIAlertControllerStyle,
                           withTitle title: String?,
                           withMessage message: String?,
-                          withActions actions: [UIAlertAction],
+                          withActions actions: [UIAlertAction]?,
                           fromViewController viewController: UIViewController) -> Void {
         let alertViewController = UIAlertController(title: title,
                                                     message: message,
                                                     preferredStyle: style)
-        for action in actions {
-            alertViewController.addAction(action)
+        if let actions = actions {
+            for action in actions {
+                alertViewController.addAction(action)
+            }
+        }
+        else {
+            alertViewController.addAction(.init(title: "Ok", style: .default, handler: nil))
         }
         
         viewController.present(alertViewController, animated: true, completion: nil)
