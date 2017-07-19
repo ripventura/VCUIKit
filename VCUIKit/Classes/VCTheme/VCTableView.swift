@@ -41,6 +41,8 @@ import UIKit
     }
     
     override func applyAppearance() -> Void {
+        super.applyAppearance()
+        
         if !storyboardAppearance {
             self.backgroundColor = sharedAppearanceManager.appearance.tableViewBackgroundColor
         }

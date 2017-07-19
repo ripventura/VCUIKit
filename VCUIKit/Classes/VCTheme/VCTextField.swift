@@ -32,6 +32,8 @@ import UIKit
     }
     
     override func applyAppearance() -> Void {
+        super.applyAppearance()
+        
         if !storyboardAppearance {
             self.textColor = sharedAppearanceManager.appearance.textFieldTextColor
             self.font = sharedAppearanceManager.appearance.textFieldTextFont

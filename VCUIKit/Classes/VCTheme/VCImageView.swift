@@ -62,7 +62,7 @@ import UIKit
         self.applyAppearance()
     }
     
-    override func applyAppearance() {
+    override func applyAppearance() -> Void {
         super.applyAppearance()
         
         if blurEffectStyle >= 0 {

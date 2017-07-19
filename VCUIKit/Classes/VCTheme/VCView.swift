@@ -29,7 +29,4 @@ import UIKit
         
         self.applyAppearance()
     }
-    
-    override func applyAppearance() -> Void {
-    }
 }

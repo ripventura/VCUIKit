@@ -15,12 +15,8 @@ import UIKit
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateBackButtonStyle()
-    }
-    override open func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.willSetDefaultStyles()
+        self.updateBackButtonStyle()
         self.applyAppearance()
     }
     
@@ -32,7 +28,7 @@ import UIKit
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
-        sharedAppearanceManager = VCAppearanceManager()
+        sharedAppearanceManager.appearance = defaultAppearance
     }
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,6 +36,8 @@ import UIKit
     }
     
     override func applyAppearance() -> Void {
+        super.applyAppearance()
+        
         //Updates StatusBar Style
         UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
         
@@ -79,16 +77,12 @@ extension VCViewController: UITextFieldDelegate {
     
     @IBOutlet open var tableView : VCTableView?
     
-    private var placeholderView : UIView = UIView()
-    open var placeHolderImageView : UIImageView = UIImageView()
+    private var placeholderView : VCView = VCView()
+    open var placeHolderImageView : VCImageView = VCImageView()
     open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     open var placeholderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
-    open var placeHolderActionButton : VCDrawableButton {
-        get {
-            return VCDrawableButton(frame: CGRectDefault)
-        }
-    }
+    open var placeHolderActionButton : VCButton = VCButton()
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +105,7 @@ extension VCViewController: UITextFieldDelegate {
         }
         
         let centerYOffset = -80
-         
+        
         self.view.addSubview(self.placeholderView)
         self.view.sendSubview(toBack: self.placeholderView)
         placeholderView.snp.makeConstraints({make in
@@ -135,7 +129,7 @@ extension VCViewController: UITextFieldDelegate {
             make.centerX.equalTo(self.placeHolderImageView)
             make.centerY.equalTo(self.placeHolderImageView)
         })
-         
+        
         self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
         self.placeholderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
         self.placeholderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
@@ -148,7 +142,7 @@ extension VCViewController: UITextFieldDelegate {
             make.top.equalTo(self.placeholderView.snp.centerY).offset(centerYOffset + 20)
             make.height.greaterThanOrEqualTo(40)
         })
-         
+        
         self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
         self.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextColor
         self.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
@@ -162,6 +156,7 @@ extension VCViewController: UITextFieldDelegate {
             make.height.greaterThanOrEqualTo(40)
         })
         
+        self.placeHolderActionButton = VCButton(frame: CGRectDefault)
         self.placeholderView.addSubview(self.placeHolderActionButton)
         self.placeHolderActionButton.addTarget(self, action: #selector(self.placeholderActionButtonPressed(_:)), for: .touchUpInside)
         placeHolderActionButton.snp.makeConstraints({make in
@@ -199,7 +194,7 @@ extension VCViewController: UITextFieldDelegate {
     
     /** Called after the placeHolderActionButton is pressed */
     open func placeholderActionButtonPressed(_ sender: Any) -> Void {
-     
+        
     }
     
     // MARK: - Refresh Control
@@ -290,13 +285,8 @@ extension VCTabledViewController: UISearchBarDelegate {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateBackButtonStyle()
-    }
-    
-    override open func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         self.willSetDefaultStyles()
+        self.updateBackButtonStyle()
         self.applyAppearance()
     }
     
@@ -308,7 +298,7 @@ extension VCTabledViewController: UISearchBarDelegate {
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
-        sharedAppearanceManager = VCAppearanceManager()
+        sharedAppearanceManager.appearance = defaultAppearance
     }
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -316,6 +306,8 @@ extension VCTabledViewController: UISearchBarDelegate {
     }
     
     override func applyAppearance() -> Void {
+        super.applyAppearance()
+        
         //Updates StatusBar Style
         UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
         
