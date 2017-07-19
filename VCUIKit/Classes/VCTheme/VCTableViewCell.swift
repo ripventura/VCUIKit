@@ -33,16 +33,16 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.contentView.backgroundColor = sharedAppearanceManager.tableViewCellBackgroundColor
-            self.backgroundColor = sharedAppearanceManager.tableViewCellBackgroundColor
+            self.contentView.backgroundColor = sharedAppearanceManager.appearance.tableViewCellBackgroundColor
+            self.backgroundColor = sharedAppearanceManager.appearance.tableViewCellBackgroundColor
             
-            self.textLabel?.textColor = sharedAppearanceManager.tableViewCellTitleTextColor
-            self.textLabel?.font = sharedAppearanceManager.tableViewCellTitleFont
+            self.textLabel?.textColor = sharedAppearanceManager.appearance.tableViewCellTitleTextColor
+            self.textLabel?.font = sharedAppearanceManager.appearance.tableViewCellTitleFont
             
-            self.detailTextLabel?.textColor = sharedAppearanceManager.tableViewCellDetailTextColor
-            self.textLabel?.font = sharedAppearanceManager.tableViewCellDetailFont
+            self.detailTextLabel?.textColor = sharedAppearanceManager.appearance.tableViewCellDetailTextColor
+            self.textLabel?.font = sharedAppearanceManager.appearance.tableViewCellDetailFont
             
-            self.tintColor = sharedAppearanceManager.tableViewCellTintColor
+            self.tintColor = sharedAppearanceManager.appearance.tableViewCellTintColor
         }
     }
 }

@@ -38,7 +38,7 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.tintColor = sharedAppearanceManager.segmentedControlTintColor
+            self.tintColor = sharedAppearanceManager.appearance.segmentedControlTintColor
         }
     }
 }

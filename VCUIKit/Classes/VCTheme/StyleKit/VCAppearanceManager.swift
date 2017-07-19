@@ -10,9 +10,22 @@ import UIKit
 
 public let CGRectDefault = CGRect(x: 0, y: 0, width: 100, height: 100)
 
+/** Shared Appearance Manager used by UI elements to retrive the app Appearance. */
 public var sharedAppearanceManager = VCAppearanceManager()
 
 open class VCAppearanceManager {
+    var appearance: VCAppearance
+    
+    init(appearance: VCAppearance = defaultAppearance) {
+        self.appearance = appearance
+    }
+}
+
+/** Default Appearance used on ViewControllers that don't override any styles.
+    Override this with a subclass of VCAppearance to change the default appearance of the app. */
+public var defaultAppearance: VCAppearance = VCAppearance()
+
+open class VCAppearance {
     open var labelTextColor : UIColor
     open var labelFont : UIFont
     
@@ -24,6 +37,9 @@ open class VCAppearanceManager {
     open var switchTintColor : UIColor = .black
     
     open var activityIndicatorTintColor : UIColor = .black
+    
+    open var textFieldTextColor : UIColor
+    open var textFieldTextFont : UIFont
     
     open var tableViewCellTintColor : UIColor = .black
     open var tableViewCellBackgroundColor : UIColor
@@ -81,6 +97,10 @@ open class VCAppearanceManager {
         
         // MARK: - VCButton
         buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+        
+        // MARK: - VCTextField
+        textFieldTextFont = UIFont.systemFont(ofSize: 14)
+        textFieldTextColor = VCUIKitStyleKit.labelTextColor
         
         // MARK: - VCTableViewCell
         tableViewCellBackgroundColor = VCUIKitStyleKit.white

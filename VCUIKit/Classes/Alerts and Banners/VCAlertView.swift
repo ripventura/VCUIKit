@@ -156,9 +156,9 @@ open class VCAlertView {
         
         alert.avoidCustomImageTint = icon != nil && !icon!.applyTint
         
-        alert.cornerRadius = sharedAppearanceManager.alertCornerRadius
-        alert.titleFont = sharedAppearanceManager.alertTitleFont
-        alert.subtitleFont = sharedAppearanceManager.alertMessageFont
+        alert.cornerRadius = sharedAppearanceManager.appearance.alertCornerRadius
+        alert.titleFont = sharedAppearanceManager.appearance.alertTitleFont
+        alert.subtitleFont = sharedAppearanceManager.appearance.alertMessageFont
         
         
         var finalTitle = "Alert";

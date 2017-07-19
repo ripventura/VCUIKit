@@ -1,14 +1,14 @@
 //
-//  VCSwitch.swift
+//  VCTextField.swift
 //  Pods
 //
-//  Created by Vitor Cesco on 14/07/17.
+//  Created by Vitor Cesco on 19/07/17.
 //
 //
 
 import UIKit
 
-@IBDesignable open class VCSwitch : UISwitch {
+@IBDesignable open class VCTextField: UITextField {
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
@@ -33,7 +33,9 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.onTintColor = sharedAppearanceManager.appearance.switchTintColor
+            self.textColor = sharedAppearanceManager.appearance.textFieldTextColor
+            self.font = sharedAppearanceManager.appearance.textFieldTextFont
         }
     }
+    
 }

@@ -32,6 +32,7 @@ import UIKit
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
+        sharedAppearanceManager = VCAppearanceManager()
     }
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,14 +41,14 @@ import UIKit
     
     override func applyAppearance() -> Void {
         //Updates StatusBar Style
-        UIApplication.shared.statusBarStyle = sharedAppearanceManager.applicationStatusBarStyle
+        UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
         
         //Updates NavigationBar appearance
         self.navigationController?.applyAppearance()
         
         if !storyboardAppearance {
-            self.view.tintColor = sharedAppearanceManager.viewControllerViewTintColor
-            self.view.backgroundColor = sharedAppearanceManager.viewControllerViewBackgroundColor
+            self.view.tintColor = sharedAppearanceManager.appearance.viewControllerViewTintColor
+            self.view.backgroundColor = sharedAppearanceManager.appearance.viewControllerViewBackgroundColor
         }
         
         //Updates TabBar colors
@@ -83,7 +84,11 @@ extension VCViewController: UITextFieldDelegate {
     open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     open var placeholderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
-    open var placeHolderActionButton : VCDrawableButton = VCDrawableButton()
+    open var placeHolderActionButton : VCDrawableButton {
+        get {
+            return VCDrawableButton(frame: CGRectDefault)
+        }
+    }
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -132,8 +137,8 @@ extension VCViewController: UITextFieldDelegate {
         })
          
         self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
-        self.placeholderTitleLabel.textColor = sharedAppearanceManager.tabledViewControllerPlaceholderTitleColor
-        self.placeholderTitleLabel.font = sharedAppearanceManager.tabledViewControllerPlaceholderTitleFont
+        self.placeholderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
+        self.placeholderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
         self.placeholderTitleLabel.textAlignment = .center
         self.placeholderTitleLabel.numberOfLines = 0
         self.placeholderView.addSubview(self.placeholderTitleLabel)
@@ -145,8 +150,8 @@ extension VCViewController: UITextFieldDelegate {
         })
          
         self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
-        self.placeHolderTextLabel.textColor = sharedAppearanceManager.tabledViewControllerPlaceholderTextColor
-        self.placeHolderTextLabel.font = sharedAppearanceManager.tabledViewControllerPlaceholderTextFont
+        self.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextColor
+        self.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
         self.placeHolderTextLabel.textAlignment = .center
         self.placeHolderTextLabel.numberOfLines = 0
         self.placeholderView.addSubview(self.placeHolderTextLabel)
@@ -157,7 +162,6 @@ extension VCViewController: UITextFieldDelegate {
             make.height.greaterThanOrEqualTo(40)
         })
         
-        self.placeHolderActionButton = self.actionButton()
         self.placeholderView.addSubview(self.placeHolderActionButton)
         self.placeHolderActionButton.addTarget(self, action: #selector(self.placeholderActionButtonPressed(_:)), for: .touchUpInside)
         placeHolderActionButton.snp.makeConstraints({make in
@@ -171,7 +175,13 @@ extension VCViewController: UITextFieldDelegate {
     // MARK: - Placeholders
     
     /** Enables / Disables the Placeholder View */
-    open func placeholder(enable : Bool, title: String? = nil, text: String? = nil, image: UIImage? = nil, activity: Bool = false, buttonTitle: String? = nil, isButtonHidden: Bool = true) -> Void {
+    open func placeholder(enable : Bool,
+                          title: String? = nil,
+                          text: String? = nil,
+                          image: UIImage? = nil,
+                          activity: Bool = false,
+                          buttonTitle: String? = nil,
+                          isButtonHidden: Bool = true) -> Void {
         self.placeholderView.isHidden = !enable
         self.tableView?.isHidden = enable
         
@@ -185,11 +195,6 @@ extension VCViewController: UITextFieldDelegate {
         }
         self.placeHolderActionButton.setTitle(buttonTitle, for: .normal)
         self.placeHolderActionButton.isHidden = isButtonHidden
-    }
-    
-    /** Initializes the Placeholder ActionButton. Override this to use custom Buttons. */
-    open func actionButton() -> VCDrawableButton {
-        return VCDrawableButton(frame: CGRectDefault)
     }
     
     /** Called after the placeHolderActionButton is pressed */
@@ -230,11 +235,11 @@ extension VCViewController: UITextFieldDelegate {
     /** Enables / Disables the Search Control on this ViewController */
     open func searchControl(enable: Bool) -> Void {
         if enable {
-            self.setNavitagionBarTitleView(view: searchController.searchBar)
+            self.setNavitagionBarTitle(view: searchController.searchBar)
             searchController.searchBar.becomeFirstResponder()
         } else {
             searchController.searchBar.resignFirstResponder()
-            self.setNavitagionBarTitleView(view: nil)
+            self.setNavitagionBarTitle(view: nil)
         }
     }
     
@@ -259,7 +264,7 @@ extension VCTabledViewController: UITableViewDelegate {
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let appearance = (tableView as? VCTableView)?.storyboardAppearance
-        return appearance != nil ? (appearance! ? tableView.rowHeight : sharedAppearanceManager.tableViewCellHeight) : tableView.rowHeight
+        return appearance != nil ? (appearance! ? tableView.rowHeight : sharedAppearanceManager.appearance.tableViewCellHeight) : tableView.rowHeight
     }
 }
 extension VCTabledViewController: UITableViewDataSource {
@@ -303,6 +308,7 @@ extension VCTabledViewController: UISearchBarDelegate {
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
+        sharedAppearanceManager = VCAppearanceManager()
     }
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -311,14 +317,14 @@ extension VCTabledViewController: UISearchBarDelegate {
     
     override func applyAppearance() -> Void {
         //Updates StatusBar Style
-        UIApplication.shared.statusBarStyle = sharedAppearanceManager.applicationStatusBarStyle
+        UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
         
         //Updates NavigationBar appearance
         self.navigationController?.applyAppearance()
         
         if !storyboardAppearance {
-            self.view.tintColor = sharedAppearanceManager.viewControllerViewTintColor
-            self.view.backgroundColor = sharedAppearanceManager.viewControllerViewBackgroundColor
+            self.view.tintColor = sharedAppearanceManager.appearance.viewControllerViewTintColor
+            self.view.backgroundColor = sharedAppearanceManager.appearance.viewControllerViewBackgroundColor
         }
         
         //Updates TabBar colors

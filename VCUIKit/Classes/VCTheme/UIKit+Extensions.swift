@@ -113,12 +113,12 @@ extension UIView {
 
 extension UIViewController {
     /** Sets the NavigationBar Title */
-    open func setNavitagionBarTitle(title : String?) {
+    open func setNavitagionBarTitle(text : String?) {
         self.navigationItem.title = title
     }
     
     /** Sets the NavigationBar Title View */
-    open func setNavitagionBarTitleView(view : UIView?) {
+    open func setNavitagionBarTitle(view : UIView?) {
         self.navigationItem.titleView = view
     }
     
@@ -150,12 +150,11 @@ extension UIViewController {
     internal func updateBackButtonStyle() {
         //Updates the BackButton Style
         let backButton = UIBarButtonItem()
-        backButton.title = sharedAppearanceManager.navigationBarBackButtonTitle
+        backButton.title = sharedAppearanceManager.appearance.navigationBarBackButtonTitle
         
         self.navigationItem.backBarButtonItem = backButton
     }
-    
-    /** Applies the custom appearance on this UIView */
+
     internal func applyAppearance() -> Void {
     }
 }
@@ -163,13 +162,13 @@ extension UIViewController {
 extension UITabBarController {
     override func applyAppearance() {
         //Updates Navbar Tint Color
-        self.tabBar.tintColor = sharedAppearanceManager.tabBarTintColor
+        self.tabBar.tintColor = sharedAppearanceManager.appearance.tabBarTintColor
         
-        self.tabBar.isTranslucent = sharedAppearanceManager.tabBarIsTranslucent
+        self.tabBar.isTranslucent = sharedAppearanceManager.appearance.tabBarIsTranslucent
         
         if let items = self.tabBar.items {
             for item in items {
-                item.setTitleTextAttributes([NSFontAttributeName: sharedAppearanceManager.tabBarFont], for: .normal)
+                item.setTitleTextAttributes([NSFontAttributeName: sharedAppearanceManager.appearance.tabBarFont], for: .normal)
             }
         }
     }
@@ -177,18 +176,18 @@ extension UITabBarController {
 
 extension UINavigationController {
     override func applyAppearance() {
-        self.navigationBar.isTranslucent = sharedAppearanceManager.navigationBarIsTranslucent
+        self.navigationBar.isTranslucent = sharedAppearanceManager.appearance.navigationBarIsTranslucent
         
         //Updates Navbar Tint Color
-        self.navigationBar.tintColor = sharedAppearanceManager.navigationBarTintColor
+        self.navigationBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
         
         //Updates Navbar Background Color
-        self.navigationBar.barTintColor = sharedAppearanceManager.navigationBarBackgroundColor
+        self.navigationBar.barTintColor = sharedAppearanceManager.appearance.navigationBarBackgroundColor
         
         //Updates NavigationBar title font
         self.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: sharedAppearanceManager.navigationBarTitleColor,
-            NSFontAttributeName: sharedAppearanceManager.navigationBarTitleFont
+            NSForegroundColorAttributeName: sharedAppearanceManager.appearance.navigationBarTitleColor,
+            NSFontAttributeName: sharedAppearanceManager.appearance.navigationBarTitleFont
         ]
     }
 }

@@ -852,12 +852,34 @@
                                     <constraint firstAttribute="width" constant="20" id="dPd-Nd-OYU"/>
                                 </constraints>
                             </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="VCTextField" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWz-v9-UQ6" customClass="VCTextField" customModule="VCUIKit">
+                                <rect key="frame" x="123" y="73" width="128" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1iq-fF-CBI"/>
+                                    <constraint firstAttribute="width" constant="128" id="tMA-KF-bKd"/>
+                                </constraints>
+                                <color key="textColor" red="0.70757772019999998" green="0.70757772019999998" blue="0.70757772019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="leading" secondItem="N8T-X1-Ixc" secondAttribute="trailing" constant="8" id="02X-Nr-6ww"/>
                             <constraint firstItem="Yqw-rf-Mju" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="0yD-7q-Tah"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="top" secondItem="wcb-RR-Doj" secondAttribute="bottom" constant="8" id="1gB-no-NDQ"/>
+                            <constraint firstItem="kWz-v9-UQ6" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="4f7-rx-KX1"/>
                             <constraint firstItem="go5-Vn-fOt" firstAttribute="top" secondItem="Yqw-rf-Mju" secondAttribute="bottom" constant="8" id="4os-1B-BVh"/>
                             <constraint firstItem="Gr0-jl-Lwh" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="8Uh-kY-mUd"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="leading" secondItem="rg3-Kf-Ipn" secondAttribute="trailing" constant="8" id="AIc-lD-uYk"/>
@@ -877,6 +899,7 @@
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="jzw-iF-u74"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="nl2-Sy-dEf"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="nqF-I8-D0X"/>
+                            <constraint firstItem="Gr0-jl-Lwh" firstAttribute="top" secondItem="kWz-v9-UQ6" secondAttribute="bottom" constant="8" id="oUt-co-Cue"/>
                             <constraint firstItem="PDP-ir-Nes" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="q2z-QV-ams"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="top" secondItem="TWk-q5-Q2b" secondAttribute="bottom" constant="8" id="sfd-r4-NQF"/>
                             <constraint firstItem="TWk-q5-Q2b" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="t4v-Gm-Jnb"/>
@@ -985,7 +1008,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jt4-Oa-CH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="829"/>
+            <point key="canvasLocation" x="-350" y="829"/>
         </scene>
     </scenes>
     <resources>

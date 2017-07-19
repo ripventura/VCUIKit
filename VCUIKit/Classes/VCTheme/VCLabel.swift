@@ -33,8 +33,8 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.font = sharedAppearanceManager.labelFont
-            self.textColor = sharedAppearanceManager.labelTextColor
+            self.font = sharedAppearanceManager.appearance.labelFont
+            self.textColor = sharedAppearanceManager.appearance.labelTextColor
         }
     }
 }

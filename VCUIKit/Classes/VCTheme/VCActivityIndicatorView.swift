@@ -38,7 +38,7 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.color = sharedAppearanceManager.activityIndicatorTintColor
+            self.color = sharedAppearanceManager.appearance.activityIndicatorTintColor
         }
     }
 }

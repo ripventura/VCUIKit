@@ -23,6 +23,7 @@
 		182BA2167DF9E31FDD15A4BCDC5010D8 /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC02DD78FDD81C68EAC81DA7C2D3EB46 /* TabView.xib */; };
 		18B1EB241F1CFE7700740EEB /* VCActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1EB221F1CFDC600740EEB /* VCActivityIndicatorView.swift */; };
 		18E193021F1FAC39009BCFEA /* VCAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E193011F1FAC39009BCFEA /* VCAlert.swift */; };
+		18E193041F1FCE92009BCFEA /* VCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E193031F1FCE92009BCFEA /* VCTextField.swift */; };
 		192B75717AF37AE68AE7C8496748218C /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0995352828011FB5BB7BE36298B819CA /* DKCameraResource.bundle */; };
 		1A0130E51AF422F68818416677EE6595 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B3595BA0517B5751F825DB0EE642D /* ActionSheetDatePicker.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		1D7F790DE84B5951F9D2F4F086D07261 /* DKAssetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1524C091F7B7E5DD0F0CEC108FBE4 /* DKAssetGroup.swift */; };
@@ -315,6 +316,7 @@
 		17B13F928206DACE4BCF71609DBB8B0F /* Presenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = SwiftMessages/Presenter.swift; sourceTree = "<group>"; };
 		18B1EB221F1CFDC600740EEB /* VCActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCActivityIndicatorView.swift; sourceTree = "<group>"; };
 		18E193011F1FAC39009BCFEA /* VCAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCAlert.swift; sourceTree = "<group>"; };
+		18E193031F1FCE92009BCFEA /* VCTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCTextField.swift; sourceTree = "<group>"; };
 		1A0218BC2654B8DBB046E9B8339D2205 /* DKPermissionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPermissionView.swift; path = DKImagePickerController/View/DKPermissionView.swift; sourceTree = "<group>"; };
 		1C85016056BA0E0D07DB8FD35AB7B167 /* FCAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FCAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DC78F6711DBF0B830FD5EC9651F7E2F /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ActionSheetDatePicker.h; path = Pickers/ActionSheetDatePicker.h; sourceTree = "<group>"; };
@@ -1023,6 +1025,7 @@
 				5733D39C5894BDD9544F5992879DF42A /* VCSegmentedControl.swift */,
 				18B1EB221F1CFDC600740EEB /* VCActivityIndicatorView.swift */,
 				68781D5E1DE8511706042490A71AFFE8 /* VCSwitch.swift */,
+				18E193031F1FCE92009BCFEA /* VCTextField.swift */,
 				0A5D4E92B4138E648445D818997B3C00 /* VCTableView.swift */,
 				4F030698CA909482C7377FBBD121C3EB /* VCTableViewCell.swift */,
 				3B02FAC166AFBFA7BDA01A973A5F7462 /* VCView.swift */,
@@ -1550,6 +1553,7 @@
 				98E85226964CE07D4ACFE5F3885501DC /* UIKit+Extensions.swift in Sources */,
 				EF19B2AF90B88FD6CA988C9A0F797BB7 /* VCActionSheetPicker.swift in Sources */,
 				257B239E4B6D4C79F8349B895B73ABF6 /* VCAlertView.swift in Sources */,
+				18E193041F1FCE92009BCFEA /* VCTextField.swift in Sources */,
 				1DFF0D65B1EA1611B48404E6CE78CEC5 /* VCAppearanceManager.swift in Sources */,
 				9C02D43F744B034788DABC2AF3D1DD06 /* VCBannerCreator.swift in Sources */,
 				BDA587F6657815F57DE06AF4A54D7413 /* VCButton.swift in Sources */,

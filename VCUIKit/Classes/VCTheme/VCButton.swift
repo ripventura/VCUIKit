@@ -33,8 +33,8 @@ import UIKit
     
     override func applyAppearance() -> Void {
         if !storyboardAppearance {
-            self.titleLabel?.font = sharedAppearanceManager.buttonFont
-            self.setTitleColor(sharedAppearanceManager.buttonTintColor, for: .normal)
+            self.titleLabel?.font = sharedAppearanceManager.appearance.buttonFont
+            self.setTitleColor(sharedAppearanceManager.appearance.buttonTintColor, for: .normal)
         }
     }
 }

@@ -91,15 +91,15 @@ open class VCBannerCreator {
         
         // Configures the message background color and content
         if theme == .success {
-            //view.configureTheme(backgroundColor: sharedAppearanceManager.bannerSuccessBackgroundColor, foregroundColor: UIColor.whiteColor())
+            //view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerSuccessBackgroundColor, foregroundColor: UIColor.whiteColor())
             view.configureContent(title: title != nil ? title! : "Success", body: message)
         }
         else if theme == .error {
-            //view.configureTheme(backgroundColor: sharedAppearanceManager.bannerErrorBackgroundColor, foregroundColor: UIColor.whiteColor())
+            //view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerErrorBackgroundColor, foregroundColor: UIColor.whiteColor())
             view.configureContent(title: title != nil ? title! : "Error", body: message)
         }
         else if theme == .info {
-            //view.configureTheme(backgroundColor: sharedAppearanceManager.bannerInfoBackgroundColor, foregroundColor: UIColor.whiteColor())
+            //view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerInfoBackgroundColor, foregroundColor: UIColor.whiteColor())
             view.configureContent(title: title != nil ? title! : "Info", body: message)
         }
         
@@ -147,7 +147,7 @@ open class VCBannerCreator {
         config.interactiveHide = false
         
         // Specify a status bar style to if the message is displayed directly under the status bar.
-        config.preferredStatusBarStyle = sharedAppearanceManager.applicationStatusBarStyle
+        config.preferredStatusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
         
         // Instantiate a message view from the provided card view layout. SwiftMessages searches for nib
         // files in the main bundle first, so you can easily copy them into your project and make changes.
@@ -157,8 +157,8 @@ open class VCBannerCreator {
         view.configureContent(body: message)
         
         if theme == nil {
-            view.backgroundView.backgroundColor = sharedAppearanceManager.navigationBarBackgroundColor
-            view.bodyLabel?.textColor = sharedAppearanceManager.navigationBarTintColor
+            view.backgroundView.backgroundColor = sharedAppearanceManager.appearance.navigationBarBackgroundColor
+            view.bodyLabel?.textColor = sharedAppearanceManager.appearance.navigationBarTintColor
         } else {
             // Theme message elements with the desired style.
             view.configureTheme(theme!)

@@ -29,9 +29,9 @@ open class VCHUD {
         SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
         SVProgressHUD.setMinimumDismissTimeInterval(2)
         
-        SVProgressHUD.setRingThickness(sharedAppearanceManager.hudRingWidth)
-        SVProgressHUD.setCornerRadius(sharedAppearanceManager.hudCornerRadius)
-        SVProgressHUD.setFont(sharedAppearanceManager.hudMessageFont)
+        SVProgressHUD.setRingThickness(sharedAppearanceManager.appearance.hudRingWidth)
+        SVProgressHUD.setCornerRadius(sharedAppearanceManager.appearance.hudCornerRadius)
+        SVProgressHUD.setFont(sharedAppearanceManager.appearance.hudMessageFont)
     }
     
     /**
