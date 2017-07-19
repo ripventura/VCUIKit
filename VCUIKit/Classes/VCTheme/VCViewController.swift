@@ -15,8 +15,13 @@ import UIKit
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.willSetDefaultStyles()
         self.updateBackButtonStyle()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.willSetDefaultStyles()
         self.applyAppearance()
     }
     
@@ -285,8 +290,13 @@ extension VCTabledViewController: UISearchBarDelegate {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.willSetDefaultStyles()
         self.updateBackButtonStyle()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.willSetDefaultStyles()
         self.applyAppearance()
     }
     
