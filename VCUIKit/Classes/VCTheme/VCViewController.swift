@@ -97,6 +97,9 @@ extension VCViewController: UITextFieldDelegate {
         self.setupRefreshControl()
         
         self.configureSearchControl()
+        
+        self.tableView?.rowHeight = UITableViewAutomaticDimension
+        self.tableView?.estimatedRowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
     }
     
     /** Populates the Interface with its UI Objects */
@@ -264,7 +267,7 @@ extension VCTabledViewController: UITableViewDelegate {
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let appearance = (tableView as? VCTableView)?.storyboardAppearance
-        return appearance != nil ? (appearance! ? tableView.rowHeight : sharedAppearanceManager.appearance.tableViewCellHeight) : tableView.rowHeight
+        return appearance != nil ? (appearance! ? tableView.rowHeight : UITableViewAutomaticDimension) : UITableViewAutomaticDimension
     }
 }
 extension VCTabledViewController: UITableViewDataSource {

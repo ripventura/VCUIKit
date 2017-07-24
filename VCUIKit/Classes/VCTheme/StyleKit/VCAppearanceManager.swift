@@ -47,7 +47,7 @@ open class VCAppearance {
     open var tableViewCellTitleFont : UIFont
     open var tableViewCellDetailTextColor : UIColor
     open var tableViewCellDetailFont : UIFont
-    open var tableViewCellHeight: CGFloat
+    open var tableViewCellEstimatedHeight: CGFloat
     
     open var tableViewBackgroundColor : UIColor
     
@@ -108,7 +108,7 @@ open class VCAppearance {
         tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tableViewCellDetailTextColor = VCUIKitStyleKit.tableViewDetailTextColor
         tableViewCellDetailFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
-        tableViewCellHeight = 60
+        tableViewCellEstimatedHeight = 60
         
         // MARK: - VCTableView
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
@@ -116,7 +116,7 @@ open class VCAppearance {
         // MARK: - UIStatusBar
         applicationStatusBarStyle = UIStatusBarStyle.lightContent
         
-        // MARk: - UINavigationBar
+        // MARK: - UINavigationBar
         navigationBarTintColor = VCUIKitStyleKit.navigationBarTintColor
         navigationBarBackgroundColor = VCUIKitStyleKit.navigationBarBackgroundColor
         navigationBarTitleColor = VCUIKitStyleKit.white
