@@ -12,13 +12,10 @@ import UIKit
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
-    // MARK: Lifecycle
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
         self.updateBackButtonStyle()
-        self.listenToAppearanceNotifications()
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -33,11 +30,6 @@ import UIKit
         
         self.applyAppearance()
     }
-    
-    deinit {
-        self.removeAppearanceNotifications()
-    }
-    
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
@@ -302,7 +294,6 @@ extension VCTabledViewController: UISearchBarDelegate {
         super.viewDidLoad()
         
         self.updateBackButtonStyle()
-        self.listenToAppearanceNotifications()
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -316,10 +307,6 @@ extension VCTabledViewController: UISearchBarDelegate {
         super.prepareForInterfaceBuilder()
         
         self.applyAppearance()
-    }
-    
-    deinit {
-        self.removeAppearanceNotifications()
     }
     
     /** Override this if you want to change the Default Styles for this particular View Controller */

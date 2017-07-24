@@ -16,13 +16,11 @@ import UIKit
         super.init(frame: frame)
         
         self.applyAppearance()
-        self.listenToAppearanceNotifications()
     }
     public override init(items: [Any]?) {
         super.init(items: items)
         
         self.applyAppearance()
-        self.listenToAppearanceNotifications()
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,15 +29,11 @@ import UIKit
         super.awakeFromNib()
         
         self.applyAppearance()
-        self.listenToAppearanceNotifications()
     }
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
         self.applyAppearance()
-    }
-    deinit {
-        self.removeAppearanceNotifications()
     }
     
     override open func applyAppearance() -> Void {

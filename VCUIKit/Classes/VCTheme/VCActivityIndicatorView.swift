@@ -16,7 +16,6 @@ import UIKit
         super.init(frame: frame)
         
         self.applyAppearance()
-        self.listenToAppearanceNotifications()
     }
     public required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,21 +24,16 @@ import UIKit
         super.init(activityIndicatorStyle: style)
         
         self.applyAppearance()
-        self.listenToAppearanceNotifications()
     }
     open override func awakeFromNib() {
         super.awakeFromNib()
         
         self.applyAppearance()
-        self.listenToAppearanceNotifications()
     }
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         
         self.applyAppearance()
-    }
-    deinit {
-        self.removeAppearanceNotifications()
     }
     
     override open func applyAppearance() -> Void {

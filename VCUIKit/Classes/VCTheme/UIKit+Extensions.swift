@@ -9,8 +9,6 @@
 import UIKit
 import SnapKit
 
-public let applyAppearanceNotification = Notification.Name.init(rawValue: "VCUIKitApplyAppearanceNotification")
-
 extension UITextField {
     /** Sets a Done Toolbar as InputAccessoryView */
     open func shouldUseDoneToolbar(shouldUse : Bool) {
@@ -110,18 +108,9 @@ extension UIView {
     
     /** Applies the custom appearance on this UIView */
     open func applyAppearance() -> Void {
-    }
-    
-    // MARK: Appearance Notifications
-    
-    func listenToAppearanceNotifications() -> Void {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applyAppearanceNotificationTriggered(notification:)), name: applyAppearanceNotification, object: nil)
-    }
-    func removeAppearanceNotifications() -> Void {
-        NotificationCenter.default.removeObserver(self, name: applyAppearanceNotification, object: nil)
-    }
-    func applyAppearanceNotificationTriggered(notification: Notification) -> Void {
-        self.applyAppearance()
+        for subview in self.subviews {
+            subview.applyAppearance()
+        }
     }
 }
 
@@ -170,18 +159,7 @@ extension UIViewController {
     }
     
     open func applyAppearance() -> Void {
-    }
-    
-    // MARK: Appearance Notifications
-    
-    func listenToAppearanceNotifications() -> Void {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applyAppearanceNotificationTriggered(notification:)), name: applyAppearanceNotification, object: nil)
-    }
-    func removeAppearanceNotifications() -> Void {
-        NotificationCenter.default.removeObserver(self, name: applyAppearanceNotification, object: nil)
-    }
-    func applyAppearanceNotificationTriggered(notification: Notification) -> Void {
-        self.applyAppearance()
+        self.view.applyAppearance()
     }
 }
 

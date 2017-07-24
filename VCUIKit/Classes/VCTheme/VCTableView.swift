@@ -18,7 +18,6 @@ import UIKit
         self.applyAppearance()
         
         self.setupNotifications()
-        self.listenToAppearanceNotifications()
     }
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,7 +28,6 @@ import UIKit
         self.applyAppearance()
         
         self.setupNotifications()
-        self.listenToAppearanceNotifications()
     }
     open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
@@ -40,7 +38,6 @@ import UIKit
     
     deinit {
         self.removeNotifications()
-        self.removeAppearanceNotifications()
     }
     
     override open func applyAppearance() -> Void {
