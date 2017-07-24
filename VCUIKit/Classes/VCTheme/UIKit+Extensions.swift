@@ -107,7 +107,7 @@ extension UIView {
     }
     
     /** Applies the custom appearance on this UIView */
-    internal func applyAppearance() -> Void {
+    open func applyAppearance() -> Void {
         for subview in self.subviews {
             subview.applyAppearance()
         }
@@ -158,13 +158,13 @@ extension UIViewController {
         self.navigationItem.backBarButtonItem = backButton
     }
     
-    internal func applyAppearance() -> Void {
+    open func applyAppearance() -> Void {
         self.view.applyAppearance()
     }
 }
 
 extension UITabBarController {
-    override func applyAppearance() {
+    override open func applyAppearance() {
         //Updates Navbar Tint Color
         self.tabBar.tintColor = sharedAppearanceManager.appearance.tabBarTintColor
         
@@ -179,7 +179,7 @@ extension UITabBarController {
 }
 
 extension UINavigationController {
-    override func applyAppearance() {
+    override open func applyAppearance() {
         self.navigationBar.isTranslucent = sharedAppearanceManager.appearance.navigationBarIsTranslucent
         
         //Updates Navbar Tint Color

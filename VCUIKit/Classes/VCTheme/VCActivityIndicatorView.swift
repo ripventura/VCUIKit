@@ -36,7 +36,7 @@ import UIKit
         self.applyAppearance()
     }
     
-    override func applyAppearance() -> Void {
+    override open func applyAppearance() -> Void {
         super.applyAppearance()
         
         if !storyboardAppearance {

@@ -40,7 +40,7 @@ import UIKit
         super.prepare(for: segue, sender: sender)
     }
     
-    override func applyAppearance() -> Void {
+    override open func applyAppearance() -> Void {
         super.applyAppearance()
         
         //Updates StatusBar Style
@@ -318,7 +318,7 @@ extension VCTabledViewController: UISearchBarDelegate {
         super.prepare(for: segue, sender: sender)
     }
     
-    override func applyAppearance() -> Void {
+    override open func applyAppearance() -> Void {
         super.applyAppearance()
         
         //Updates StatusBar Style

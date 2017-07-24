@@ -40,7 +40,7 @@ import UIKit
         self.removeNotifications()
     }
     
-    override func applyAppearance() -> Void {
+    override open func applyAppearance() -> Void {
         super.applyAppearance()
         
         if !storyboardAppearance {
