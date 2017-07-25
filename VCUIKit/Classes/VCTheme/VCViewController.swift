@@ -21,7 +21,6 @@ import UIKit
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.willSetDefaultStyles()
         self.applyAppearance()
     }
     
@@ -41,6 +40,7 @@ import UIKit
     }
     
     override open func applyAppearance() -> Void {
+        self.willSetDefaultStyles()
         super.applyAppearance()
         
         //Updates StatusBar Style
@@ -299,7 +299,6 @@ extension VCTabledViewController: UISearchBarDelegate {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.willSetDefaultStyles()
         self.applyAppearance()
     }
     
@@ -319,6 +318,7 @@ extension VCTabledViewController: UISearchBarDelegate {
     }
     
     override open func applyAppearance() -> Void {
+        self.willSetDefaultStyles()
         super.applyAppearance()
         
         //Updates StatusBar Style
