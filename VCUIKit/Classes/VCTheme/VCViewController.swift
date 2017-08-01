@@ -175,6 +175,11 @@ extension VCViewController: UITextFieldDelegate {
         })
     }
     
+    /** Reloads TableView Data */
+    open func reloadData() {
+        self.tableView?.reloadData()
+    }
+    
     // MARK: - Placeholders
     
     /** Enables / Disables the Placeholder View */
