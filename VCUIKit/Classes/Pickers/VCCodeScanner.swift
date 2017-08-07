@@ -14,9 +14,9 @@ open class VCCodeScanner: NSObject {
     /** Shows a VCCodeScannerViewController.
      
      - Parameters
-        - parentViewController: A viewController resposible for presenting the new one.
-        - delegate: The VCCodeScannerDelegate to handle scanning calls.
-        - scannerViewController: An optional sublclass from VCCodeScannerViewController.
+     - parentViewController: A viewController resposible for presenting the new one.
+     - delegate: The VCCodeScannerDelegate to handle scanning calls.
+     - scannerViewController: An optional sublclass from VCCodeScannerViewController.
      */
     open static func showScanner(parentViewController: UIViewController,
                                  delegate: VCCodeScannerDelegate,
@@ -31,11 +31,6 @@ public protocol VCCodeScannerDelegate {
      * Called when the scanner scans a valid Code
      */
     func scanner(scanner : VCCodeScannerViewController, didFinnishScanningWithResult result: String)
-    
-    /**
-     * Called when the scanner scans an invalid code
-     */
-    func scannerDidFailScanning(scanner : VCCodeScannerViewController)
 }
 
 open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutputObjectsDelegate {
@@ -47,7 +42,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     
     var flashSwitch : UISwitch?
     
-    public var delegate : VCCodeScannerDelegate?
+    open var delegate : VCCodeScannerDelegate?
     
     let supportedCodeTypes = [AVMetadataObjectTypeUPCECode,
                               AVMetadataObjectTypeCode39Code,
@@ -59,6 +54,22 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
                               AVMetadataObjectTypeAztecCode,
                               AVMetadataObjectTypePDF417Code,
                               AVMetadataObjectTypeQRCode]
+    
+    /** Wheter the viewController should dismiss itself after the first scan occurs */
+    open var singleScan: Bool {
+        return true
+    }
+    
+    /** Wheter the viewController is ready to evaluate a scanned object */
+    open var readyToScan: Bool = true
+    
+    open override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -218,33 +229,35 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Called after a code is scanned
+    open func didScan(code: String) {
+        self.delegate?.scanner(scanner: self, didFinnishScanningWithResult: code)
+        
+        if self.singleScan {
+            self.finishScanning()
+        }
+    }
+    
     // MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
     
     open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        
-        // Check if the metadataObjects array is not nil and it contains at least one object.
-        if metadataObjects == nil || metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
+        if self.readyToScan && metadataObjects != nil && metadataObjects.count > 0 {
             
-            self.delegate?.scannerDidFailScanning(scanner: self)
+            // Get the metadata object.
+            let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
             
-            self.finishScanning()
-            return
-        }
-        
-        // Get the metadata object.
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
-        
-        if supportedCodeTypes.contains(metadataObj.type) {
-            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
-            
-            if metadataObj.stringValue != nil {
-                self.delegate?.scanner(scanner: self, didFinnishScanningWithResult: metadataObj.stringValue)
+            if supportedCodeTypes.contains(metadataObj.type) {
+                // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+                let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+                qrCodeFrameView?.frame = barCodeObject!.bounds
                 
-                self.finishScanning()
+                if metadataObj.stringValue != nil {
+                    self.didScan(code: metadataObj.stringValue)
+                    return
+                }
             }
         }
+        
+        qrCodeFrameView?.frame = CGRect.zero
     }
 }
