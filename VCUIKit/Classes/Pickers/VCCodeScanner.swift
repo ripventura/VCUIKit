@@ -40,7 +40,10 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     var videoPreviewLayer : AVCaptureVideoPreviewLayer?
     var qrCodeFrameView : UIView?
     
-    var flashSwitch : UISwitch?
+    @IBOutlet var flashSwitch: VCSwitch?
+    @IBOutlet var flashLabel: VCLabel?
+    @IBOutlet var descriptionLabel: VCLabel?
+    @IBOutlet var cancelButton: VCButton?
     
     open var delegate : VCCodeScannerDelegate?
     
@@ -99,13 +102,12 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
+            
+            // Populate the interface elements
+            self.populateInterface(previewLayer: videoPreviewLayer!)
             
             // Start video capture.
             captureSession?.startRunning()
-            
-            // Populate the interface elements
-            self.populateInterface()
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
@@ -130,70 +132,90 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     }
     
     // Populates the interface elements
-    func populateInterface() {
+    func populateInterface(previewLayer: AVCaptureVideoPreviewLayer) {
         
-        let textLabel = UILabel(frame: CGRectDefault)
-        textLabel.textColor = UIColor.white
-        textLabel.shadowColor = UIColor.black
-        textLabel.textAlignment = NSTextAlignment.center
-        textLabel.numberOfLines = 3
-        textLabel.minimumScaleFactor = 0.5
-        textLabel.text = "Center the QR code in the camera\nTry avoiding shadows and glares"
-        self.view.addSubview(textLabel)
-        textLabel.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(self.view).offset(68)
-            make.left.equalTo(self.view).offset(8)
-            make.right.equalTo(self.view).offset(8)
-            make.height.equalTo(80)
+        let view = UIView(frame: CGRectDefault)
+        self.view.addSubview(view)
+        self.view.sendSubview(toBack: view)
+        view.snp.makeConstraints { (make) -> Void in
+            make.edges.equalToSuperview()
         }
+        view.layer.addSublayer(previewLayer)
+        
+        if self.descriptionLabel == nil {
+            self.descriptionLabel = VCLabel(frame: CGRectDefault)
+            self.descriptionLabel?.textColor = UIColor.white
+            self.descriptionLabel?.shadowColor = UIColor.black
+            self.descriptionLabel?.textAlignment = NSTextAlignment.center
+            self.descriptionLabel?.numberOfLines = 3
+            self.descriptionLabel?.minimumScaleFactor = 0.5
+            self.descriptionLabel?.text = "Center the QR code in the camera\nTry avoiding shadows and glares"
+            self.view.addSubview(self.descriptionLabel!)
+            self.descriptionLabel?.snp.makeConstraints { (make) -> Void in
+                make.top.equalTo(self.view).offset(68)
+                make.left.equalTo(self.view).offset(8)
+                make.right.equalTo(self.view).offset(8)
+                make.height.equalTo(80)
+            }
+        }
+        
         
         if self.isFlashAvailable() {
-            flashSwitch = UISwitch(frame: CGRectDefault)
-            flashSwitch!.isOn = false
-            self.view.addSubview(flashSwitch!)
-            flashSwitch!.snp.makeConstraints { (make) -> Void in
-                make.right.equalTo(flashSwitch!.superview!).offset(-8)
-                make.top.equalTo(flashSwitch!.superview!).offset(20)
-                make.width.equalTo(51)
-                make.height.equalTo(36)
+            if self.flashSwitch == nil {
+                self.flashSwitch = VCSwitch(frame: CGRectDefault)
+                self.flashSwitch?.isOn = false
+                self.view.addSubview(self.flashSwitch!)
+                flashSwitch!.snp.makeConstraints { (make) -> Void in
+                    make.right.equalTo(self.flashSwitch!.superview!).offset(-8)
+                    make.top.equalTo(self.flashSwitch!.superview!).offset(20)
+                    make.width.equalTo(51)
+                    make.height.equalTo(36)
+                }
+                flashSwitch!.addTarget(self, action: #selector(VCCodeScannerViewController.flashSwitchValueChanged(_:)), for: UIControlEvents.valueChanged)
             }
-            flashSwitch!.addTarget(self, action: #selector(VCCodeScannerViewController.flashSwitchValueChanged(sender:)), for: UIControlEvents.valueChanged)
             
-            
-            let flashLabel = UILabel(frame: CGRectDefault)
-            flashLabel.textColor = UIColor.white
-            flashLabel.shadowColor = UIColor.black
-            flashLabel.textAlignment = NSTextAlignment.right
-            flashLabel.minimumScaleFactor = 0.5
-            flashLabel.text = "Camera flash"
-            self.view.addSubview(flashLabel)
-            flashLabel.snp.makeConstraints { (make) -> Void in
-                make.top.equalTo(flashSwitch!)
-                make.left.equalTo(self.view).offset(8)
-                make.right.equalTo(flashSwitch!.snp.left).offset(-8)
-                make.height.equalTo(flashSwitch!)
+            if self.flashLabel == nil {
+                self.flashLabel = VCLabel(frame: CGRectDefault)
+                self.flashLabel?.textColor = UIColor.white
+                self.flashLabel?.shadowColor = UIColor.black
+                self.flashLabel?.textAlignment = NSTextAlignment.right
+                self.flashLabel?.minimumScaleFactor = 0.5
+                self.flashLabel?.text = "Flash"
+                self.view.addSubview(self.flashLabel!)
+                self.flashLabel?.snp.makeConstraints { (make) -> Void in
+                    make.top.equalTo(self.flashSwitch!)
+                    make.left.equalTo(self.view).offset(8)
+                    make.right.equalTo(self.flashSwitch!.snp.left).offset(-8)
+                    make.height.equalTo(self.flashSwitch!)
+                }
             }
         }
+        else {
+            self.flashSwitch?.isHidden = true
+            self.flashLabel?.isHidden = true
+        }
         
-        let cancelButton = UIButton(frame: CGRectDefault)
-        cancelButton.setTitle("Cancel", for: UIControlState.normal)
-        cancelButton.addTarget(self, action: #selector(VCCodeScannerViewController.cancelButtonPressed(sender:)), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(cancelButton)
-        cancelButton.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(cancelButton.superview!).offset(20)
-            make.bottom.equalTo(cancelButton.superview!).offset(-20)
-            make.right.equalTo(cancelButton.superview!).offset(-20)
-            make.height.equalTo(60)
+        if self.cancelButton == nil {
+            self.cancelButton = VCButton(frame: CGRectDefault)
+            self.cancelButton?.setTitle("Cancel", for: UIControlState.normal)
+            self.cancelButton?.addTarget(self, action: #selector(VCCodeScannerViewController.cancelButtonPressed(_:)), for: UIControlEvents.touchUpInside)
+            self.view.addSubview(self.cancelButton!)
+            self.cancelButton?.snp.makeConstraints { (make) -> Void in
+                make.left.equalTo(self.cancelButton!.superview!).offset(20)
+                make.bottom.equalTo(self.cancelButton!.superview!).offset(-20)
+                make.right.equalTo(self.cancelButton!.superview!).offset(-20)
+                make.height.equalTo(60)
+            }
         }
     }
     
     // Called after the Cancel button has been pressed
-    func cancelButtonPressed(sender : Any) {
+    @IBAction func cancelButtonPressed(_ sender : Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     // Called after the Flash Switch changed value
-    func flashSwitchValueChanged(sender : Any) {
+    @IBAction func flashSwitchValueChanged(_ sender : Any) {
         if self.isFlashAvailable() {
             if flashSwitch!.isOn {
                 
