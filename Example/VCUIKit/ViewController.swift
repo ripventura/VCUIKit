@@ -110,8 +110,11 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
                                                         message: "Error message")
             case 2:
                 sharedBannerCreator.showBanner(theme: .info,
-                                                        message: "Info message")
+                                               message: "Info message")
             case 3:
+                sharedBannerCreator.showBanner(theme: .warning,
+                                               message: "Warning message")
+            case 4:
                 let customView = UIView(frame: CGRectDefault)
                 customView.backgroundColor = UIColor.purple
                 

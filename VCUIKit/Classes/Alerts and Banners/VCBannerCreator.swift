@@ -11,14 +11,9 @@ import SwiftMessages
 
 public let sharedBannerCreator : VCBannerCreator = VCBannerCreator()
 
-
 open class VCBannerCreator {
     
     var bannerMessager : SwiftMessages
-    
-    enum DefaultErrorMessage: String {
-        case IncorrectInput = "The information provided is incorrect. Please try again."
-    }
     
     init() {
         bannerMessager = SwiftMessages()
@@ -70,7 +65,7 @@ open class VCBannerCreator {
         // Dim the background like a popover view. Can also hide when the background is tapped.
         config.dimMode = windowDimMode
         
-        // Eisable the interactive pan-to-hide gesture.
+        // Disable the interactive pan-to-hide gesture.
         config.interactiveHide = dismissesOnTap
         
         // Specify a status bar style to if the message is displayed directly under the status bar.
@@ -91,16 +86,24 @@ open class VCBannerCreator {
         
         // Configures the message background color and content
         if theme == .success {
-            //view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerSuccessBackgroundColor, foregroundColor: UIColor.whiteColor())
+            view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerSuccessBackgroundColor,
+                                foregroundColor: sharedAppearanceManager.appearance.bannerSuccessTextColor)
             view.configureContent(title: title != nil ? title! : "Success", body: message)
         }
         else if theme == .error {
-            //view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerErrorBackgroundColor, foregroundColor: UIColor.whiteColor())
+            view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerErrorBackgroundColor,
+                                foregroundColor: sharedAppearanceManager.appearance.bannerErrorTextColor)
             view.configureContent(title: title != nil ? title! : "Error", body: message)
         }
         else if theme == .info {
-            //view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerInfoBackgroundColor, foregroundColor: UIColor.whiteColor())
+            view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerInfoBackgroundColor,
+                                foregroundColor: sharedAppearanceManager.appearance.bannerInfoTextColor)
             view.configureContent(title: title != nil ? title! : "Info", body: message)
+        }
+        else if theme == .warning {
+            view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerWarningBackgroundColor,
+                                foregroundColor: sharedAppearanceManager.appearance.bannerWarningTextColor)
+            view.configureContent(title: title != nil ? title! : "Warning", body: message)
         }
         
         // Hides the Button
@@ -162,6 +165,24 @@ open class VCBannerCreator {
         } else {
             // Theme message elements with the desired style.
             view.configureTheme(theme!)
+            
+            // Configures the message background color and content
+            if theme == .success {
+                view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerSuccessBackgroundColor,
+                                    foregroundColor: sharedAppearanceManager.appearance.bannerSuccessTextColor)
+            }
+            else if theme == .error {
+                view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerErrorBackgroundColor,
+                                    foregroundColor: sharedAppearanceManager.appearance.bannerErrorTextColor)
+            }
+            else if theme == .info {
+                view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerInfoBackgroundColor,
+                                    foregroundColor: sharedAppearanceManager.appearance.bannerInfoTextColor)
+            }
+            else if theme == .warning {
+                view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerWarningBackgroundColor,
+                                    foregroundColor: sharedAppearanceManager.appearance.bannerWarningTextColor)
+            }
         }
         
         DispatchQueue.main.async {
@@ -235,7 +256,7 @@ open class VCBannerCreator {
     /** Hides all banners **/
     public func hideBanners() {
         DispatchQueue.main.async {
-            self.bannerMessager.hide()
+            self.bannerMessager.hideAll()
         }
     }
 }

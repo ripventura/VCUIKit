@@ -80,6 +80,11 @@ open class VCAppearance {
     open var bannerSuccessBackgroundColor : UIColor
     open var bannerErrorBackgroundColor : UIColor
     open var bannerInfoBackgroundColor : UIColor
+    open var bannerWarningBackgroundColor : UIColor
+    open var bannerSuccessTextColor : UIColor
+    open var bannerErrorTextColor : UIColor
+    open var bannerInfoTextColor : UIColor
+    open var bannerWarningTextColor : UIColor
     open var bannerFont : UIFont
     
     open var alertTitleFont : UIFont
@@ -144,6 +149,11 @@ open class VCAppearance {
         bannerSuccessBackgroundColor = VCUIKitStyleKit.bannerSuccessBackgroundColor
         bannerErrorBackgroundColor = VCUIKitStyleKit.bannerDangerBackgroundColor
         bannerInfoBackgroundColor = VCUIKitStyleKit.bannerInfoBackgroundColor
+        bannerWarningBackgroundColor = UIColor.orange
+        bannerSuccessTextColor = UIColor.white
+        bannerErrorTextColor = UIColor.white
+        bannerInfoTextColor = UIColor.darkText
+        bannerWarningTextColor = UIColor.white
         bannerFont = UIFont.systemFont(ofSize: 12)
         
         // MARK: - VCAlertView
