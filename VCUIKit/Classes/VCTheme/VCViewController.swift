@@ -102,6 +102,12 @@ extension VCViewController: UITextFieldDelegate {
         self.tableView?.estimatedRowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
     }
     
+    override open func applyAppearance() -> Void {
+        super.applyAppearance()
+        
+        (searchController.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = sharedAppearanceManager.appearance.navigationBarTitleColor
+    }
+    
     /** Populates the Interface with its UI Objects */
     private func populateInterface() {
         if self.tableView == nil {
