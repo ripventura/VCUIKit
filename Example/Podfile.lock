@@ -9,10 +9,10 @@ PODS:
   - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
   - SwiftMessages (3.3.3)
-  - VCUIKit (0.0.53):
+  - VCUIKit (0.0.56):
     - ActionSheetPicker-3.0 (= 2.2.0)
     - DKImagePickerController (= 3.5.0)
-    - FCAlertView (~> 1.4)
+    - FCAlertView (= 1.4)
     - SnapKit (= 3.2.0)
     - SVProgressHUD (= 2.1.2)
     - SwiftMessages (= 3.3.3)
@@ -20,7 +20,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (= 2.2.0)
   - DKImagePickerController (= 3.5.0)
-  - FCAlertView (~> 1.4)
+  - FCAlertView (= 1.4)
   - SnapKit (= 3.2.0)
   - SVProgressHUD (= 2.1.2)
   - SwiftMessages (= 3.3.3)
@@ -28,7 +28,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   VCUIKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
@@ -37,8 +37,8 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftMessages: 09cea3336e3fb63c3578983c8aac65acaa6d884a
-  VCUIKit: 77a7351c447fc97973912b7b78f413bcc4d0e3be
+  VCUIKit: f7ecd01ec41abc5185633b7b9e402c0a7d1c8b00
 
-PODFILE CHECKSUM: 0eb6fc07e2105c7e79353cb1dd0b34f9e52e3220
+PODFILE CHECKSUM: ab58f7148b489b093cb7218a6529fe26402241c6
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

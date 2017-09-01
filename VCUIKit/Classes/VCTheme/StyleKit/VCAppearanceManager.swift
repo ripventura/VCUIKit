@@ -22,7 +22,7 @@ open class VCAppearanceManager {
 }
 
 /** Default Appearance used on ViewControllers that don't override any styles.
-    Override this with a subclass of VCAppearance to change the default appearance of the app. */
+ Override this with a subclass of VCAppearance to change the default appearance of the app. */
 public var defaultAppearance: VCAppearance = VCAppearance()
 
 open class VCAppearance {
@@ -76,7 +76,7 @@ open class VCAppearance {
     open var tabBarBackgroundColor : UIColor
     open var tabBarFont : UIFont
     open var tabBarIsTranslucent : Bool
-        
+    
     open var bannerSuccessBackgroundColor : UIColor
     open var bannerErrorBackgroundColor : UIColor
     open var bannerInfoBackgroundColor : UIColor
@@ -113,7 +113,7 @@ open class VCAppearance {
         tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tableViewCellDetailTextColor = VCUIKitStyleKit.tableViewDetailTextColor
         tableViewCellDetailFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
-        tableViewCellEstimatedHeight = 60
+        tableViewCellEstimatedHeight = 44
         
         // MARK: - VCTableView
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor

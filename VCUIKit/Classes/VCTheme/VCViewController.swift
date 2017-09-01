@@ -92,14 +92,14 @@ extension VCViewController: UITextFieldDelegate {
     override open func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView?.estimatedRowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
+        tableView?.rowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
+        
         self.populateInterface()
         
         self.setupRefreshControl()
         
         self.configureSearchControl()
-        
-        self.tableView?.rowHeight = UITableViewAutomaticDimension
-        self.tableView?.estimatedRowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
     }
     
     override open func applyAppearance() -> Void {
@@ -277,8 +277,10 @@ extension VCTabledViewController: UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let appearance = (tableView as? VCTableView)?.storyboardAppearance
-        return appearance != nil ? (appearance! ? tableView.rowHeight : UITableViewAutomaticDimension) : UITableViewAutomaticDimension
+        if ((tableView as? VCTableView)?.storyboardAppearance) != nil {
+            return tableView.rowHeight
+        }
+        return sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
     }
 }
 extension VCTabledViewController: UITableViewDataSource {
