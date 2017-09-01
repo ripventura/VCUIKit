@@ -4,7 +4,6 @@ All the code was done by me, so please if you think you can contribute, lets sha
 
 When I get some time I will update the Wiki page with detailed description of each class / method.
 
-[![CI Status](http://img.shields.io/travis/ripventura/VCUIKit.svg?style=flat)](https://travis-ci.org/ripventura/VCUIKit)
 [![Version](https://img.shields.io/cocoapods/v/VCUIKit.svg?style=flat)](http://cocoapods.org/pods/VCUIKit)
 [![License](https://img.shields.io/cocoapods/l/VCUIKit.svg?style=flat)](http://cocoapods.org/pods/VCUIKit)
 [![Platform](https://img.shields.io/cocoapods/p/VCUIKit.svg?style=flat)](http://cocoapods.org/pods/VCUIKit)
@@ -13,7 +12,7 @@ When I get some time I will update the Wiki page with detailed description of ea
 To run the example project, simply clone the repo and open Example/VCUIKit.xcworkspace.
 
 ## Requirements
-- iOS >= 9.0
+- iOS >= 8.0
 
 ## Installation
 
