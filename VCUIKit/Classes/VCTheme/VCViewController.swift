@@ -282,6 +282,10 @@ extension VCTabledViewController: UITableViewDelegate {
         }
         return sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
     }
+    
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0001
+    }
 }
 extension VCTabledViewController: UITableViewDataSource {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
