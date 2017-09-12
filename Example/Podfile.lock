@@ -9,7 +9,7 @@ PODS:
   - SnapKit (3.2.0)
   - SVProgressHUD (2.1.2)
   - SwiftMessages (3.3.3)
-  - VCUIKit (0.0.57):
+  - VCUIKit (0.0.58):
     - ActionSheetPicker-3.0 (= 2.2.0)
     - DKImagePickerController (= 3.5.0)
     - FCAlertView (= 1.4)
@@ -37,7 +37,7 @@ SPEC CHECKSUMS:
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftMessages: 09cea3336e3fb63c3578983c8aac65acaa6d884a
-  VCUIKit: b2144bd57783db702d0cfb9ad55ff065ec72a783
+  VCUIKit: 7a54ec2c8353a13f663ef3696cb7b2bd7a628cc6
 
 PODFILE CHECKSUM: ab58f7148b489b093cb7218a6529fe26402241c6
 

@@ -61,46 +61,10 @@ extension UIView {
     }
     
     /** Adds the View to a given UIView, creating constraints based on the UIEdgeInsets */
-    func addTo(superView: UIView, withConstraint constraintInset: UIEdgeInsets) -> Void {
+    open func addTo(superView: UIView, withConstraint constraintInset: UIEdgeInsets) -> Void {
         
         superView.addSubview(self)
-        
-        /*let horizonalContraintLeft = NSLayoutConstraint(item: self,
-         attribute: .leadingMargin,
-         relatedBy: .equal,
-         toItem: superView,
-         attribute: .leadingMargin,
-         multiplier: 1.0,
-         constant: constraintInset.left)
-         
-         let horizonalContraintRight = NSLayoutConstraint(item: self,
-         attribute: .trailingMargin,
-         relatedBy: .equal,
-         toItem: superView,
-         attribute: .trailingMargin,
-         multiplier: 1.0,
-         constant: -constraintInset.right)
-         
-         let verticalConstraintTop = NSLayoutConstraint(item: self,
-         attribute: .topMargin,
-         relatedBy: .equal,
-         toItem: superView,
-         attribute: .top,
-         multiplier: 1.0,
-         constant: constraintInset.top)
-         
-         let verticalConstraintBottom = NSLayoutConstraint(item: self,
-         attribute: .bottomMargin,
-         relatedBy: .equal,
-         toItem: superView,
-         attribute: .bottom,
-         multiplier: 1.0,
-         constant: constraintInset.bottom)
-         
-         NSLayoutConstraint.activate([horizonalContraintLeft,
-         horizonalContraintRight,
-         verticalConstraintTop,
-         verticalConstraintBottom])*/
+
         self.snp.makeConstraints({make in
             make.edges.equalTo(superView).inset(constraintInset)
         })
@@ -111,6 +75,102 @@ extension UIView {
         for subview in self.subviews {
             subview.applyAppearance()
         }
+    }
+    
+    // MARK: - Animation
+    
+    
+    /** Shakes the view sideways */
+    open func shake(duration: Float = 0.5, multiplier: Float = 1) {
+        let animation = CAKeyframeAnimation()
+        
+        animation.keyPath = "position.x"
+        animation.values = [0 * multiplier, 10 * multiplier, -10 * multiplier, 10 * multiplier, -5 * multiplier, 5 * multiplier, -5 * multiplier, 0 * multiplier]
+        animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
+        animation.duration = CFTimeInterval(duration)
+        animation.isAdditive = true
+        animation.isRemovedOnCompletion = true
+        
+        self.layer.add(animation, forKey: "shake")
+    }
+    
+    /** Bounces the view vertically */
+    open func bounce(duration: Float = 0.5, multiplier: Float = 1) {
+        let animation = CAKeyframeAnimation()
+        
+        animation.keyPath = "position.y"
+        animation.values = [
+            0 * multiplier,
+            -20 * multiplier,
+            0 * multiplier,
+            -10 * multiplier,
+            0 * multiplier,
+            -5 * multiplier,
+            0 * multiplier]
+        animation.keyTimes = [
+            0,
+            0.4,
+            0.6,
+            0.8,
+            0.9,
+            0.95,
+            1]
+        animation.duration = CFTimeInterval(duration)
+        animation.isAdditive = true
+        animation.isRemovedOnCompletion = true
+        
+        self.layer.add(animation, forKey: "bounce")
+    }
+    
+    /** Grows (scales up) the View on both X and Y axis and reverses */
+    open func grow(duration: Float = 0.5, multiplier: Float = 1) {
+        let animation = CAKeyframeAnimation()
+        
+        animation.keyPath = "transform.scale"
+        animation.values = [1, max(1.1, 1.3 * multiplier)]
+        animation.keyTimes = [0, 1]
+        animation.duration = CFTimeInterval(duration / 2) //.autoreverses doubles the duration time
+        animation.autoreverses = true
+        animation.isRemovedOnCompletion = true
+        
+        self.layer.add(animation, forKey: "grow")
+    }
+    
+    /** Shrinks (scales down) the View on both X and Y axis and reverses */
+    open func shrink(duration: Float = 0.5, multiplier: Float = 1) {
+        let animation = CAKeyframeAnimation()
+        
+        animation.keyPath = "transform.scale"
+        animation.values = [1, 1 / max(1.1, 1.3 * multiplier)]
+        animation.keyTimes = [0, 1]
+        animation.duration = CFTimeInterval(duration / 2) //.autoreverses doubles the duration time
+        animation.autoreverses = true
+        animation.isRemovedOnCompletion = true
+        
+        self.layer.add(animation, forKey: "shrink")
+    }
+    
+    /** Swings the View */
+    open func swing(duration: Float = 0.35, multiplier: Float = 1) {
+        let animation = CAKeyframeAnimation()
+        
+        let rotationAngle: Double = 15.0 * Double(multiplier)
+        
+        animation.keyPath = "transform.rotation.z"
+        animation.values = [
+            0,
+            rotationAngle / 180 * Double.pi,
+            0,
+            -rotationAngle / 180 * Double.pi,
+            0
+        ]
+        animation.keyTimes = [0, 0.25, 0.5, 0.75, 1]
+        animation.duration = CFTimeInterval(duration)
+        animation.isRemovedOnCompletion = true
+        animation.isAdditive = true
+        animation.repeatCount = 2
+        
+        self.layer.add(animation, forKey: "swing")
     }
 }
 
