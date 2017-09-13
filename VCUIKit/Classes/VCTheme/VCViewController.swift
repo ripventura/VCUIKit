@@ -284,7 +284,7 @@ extension VCTabledViewController: UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0001
+        return 20
     }
 }
 extension VCTabledViewController: UITableViewDataSource {
