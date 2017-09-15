@@ -71,7 +71,7 @@ extension UIView {
     }
     
     /** Applies the custom appearance on this UIView */
-    open func applyAppearance() -> Void {
+    @objc open func applyAppearance() -> Void {
         for subview in self.subviews {
             subview.applyAppearance()
         }
@@ -218,7 +218,7 @@ extension UIViewController {
         self.navigationItem.backBarButtonItem = backButton
     }
     
-    open func applyAppearance() -> Void {
+    @objc open func applyAppearance() -> Void {
         self.view.applyAppearance()
     }
 }
@@ -232,7 +232,7 @@ extension UITabBarController {
         
         if let items = self.tabBar.items {
             for item in items {
-                item.setTitleTextAttributes([NSFontAttributeName: sharedAppearanceManager.appearance.tabBarFont], for: .normal)
+                item.setTitleTextAttributes([NSAttributedStringKey.font: sharedAppearanceManager.appearance.tabBarFont], for: .normal)
             }
         }
     }
@@ -250,8 +250,8 @@ extension UINavigationController {
         
         //Updates NavigationBar title font
         self.navigationBar.titleTextAttributes = [
-            NSForegroundColorAttributeName: sharedAppearanceManager.appearance.navigationBarTitleColor,
-            NSFontAttributeName: sharedAppearanceManager.appearance.navigationBarTitleFont
+            NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor,
+            NSAttributedStringKey.font: sharedAppearanceManager.appearance.navigationBarTitleFont
         ]
     }
 }

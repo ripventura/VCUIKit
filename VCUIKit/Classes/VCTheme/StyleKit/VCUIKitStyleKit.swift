@@ -69,57 +69,57 @@ public class VCUIKitStyleKit : NSObject {
 
     //// Colors
 
-    public dynamic class var navigationBarBackgroundColor: UIColor { return Cache.navigationBarBackgroundColor }
-    public dynamic class var navigationBarTintColor: UIColor { return Cache.navigationBarTintColor }
-    public dynamic class var navigationBarTitleColor: UIColor { return Cache.navigationBarTitleColor }
-    public dynamic class var viewControllerViewBackgroundColor: UIColor { return Cache.viewControllerViewBackgroundColor }
-    public dynamic class var viewControllerViewTintColor: UIColor { return Cache.viewControllerViewTintColor }
-    public dynamic class var labelTextColor: UIColor { return Cache.labelTextColor }
-    public dynamic class var labelBackgroundColor: UIColor { return Cache.labelBackgroundColor }
-    public dynamic class var tableViewBackgroundColor: UIColor { return Cache.tableViewBackgroundColor }
-    public dynamic class var tableViewCellBackgroundColor: UIColor { return Cache.tableViewCellBackgroundColor }
-    public dynamic class var tableViewCellTintColor: UIColor { return Cache.tableViewCellTintColor }
-    public dynamic class var tableViewCellTitleTextColor: UIColor { return Cache.tableViewCellTitleTextColor }
-    public dynamic class var tableViewDetailTextColor: UIColor { return Cache.tableViewDetailTextColor }
-    public dynamic class var signaturePickerViewControllerViewBackgroundColor: UIColor { return Cache.signaturePickerViewControllerViewBackgroundColor }
-    public dynamic class var signaturePickerViewControllerStrokeColor: UIColor { return Cache.signaturePickerViewControllerStrokeColor }
-    public dynamic class var bannerSuccessBackgroundColor: UIColor { return Cache.bannerSuccessBackgroundColor }
-    public dynamic class var bannerInfoBackgroundColor: UIColor { return Cache.bannerInfoBackgroundColor }
-    public dynamic class var tabBarTintColor: UIColor { return Cache.tabBarTintColor }
-    public dynamic class var alertTitleTextColor: UIColor { return Cache.alertTitleTextColor }
-    public dynamic class var alertMessageTextColor: UIColor { return Cache.alertMessageTextColor }
-    public dynamic class var alertViewTintColor: UIColor { return Cache.alertViewTintColor }
-    public dynamic class var alertBackgroundColor: UIColor { return Cache.alertBackgroundColor }
-    public dynamic class var alertCancelButtonBackgroundColor: UIColor { return Cache.alertCancelButtonBackgroundColor }
-    public dynamic class var alertCancelButtonTitleColor: UIColor { return Cache.alertCancelButtonTitleColor }
-    public dynamic class var alertButtonTitleColor: UIColor { return Cache.alertButtonTitleColor }
-    public dynamic class var alertButtonBackgroundColor: UIColor { return Cache.alertButtonBackgroundColor }
-    public dynamic class var redIOS: UIColor { return Cache.redIOS }
-    public dynamic class var bannerDangerBackgroundColor: UIColor { return Cache.bannerDangerBackgroundColor }
-    public dynamic class var greenIOS: UIColor { return Cache.greenIOS }
-    public dynamic class var blueIOS: UIColor { return Cache.blueIOS }
-    public dynamic class var black: UIColor { return Cache.black }
-    public dynamic class var white: UIColor { return Cache.white }
-    public dynamic class var blueBLOX: UIColor { return Cache.blueBLOX }
-    public dynamic class var whiteGrey1: UIColor { return Cache.whiteGrey1 }
-    public dynamic class var transparent: UIColor { return Cache.transparent }
-    public dynamic class var whiteGrey2: UIColor { return Cache.whiteGrey2 }
-    public dynamic class var blackGray1: UIColor { return Cache.blackGray1 }
-    public dynamic class var greyIOSPlaceholder: UIColor { return Cache.greyIOSPlaceholder }
-    public dynamic class var greyIOSContext: UIColor { return Cache.greyIOSContext }
-    public dynamic class var greyIOSLightGrey: UIColor { return Cache.greyIOSLightGrey }
-    public dynamic class var vCFlatUIButtonBackgroundColor: UIColor { return Cache.vCFlatUIButtonBackgroundColor }
-    public dynamic class var vCFlatUIButtonShadowColor: UIColor { return Cache.vCFlatUIButtonShadowColor }
-    public dynamic class var hUDMessageTextColor: UIColor { return Cache.hUDMessageTextColor }
-    public dynamic class var hUDTintColor: UIColor { return Cache.hUDTintColor }
-    public dynamic class var hUDBackgroundColor: UIColor { return Cache.hUDBackgroundColor }
-    public dynamic class var vCFlatUIButtonNormalTitleColor: UIColor { return Cache.vCFlatUIButtonNormalTitleColor }
-    public dynamic class var vCFlatUIButtonPressedTitleColor: UIColor { return Cache.vCFlatUIButtonPressedTitleColor }
-    public dynamic class var vCIconButtonFillColor: UIColor { return Cache.vCIconButtonFillColor }
+    @objc public dynamic class var navigationBarBackgroundColor: UIColor { return Cache.navigationBarBackgroundColor }
+    @objc public dynamic class var navigationBarTintColor: UIColor { return Cache.navigationBarTintColor }
+    @objc public dynamic class var navigationBarTitleColor: UIColor { return Cache.navigationBarTitleColor }
+    @objc public dynamic class var viewControllerViewBackgroundColor: UIColor { return Cache.viewControllerViewBackgroundColor }
+    @objc public dynamic class var viewControllerViewTintColor: UIColor { return Cache.viewControllerViewTintColor }
+    @objc public dynamic class var labelTextColor: UIColor { return Cache.labelTextColor }
+    @objc public dynamic class var labelBackgroundColor: UIColor { return Cache.labelBackgroundColor }
+    @objc public dynamic class var tableViewBackgroundColor: UIColor { return Cache.tableViewBackgroundColor }
+    @objc public dynamic class var tableViewCellBackgroundColor: UIColor { return Cache.tableViewCellBackgroundColor }
+    @objc public dynamic class var tableViewCellTintColor: UIColor { return Cache.tableViewCellTintColor }
+    @objc public dynamic class var tableViewCellTitleTextColor: UIColor { return Cache.tableViewCellTitleTextColor }
+    @objc public dynamic class var tableViewDetailTextColor: UIColor { return Cache.tableViewDetailTextColor }
+    @objc public dynamic class var signaturePickerViewControllerViewBackgroundColor: UIColor { return Cache.signaturePickerViewControllerViewBackgroundColor }
+    @objc public dynamic class var signaturePickerViewControllerStrokeColor: UIColor { return Cache.signaturePickerViewControllerStrokeColor }
+    @objc public dynamic class var bannerSuccessBackgroundColor: UIColor { return Cache.bannerSuccessBackgroundColor }
+    @objc public dynamic class var bannerInfoBackgroundColor: UIColor { return Cache.bannerInfoBackgroundColor }
+    @objc public dynamic class var tabBarTintColor: UIColor { return Cache.tabBarTintColor }
+    @objc public dynamic class var alertTitleTextColor: UIColor { return Cache.alertTitleTextColor }
+    @objc public dynamic class var alertMessageTextColor: UIColor { return Cache.alertMessageTextColor }
+    @objc public dynamic class var alertViewTintColor: UIColor { return Cache.alertViewTintColor }
+    @objc public dynamic class var alertBackgroundColor: UIColor { return Cache.alertBackgroundColor }
+    @objc public dynamic class var alertCancelButtonBackgroundColor: UIColor { return Cache.alertCancelButtonBackgroundColor }
+    @objc public dynamic class var alertCancelButtonTitleColor: UIColor { return Cache.alertCancelButtonTitleColor }
+    @objc public dynamic class var alertButtonTitleColor: UIColor { return Cache.alertButtonTitleColor }
+    @objc public dynamic class var alertButtonBackgroundColor: UIColor { return Cache.alertButtonBackgroundColor }
+    @objc public dynamic class var redIOS: UIColor { return Cache.redIOS }
+    @objc public dynamic class var bannerDangerBackgroundColor: UIColor { return Cache.bannerDangerBackgroundColor }
+    @objc public dynamic class var greenIOS: UIColor { return Cache.greenIOS }
+    @objc public dynamic class var blueIOS: UIColor { return Cache.blueIOS }
+    @objc public dynamic class var black: UIColor { return Cache.black }
+    @objc public dynamic class var white: UIColor { return Cache.white }
+    @objc public dynamic class var blueBLOX: UIColor { return Cache.blueBLOX }
+    @objc public dynamic class var whiteGrey1: UIColor { return Cache.whiteGrey1 }
+    @objc public dynamic class var transparent: UIColor { return Cache.transparent }
+    @objc public dynamic class var whiteGrey2: UIColor { return Cache.whiteGrey2 }
+    @objc public dynamic class var blackGray1: UIColor { return Cache.blackGray1 }
+    @objc public dynamic class var greyIOSPlaceholder: UIColor { return Cache.greyIOSPlaceholder }
+    @objc public dynamic class var greyIOSContext: UIColor { return Cache.greyIOSContext }
+    @objc public dynamic class var greyIOSLightGrey: UIColor { return Cache.greyIOSLightGrey }
+    @objc public dynamic class var vCFlatUIButtonBackgroundColor: UIColor { return Cache.vCFlatUIButtonBackgroundColor }
+    @objc public dynamic class var vCFlatUIButtonShadowColor: UIColor { return Cache.vCFlatUIButtonShadowColor }
+    @objc public dynamic class var hUDMessageTextColor: UIColor { return Cache.hUDMessageTextColor }
+    @objc public dynamic class var hUDTintColor: UIColor { return Cache.hUDTintColor }
+    @objc public dynamic class var hUDBackgroundColor: UIColor { return Cache.hUDBackgroundColor }
+    @objc public dynamic class var vCFlatUIButtonNormalTitleColor: UIColor { return Cache.vCFlatUIButtonNormalTitleColor }
+    @objc public dynamic class var vCFlatUIButtonPressedTitleColor: UIColor { return Cache.vCFlatUIButtonPressedTitleColor }
+    @objc public dynamic class var vCIconButtonFillColor: UIColor { return Cache.vCIconButtonFillColor }
 
     //// Drawing Methods
 
-    public dynamic class func drawViewController(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 377, height: 667), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawViewController(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 377, height: 667), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -141,7 +141,7 @@ public class VCUIKitStyleKit : NSObject {
         let textTextContent = "Random Button"
         let textStyle = NSMutableParagraphStyle()
         textStyle.alignment = .center
-        let textFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Medium", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.viewControllerViewTintColor, NSParagraphStyleAttributeName: textStyle]
+        let textFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-Medium", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.viewControllerViewTintColor, NSAttributedStringKey.paragraphStyle: textStyle]
 
         let textTextHeight: CGFloat = textTextContent.boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: textFontAttributes, context: nil).height
         context.saveGState()
@@ -153,7 +153,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawNavigationBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 64), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawNavigationBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 64), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -196,7 +196,7 @@ public class VCUIKitStyleKit : NSObject {
         let labelTextContent = "Edit"
         let labelStyle = NSMutableParagraphStyle()
         labelStyle.alignment = .center
-        let labelFontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.navigationBarTintColor, NSParagraphStyleAttributeName: labelStyle]
+        let labelFontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.navigationBarTintColor, NSAttributedStringKey.paragraphStyle: labelStyle]
 
         let labelTextHeight: CGFloat = labelTextContent.boundingRect(with: CGSize(width: labelRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: labelFontAttributes, context: nil).height
         context.saveGState()
@@ -210,7 +210,7 @@ public class VCUIKitStyleKit : NSObject {
         let label2TextContent = "Title"
         let label2Style = NSMutableParagraphStyle()
         label2Style.alignment = .center
-        let label2FontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Semibold", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.navigationBarTitleColor, NSParagraphStyleAttributeName: label2Style]
+        let label2FontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Semibold", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.navigationBarTitleColor, NSAttributedStringKey.paragraphStyle: label2Style]
 
         let label2TextHeight: CGFloat = label2TextContent.boundingRect(with: CGSize(width: label2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: label2FontAttributes, context: nil).height
         context.saveGState()
@@ -224,7 +224,7 @@ public class VCUIKitStyleKit : NSObject {
         let label3TextContent = "Bac"
         let label3Style = NSMutableParagraphStyle()
         label3Style.alignment = .center
-        let label3FontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.navigationBarTintColor, NSParagraphStyleAttributeName: label3Style]
+        let label3FontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.navigationBarTintColor, NSAttributedStringKey.paragraphStyle: label3Style]
 
         let label3TextHeight: CGFloat = label3TextContent.boundingRect(with: CGSize(width: label3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: label3FontAttributes, context: nil).height
         context.saveGState()
@@ -238,7 +238,7 @@ public class VCUIKitStyleKit : NSObject {
         let label4TextContent = "k"
         let label4Style = NSMutableParagraphStyle()
         label4Style.alignment = .center
-        let label4FontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.navigationBarTintColor, NSParagraphStyleAttributeName: label4Style]
+        let label4FontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.navigationBarTintColor, NSAttributedStringKey.paragraphStyle: label4Style]
 
         let label4TextHeight: CGFloat = label4TextContent.boundingRect(with: CGSize(width: label4Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: label4FontAttributes, context: nil).height
         context.saveGState()
@@ -265,7 +265,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawNormalLabel(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 232, height: 64), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawNormalLabel(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 232, height: 64), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -284,7 +284,7 @@ public class VCUIKitStyleKit : NSObject {
         let textTextContent = "Lorem ipsum dolor"
         let textStyle = NSMutableParagraphStyle()
         textStyle.alignment = .center
-        let textFontAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 13)!, NSForegroundColorAttributeName: VCUIKitStyleKit.labelTextColor, NSParagraphStyleAttributeName: textStyle]
+        let textFontAttributes = [NSAttributedStringKey.font: UIFont(name: "HelveticaNeue", size: 13)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.labelTextColor, NSAttributedStringKey.paragraphStyle: textStyle]
 
         let textTextHeight: CGFloat = textTextContent.boundingRect(with: CGSize(width: textRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: textFontAttributes, context: nil).height
         context.saveGState()
@@ -296,7 +296,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawCollectionView(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 667), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawCollectionView(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 667), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -316,7 +316,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawTableView(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 377, height: 667), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawTableView(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 377, height: 667), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -360,7 +360,7 @@ public class VCUIKitStyleKit : NSObject {
         let detailTextContent = "Detail"
         let detailStyle = NSMutableParagraphStyle()
         detailStyle.alignment = .right
-        let detailFontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.tableViewDetailTextColor, NSParagraphStyleAttributeName: detailStyle]
+        let detailFontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.tableViewDetailTextColor, NSAttributedStringKey.paragraphStyle: detailStyle]
 
         let detailTextHeight: CGFloat = detailTextContent.boundingRect(with: CGSize(width: detailRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: detailFontAttributes, context: nil).height
         context.saveGState()
@@ -374,7 +374,7 @@ public class VCUIKitStyleKit : NSObject {
         let label2TextContent = "Title"
         let label2Style = NSMutableParagraphStyle()
         label2Style.alignment = .left
-        let label2FontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.tableViewCellTitleTextColor, NSParagraphStyleAttributeName: label2Style]
+        let label2FontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.tableViewCellTitleTextColor, NSAttributedStringKey.paragraphStyle: label2Style]
 
         let label2TextHeight: CGFloat = label2TextContent.boundingRect(with: CGSize(width: label2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: label2FontAttributes, context: nil).height
         context.saveGState()
@@ -449,7 +449,7 @@ public class VCUIKitStyleKit : NSObject {
         let titleTextContent = "Title"
         let titleStyle = NSMutableParagraphStyle()
         titleStyle.alignment = .left
-        let titleFontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 17)!, NSForegroundColorAttributeName: VCUIKitStyleKit.tableViewCellTitleTextColor, NSParagraphStyleAttributeName: titleStyle]
+        let titleFontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 17)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.tableViewCellTitleTextColor, NSAttributedStringKey.paragraphStyle: titleStyle]
 
         let titleTextHeight: CGFloat = titleTextContent.boundingRect(with: CGSize(width: titleRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: titleFontAttributes, context: nil).height
         context.saveGState()
@@ -481,7 +481,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawSignatureViewController(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 667, height: 375), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawSignatureViewController(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 667, height: 375), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -515,7 +515,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawBannerSuccess(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 80), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawBannerSuccess(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 80), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -535,7 +535,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawBannerInfo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 80), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawBannerInfo(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 80), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -555,7 +555,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawBannerDanger(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 80), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawBannerDanger(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 80), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -575,7 +575,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawTabBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 64), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawTabBar(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 64), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -591,7 +591,7 @@ public class VCUIKitStyleKit : NSObject {
         let labelTextContent = "Contacts"
         let labelStyle = NSMutableParagraphStyle()
         labelStyle.alignment = .center
-        let labelFontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 11)!, NSForegroundColorAttributeName: VCUIKitStyleKit.tabBarTintColor, NSParagraphStyleAttributeName: labelStyle]
+        let labelFontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 11)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.tabBarTintColor, NSAttributedStringKey.paragraphStyle: labelStyle]
 
         let labelTextHeight: CGFloat = labelTextContent.boundingRect(with: CGSize(width: labelRect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: labelFontAttributes, context: nil).height
         context.saveGState()
@@ -605,7 +605,7 @@ public class VCUIKitStyleKit : NSObject {
         let label2TextContent = "Recents"
         let label2Style = NSMutableParagraphStyle()
         label2Style.alignment = .center
-        let label2FontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 11)!, NSForegroundColorAttributeName: VCUIKitStyleKit.tabBarTintColor, NSParagraphStyleAttributeName: label2Style]
+        let label2FontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 11)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.tabBarTintColor, NSAttributedStringKey.paragraphStyle: label2Style]
 
         let label2TextHeight: CGFloat = label2TextContent.boundingRect(with: CGSize(width: label2Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: label2FontAttributes, context: nil).height
         context.saveGState()
@@ -619,7 +619,7 @@ public class VCUIKitStyleKit : NSObject {
         let label3TextContent = "Settings"
         let label3Style = NSMutableParagraphStyle()
         label3Style.alignment = .center
-        let label3FontAttributes = [NSFontAttributeName: UIFont(name: "SFUIText-Regular", size: 11)!, NSForegroundColorAttributeName: VCUIKitStyleKit.tabBarTintColor, NSParagraphStyleAttributeName: label3Style]
+        let label3FontAttributes = [NSAttributedStringKey.font: UIFont(name: "SFUIText-Regular", size: 11)!, NSAttributedStringKey.foregroundColor: VCUIKitStyleKit.tabBarTintColor, NSAttributedStringKey.paragraphStyle: label3Style]
 
         let label3TextHeight: CGFloat = label3TextContent.boundingRect(with: CGSize(width: label3Rect.width, height: CGFloat.infinity), options: .usesLineFragmentOrigin, attributes: label3FontAttributes, context: nil).height
         context.saveGState()
@@ -649,7 +649,7 @@ public class VCUIKitStyleKit : NSObject {
 
     }
 
-    public dynamic class func drawVCFlatUIButtonNormal(vCFlatUIButtonSize: CGSize = CGSize(width: 200, height: 44), vCFlatUIButtonShadowHeight: CGFloat = 3, vCFlatUIButtonCornerRadius: CGFloat = 6) {
+    @objc public dynamic class func drawVCFlatUIButtonNormal(vCFlatUIButtonSize: CGSize = CGSize(width: 200, height: 44), vCFlatUIButtonShadowHeight: CGFloat = 3, vCFlatUIButtonCornerRadius: CGFloat = 6) {
 
         //// Variable Declarations
         let vCFlatButtonNormalFrontShapeHeight: CGFloat = vCFlatUIButtonSize.height - vCFlatUIButtonShadowHeight
@@ -666,7 +666,7 @@ public class VCUIKitStyleKit : NSObject {
         frontPath.fill()
     }
 
-    public dynamic class func drawVCFlatUIButtonPressed(vCFlatUIButtonSize: CGSize = CGSize(width: 200, height: 44), vCFlatUIButtonShadowHeight: CGFloat = 3, vCFlatUIButtonCornerRadius: CGFloat = 6) {
+    @objc public dynamic class func drawVCFlatUIButtonPressed(vCFlatUIButtonSize: CGSize = CGSize(width: 200, height: 44), vCFlatUIButtonShadowHeight: CGFloat = 3, vCFlatUIButtonCornerRadius: CGFloat = 6) {
 
         //// Variable Declarations
         let vCFlatUIButtonPressedFrontYPosition: CGFloat = vCFlatUIButtonShadowHeight / 3.0
@@ -684,7 +684,7 @@ public class VCUIKitStyleKit : NSObject {
         frontPath.fill()
     }
 
-    public dynamic class func drawRoundedXIcon(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawRoundedXIcon(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 100, height: 100), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         

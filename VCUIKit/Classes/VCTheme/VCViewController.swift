@@ -214,7 +214,7 @@ extension VCViewController: UITextFieldDelegate {
     }
     
     /** Called after the placeHolderActionButton is pressed */
-    open func placeholderActionButtonPressed(_ sender: Any) -> Void {
+    @objc open func placeholderActionButtonPressed(_ sender: Any) -> Void {
         
     }
     
@@ -229,7 +229,7 @@ extension VCViewController: UITextFieldDelegate {
     }
     
     /** Called after the PullRefreshControl is triggered */
-    open func didPullRefreshControl() -> Void {
+    @objc open func didPullRefreshControl() -> Void {
     }
     
     // MARK: - Search Control

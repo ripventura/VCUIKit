@@ -47,16 +47,16 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     
     open var delegate : VCCodeScannerDelegate?
     
-    let supportedCodeTypes = [AVMetadataObjectTypeUPCECode,
-                              AVMetadataObjectTypeCode39Code,
-                              AVMetadataObjectTypeCode39Mod43Code,
-                              AVMetadataObjectTypeCode93Code,
-                              AVMetadataObjectTypeCode128Code,
-                              AVMetadataObjectTypeEAN8Code,
-                              AVMetadataObjectTypeEAN13Code,
-                              AVMetadataObjectTypeAztecCode,
-                              AVMetadataObjectTypePDF417Code,
-                              AVMetadataObjectTypeQRCode]
+    let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
+                              AVMetadataObject.ObjectType.code39,
+                              AVMetadataObject.ObjectType.code39Mod43,
+                              AVMetadataObject.ObjectType.code93,
+                              AVMetadataObject.ObjectType.code128,
+                              AVMetadataObject.ObjectType.ean8,
+                              AVMetadataObject.ObjectType.ean13,
+                              AVMetadataObject.ObjectType.aztec,
+                              AVMetadataObject.ObjectType.pdf417,
+                              AVMetadataObject.ObjectType.qr]
     
     /** Wheter the viewController should dismiss itself after the first scan occurs */
     open var singleScan: Bool {
@@ -78,11 +78,11 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
         super.viewDidLoad()
         
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
-        self.captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        self.captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         
         do {
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
-            let input = try AVCaptureDeviceInput(device: captureDevice)
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
             
             // Initialize the captureSession object.
             captureSession = AVCaptureSession()
@@ -99,8 +99,8 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
             
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = view.layer.bounds
             
             // Populate the interface elements
@@ -220,7 +220,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
                 do {
                     try captureDevice?.lockForConfiguration()
                     
-                    captureDevice?.torchMode = AVCaptureTorchMode.on
+                    captureDevice?.torchMode = AVCaptureDevice.TorchMode.on
                     captureDevice?.unlockForConfiguration()
                 }
                 catch _ { }
@@ -229,7 +229,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
                 do {
                     try captureDevice?.lockForConfiguration()
                     
-                    captureDevice?.torchMode = AVCaptureTorchMode.off
+                    captureDevice?.torchMode = AVCaptureDevice.TorchMode.off
                     captureDevice?.unlockForConfiguration()
                 }
                 catch _ { }
@@ -260,8 +260,8 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
     
     // MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
     
-    open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        if self.readyToScan && metadataObjects != nil && metadataObjects.count > 0 {
+    open func metadataOutput(captureOutput: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        if self.readyToScan && metadataObjects.count > 0 {
             
             // Get the metadata object.
             let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
@@ -272,7 +272,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
                 qrCodeFrameView?.frame = barCodeObject!.bounds
                 
                 if metadataObj.stringValue != nil {
-                    self.didScan(code: metadataObj.stringValue)
+                    self.didScan(code: metadataObj.stringValue!)
                     return
                 }
             }

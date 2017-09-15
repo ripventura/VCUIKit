@@ -18,7 +18,7 @@ open class VCActionSheetPicker: NSObject {
         initialSelection : Int,
         originView : UIView,
         completionHandler : @escaping (Int, String)->Void,
-        cancelHandler : ((Void)->Void)?) {
+        cancelHandler : (()->Void)?) {
         
         ActionSheetStringPicker.show(withTitle: title, rows: stringOptions, initialSelection: initialSelection, doneBlock: {
             picker, selectedIndex, selectedValue in
@@ -40,7 +40,7 @@ open class VCActionSheetPicker: NSObject {
         maximumDate : Date?,
         originView : UIView,
         completionHandler : @escaping (Date)->Void,
-        cancelHandler : ((Void)->Void)?) {
+        cancelHandler : (()->Void)?) {
         
         
         if minimumDate != nil && maximumDate != nil {

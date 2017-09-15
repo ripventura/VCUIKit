@@ -94,7 +94,7 @@ open class VCHUD {
      - Parameters:
      - completion: Block called after the HUD is dismissed.
      */
-    open func dismiss(completion: ((Void) -> Void)?) -> Void {
+    open func dismiss(completion: (() -> Void)?) -> Void {
         DispatchQueue.main.async {
             SVProgressHUD.dismiss(completion: completion)
         }
