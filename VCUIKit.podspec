@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VCUIKit'
-  s.version          = '0.0.60'
-  s.summary          = 'A collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.'
+  s.version          = '0.1.1'
+  s.summary          = 'A collection of classes and extensions written in Swift 4 to help you optimize your time when developing iOS applications.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This is a collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications. All the code was done by me, so please if you think you can contribute, lets share some thoughts!
+This is a collection of classes and extensions written in Swift 4 to help you optimize your time when developing iOS applications. All the code was done by me, so please if you think you can contribute, lets share some thoughts!
 
 When I get some time I will update the Wiki page with detailed description of each class / method.
                        DESC
