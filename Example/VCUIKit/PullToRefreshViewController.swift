@@ -11,9 +11,16 @@ import VCUIKit
 
 class PullToRefreshViewController: VCTabledViewController {
     
+    var isSearchEnabled: Bool = false
+    
     override func didPullRefreshControl() {
         print("Did pull to refresh!")
         self.pullRefreshControl?.endRefreshing()
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        
+        self.searchControl(enable: !isSearchEnabled)
     }
     
     // MARK: - UITableViewDataSource

@@ -105,7 +105,9 @@ extension VCViewController: UITextFieldDelegate {
     override open func applyAppearance() -> Void {
         super.applyAppearance()
         
-        (searchController.searchBar.value(forKey: "searchField") as? UITextField)?.textColor = sharedAppearanceManager.appearance.navigationBarTitleColor
+        self.fixSearchBarAppearance()
+        
+        searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
     }
     
     /** Populates the Interface with its UI Objects */
@@ -232,28 +234,54 @@ extension VCViewController: UITextFieldDelegate {
     
     // MARK: - Search Control
     
+    fileprivate func fixSearchBarAppearance () {
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.textColor = sharedAppearanceManager.appearance.navigationBarTitleColor
+        }
+    }
+    
     /** Configures the SearchControl. Override this calling super for any custom properties. */
     open func configureSearchControl() -> Void {
+        searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
+        // Good practice
         definesPresentationContext = false
         
-        searchController.searchBar.placeholder = "Search..."
-        searchController.searchBar.keyboardType = .default
-        searchController.searchBar.searchBarStyle = .minimal
-        searchController.searchBar.showsCancelButton = true
-        searchController.searchBar.delegate = self
+        if #available(iOS 11.0, *) {
+            self.navigationItem.largeTitleDisplayMode = .never
+            self.navigationItem.hidesSearchBarWhenScrolling = true
+        }
+        else {
+            searchController.hidesNavigationBarDuringPresentation = false
+            
+            searchController.searchBar.showsCancelButton = true
+        }
     }
     
     /** Enables / Disables the Search Control on this ViewController */
     open func searchControl(enable: Bool) -> Void {
         if enable {
-            self.setNavitagionBarTitle(view: searchController.searchBar)
+
+            if #available(iOS 11.0, *) {
+                self.navigationItem.searchController = self.searchController
+                
+                self.fixSearchBarAppearance()
+            } else {
+                // Fallback on earlier versions
+                self.setNavitagionBarTitle(view: searchController.searchBar)
+            }
+            
             searchController.searchBar.becomeFirstResponder()
         } else {
             searchController.searchBar.resignFirstResponder()
-            self.setNavitagionBarTitle(view: nil)
+
+            if #available(iOS 11.0, *) {
+                self.navigationItem.searchController = nil
+            } else {
+                // Fallback on earlier versions
+                self.setNavitagionBarTitle(view: nil)
+            }
         }
     }
     

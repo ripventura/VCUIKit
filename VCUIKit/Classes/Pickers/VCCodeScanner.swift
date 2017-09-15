@@ -145,7 +145,6 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
         if self.descriptionLabel == nil {
             self.descriptionLabel = VCLabel(frame: CGRectDefault)
             self.descriptionLabel?.textColor = UIColor.white
-            self.descriptionLabel?.shadowColor = UIColor.black
             self.descriptionLabel?.textAlignment = NSTextAlignment.center
             self.descriptionLabel?.numberOfLines = 3
             self.descriptionLabel?.minimumScaleFactor = 0.5
@@ -177,7 +176,6 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
             if self.flashLabel == nil {
                 self.flashLabel = VCLabel(frame: CGRectDefault)
                 self.flashLabel?.textColor = UIColor.white
-                self.flashLabel?.shadowColor = UIColor.black
                 self.flashLabel?.textAlignment = NSTextAlignment.right
                 self.flashLabel?.minimumScaleFactor = 0.5
                 self.flashLabel?.text = "Flash"

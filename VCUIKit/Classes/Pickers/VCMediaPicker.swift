@@ -7,53 +7,64 @@
 //
 
 import Foundation
-import DKImagePickerController
 
 open class VCMediaPicker: NSObject {
-    public enum MediaKind : Int {
-        //Video currently not supported (completionHandler implications)
-        //case Photo, Video, All
-        case photo
-    }
     
-    public enum MediaSource : Int {
-        case camera, library, both
-    }
-    
-    /** Shows a Media Picker */
-    open static func showMediaPicker(maxSelections : Int,
-                                       mediaKind : MediaKind,
-                                       mediaSource : MediaSource,
-                                       parentViewController: UIViewController,
-                                       completionHandler : @escaping ([UIImage]) ->Void) {
+    /** Shows a Media Picker from the iOS Albums */
+    open static func showAlbumMediaPicker(delegateViewController: UIViewController) {
         
-        let pickerController : DKImagePickerController = DKImagePickerController()
-        
-        pickerController.assetType = DKImagePickerControllerAssetType(rawValue: mediaKind.rawValue)!
-        pickerController.maxSelectableCount = maxSelections
-        pickerController.sourceType = DKImagePickerControllerSourceType(rawValue: mediaSource.rawValue)!
-        
-        if maxSelections < 2 {
-            pickerController.singleSelect = true
-        }
-        
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+        // If the device has support for the asked sourceType
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let pickerController = self.pickerController(delegateViewController: delegateViewController)
             
-            var imageArray : [UIImage] = []
+            pickerController.sourceType = .photoLibrary
             
-            for asset in assets {
-                asset.fetchOriginalImage(true, completeBlock: {(image: UIImage?, info: [AnyHashable : Any]?) in
-                    if image != nil {
-                        imageArray.append(image!)
-                    }
-                })
+            if #available(iOS 11.0, *) {
+                pickerController.imageExportPreset = .compatible
             }
             
-            completionHandler(imageArray)
+            DispatchQueue.main.async {
+                delegateViewController.present(pickerController, animated: true, completion: nil)
+            }
         }
+        else {
+            print("This device has no support for sourceType photoLibrary")
+        }
+    }
+    
+    /** Shows a Media Picker from the Camera */
+    open static func showCameraMediaPicker(delegateViewController: UIViewController,
+                                           captureMode: UIImagePickerControllerCameraCaptureMode = .photo,
+                                           cameraDevice: UIImagePickerControllerCameraDevice = .rear) {
         
-        parentViewController.present(pickerController,
-                                     animated: true,
-                                     completion: nil)
+        // If the device has support for the asked sourceType
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            // If the device has support for the asked cameraDevice
+            if UIImagePickerController.isCameraDeviceAvailable(cameraDevice) {
+                let pickerController = self.pickerController(delegateViewController: delegateViewController)
+                
+                pickerController.sourceType = .camera
+                pickerController.cameraCaptureMode = captureMode
+                pickerController.cameraDevice = cameraDevice
+                pickerController.showsCameraControls = true
+                
+                DispatchQueue.main.async {
+                    delegateViewController.present(pickerController, animated: true, completion: nil)
+                }
+            }
+            else {
+                print("This device has no support for the chose cameraDevice")
+            }
+        }
+        else {
+            print("This device has no support for sourceType camera")
+        }
+    }
+    
+    fileprivate static func pickerController(delegateViewController: UIViewController) -> UIImagePickerController {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = delegateViewController as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        
+        return pickerController
     }
 }

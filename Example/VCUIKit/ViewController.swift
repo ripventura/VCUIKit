@@ -60,13 +60,9 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
                                                     print("Date picker has been canceled")
                 })
             case 3:
-                VCMediaPicker.showMediaPicker(maxSelections: 2,
-                                              mediaKind: .photo,
-                                              mediaSource: .both,
-                                              parentViewController: self,
-                                              completionHandler: { images in
-                                                print("You selected " + images.description)
-                })
+                VCMediaPicker.showAlbumMediaPicker(delegateViewController: self)
+            case 4:
+                VCMediaPicker.showCameraMediaPicker(delegateViewController: self)
             default:
                 break
             }
@@ -95,7 +91,7 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
                 VCAlertView.showAlert(message: "This is a TextField example",
                                       textFields: [
                                         VCAlertView.AlertTextfield(placeholder: "Feedback", didReturn: {text in
-                                            sharedBannerCreator.showStatusBarMessage(message: "Your feedback: " + (text != nil ? text! : ""))
+                                            sharedBannerCreator.showBanner(theme: .info, message: "Your feedback: " + (text != nil ? text! : ""))
                                         })])
             default:
                 break
@@ -128,36 +124,7 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
             default:
                 break
             }
-            
         case 3:
-            switch indexPath.row {
-            case 0:
-                sharedBannerCreator.showStatusBarMessage(theme: .success,
-                                                         message: "Success message",
-                                                         duration: 2,
-                                                         tallBar: false)
-            case 1:
-                sharedBannerCreator.showStatusBarMessage(theme: .error,
-                                                         message: "Error message",
-                                                         duration: 2,
-                                                         tallBar: false)
-            case 2:
-                sharedBannerCreator.showStatusBarMessage(theme: .info,
-                                                         message: "Info message",
-                                                         duration: 2,
-                                                         tallBar: false)
-            case 3:
-                sharedBannerCreator.showStatusBarMessage(message: "Normal message")
-            case 4:
-                sharedBannerCreator.showStatusBarMessage(theme: .success,
-                                                         message: "Tall message",
-                                                         duration: 2,
-                                                         tallBar: true)
-            default:
-                break
-            }
-            
-        case 4:
             switch indexPath.row {
             case 0:
                 sharedHUD.show(progress: nil, message: "Loading indeterminate")

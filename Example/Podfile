@@ -3,17 +3,15 @@ use_frameworks!
 target 'VCUIKit_Example' do
   pod 'VCUIKit', :path => '../'
 
-pod 'SwiftMessages', '3.3.3'
+pod 'SwiftMessages', '3.5.1'
 
 pod 'FCAlertView', '1.4'
 
 pod 'SnapKit', '3.2.0'
 
-pod 'DKImagePickerController', '3.5.0'
-
 pod 'ActionSheetPicker-3.0', '2.2.0'
 
-pod 'SVProgressHUD', '2.1.2'
+pod 'SVProgressHUD', '2.2.1'
 
 # Script to fix the IBDesignable issues
 post_install do |installer|
