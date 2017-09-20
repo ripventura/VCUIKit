@@ -35,7 +35,9 @@ import UIKit
         super.applyAppearance()
         
         if !storyboardAppearance {
-            self.titleLabel?.font = sharedAppearanceManager.appearance.buttonFont
+            if let customFont = sharedAppearanceManager.appearance.buttonFont {
+                self.titleLabel?.font = customFont
+            }
             self.setTitleColor(sharedAppearanceManager.appearance.buttonTintColor, for: .normal)
         }
     }

@@ -12,9 +12,8 @@ import UIKit
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesSearchControl: Bool = false
-    
     /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable var storyboardAppearance: Bool = false
+    @IBInspectable open var storyboardAppearance: Bool = false
     
     open var placeHolderImageView : VCImageView = VCImageView()
     open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
@@ -23,6 +22,9 @@ import UIKit
     open var placeHolderActionButton : VCButton = VCButton()
     
     open var searchController: UISearchController = UISearchController(searchResultsController: nil)
+    
+    // Used on iOS <= 10 to hide rightBarButtonItems when searching
+    var rightButtonItems: [UIBarButtonItem]?
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -61,70 +63,76 @@ import UIKit
     private func setupPlaceholders() {
         let centerYOffset = -80
         
-        if let backgroundView = self.tableView.backgroundView {
-            backgroundView.addSubview(self.placeHolderImageView)
-            placeHolderImageView.snp.makeConstraints({make in
-                make.centerX.equalTo(backgroundView)
-                make.bottom.equalTo(backgroundView.snp.centerY).offset(centerYOffset)
-                make.width.equalTo(100)
-                make.height.equalTo(100)
-            })
-            
-            backgroundView.addSubview(self.placeHolderActivityIndicatorView)
-            self.placeHolderActivityIndicatorView.hidesWhenStopped = true
-            placeHolderActivityIndicatorView.snp.makeConstraints({make in
-                make.centerX.equalTo(self.placeHolderImageView)
-                make.centerY.equalTo(self.placeHolderImageView)
-            })
-            
-            self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
-            self.placeholderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
-            self.placeholderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
-            self.placeholderTitleLabel.textAlignment = .center
-            self.placeholderTitleLabel.numberOfLines = 0
-            backgroundView.addSubview(self.placeholderTitleLabel)
-            placeholderTitleLabel.snp.makeConstraints({make in
-                make.left.equalTo(backgroundView)
-                make.right.equalTo(backgroundView)
-                make.top.equalTo(backgroundView.snp.centerY).offset(centerYOffset + 20)
-                make.height.greaterThanOrEqualTo(40)
-            })
-            
-            self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
-            self.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextColor
-            self.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
-            self.placeHolderTextLabel.textAlignment = .center
-            self.placeHolderTextLabel.numberOfLines = 0
-            backgroundView.addSubview(self.placeHolderTextLabel)
-            placeHolderTextLabel.snp.makeConstraints({make in
-                make.left.equalTo(backgroundView)
-                make.right.equalTo(backgroundView)
-                make.top.equalTo(self.placeholderTitleLabel.snp.bottom)
-                make.height.greaterThanOrEqualTo(40)
-            })
-            
-            self.placeHolderActionButton = VCButton(frame: CGRectDefault)
-            backgroundView.addSubview(self.placeHolderActionButton)
-            self.placeHolderActionButton.addTarget(self, action: #selector(self.placeholderActionButtonPressed(_:)), for: .touchUpInside)
-            placeHolderActionButton.snp.makeConstraints({make in
-                make.width.equalTo(200)
-                make.height.equalTo(40)
-                make.centerX.equalTo(backgroundView)
-                make.top.equalTo(self.placeHolderTextLabel.snp.bottom).offset(8)
-            })
-        }
+        let backgroundView: UIView = UIView(frame: CGRectDefault)
+        self.tableView.backgroundView = backgroundView
+        
+        backgroundView.addSubview(self.placeHolderImageView)
+        placeHolderImageView.snp.makeConstraints({make in
+            make.centerX.equalTo(backgroundView)
+            make.bottom.equalTo(backgroundView.snp.centerY).offset(centerYOffset)
+            make.width.equalTo(100)
+            make.height.equalTo(100)
+        })
+        
+        backgroundView.addSubview(self.placeHolderActivityIndicatorView)
+        self.placeHolderActivityIndicatorView.hidesWhenStopped = true
+        placeHolderActivityIndicatorView.snp.makeConstraints({make in
+            make.centerX.equalTo(self.placeHolderImageView)
+            make.centerY.equalTo(self.placeHolderImageView)
+        })
+        
+        self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
+        self.placeholderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
+        self.placeholderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
+        self.placeholderTitleLabel.textAlignment = .center
+        self.placeholderTitleLabel.numberOfLines = 0
+        backgroundView.addSubview(self.placeholderTitleLabel)
+        placeholderTitleLabel.snp.makeConstraints({make in
+            make.left.equalTo(backgroundView)
+            make.right.equalTo(backgroundView)
+            make.top.equalTo(backgroundView.snp.centerY).offset(centerYOffset + 20)
+            make.height.greaterThanOrEqualTo(40)
+        })
+        
+        self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
+        self.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextColor
+        self.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
+        self.placeHolderTextLabel.textAlignment = .center
+        self.placeHolderTextLabel.numberOfLines = 0
+        backgroundView.addSubview(self.placeHolderTextLabel)
+        placeHolderTextLabel.snp.makeConstraints({make in
+            make.left.equalTo(backgroundView)
+            make.right.equalTo(backgroundView)
+            make.top.equalTo(self.placeholderTitleLabel.snp.bottom)
+            make.height.greaterThanOrEqualTo(40)
+        })
+        
+        self.placeHolderActionButton = VCButton(frame: CGRectDefault)
+        backgroundView.addSubview(self.placeHolderActionButton)
+        self.placeHolderActionButton.addTarget(self, action: #selector(self.placeholderActionButtonPressed(_:)), for: .touchUpInside)
+        placeHolderActionButton.snp.makeConstraints({make in
+            make.width.equalTo(200)
+            make.height.equalTo(40)
+            make.centerX.equalTo(backgroundView)
+            make.top.equalTo(self.placeHolderTextLabel.snp.bottom).offset(8)
+        })
     }
     
-    /** Enables / Disables the Placeholder View */
-    open func placeholder(enable : Bool,
-                          title: String? = nil,
-                          text: String? = nil,
-                          image: UIImage? = nil,
-                          activity: Bool = false,
-                          buttonTitle: String? = nil,
-                          isButtonHidden: Bool = true) -> Void {
-        self.tableView.backgroundView?.isHidden = !enable
-        self.tableView?.isHidden = enable
+    /** Updates the placeholders */
+    open func updatePlaceholders(enable: Bool,
+                                 title: String? = nil,
+                                 text: String? = nil,
+                                 image: UIImage? = nil,
+                                 activity: Bool = false,
+                                 buttonTitle: String? = nil) -> Void {
+        self.tableView.separatorStyle = enable ? .none : .singleLine
+        
+        if enable {
+            self.tableView.bringSubview(toFront: self.tableView.backgroundView!)
+        }
+        else {
+            self.tableView.sendSubview(toBack: self.tableView.backgroundView!)
+        }
         
         self.placeholderTitleLabel.text = title
         self.placeHolderTextLabel.text = text
@@ -135,7 +143,7 @@ import UIKit
             self.placeHolderActivityIndicatorView.stopAnimating()
         }
         self.placeHolderActionButton.setTitle(buttonTitle, for: .normal)
-        self.placeHolderActionButton.isHidden = isButtonHidden
+        self.placeHolderActionButton.isHidden = buttonTitle == nil
     }
     
     /** Called after the placeHolderActionButton is pressed */
@@ -261,8 +269,21 @@ extension VCTableViewController: UISearchBarDelegate {
                 textField.tintColor = .gray
             }
         }
+        
+        if #available(iOS 11.0, *) {
+        }
+        else {
+            self.rightButtonItems = self.navigationItem.rightBarButtonItems
+            self.navigationItem.rightBarButtonItems = nil
+        }
     }
     open func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if #available(iOS 11.0, *) {
+        }
+        else {
+            self.navigationItem.rightBarButtonItems = self.rightButtonItems
+            self.rightButtonItems = nil
+        }
     }
 }
 extension VCTableViewController {

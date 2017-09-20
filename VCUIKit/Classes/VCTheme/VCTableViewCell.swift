@@ -39,10 +39,14 @@ import UIKit
             self.backgroundColor = sharedAppearanceManager.appearance.tableViewCellBackgroundColor
             
             self.textLabel?.textColor = sharedAppearanceManager.appearance.tableViewCellTitleTextColor
-            self.textLabel?.font = sharedAppearanceManager.appearance.tableViewCellTitleFont
+            if let customFont = sharedAppearanceManager.appearance.tableViewCellTitleFont {
+                self.textLabel?.font = customFont
+            }
             
             self.detailTextLabel?.textColor = sharedAppearanceManager.appearance.tableViewCellDetailTextColor
-            self.textLabel?.font = sharedAppearanceManager.appearance.tableViewCellDetailFont
+            if let customFont = sharedAppearanceManager.appearance.tableViewCellDetailFont {
+                self.textLabel?.font = customFont
+            }
             
             self.tintColor = sharedAppearanceManager.appearance.tableViewCellTintColor
         }

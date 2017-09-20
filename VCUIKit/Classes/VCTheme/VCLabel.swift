@@ -35,7 +35,9 @@ import UIKit
         super.applyAppearance()
         
         if !storyboardAppearance {
-            self.font = sharedAppearanceManager.appearance.labelFont
+            if let customFont = sharedAppearanceManager.appearance.labelFont {
+                self.font = customFont
+            }
             self.textColor = sharedAppearanceManager.appearance.labelTextColor
         }
     }

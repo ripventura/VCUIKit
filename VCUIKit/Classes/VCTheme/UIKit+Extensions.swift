@@ -230,9 +230,11 @@ extension UITabBarController {
         
         self.tabBar.isTranslucent = sharedAppearanceManager.appearance.tabBarIsTranslucent
         
-        if let items = self.tabBar.items {
-            for item in items {
-                item.setTitleTextAttributes([NSAttributedStringKey.font: sharedAppearanceManager.appearance.tabBarFont], for: .normal)
+        if let customFont = sharedAppearanceManager.appearance.tabBarFont {
+            if let items = self.tabBar.items {
+                for item in items {
+                    item.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
             }
         }
     }
@@ -249,10 +251,13 @@ extension UINavigationController {
         self.navigationBar.barTintColor = sharedAppearanceManager.appearance.navigationBarBackgroundColor
         
         //Updates NavigationBar title font
-        self.navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor,
-            NSAttributedStringKey.font: sharedAppearanceManager.appearance.navigationBarTitleFont
+        var attributes: [NSAttributedStringKey:Any] = [
+            NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor
         ]
+        if let customFont = sharedAppearanceManager.appearance.navigationBarTitleFont {
+            attributes[NSAttributedStringKey.font] = customFont
+        }
+        self.navigationBar.titleTextAttributes = attributes
         if #available(iOS 11.0, *) {
             self.navigationBar.largeTitleTextAttributes = [
                 NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor

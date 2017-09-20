@@ -27,10 +27,10 @@ public var defaultAppearance: VCAppearance = VCAppearance()
 
 open class VCAppearance {
     open var labelTextColor : UIColor
-    open var labelFont : UIFont
+    open var labelFont : UIFont?
     
     open var buttonTintColor : UIColor = .black
-    open var buttonFont : UIFont
+    open var buttonFont : UIFont?
     
     open var segmentedControlTintColor : UIColor = .black
     
@@ -39,14 +39,14 @@ open class VCAppearance {
     open var activityIndicatorTintColor : UIColor = .black
     
     open var textFieldTextColor : UIColor
-    open var textFieldTextFont : UIFont
+    open var textFieldTextFont : UIFont?
     
     open var tableViewCellTintColor : UIColor = .black
     open var tableViewCellBackgroundColor : UIColor
     open var tableViewCellTitleTextColor : UIColor
-    open var tableViewCellTitleFont : UIFont
+    open var tableViewCellTitleFont : UIFont?
     open var tableViewCellDetailTextColor : UIColor
-    open var tableViewCellDetailFont : UIFont
+    open var tableViewCellDetailFont : UIFont?
     open var tableViewCellEstimatedHeight: CGFloat
     
     open var tableViewBackgroundColor : UIColor
@@ -56,8 +56,8 @@ open class VCAppearance {
     open var navigationBarTintColor : UIColor
     open var navigationBarBackgroundColor : UIColor
     open var navigationBarTitleColor : UIColor
-    open var navigationBarTitleFont : UIFont
-    open var navigationBarBackButtonTitle : String
+    open var navigationBarTitleFont : UIFont?
+    open var navigationBarBackButtonTitle : String?
     open var navigationBarIsTranslucent : Bool
     
     open var viewControllerViewTintColor : UIColor {
@@ -74,7 +74,7 @@ open class VCAppearance {
     
     open var tabBarTintColor : UIColor = .black
     open var tabBarBackgroundColor : UIColor
-    open var tabBarFont : UIFont
+    open var tabBarFont : UIFont?
     open var tabBarIsTranslucent : Bool
     
     open var bannerSuccessBackgroundColor : UIColor
@@ -98,10 +98,10 @@ open class VCAppearance {
     public init() {
         // MARK: - VCLabel
         labelTextColor = VCUIKitStyleKit.labelTextColor
-        labelFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+        //labelFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         
         // MARK: - VCButton
-        buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
+        //buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
         
         // MARK: - VCTextField
         textFieldTextFont = UIFont.systemFont(ofSize: 14)
@@ -110,9 +110,9 @@ open class VCAppearance {
         // MARK: - VCTableViewCell
         tableViewCellBackgroundColor = VCUIKitStyleKit.white
         tableViewCellTitleTextColor = VCUIKitStyleKit.tableViewCellTitleTextColor
-        tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+        //tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tableViewCellDetailTextColor = VCUIKitStyleKit.tableViewDetailTextColor
-        tableViewCellDetailFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
+        //tableViewCellDetailFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         tableViewCellEstimatedHeight = 44
         
         // MARK: - VCTableView
@@ -125,8 +125,8 @@ open class VCAppearance {
         navigationBarTintColor = VCUIKitStyleKit.navigationBarTintColor
         navigationBarBackgroundColor = VCUIKitStyleKit.navigationBarBackgroundColor
         navigationBarTitleColor = VCUIKitStyleKit.white
-        navigationBarTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
-        navigationBarBackButtonTitle = ""
+        //navigationBarTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        //navigationBarBackButtonTitle = ""
         navigationBarIsTranslucent = false
         
         // MARK: - VCViewController
@@ -142,7 +142,7 @@ open class VCAppearance {
         // MARK: - UITabBar
         tabBarTintColor = VCUIKitStyleKit.tabBarTintColor
         tabBarBackgroundColor = VCUIKitStyleKit.viewControllerViewBackgroundColor
-        tabBarFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
+        //tabBarFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         tabBarIsTranslucent = false
         
         // MARK: - VCBannerCreator
