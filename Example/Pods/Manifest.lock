@@ -1,18 +1,15 @@
 PODS:
-  - ActionSheetPicker-3.0 (2.2.0)
   - FCAlertView (1.4.0)
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.1)
   - SwiftMessages (3.5.1)
-  - VCUIKit (0.1.5):
-    - ActionSheetPicker-3.0 (= 2.2.0)
+  - VCUIKit (0.1.6):
     - FCAlertView (= 1.4)
     - SnapKit (~> 4.0.0)
     - SVProgressHUD (= 2.2.1)
     - SwiftMessages (= 3.5.1)
 
 DEPENDENCIES:
-  - ActionSheetPicker-3.0 (= 2.2.0)
   - FCAlertView (= 1.4)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD (= 2.2.1)
@@ -24,13 +21,12 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
   SwiftMessages: ea0184c801030e52674c603896812c392c129248
-  VCUIKit: 1cb87a6d181ff40ab1ea98f0b53cf12d3f322593
+  VCUIKit: 507ed241e9b0d4b833ce2bbf8873c92b5e258848
 
-PODFILE CHECKSUM: 348ddca46119d25d578f63d5637e5ed1232a3e8c
+PODFILE CHECKSUM: 96f3ff75b96ce4ffb025333fe3063052a7e7f6cb
 
 COCOAPODS: 1.3.1

@@ -9,8 +9,6 @@ pod 'FCAlertView', '1.4'
 
 pod 'SnapKit', '~> 4.0.0'
 
-pod 'ActionSheetPicker-3.0', '2.2.0'
-
 pod 'SVProgressHUD', '2.2.1'
 
 # Script to fix the IBDesignable issues

@@ -43,32 +43,8 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
                 VCCodeScanner.showScanner(parentViewController: self,
                                           delegate: self)
             case 1:
-                VCActionSheetPicker.showStringPicker(title: "Picking Strings",
-                                                     stringOptions: ["Dog", "Cat", "Bird", "Turtle"],
-                                                     initialSelection: 2,
-                                                     originView: self.view,
-                                                     completionHandler: {index, value in
-                                                        print("You selected " + value + " at index " + String(format: "%d", index))
-                },
-                                                     cancelHandler: {
-                                                        print("String picker has been canceled")
-                })
-            case 2:
-                VCActionSheetPicker.showDatePicker(title: "Picking Dates",
-                                                   pickerMode: .date,
-                                                   selectedDate: Date(),
-                                                   minimumDate: Date().addingTimeInterval(-25920000),
-                                                   maximumDate: Date().addingTimeInterval(25920000),
-                                                   originView: self.view,
-                                                   completionHandler: {date in
-                                                    print("You selected " + date.description)
-                },
-                                                   cancelHandler: {
-                                                    print("Date picker has been canceled")
-                })
-            case 3:
                 VCMediaPicker.showAlbumMediaPicker(delegateViewController: self)
-            case 4:
+            case 2:
                 VCMediaPicker.showCameraMediaPicker(delegateViewController: self)
             default:
                 break
