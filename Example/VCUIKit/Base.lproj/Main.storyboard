@@ -250,14 +250,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wdC-3E-xaW">
-                                                    <rect key="frame" x="16" y="11.5" width="81" height="17"/>
+                                                    <rect key="frame" x="15" y="11.5" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert with custom Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wxf-WE-6H6">
-                                                    <rect key="frame" x="16" y="31" width="170" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="170" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -274,14 +274,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IVi-PY-jUO">
-                                                    <rect key="frame" x="16" y="11.5" width="81" height="17"/>
+                                                    <rect key="frame" x="15" y="11.5" width="81" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Normal alert with TextField" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nLW-1v-YwA">
-                                                    <rect key="frame" x="16" y="31" width="151.5" height="14.5"/>
+                                                    <rect key="frame" x="15" y="31" width="151.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -552,7 +552,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCTabledViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ilV-6S-jwM">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="VCTableViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ilV-6S-jwM">
                                                     <rect key="frame" x="15" y="0.0" width="325" height="59.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -562,7 +562,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="S5t-0T-lgj" kind="show" id="Iui-Wn-HLr"/>
+                                            <segue destination="EAz-Q1-Nwc" kind="show" id="pas-KZ-tqn"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -864,54 +864,31 @@
             </objects>
             <point key="canvasLocation" x="1213.5999999999999" y="64.31784107946028"/>
         </scene>
-        <!--Pull to refresh-->
-        <scene sceneID="cqD-ej-flb">
+        <!--Pull to Refresh-->
+        <scene sceneID="6dJ-1Q-FyS">
             <objects>
-                <viewController id="S5t-0T-lgj" customClass="PullToRefreshViewController" customModule="VCUIKit_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gZW-iz-3xR"/>
-                        <viewControllerLayoutGuide type="bottom" id="Uqf-1F-HHP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y2v-JP-lDG">
+                <tableViewController id="EAz-Q1-Nwc" customClass="PullToRefreshViewController" customModule="VCUIKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Pyo-5F-esK" customClass="VCTableView" customModule="VCUIKit">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zOo-Zh-FHf" customClass="VCTableView" customModule="VCUIKit">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="storyboardAppearance" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="S5t-0T-lgj" id="0bS-v4-AEI"/>
-                                    <outlet property="delegate" destination="S5t-0T-lgj" id="qpY-ce-2nT"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Uqf-1F-HHP" firstAttribute="top" secondItem="zOo-Zh-FHf" secondAttribute="bottom" id="Oav-a0-j1G"/>
-                            <constraint firstItem="zOo-Zh-FHf" firstAttribute="leading" secondItem="Y2v-JP-lDG" secondAttribute="leading" id="Ohe-AL-imP"/>
-                            <constraint firstItem="zOo-Zh-FHf" firstAttribute="top" secondItem="gZW-iz-3xR" secondAttribute="bottom" id="Vyx-VP-A5z"/>
-                            <constraint firstAttribute="trailing" secondItem="zOo-Zh-FHf" secondAttribute="trailing" id="tmZ-cY-nCJ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pull to refresh" largeTitleDisplayMode="always" id="ESZ-zp-txe">
-                        <barButtonItem key="backBarButtonItem" title="oi" id="A0m-z5-FKe"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="2fL-OF-XOW">
-                            <connections>
-                                <action selector="searchButtonPressed:" destination="S5t-0T-lgj" id="8sD-mV-Qfy"/>
-                            </connections>
-                        </barButtonItem>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="EAz-Q1-Nwc" id="tla-Dm-aLF"/>
+                            <outlet property="delegate" destination="EAz-Q1-Nwc" id="iKW-f3-432"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pull to Refresh" largeTitleDisplayMode="never" id="d9B-Ow-CgS">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Test" id="Sbz-Wv-r9M"/>
+                            <barButtonItem title="Test" id="E6Q-tf-1BE"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="pullToRefresh" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="includesRefreshControl" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="includesSearchControl" value="YES"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="tableView" destination="zOo-Zh-FHf" id="uLz-Hs-EEe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tNX-5l-afs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3r-K1-0ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1214" y="829"/>
         </scene>

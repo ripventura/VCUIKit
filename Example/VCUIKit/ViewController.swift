@@ -16,6 +16,13 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationItem.largeTitleDisplayMode = .always
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +34,7 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        super.tableView(tableView, didSelectRowAt: indexPath)
         
         switch indexPath.section {
         case 0:

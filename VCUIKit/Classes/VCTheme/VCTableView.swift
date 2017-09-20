@@ -35,7 +35,6 @@ import UIKit
         self.applyAppearance()
     }
     
-    
     deinit {
         self.removeNotifications()
     }

@@ -253,5 +253,10 @@ extension UINavigationController {
             NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor,
             NSAttributedStringKey.font: sharedAppearanceManager.appearance.navigationBarTitleFont
         ]
+        if #available(iOS 11.0, *) {
+            self.navigationBar.largeTitleTextAttributes = [
+                NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor
+            ]
+        }
     }
 }
