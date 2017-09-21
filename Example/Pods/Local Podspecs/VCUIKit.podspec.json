@@ -21,7 +21,7 @@
   "source_files": "VCUIKit/Classes/**/*",
   "dependencies": {
     "SwiftMessages": [
-      "3.5.1"
+      "~> 4.0.0"
     ],
     "SnapKit": [
       "~> 4.0.0"

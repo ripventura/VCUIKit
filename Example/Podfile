@@ -3,7 +3,7 @@ use_frameworks!
 target 'VCUIKit_Example' do
   pod 'VCUIKit', :path => '../'
 
-pod 'SwiftMessages', '3.5.1'
+pod 'SwiftMessages', '~> 4.0.0'
 
 pod 'FCAlertView', '1.4'
 
