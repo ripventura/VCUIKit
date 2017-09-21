@@ -17,7 +17,7 @@ open class VCBannerCreator {
     
     init() {
         bannerMessager = SwiftMessages()
-        bannerMessager.pauseBetweenMessages = 2
+        bannerMessager.pauseBetweenMessages = 0.5
     }
     
     /** 
@@ -73,7 +73,7 @@ open class VCBannerCreator {
         
         // Instantiate a message view from the provided card view layout. SwiftMessages searches for nib
         // files in the main bundle first, so you can easily copy them into your project and make changes.
-        let view = MessageView.viewFromNib(layout: .MessageView)
+        let view = MessageView.viewFromNib(layout: .messageView)
         
         // Theme message elements with the desired style.
         view.configureTheme(theme)
