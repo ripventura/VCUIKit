@@ -58,7 +58,6 @@ open class VCAppearance {
     open var navigationBarTitleColor : UIColor
     open var navigationBarTitleFont : UIFont?
     open var navigationBarBackButtonTitle : String?
-    open var navigationBarIsTranslucent : Bool
     
     open var viewControllerViewTintColor : UIColor {
         didSet {
@@ -126,8 +125,7 @@ open class VCAppearance {
         navigationBarBackgroundColor = VCUIKitStyleKit.navigationBarBackgroundColor
         navigationBarTitleColor = VCUIKitStyleKit.white
         //navigationBarTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
-        //navigationBarBackButtonTitle = ""
-        navigationBarIsTranslucent = false
+        navigationBarBackButtonTitle = ""
         
         // MARK: - VCViewController
         viewControllerViewTintColor = VCUIKitStyleKit.viewControllerViewTintColor

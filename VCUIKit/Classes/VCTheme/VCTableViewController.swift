@@ -37,12 +37,9 @@ import UIKit
         
         self.updateBackButtonStyle()
         
-        tableView?.estimatedRowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
-        tableView?.rowHeight = sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
-        
         self.setupPlaceholders()
-        self.setupRefreshControl()
         self.setupSearchControl()
+        self.setupRefreshControl()
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -156,12 +153,16 @@ import UIKit
     internal func setupRefreshControl() -> Void {
         if self.includesRefreshControl {
             self.refreshControl = UIRefreshControl()
-            self.refreshControl?.addTarget(self, action: #selector(self.didRefreshControl), for: .valueChanged)
+            self.refreshControl?.addTarget(self, action: #selector(self.refreshControlTriggered), for: .valueChanged)
         }
     }
-    
+    @objc fileprivate func refreshControlTriggered() {
+        if self.refreshControl!.isRefreshing {
+            self.didRefreshControl()
+        }
+    }
     /** Called after the RefreshControl is triggered */
-    @objc open func didRefreshControl() -> Void {
+    open func didRefreshControl() -> Void {
     }
     
     // MARK: - Search Control
@@ -185,6 +186,7 @@ import UIKit
         self.searchControl(enable: self.includesSearchControl)
     }
     
+    /** Enables / disables the SearchControl */
     open func searchControl(enable: Bool) {
         if enable {
             if #available(iOS 11.0, *) {
@@ -192,6 +194,8 @@ import UIKit
             } else {
                 // Fallback on earlier versions
                 self.setNavitagionBarTitle(view: searchController.searchBar)
+                
+                self.searchController.becomeFirstResponder()
             }
         }
         else {
@@ -206,20 +210,25 @@ import UIKit
         }
     }
     
+    /** Called after the SearchControl updates it's text */
+    open func didSearch(text: String?) {
+        
+    }
+    
     // MARK: - Data Loading
     
     /** Reloads TableView Data */
     open func reloadData() {
         self.tableView?.reloadData()
     }
-
+    
     // MARK: - Styling
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
         sharedAppearanceManager.appearance = defaultAppearance
     }
-
+    
     override open func applyAppearance() -> Void {
         self.willSetDefaultStyles()
         super.applyAppearance()
@@ -231,7 +240,13 @@ import UIKit
         self.navigationController?.applyAppearance()
         
         if #available(iOS 11.0, *) {
-            self.refreshControl?.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
+            if self.includesSearchControl {
+                self.refreshControl?.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
+            }
+            if self.includesRefreshControl {
+                // This is needed to fix a bug on iOS 11 where refreshControls brake when refreshing
+                self.navigationController?.navigationBar.isTranslucent = true
+            }
         }
         searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
         
@@ -242,9 +257,6 @@ import UIKit
         
         //Updates TabBar colors
         self.tabBarController?.applyAppearance()
-        
-        //Doesn't let the subvies extend through the NavigationBar / TabBar
-        self.edgesForExtendedLayout = []
     }
 }
 extension VCTableViewController: UITextFieldDelegate {
@@ -255,6 +267,7 @@ extension VCTableViewController: UITextFieldDelegate {
 }
 extension VCTableViewController: UISearchResultsUpdating {
     open func updateSearchResults(for searchController: UISearchController) {
+        self.didSearch(text: searchController.searchBar.text)
     }
 }
 extension VCTableViewController: UISearchBarDelegate {
@@ -286,16 +299,10 @@ extension VCTableViewController: UISearchBarDelegate {
         }
     }
 }
-extension VCTableViewController {
-    open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if ((tableView as? VCTableView)?.storyboardAppearance) != nil {
-            return tableView.rowHeight
-        }
-        return sharedAppearanceManager.appearance.tableViewCellEstimatedHeight
-    }
-}
+
 extension VCTableViewController {
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 }
+

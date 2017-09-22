@@ -59,9 +59,6 @@ import UIKit
         
         //Updates TabBar colors
         self.tabBarController?.applyAppearance()
-        
-        //Doesn't let the subvies extend through the NavigationBar / TabBar
-        self.edgesForExtendedLayout = []
     }
 }
 extension VCViewController: UITextFieldDelegate {

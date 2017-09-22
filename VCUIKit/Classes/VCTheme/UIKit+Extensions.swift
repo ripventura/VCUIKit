@@ -242,8 +242,6 @@ extension UITabBarController {
 
 extension UINavigationController {
     override open func applyAppearance() {
-        self.navigationBar.isTranslucent = sharedAppearanceManager.appearance.navigationBarIsTranslucent
-        
         //Updates Navbar Tint Color
         self.navigationBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
         

@@ -22,7 +22,6 @@ class PullToRefreshViewController: VCTableViewController {
                                     title: "Placeholder Title",
                                     text: "Placeholder text...",
                                     image: nil,
-                                    activity: true,
                                     buttonTitle: "Touch me")
         }
         else {
@@ -30,10 +29,13 @@ class PullToRefreshViewController: VCTableViewController {
             self.updatePlaceholders(enable: false)
         }
         self.reloadData()
-        
-        self.refreshControl?.endRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+            self.refreshControl?.endRefreshing()
+        })
     }
     
+    @IBAction func searchButtonPressed(_ sender: Any) {
+    }
     override func placeholderActionButtonPressed(_ sender: Any) {
         print("You touched it!")
     }
