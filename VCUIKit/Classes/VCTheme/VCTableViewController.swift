@@ -12,6 +12,8 @@ import UIKit
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesSearchControl: Bool = false
+    /** Whether the TableView should disable the RefreshControl when searching */
+    @IBInspectable open var disablesRefreshWhenSearching: Bool = true
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable open var storyboardAppearance: Bool = false
     
@@ -25,6 +27,10 @@ import UIKit
     
     // Used on iOS <= 10 to hide rightBarButtonItems when searching
     var rightButtonItems: [UIBarButtonItem]?
+    
+    // Used to disable the RefreshControl when Searching
+    var bounce: Bool = true
+    var alwaysBounceVertical: Bool = true
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -54,7 +60,12 @@ import UIKit
         if #available(iOS 11, *) {
         }
         else {
-            self.searchControl(enable: self.includesSearchControl)
+            if self.includesSearchControl {
+                if self.navigationItem.titleView != searchController.searchBar {
+                    // Fallback on earlier versions
+                    self.setNavitagionBarTitle(view: searchController.searchBar)
+                }
+            }
         }
     }
     
@@ -179,50 +190,83 @@ import UIKit
     
     /** Sets up the SearchControl. Override this calling super for any custom properties. */
     open func setupSearchControl() -> Void {
-        searchController.searchBar.delegate = self
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.showsCancelButton = false
+        self.searchController.searchBar.delegate = self
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.showsCancelButton = false
         // Good practice
         definesPresentationContext = false
         
         if #available(iOS 11.0, *) {
             self.navigationItem.hidesSearchBarWhenScrolling = true
             
-            self.searchControl(enable: self.includesSearchControl)
+            if self.includesSearchControl {
+                self.navigationItem.searchController = self.searchController
+            }
         }
         else {
-            searchController.hidesNavigationBarDuringPresentation = false
+            self.searchController.hidesNavigationBarDuringPresentation = false
         }
     }
     
-    /** Enables / disables the SearchControl */
-    open func searchControl(enable: Bool) {
-        if enable {
-            if #available(iOS 11.0, *) {
-                self.navigationItem.searchController = self.searchController
-            } else {
-                if self.navigationItem.titleView != searchController.searchBar {
-                    // Fallback on earlier versions
-                    self.setNavitagionBarTitle(view: searchController.searchBar)
-                }
-            }
+    /** Sets the SearchControl active/inactive */
+    open func setSearchControl(active: Bool) {
+        // If the SearchControl was active and is now being disabled
+        if self.searchController.isActive && !active {
+            self.didCancelSearch()
         }
-        else {
-            self.searchController.searchBar.resignFirstResponder()
-            
-            if #available(iOS 11.0, *) {
-                self.navigationItem.searchController = nil
-            } else {
-                // Fallback on earlier versions
-                self.setNavitagionBarTitle(view: nil)
-            }
-        }
+        self.searchController.isActive = active
     }
     
     /** Called after the SearchControl updates it's text */
     open func didSearch(text: String?) {
         
+    }
+    
+    /** Called after the SearchControl becomes active */
+    open func didStartSearching() {
+        if self.disablesRefreshWhenSearching {
+            // Stores for later use
+            self.bounce = self.tableView.bounces
+            self.alwaysBounceVertical = self.tableView.alwaysBounceVertical
+            
+            // Disables the RefreshControl when searching
+            self.tableView.bounces = false
+            self.tableView.alwaysBounceVertical = false
+        }
+        // This appearance has to be fixed after the bar starts editing (iOS 11 bug)
+        if let textField = self.searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            if #available(iOS 11.0, *) {
+                textField.textColor = sharedAppearanceManager.appearance.navigationBarTitleColor
+            }
+            else {
+                textField.textColor = .darkText
+                textField.tintColor = .gray
+            }
+        }
+        
+        if #available(iOS 11.0, *) {
+        }
+        else {
+            self.rightButtonItems = self.navigationItem.rightBarButtonItems
+            self.navigationItem.rightBarButtonItems = nil
+        }
+    }
+    
+    /** Called after the SearchControl becomes inactive */
+    open func didCancelSearch() {
+        if self.disablesRefreshWhenSearching {
+            // Enables back the RefreshControl
+            self.tableView.bounces = self.bounce
+            self.tableView.alwaysBounceVertical = self.alwaysBounceVertical
+        }
+        
+        if #available(iOS 11.0, *) {
+        }
+        else {
+            self.navigationItem.rightBarButtonItems = self.rightButtonItems
+            self.rightButtonItems = nil
+        }
     }
     
     // MARK: - Data Loading
@@ -238,7 +282,7 @@ import UIKit
     open func willSetDefaultStyles() {
         sharedAppearanceManager.appearance = defaultAppearance
     }
-
+    
     
     override open func applyAppearance() -> Void {
         self.willSetDefaultStyles()
@@ -284,31 +328,11 @@ extension VCTableViewController: UISearchResultsUpdating {
 }
 extension VCTableViewController: UISearchBarDelegate {
     open func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        // This appearance has to be fixed after the bar starts editing (iOS 11 bug)
-        if let textField = self.searchController.searchBar.value(forKey: "searchField") as? UITextField {
-            if #available(iOS 11.0, *) {
-                textField.textColor = sharedAppearanceManager.appearance.navigationBarTitleColor
-            }
-            else {
-                textField.textColor = .darkText
-                textField.tintColor = .gray
-            }
-        }
-        
-        if #available(iOS 11.0, *) {
-        }
-        else {
-            self.rightButtonItems = self.navigationItem.rightBarButtonItems
-            self.navigationItem.rightBarButtonItems = nil
-        }
+        self.didStartSearching()
     }
+    
     open func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        if #available(iOS 11.0, *) {
-        }
-        else {
-            self.navigationItem.rightBarButtonItems = self.rightButtonItems
-            self.rightButtonItems = nil
-        }
+        self.didCancelSearch()
     }
 }
 
