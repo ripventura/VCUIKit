@@ -572,6 +572,10 @@
                     <navigationItem key="navigationItem" title="VCUIKit" id="PeL-7J-zFp">
                         <barButtonItem key="rightBarButtonItem" title="Test" id="bgm-wv-N5i"/>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="includesRefreshControl" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="includesSearchControl" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSl-ng-oS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -831,7 +835,7 @@
                             <outlet property="delegate" destination="EAz-Q1-Nwc" id="iKW-f3-432"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pull to Refresh" id="d9B-Ow-CgS">
+                    <navigationItem key="navigationItem" title="Pull to Refresh" largeTitleDisplayMode="never" id="d9B-Ow-CgS">
                         <rightBarButtonItems>
                             <barButtonItem title="Test" id="Sbz-Wv-r9M">
                                 <connections>

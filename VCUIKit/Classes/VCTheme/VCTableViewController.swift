@@ -12,8 +12,6 @@ import UIKit
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesSearchControl: Bool = false
-    /** Whether the SearchBar should hide when scrolling the TableView */
-    @IBInspectable open var hidesSearchBarOnScroll: Bool = false
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable open var storyboardAppearance: Bool = false
     
@@ -48,6 +46,16 @@ import UIKit
         super.viewWillAppear(animated)
         
         self.applyAppearance()
+    }
+    
+    open override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if #available(iOS 11, *) {
+        }
+        else {
+            self.searchControl(enable: self.includesSearchControl)
+        }
     }
     
     open override func prepareForInterfaceBuilder() {
@@ -179,13 +187,13 @@ import UIKit
         definesPresentationContext = false
         
         if #available(iOS 11.0, *) {
-            self.navigationItem.hidesSearchBarWhenScrolling = self.hidesSearchBarOnScroll
+            self.navigationItem.hidesSearchBarWhenScrolling = true
+            
+            self.searchControl(enable: self.includesSearchControl)
         }
         else {
             searchController.hidesNavigationBarDuringPresentation = false
         }
-        
-        self.searchControl(enable: self.includesSearchControl)
     }
     
     /** Enables / disables the SearchControl */
@@ -194,14 +202,14 @@ import UIKit
             if #available(iOS 11.0, *) {
                 self.navigationItem.searchController = self.searchController
             } else {
-                // Fallback on earlier versions
-                self.setNavitagionBarTitle(view: searchController.searchBar)
-                
-                self.searchController.becomeFirstResponder()
+                if self.navigationItem.titleView != searchController.searchBar {
+                    // Fallback on earlier versions
+                    self.setNavitagionBarTitle(view: searchController.searchBar)
+                }
             }
         }
         else {
-            self.searchController.resignFirstResponder()
+            self.searchController.searchBar.resignFirstResponder()
             
             if #available(iOS 11.0, *) {
                 self.navigationItem.searchController = nil
@@ -230,6 +238,7 @@ import UIKit
     open func willSetDefaultStyles() {
         sharedAppearanceManager.appearance = defaultAppearance
     }
+
     
     override open func applyAppearance() -> Void {
         self.willSetDefaultStyles()
@@ -250,6 +259,7 @@ import UIKit
                 self.navigationController?.navigationBar.isTranslucent = true
             }
         }
+        
         searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
         
         if !storyboardAppearance {
