@@ -12,6 +12,8 @@ import UIKit
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesSearchControl: Bool = false
+    /** Whether the SearchBar should hide when scrolling the TableView */
+    @IBInspectable open var hidesSearchBarOnScroll: Bool = false
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable open var storyboardAppearance: Bool = false
     
@@ -177,7 +179,7 @@ import UIKit
         definesPresentationContext = false
         
         if #available(iOS 11.0, *) {
-            self.navigationItem.hidesSearchBarWhenScrolling = true
+            self.navigationItem.hidesSearchBarWhenScrolling = self.hidesSearchBarOnScroll
         }
         else {
             searchController.hidesNavigationBarDuringPresentation = false

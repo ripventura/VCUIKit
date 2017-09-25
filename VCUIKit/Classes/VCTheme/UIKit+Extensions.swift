@@ -211,11 +211,13 @@ extension UIViewController {
     }
     
     internal func updateBackButtonStyle() {
-        //Updates the BackButton Style
-        let backButton = UIBarButtonItem()
-        backButton.title = sharedAppearanceManager.appearance.navigationBarBackButtonTitle
-        
-        self.navigationItem.backBarButtonItem = backButton
+        if let title = sharedAppearanceManager.appearance.navigationBarBackButtonTitle {
+            //Updates the BackButton Style
+            let backButton = UIBarButtonItem()
+            backButton.title = title
+            
+            self.navigationItem.backBarButtonItem = backButton
+        }
     }
     
     @objc open func applyAppearance() -> Void {
