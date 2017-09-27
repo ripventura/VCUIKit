@@ -1,5 +1,5 @@
 # VCUIKit
-This is a collection of classes and extensions written in Swift 3 to help you optimize your time when developing iOS applications.
+This is a collection of classes and extensions written in Swift 4 to help you optimize your time when developing iOS applications.
 All the code was done by me, so please if you think you can contribute, lets share some thoughts!
 
 When I get some time I will update the Wiki page with detailed description of each class / method.
@@ -12,7 +12,7 @@ When I get some time I will update the Wiki page with detailed description of ea
 To run the example project, simply clone the repo and open Example/VCUIKit.xcworkspace.
 
 ## Requirements
-- iOS >= 8.0
+- iOS >= 10.0
 
 ## Installation
 
