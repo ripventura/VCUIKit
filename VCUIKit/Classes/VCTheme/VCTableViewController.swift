@@ -7,15 +7,13 @@
 
 import UIKit
 
-@IBDesignable open class VCTableViewController: UIViewController {
+@IBDesignable open class VCTableViewController: VCViewController {
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesSearchControl: Bool = false
     /** Whether the TableView should disable the RefreshControl when searching */
     @IBInspectable open var disablesRefreshWhenSearching: Bool = true
-    /** Wheter the appearance is being set manually on Storyboard */
-    @IBInspectable open var storyboardAppearance: Bool = false
     
     /** Main TableView */
     @IBOutlet open var tableView: UITableView!
