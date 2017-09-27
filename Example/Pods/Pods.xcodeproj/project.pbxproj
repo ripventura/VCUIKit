@@ -21,6 +21,7 @@
 		1512B3352124A2311AD039FFCAB548EE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ADEF5B6741230456A4B49BC47C4F18 /* Theme.swift */; };
 		15BF9F9FAEE413EAD01BE67E351E8BF3 /* VCUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F1F61FF8470B377621D973A135AFD /* VCUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		186AFBAF1F7C0DD900A882AB /* VCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AFBAE1F7C0DD800A882AB /* VCTableViewController.swift */; };
+		186AFBB21F7C28BA00A882AB /* VCPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AFBB01F7C289F00A882AB /* VCPlaceholderView.swift */; };
 		1938D148C8F535309839380260502D5B /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF3BCD652558094E3CA440BC04C563A /* SVProgressHUD.framework */; };
 		19E4BCF9D89FFC75CC350223FDF60B04 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE8F3D14115A58D283933CD66D7FD2 /* SVIndefiniteAnimatedView.m */; };
 		1E5656E480B4EAF80F2CD782CE5EC505 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D75C4BABBE6A84BBC13F952AA2D8C8 /* Animator.swift */; };
@@ -246,6 +247,7 @@
 		185360A499968D01DE2BD8A2683FB987 /* MaskingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaskingView.swift; path = SwiftMessages/MaskingView.swift; sourceTree = "<group>"; };
 		1860822BECCB4A6AD7E3B1BC3606C98E /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		186AFBAE1F7C0DD800A882AB /* VCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTableViewController.swift; sourceTree = "<group>"; };
+		186AFBB01F7C289F00A882AB /* VCPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPlaceholderView.swift; sourceTree = "<group>"; };
 		197DC22143FE0503E91B8CC1BEFFE9F8 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		1BA571463BE934D27FBE1980466AEED9 /* CardView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CardView.xib; path = SwiftMessages/Resources/CardView.xib; sourceTree = "<group>"; };
 		1E702495D54352D946971B2D4E199010 /* close-round.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close-round.png"; path = "FCAlertView/Assets/close-round.png"; sourceTree = "<group>"; };
@@ -550,6 +552,7 @@
 				CE3F704A800D470A00A275265C30934C /* VCSwitch.swift */,
 				42F2C4006D02C60D821635F7D6591AAD /* VCTableView.swift */,
 				02FC2441C91AA087E19973CB83E0F22A /* VCTableViewCell.swift */,
+				186AFBB01F7C289F00A882AB /* VCPlaceholderView.swift */,
 				364DF5B45870806D1674643D3ECDC37B /* VCTabledViewController.swift */,
 				186AFBAE1F7C0DD800A882AB /* VCTableViewController.swift */,
 				1584FA53177CB602A899634429FBBCE7 /* VCTextField.swift */,
@@ -1258,6 +1261,7 @@
 				33DF05C74CC71F156477434D452C9DD9 /* VCSegmentedControl.swift in Sources */,
 				186AFBAF1F7C0DD900A882AB /* VCTableViewController.swift in Sources */,
 				372DBE6F4F06ABC4BD524D233855693E /* VCSwitch.swift in Sources */,
+				186AFBB21F7C28BA00A882AB /* VCPlaceholderView.swift in Sources */,
 				B357A0602E2703E002CD666B93819DE3 /* VCTableView.swift in Sources */,
 				452C14ED7708E3E66819B764191301E3 /* VCTableViewCell.swift in Sources */,
 				14584EF6E8F1B3A254F58F2367A6E32E /* VCTabledViewController.swift in Sources */,
