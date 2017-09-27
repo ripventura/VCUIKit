@@ -12,11 +12,8 @@ import UIKit
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
-    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-    }
-    
     // MARK: - Lifecycle
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
