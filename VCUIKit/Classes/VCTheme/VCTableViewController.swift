@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable open class VCTableViewController: UITableViewController {
+@IBDesignable open class VCTableViewController: UIViewController {
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */
@@ -17,6 +17,10 @@ import UIKit
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable open var storyboardAppearance: Bool = false
     
+    /** Main TableView */
+    @IBOutlet open var tableView: UITableView!
+    
+    open var backgroundView: UIView = UIView()
     open var placeHolderImageView : VCImageView = VCImageView()
     open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     open var placeholderTitleLabel : VCLabel = VCLabel()
@@ -29,8 +33,8 @@ import UIKit
     var rightButtonItems: [UIBarButtonItem]?
     
     // Used to disable the RefreshControl when Searching
-    var bounce: Bool = true
-    var alwaysBounceVertical: Bool = true
+    var bounce: Bool?
+    var alwaysBounceVertical: Bool?
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -41,38 +45,26 @@ import UIKit
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateBackButtonStyle()
-        
         self.setupPlaceholders()
         self.setupSearchControl()
         self.setupRefreshControl()
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.applyAppearance()
-    }
-    
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // Auto includes the SearchBar on iOS <= 10
         if #available(iOS 11, *) {
         }
         else {
+            // If includesSearchControl
             if self.includesSearchControl {
+                // If the SearchControl isn't loaded yet
                 if self.navigationItem.titleView != searchController.searchBar {
-                    // Fallback on earlier versions
                     self.setNavitagionBarTitle(view: searchController.searchBar)
                 }
             }
         }
-    }
-    
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        
-        self.applyAppearance()
     }
     
     // MARK: - Placeholders
@@ -81,8 +73,13 @@ import UIKit
     private func setupPlaceholders() {
         let centerYOffset = -80
         
-        let backgroundView: UIView = UIView(frame: CGRectDefault)
-        self.tableView.backgroundView = backgroundView
+        backgroundView = UIView(frame: CGRectDefault)
+        backgroundView.backgroundColor = .clear
+        self.view.addSubview(backgroundView)
+        self.view.sendSubview(toBack: backgroundView)
+        backgroundView.snp.makeConstraints({make in
+            make.edges.equalToSuperview()
+        })
         
         backgroundView.addSubview(self.placeHolderImageView)
         placeHolderImageView.snp.makeConstraints({make in
@@ -143,14 +140,7 @@ import UIKit
                                  image: UIImage? = nil,
                                  activity: Bool = false,
                                  buttonTitle: String? = nil) -> Void {
-        self.tableView.separatorStyle = enable ? .none : .singleLine
-        
-        if enable {
-            self.tableView.bringSubview(toFront: self.tableView.backgroundView!)
-        }
-        else {
-            self.tableView.sendSubview(toBack: self.tableView.backgroundView!)
-        }
+        self.backgroundView.isHidden = !enable
         
         self.placeholderTitleLabel.text = title
         self.placeHolderTextLabel.text = text
@@ -173,12 +163,12 @@ import UIKit
     
     internal func setupRefreshControl() -> Void {
         if self.includesRefreshControl {
-            self.refreshControl = UIRefreshControl()
-            self.refreshControl?.addTarget(self, action: #selector(self.refreshControlTriggered), for: .valueChanged)
+            self.tableView.refreshControl = UIRefreshControl()
+            self.tableView.refreshControl?.addTarget(self, action: #selector(self.refreshControlTriggered), for: .valueChanged)
         }
     }
     @objc fileprivate func refreshControlTriggered() {
-        if self.refreshControl!.isRefreshing {
+        if self.tableView!.refreshControl!.isRefreshing {
             self.didRefreshControl()
         }
     }
@@ -257,8 +247,8 @@ import UIKit
     open func didCancelSearch() {
         if self.disablesRefreshWhenSearching {
             // Enables back the RefreshControl
-            self.tableView.bounces = self.bounce
-            self.tableView.alwaysBounceVertical = self.alwaysBounceVertical
+            self.tableView.bounces = self.bounce!
+            self.tableView.alwaysBounceVertical = self.alwaysBounceVertical!
         }
         
         if #available(iOS 11.0, *) {
@@ -273,30 +263,17 @@ import UIKit
     
     /** Reloads TableView Data */
     open func reloadData() {
-        self.tableView?.reloadData()
+        self.tableView.reloadData()
     }
     
     // MARK: - Styling
     
-    /** Override this if you want to change the Default Styles for this particular View Controller */
-    open func willSetDefaultStyles() {
-        sharedAppearanceManager.appearance = defaultAppearance
-    }
-    
-    
     override open func applyAppearance() -> Void {
-        self.willSetDefaultStyles()
         super.applyAppearance()
-        
-        //Updates StatusBar Style
-        UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
-        
-        //Updates NavigationBar appearance
-        self.navigationController?.applyAppearance()
         
         if #available(iOS 11.0, *) {
             if self.includesSearchControl {
-                self.refreshControl?.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
+                self.tableView.refreshControl?.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
             }
             if self.includesRefreshControl {
                 // This is needed to fix a bug on iOS 11 where refreshControls brake when refreshing
@@ -305,20 +282,6 @@ import UIKit
         }
         
         searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
-        
-        if !storyboardAppearance {
-            self.view.tintColor = sharedAppearanceManager.appearance.viewControllerViewTintColor
-            self.view.backgroundColor = sharedAppearanceManager.appearance.viewControllerViewBackgroundColor
-        }
-        
-        //Updates TabBar colors
-        self.tabBarController?.applyAppearance()
-    }
-}
-extension VCTableViewController: UITextFieldDelegate {
-    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 extension VCTableViewController: UISearchResultsUpdating {
@@ -336,8 +299,16 @@ extension VCTableViewController: UISearchBarDelegate {
     }
 }
 
-extension VCTableViewController {
-    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension VCTableViewController: UITableViewDataSource {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell(style: .default, reuseIdentifier: nil)
+    }
+}
+extension VCTableViewController: UITableViewDelegate {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 }

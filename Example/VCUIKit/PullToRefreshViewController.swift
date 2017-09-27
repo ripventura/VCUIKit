@@ -30,7 +30,7 @@ class PullToRefreshViewController: VCTableViewController {
         }
         self.reloadData()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-            self.refreshControl?.endRefreshing()
+            self.tableView?.refreshControl?.endRefreshing()
         })
     }
     

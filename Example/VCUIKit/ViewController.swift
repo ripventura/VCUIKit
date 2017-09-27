@@ -9,7 +9,7 @@
 import UIKit
 import VCUIKit
 
-class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
+class DemoViewController: UITableViewController, VCCodeScannerDelegate {
     
     var codeScannerViewController : VCCodeScannerViewController?
     
@@ -18,11 +18,19 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationItem.largeTitleDisplayMode = .always
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        super.tableView(tableView, didSelectRowAt: indexPath)
-        
         switch indexPath.section {
         case 0:
             switch indexPath.row {
