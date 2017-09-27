@@ -9,7 +9,7 @@
 import UIKit
 import VCUIKit
 
-class DemoViewController: UITableViewController, VCCodeScannerDelegate {
+class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
     
     var codeScannerViewController : VCCodeScannerViewController?
     
@@ -20,13 +20,6 @@ class DemoViewController: UITableViewController, VCCodeScannerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationItem.largeTitleDisplayMode = .always
-        } else {
-            // Fallback on earlier versions
-        }
     }
     // MARK: - UITableViewDelegate
     

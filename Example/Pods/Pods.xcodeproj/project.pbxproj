@@ -17,9 +17,10 @@
 		0F2BC1C6A36212A3DA7FC66783A0E2F4 /* MaskingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185360A499968D01DE2BD8A2683FB987 /* MaskingView.swift */; };
 		112BF019800413CFFD08B1CA9969FD58 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342B927C1B00F82CFEEBF33DC44214B4 /* ConstraintMultiplierTarget.swift */; };
 		13845D262ED4FD758695DDF1921051CB /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108C11AC9168572CEFE1F5CBDD01BEB6 /* ConstraintRelatableTarget.swift */; };
-		14584EF6E8F1B3A254F58F2367A6E32E /* VCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364DF5B45870806D1674643D3ECDC37B /* VCTableViewController.swift */; };
+		14584EF6E8F1B3A254F58F2367A6E32E /* VCTabledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364DF5B45870806D1674643D3ECDC37B /* VCTabledViewController.swift */; };
 		1512B3352124A2311AD039FFCAB548EE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ADEF5B6741230456A4B49BC47C4F18 /* Theme.swift */; };
 		15BF9F9FAEE413EAD01BE67E351E8BF3 /* VCUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3F1F61FF8470B377621D973A135AFD /* VCUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		186AFBAF1F7C0DD900A882AB /* VCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AFBAE1F7C0DD800A882AB /* VCTableViewController.swift */; };
 		1938D148C8F535309839380260502D5B /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF3BCD652558094E3CA440BC04C563A /* SVProgressHUD.framework */; };
 		19E4BCF9D89FFC75CC350223FDF60B04 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFE8F3D14115A58D283933CD66D7FD2 /* SVIndefiniteAnimatedView.m */; };
 		1E5656E480B4EAF80F2CD782CE5EC505 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D75C4BABBE6A84BBC13F952AA2D8C8 /* Animator.swift */; };
@@ -244,6 +245,7 @@
 		167D8794208EEBD88EA5968A3F22364F /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		185360A499968D01DE2BD8A2683FB987 /* MaskingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaskingView.swift; path = SwiftMessages/MaskingView.swift; sourceTree = "<group>"; };
 		1860822BECCB4A6AD7E3B1BC3606C98E /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
+		186AFBAE1F7C0DD800A882AB /* VCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTableViewController.swift; sourceTree = "<group>"; };
 		197DC22143FE0503E91B8CC1BEFFE9F8 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		1BA571463BE934D27FBE1980466AEED9 /* CardView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = CardView.xib; path = SwiftMessages/Resources/CardView.xib; sourceTree = "<group>"; };
 		1E702495D54352D946971B2D4E199010 /* close-round.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close-round.png"; path = "FCAlertView/Assets/close-round.png"; sourceTree = "<group>"; };
@@ -259,7 +261,7 @@
 		32CA4B76FED7A3B37E1AA5A26D41DCBB /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		341EB5EEAE3D16B3B7112AD59B52DCC5 /* VCAlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VCAlertView.swift; sourceTree = "<group>"; };
 		342B927C1B00F82CFEEBF33DC44214B4 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		364DF5B45870806D1674643D3ECDC37B /* VCTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VCTableViewController.swift; sourceTree = "<group>"; };
+		364DF5B45870806D1674643D3ECDC37B /* VCTabledViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VCTabledViewController.swift; sourceTree = "<group>"; };
 		366C5D27B1A17309FAC1954A1B95AE71 /* VCSegmentedControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VCSegmentedControl.swift; sourceTree = "<group>"; };
 		371719D86874B7DEBEB4DAE8D565ECDD /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressAnimatedView.m; path = SVProgressHUD/SVProgressAnimatedView.m; sourceTree = "<group>"; };
 		376378553C4A0BE5C1758B1FD98C2E23 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
@@ -548,7 +550,8 @@
 				CE3F704A800D470A00A275265C30934C /* VCSwitch.swift */,
 				42F2C4006D02C60D821635F7D6591AAD /* VCTableView.swift */,
 				02FC2441C91AA087E19973CB83E0F22A /* VCTableViewCell.swift */,
-				364DF5B45870806D1674643D3ECDC37B /* VCTableViewController.swift */,
+				364DF5B45870806D1674643D3ECDC37B /* VCTabledViewController.swift */,
+				186AFBAE1F7C0DD800A882AB /* VCTableViewController.swift */,
 				1584FA53177CB602A899634429FBBCE7 /* VCTextField.swift */,
 				BB8CC2E16D897A663DF19BC173840DCE /* VCView.swift */,
 				80F53402933360A482B343C41AFB4121 /* VCViewController.swift */,
@@ -1115,6 +1118,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					EF1ABE20DAA23760FBF0359740C1F0B9 = {
+						LastSwiftMigration = 0900;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1248,10 +1256,11 @@
 				BC6E167C619901584DE9F86424F607B6 /* VCLabel.swift in Sources */,
 				960EF5DC9D09D6A729DCE58709F11CB0 /* VCMediaPicker.swift in Sources */,
 				33DF05C74CC71F156477434D452C9DD9 /* VCSegmentedControl.swift in Sources */,
+				186AFBAF1F7C0DD900A882AB /* VCTableViewController.swift in Sources */,
 				372DBE6F4F06ABC4BD524D233855693E /* VCSwitch.swift in Sources */,
 				B357A0602E2703E002CD666B93819DE3 /* VCTableView.swift in Sources */,
 				452C14ED7708E3E66819B764191301E3 /* VCTableViewCell.swift in Sources */,
-				14584EF6E8F1B3A254F58F2367A6E32E /* VCTableViewController.swift in Sources */,
+				14584EF6E8F1B3A254F58F2367A6E32E /* VCTabledViewController.swift in Sources */,
 				5D23786C226A8351363007086C775145 /* VCTextField.swift in Sources */,
 				3CFEEC15092EEE3055A50612A95AE990 /* VCUIKit-dummy.m in Sources */,
 				5E9B1CCC940D2D8E258EC89E89184523 /* VCUIKitStyleKit.swift in Sources */,
@@ -1610,6 +1619,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 539073BB15136E65701D3077E04F77C8 /* FCAlertView.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1634,6 +1644,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1682,6 +1693,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 539073BB15136E65701D3077E04F77C8 /* FCAlertView.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

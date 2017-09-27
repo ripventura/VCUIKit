@@ -14,7 +14,7 @@ struct Animation {
     let duration: Float
 }
 
-class AnimationsViewController: UIViewController {
+class AnimationsViewController: VCViewController {
     let animations: [Animation] = [
         Animation(name: "Shake", duration: 0.5),
         Animation(name: "Bounce", duration: 0.5),

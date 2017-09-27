@@ -9,41 +9,36 @@
 import UIKit
 import VCUIKit
 
-class PullToRefreshViewController: VCTableViewController {
-    var count: Int = 20
+class PullToRefreshViewController: VCTabledViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     override func didRefreshControl() {
-        if self.count > 0 {
-            self.count = 0
-            self.updatePlaceholders(enable: true,
-                                    title: "Placeholder Title",
-                                    text: "Placeholder text...",
-                                    image: nil,
-                                    buttonTitle: "Touch me")
-        }
-        else {
-            self.count = 20
-            self.updatePlaceholders(enable: false)
-        }
-        self.reloadData()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-            self.tableView?.refreshControl?.endRefreshing()
+            
+            self.updatePlaceholders(enable: true,
+                                    title: "Some title here",
+                                    text: "Try refreshing your data",
+                                    buttonTitle: "Refresh")
         })
     }
     
-    @IBAction func searchButtonPressed(_ sender: Any) {
-    }
-    override func placeholderActionButtonPressed(_ sender: Any) {
-        print("You touched it!")
+    override func placeholderActionButtonPressed() {
+        self.updatePlaceholders(enable: true,
+                                title: "Refreshing data",
+                                text: "Hang on...",
+                                activity: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+            self.updatePlaceholders(enable: false)
+        })
     }
     
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.count
+        return 20
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = VCTableViewCell(frame: CGRectDefault)
