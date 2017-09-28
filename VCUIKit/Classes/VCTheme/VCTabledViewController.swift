@@ -235,7 +235,7 @@ extension VCTabledViewController: UITableViewDataSource {
 }
 extension VCTabledViewController: UITableViewDelegate {
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

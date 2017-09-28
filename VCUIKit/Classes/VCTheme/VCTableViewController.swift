@@ -11,6 +11,10 @@ import UIKit
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     // MARK: - Lifecycle
     
     open override func viewDidLoad() {
@@ -63,3 +67,4 @@ extension VCTableViewController: UITextFieldDelegate {
         return true
     }
 }
+
