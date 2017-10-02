@@ -36,6 +36,8 @@ open class VCAppearance {
     
     open var switchTintColor : UIColor = .black
     
+    open var toolbarTintColor : UIColor = .black
+    
     open var activityIndicatorTintColor : UIColor = .black
     
     open var textFieldTextColor : UIColor
@@ -178,5 +180,7 @@ open class VCAppearance {
         activityIndicatorTintColor = self.viewControllerViewTintColor
         
         tableViewCellTintColor = self.viewControllerViewTintColor
+        
+        toolbarTintColor = self.viewControllerViewTintColor
     }
 }
