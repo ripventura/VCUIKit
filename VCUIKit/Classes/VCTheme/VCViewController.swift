@@ -36,9 +36,10 @@ import UIKit
     
     /** Override this if you want to change the Default Styles for this particular View Controller */
     open func willSetDefaultStyles() {
+        sharedAppearanceManager.initializeDefaultAppearance?()
         sharedAppearanceManager.appearance = defaultAppearance
     }
-
+    
     override open func applyAppearance() -> Void {
         self.willSetDefaultStyles()
         super.applyAppearance()
@@ -64,3 +65,4 @@ extension VCViewController: UITextFieldDelegate {
         return true
     }
 }
+

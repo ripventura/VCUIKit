@@ -15,6 +15,8 @@ public var sharedAppearanceManager = VCAppearanceManager()
 
 open class VCAppearanceManager {
     open var appearance: VCAppearance
+    /** Initialize the defaultAppearance inside the "code" block under AppDelegate */
+    open var initializeDefaultAppearance: (() -> Void)?
     
     public init(appearance: VCAppearance = defaultAppearance) {
         self.appearance = appearance
@@ -184,3 +186,4 @@ open class VCAppearance {
         toolbarTintColor = self.viewControllerViewTintColor
     }
 }
+
