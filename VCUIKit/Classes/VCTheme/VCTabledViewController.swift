@@ -25,10 +25,6 @@ import UIKit
     // Used on iOS <= 10 to hide rightBarButtonItems when searching
     var rightButtonItems: [UIBarButtonItem]?
     
-    // Used to disable the RefreshControl when Searching
-    var bounce: Bool?
-    var alwaysBounceVertical: Bool?
-    
     // MARK: - Lifecycle
     
     open override func viewDidLoad() {
@@ -152,10 +148,6 @@ import UIKit
     /** Called after the SearchControl becomes active */
     open func didStartSearching() {
         if self.disablesRefreshWhenSearching {
-            // Stores for later use
-            self.bounce = self.tableView.bounces
-            self.alwaysBounceVertical = self.tableView.alwaysBounceVertical
-            
             // Disables the RefreshControl when searching
             self.tableView.bounces = false
             self.tableView.alwaysBounceVertical = false
@@ -183,8 +175,8 @@ import UIKit
     open func didCancelSearch() {
         if self.disablesRefreshWhenSearching {
             // Enables back the RefreshControl
-            self.tableView.bounces = self.bounce!
-            self.tableView.alwaysBounceVertical = self.alwaysBounceVertical!
+            self.tableView.bounces = true
+            self.tableView.alwaysBounceVertical = true
         }
         
         if #available(iOS 11.0, *) {
