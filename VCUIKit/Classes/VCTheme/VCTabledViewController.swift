@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable open class VCTabledViewController: VCViewController {
+open class VCTabledViewController: VCViewController {
     /** Whether the TableView should have a RefreshControl */
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the TableView should have a RefreshControl */

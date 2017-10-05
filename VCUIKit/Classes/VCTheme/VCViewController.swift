@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable open class VCViewController: UIViewController {
+open class VCViewController: UIViewController {
     /** Wheter the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
@@ -22,12 +22,6 @@ import UIKit
     
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.applyAppearance()
-    }
-    
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
         
         self.applyAppearance()
     }
