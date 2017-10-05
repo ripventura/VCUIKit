@@ -742,6 +742,14 @@
                                     <constraint firstAttribute="width" constant="49" id="nco-M6-gRM"/>
                                 </constraints>
                             </switch>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7L7-le-gdw" customClass="VCProgressView" customModule="VCUIKit">
+                                <rect key="frame" x="16" y="39" width="343" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="b8P-LJ-auF"/>
+                                </constraints>
+                                <color key="progressTintColor" red="1" green="0.22" blue="0.14000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="trackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="go5-Vn-fOt" customClass="VCActivityIndicatorView" customModule="VCUIKit">
                                 <rect key="frame" x="177" y="471" width="20" height="20"/>
                                 <constraints>
@@ -780,6 +788,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="leading" secondItem="N8T-X1-Ixc" secondAttribute="trailing" constant="8" id="02X-Nr-6ww"/>
+                            <constraint firstItem="kWz-v9-UQ6" firstAttribute="top" secondItem="7L7-le-gdw" secondAttribute="bottom" constant="8" id="0Yi-8z-hYk"/>
                             <constraint firstItem="Yqw-rf-Mju" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="0yD-7q-Tah"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="top" secondItem="wcb-RR-Doj" secondAttribute="bottom" constant="8" id="1gB-no-NDQ"/>
                             <constraint firstItem="kWz-v9-UQ6" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="4f7-rx-KX1"/>
@@ -794,6 +803,7 @@
                             <constraint firstItem="TWk-q5-Q2b" firstAttribute="top" secondItem="Gr0-jl-Lwh" secondAttribute="bottom" constant="8" id="Ll9-Ra-bjn"/>
                             <constraint firstItem="Fqs-mb-VgH" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="M9v-we-Aap"/>
                             <constraint firstItem="cje-FM-goE" firstAttribute="centerY" secondItem="hKp-RG-ETN" secondAttribute="centerY" id="MJw-u2-yrg"/>
+                            <constraint firstItem="7L7-le-gdw" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="PxY-iZ-dAL"/>
                             <constraint firstItem="N8T-X1-Ixc" firstAttribute="leading" secondItem="Fqs-mb-VgH" secondAttribute="trailing" constant="8" id="UZh-L4-YVq"/>
                             <constraint firstItem="wcb-RR-Doj" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="V2Y-1S-F0g"/>
                             <constraint firstItem="TWk-q5-Q2b" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="Vl5-HC-Zxv"/>
@@ -803,6 +813,7 @@
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="centerX" secondItem="hKp-RG-ETN" secondAttribute="centerX" id="f7B-aH-nEV"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="leading" secondItem="hKp-RG-ETN" secondAttribute="leadingMargin" id="h66-42-41D"/>
                             <constraint firstItem="rg3-Kf-Ipn" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="jzw-iF-u74"/>
+                            <constraint firstItem="7L7-le-gdw" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="kTs-fy-vGr"/>
                             <constraint firstItem="Jbe-Hj-TjG" firstAttribute="trailing" secondItem="hKp-RG-ETN" secondAttribute="trailingMargin" id="nl2-Sy-dEf"/>
                             <constraint firstItem="goU-IU-hqx" firstAttribute="top" secondItem="PDP-ir-Nes" secondAttribute="bottom" constant="8" id="nqF-I8-D0X"/>
                             <constraint firstItem="Gr0-jl-Lwh" firstAttribute="top" secondItem="kWz-v9-UQ6" secondAttribute="bottom" constant="8" id="oUt-co-Cue"/>

@@ -9,7 +9,7 @@
 import UIKit
 
 open class VCTableViewCell: UITableViewCell {
-    /** Wheter the appearance is being set manually on Storyboard */
+    /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

@@ -29,8 +29,8 @@ open class VCBannerCreator {
         - title: Title being displayed.
         - icon: Custom image to be used as Icon on the left.
         - duration: Duration to display de Banner. 0 means forever.
-        - dismissesOnTap: Wheter the banner hides on tap / pan gesture.
-        - dropShadow: Wheter the banner should have a shadow along it's borders.
+        - dismissesOnTap: Whether the banner hides on tap / pan gesture.
+        - dropShadow: Whether the banner should have a shadow along it's borders.
         - windowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade).
         - presentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar).
         - presentationDirection: Where the Banner should appear. Top, Bottom.
@@ -121,8 +121,8 @@ open class VCBannerCreator {
      - Parameters:
         - contentView: Custom UIView to be displayed inside the Banner.
         - duration: Duration to display de Banner. 0 means forever.
-        - dismissesOnTap: Wheter the banner hides on tap / pan gesture.
-        - dropShadow: Wheter the banner should have a shadow along it's borders.
+        - dismissesOnTap: Whether the banner hides on tap / pan gesture.
+        - dropShadow: Whether the banner should have a shadow along it's borders.
         - windowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade).
         - presentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar).
         - presentationDirection: Where the Banner should appear. Top, Bottom.

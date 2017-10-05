@@ -58,12 +58,12 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
                               AVMetadataObject.ObjectType.pdf417,
                               AVMetadataObject.ObjectType.qr]
     
-    /** Wheter the viewController should dismiss itself after the first scan occurs */
+    /** Whether the viewController should dismiss itself after the first scan occurs */
     open var singleScan: Bool {
         return true
     }
     
-    /** Wheter the viewController is ready to evaluate a scanned object */
+    /** Whether the viewController is ready to evaluate a scanned object */
     open var readyToScan: Bool = true
     
     open override var shouldAutorotate: Bool {
@@ -237,7 +237,7 @@ open class VCCodeScannerViewController: VCViewController, AVCaptureMetadataOutpu
         }
     }
     
-    // Wheter this device has flash available
+    // Whether this device has flash available
     func isFlashAvailable() -> Bool {
         return self.captureDevice!.isTorchAvailable
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 open class VCViewController: UIViewController {
-    /** Wheter the appearance is being set manually on Storyboard */
+    /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
     // MARK: - Lifecycle

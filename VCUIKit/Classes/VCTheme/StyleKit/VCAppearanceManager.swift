@@ -36,6 +36,9 @@ open class VCAppearance {
     
     open var segmentedControlTintColor : UIColor = .black
     
+    open var progressViewTrackTintColor : UIColor = .lightGray
+    open var progressViewProgressTintColor : UIColor = .black
+    
     open var switchTintColor : UIColor = .black
     
     open var toolbarTintColor : UIColor = .black
@@ -184,6 +187,8 @@ open class VCAppearance {
         tableViewCellTintColor = self.viewControllerViewTintColor
         
         toolbarTintColor = self.viewControllerViewTintColor
+        
+        progressViewProgressTintColor = self.viewControllerViewTintColor
     }
 }
 

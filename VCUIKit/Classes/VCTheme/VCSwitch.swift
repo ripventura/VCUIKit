@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable open class VCSwitch : UISwitch {
-    /** Wheter the appearance is being set manually on Storyboard */
+    /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
     public override init(frame: CGRect) {

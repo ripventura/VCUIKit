@@ -26,7 +26,7 @@ open class VCAlertView {
     public struct AlertIcon {
         /** The icon Image */
         let image : UIImage?
-        /** Wheter or not this image should be tinted by the Alert Colorscheme */
+        /** Whether or not this image should be tinted by the Alert Colorscheme */
         let applyTint: Bool
         public init(image: UIImage?, applyTint: Bool = true) {
             self.image = image
@@ -54,7 +54,7 @@ open class VCAlertView {
         - message: The alert message.
         - defaultButton: The default button.
         - extraButtons: Extra buttons to be available on the alert.
-        - roundedButtons: Wheter or not the buttons should be rounded or squared.
+        - roundedButtons: Whether or not the buttons should be rounded or squared.
         - textFields: TextFields to be displayed below the message.
      */
     static open func showAlert (style : Style,
@@ -99,7 +99,7 @@ open class VCAlertView {
          - message: The alert message.
          - defaultButton: The default button.
          - extraButtons: Extra buttons to be available on the alert.
-         - roundedButtons: Wheter or not the buttons should be rounded or squared.
+         - roundedButtons: Whether or not the buttons should be rounded or squared.
          - textFields: TextFields to be displayed below the message.
          - icon: Custom AlertIcon to be used as Icon on the top of the alert.
      */

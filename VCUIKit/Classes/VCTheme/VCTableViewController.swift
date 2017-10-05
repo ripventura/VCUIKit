@@ -8,7 +8,7 @@
 import UIKit
 
 open class VCTableViewController: UITableViewController {
-    /** Wheter the appearance is being set manually on Storyboard */
+    /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
