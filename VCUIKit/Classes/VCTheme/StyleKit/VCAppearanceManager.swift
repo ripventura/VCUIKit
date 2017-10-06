@@ -95,6 +95,7 @@ open class VCAppearance {
     open var bannerWarningTextColor : UIColor
     open var bannerMessageFont : UIFont
     open var bannerTitleFont : UIFont
+    open var bannerIconSize : CGSize
     open var bannerDuration: TimeInterval
     open var bannerDismissesOnTap: Bool
     open var bannerDropShadow: Bool
@@ -171,6 +172,7 @@ open class VCAppearance {
         bannerWarningTextColor = UIColor.white
         bannerMessageFont = UIFont.systemFont(ofSize: 12)
         bannerTitleFont = UIFont.boldSystemFont(ofSize: 14)
+        bannerIconSize = CGSize(width: 20.0, height: 20.0)
         bannerDuration = 3
         bannerDismissesOnTap = true
         bannerDropShadow = true

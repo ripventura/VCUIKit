@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftMessages
+import VCSwiftToolkit
 
 public let sharedBannerCreator : VCBannerCreator = VCBannerCreator()
 
@@ -20,21 +21,21 @@ open class VCBannerCreator {
         bannerMessager.pauseBetweenMessages = 0.5
     }
     
-    /** 
+    /**
      Shows a Banner.
      
      - Parameters:
-        - theme: Success, Info, Error.
-        - message: Message being displayed.
-        - title: Title being displayed.
-        - icon: Custom image to be used as Icon on the left.
-        - duration: Duration to display de Banner. 0 means forever.
-        - dismissesOnTap: Whether the banner hides on tap / pan gesture.
-        - dropShadow: Whether the banner should have a shadow along it's borders.
-        - windowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade).
-        - presentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar).
-        - presentationDirection: Where the Banner should appear. Top, Bottom.
-    */
+     - theme: Success, Info, Error.
+     - message: Message being displayed.
+     - title: Title being displayed.
+     - icon: Custom image to be used as Icon on the left.
+     - duration: Duration to display de Banner. 0 means forever.
+     - dismissesOnTap: Whether the banner hides on tap / pan gesture.
+     - dropShadow: Whether the banner should have a shadow along it's borders.
+     - windowDimMode: Style that covers the rest of the screen. None, Color, Gray (fade).
+     - presentationContext: How the Banner will override the other view. UIWindowLevelStatusBar (covers all including Status Bar), UIWindowLevelNormal (covers all but the Status Bar).
+     - presentationDirection: Where the Banner should appear. Top, Bottom.
+     */
     public func showBanner(theme: Theme,
                            message: String,
                            title: String? = nil,
@@ -89,26 +90,51 @@ open class VCBannerCreator {
             view.configureDropShadow()
         }
         
+        let iconSize = sharedAppearanceManager.appearance.bannerIconSize
+        
         // Configures the message background color and content
         if theme == .success {
             view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerSuccessBackgroundColor,
                                 foregroundColor: sharedAppearanceManager.appearance.bannerSuccessTextColor)
-            view.configureContent(title: title != nil ? title! : "Success", body: message)
+            if let icon = icon {
+                view.configureContent(title: title ?? "Success", body: message, iconImage: icon.vcScaleToNewSize(newSize: iconSize))
+            }
+            else {
+                view.configureContent(title: title ?? "Success", body: message)
+            }
         }
         else if theme == .error {
             view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerErrorBackgroundColor,
                                 foregroundColor: sharedAppearanceManager.appearance.bannerErrorTextColor)
-            view.configureContent(title: title != nil ? title! : "Error", body: message)
+            
+            if let icon = icon {
+                view.configureContent(title: title ?? "Error", body: message, iconImage: icon.vcScaleToNewSize(newSize: iconSize))
+            }
+            else {
+                view.configureContent(title: title ?? "Error", body: message)
+            }
         }
         else if theme == .info {
             view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerInfoBackgroundColor,
                                 foregroundColor: sharedAppearanceManager.appearance.bannerInfoTextColor)
-            view.configureContent(title: title != nil ? title! : "Info", body: message)
+            
+            if let icon = icon {
+                view.configureContent(title: title ?? "Info", body: message, iconImage: icon.vcScaleToNewSize(newSize: iconSize))
+            }
+            else {
+                view.configureContent(title: title ?? "Info", body: message)
+            }
         }
         else if theme == .warning {
             view.configureTheme(backgroundColor: sharedAppearanceManager.appearance.bannerWarningBackgroundColor,
                                 foregroundColor: sharedAppearanceManager.appearance.bannerWarningTextColor)
-            view.configureContent(title: title != nil ? title! : "Warning", body: message)
+            
+            if let icon = icon {
+                view.configureContent(title: title ?? "Warning", body: message, iconImage: icon.vcScaleToNewSize(newSize: iconSize))
+            }
+            else {
+                view.configureContent(title: title ?? "Warning", body: message)
+            }
         }
         
         // Hides the Button
@@ -127,3 +153,4 @@ open class VCBannerCreator {
         }
     }
 }
+
