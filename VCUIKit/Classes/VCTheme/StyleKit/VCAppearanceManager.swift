@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 public let CGRectDefault = CGRect(x: 0, y: 0, width: 100, height: 100)
 
@@ -94,6 +95,12 @@ open class VCAppearance {
     open var bannerWarningTextColor : UIColor
     open var bannerMessageFont : UIFont
     open var bannerTitleFont : UIFont
+    open var bannerDuration: TimeInterval
+    open var bannerDismissesOnTap: Bool
+    open var bannerDropShadow: Bool
+    open var bannerDimMode: SwiftMessages.DimMode
+    open var bannerPresentationContext: SwiftMessages.PresentationContext
+    open var bannerPresentationDirection: SwiftMessages.PresentationStyle
     
     open var alertTitleFont : UIFont
     open var alertMessageFont : UIFont
@@ -164,6 +171,12 @@ open class VCAppearance {
         bannerWarningTextColor = UIColor.white
         bannerMessageFont = UIFont.systemFont(ofSize: 12)
         bannerTitleFont = UIFont.boldSystemFont(ofSize: 14)
+        bannerDuration = 3
+        bannerDismissesOnTap = true
+        bannerDropShadow = true
+        bannerDimMode = .none
+        bannerPresentationContext = .window(windowLevel: UIWindowLevelStatusBar)
+        bannerPresentationDirection = .top
         
         // MARK: - VCAlertView
         alertTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
