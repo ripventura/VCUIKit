@@ -78,6 +78,9 @@ open class VCBannerCreator {
         // Theme message elements with the desired style.
         view.configureTheme(theme)
         
+        // Sets the font
+        view.titleLabel?.font = sharedAppearanceManager.appearance.bannerTitleFont
+        view.bodyLabel?.font = sharedAppearanceManager.appearance.bannerMessageFont
         
         if dropShadow {
             // Drops a Shadow outside the banner frame

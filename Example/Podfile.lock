@@ -3,7 +3,7 @@ PODS:
   - SnapKit (4.0.0)
   - SVProgressHUD (2.2.1)
   - SwiftMessages (4.0.0)
-  - VCUIKit (0.1.24):
+  - VCUIKit (0.1.25):
     - FCAlertView (~> 1.4)
     - SnapKit (~> 4.0.0)
     - SVProgressHUD (~> 2.2.1)
@@ -25,7 +25,7 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
   SwiftMessages: cd565e0e7d095584be1770c012c6b5be4183b5ee
-  VCUIKit: e4b4f67d260e520d8285912ad2944b57b3cde46c
+  VCUIKit: 7c2f03f416a40b605ff9c3841c5f24463db65b22
 
 PODFILE CHECKSUM: 42d8195bf80518b9ca21be4c5f7165d9133a26dd
 

@@ -1,6 +1,6 @@
 {
   "name": "VCUIKit",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "summary": "A collection of classes and extensions written in Swift 4 to help you optimize your time when developing iOS applications.",
   "description": "This is a collection of classes and extensions written in Swift 4 to help you optimize your time when developing iOS applications. All the code was done by me, so please if you think you can contribute, lets share some thoughts!\n\nWhen I get some time I will update the Wiki page with detailed description of each class / method.",
   "homepage": "https://github.com/ripventura/VCUIKit",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ripventura/VCUIKit.git",
-    "tag": "0.1.24"
+    "tag": "0.1.25"
   },
   "platforms": {
     "ios": "10.0"

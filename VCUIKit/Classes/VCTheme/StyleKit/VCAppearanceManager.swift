@@ -92,7 +92,8 @@ open class VCAppearance {
     open var bannerErrorTextColor : UIColor
     open var bannerInfoTextColor : UIColor
     open var bannerWarningTextColor : UIColor
-    open var bannerFont : UIFont
+    open var bannerMessageFont : UIFont
+    open var bannerTitleFont : UIFont
     
     open var alertTitleFont : UIFont
     open var alertMessageFont : UIFont
@@ -161,7 +162,8 @@ open class VCAppearance {
         bannerErrorTextColor = UIColor.white
         bannerInfoTextColor = UIColor.darkText
         bannerWarningTextColor = UIColor.white
-        bannerFont = UIFont.systemFont(ofSize: 12)
+        bannerMessageFont = UIFont.systemFont(ofSize: 12)
+        bannerTitleFont = UIFont.boldSystemFont(ofSize: 14)
         
         // MARK: - VCAlertView
         alertTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
