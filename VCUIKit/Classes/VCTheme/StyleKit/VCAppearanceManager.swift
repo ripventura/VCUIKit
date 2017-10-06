@@ -57,6 +57,7 @@ open class VCAppearance {
     open var tableViewCellEstimatedHeight: CGFloat
     
     open var tableViewBackgroundColor : UIColor
+    open var tableViewSeparatorColor : UIColor
     
     open var applicationStatusBarStyle : UIStatusBarStyle
     
@@ -123,6 +124,7 @@ open class VCAppearance {
         
         // MARK: - VCTableView
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
+        tableViewSeparatorColor = VCUIKitStyleKit.tableViewDetailTextColor
         
         // MARK: - UIStatusBar
         applicationStatusBarStyle = UIStatusBarStyle.lightContent

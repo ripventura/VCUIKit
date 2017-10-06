@@ -39,6 +39,7 @@ open class VCTableView: UITableView {
         
         if !storyboardAppearance {
             self.backgroundColor = sharedAppearanceManager.appearance.tableViewBackgroundColor
+            self.separatorColor = sharedAppearanceManager.appearance.tableViewSeparatorColor
         }
     }
     
