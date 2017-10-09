@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomBannerView" customModule="VCUIKit_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="xG3-f4-hxt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okv-2y-wEk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqN-3W-YlI">
+                            <rect key="frame" x="8" y="8" width="100" height="84"/>
+                            <color key="backgroundColor" red="1" green="0.22" blue="0.14000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="FRA-qz-fEq"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Banner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJi-GN-qOf">
+                            <rect key="frame" x="116" y="8" width="251" height="84"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.87" blue="0.56000000000000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="pJi-GN-qOf" firstAttribute="trailing" secondItem="okv-2y-wEk" secondAttribute="trailingMargin" id="LKM-tg-z16"/>
+                        <constraint firstItem="pJi-GN-qOf" firstAttribute="leading" secondItem="yqN-3W-YlI" secondAttribute="trailing" constant="8" id="Me4-vM-0eH"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="yqN-3W-YlI" secondAttribute="bottom" id="V6Z-Q0-QX7"/>
+                        <constraint firstAttribute="height" constant="100" id="ewo-jA-lZC"/>
+                        <constraint firstItem="yqN-3W-YlI" firstAttribute="top" secondItem="okv-2y-wEk" secondAttribute="topMargin" id="fqy-Xf-G7b"/>
+                        <constraint firstAttribute="bottomMargin" secondItem="pJi-GN-qOf" secondAttribute="bottom" id="jDu-QO-vff"/>
+                        <constraint firstItem="yqN-3W-YlI" firstAttribute="leading" secondItem="okv-2y-wEk" secondAttribute="leadingMargin" id="kcc-Ct-Svs"/>
+                        <constraint firstItem="pJi-GN-qOf" firstAttribute="top" secondItem="okv-2y-wEk" secondAttribute="topMargin" id="xWM-9z-uaW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="okv-2y-wEk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="CIL-vY-qm4"/>
+                <constraint firstItem="okv-2y-wEk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="MeF-p0-PGA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="okv-2y-wEk" secondAttribute="trailing" id="zb1-TK-UfE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33.5" y="-229"/>
+        </view>
+    </objects>
+</document>

@@ -8,6 +8,7 @@
 
 import UIKit
 import VCUIKit
+import SwiftMessages
 
 class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
     
@@ -80,7 +81,16 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
                                                message: "Info message")
             case 3:
                 sharedBannerCreator.showBanner(theme: .warning,
-                                               message: "Warning message")
+                                               message: "Warning message",
+                                               presentationContext: SwiftMessages.PresentationContext.viewController(self))
+            case 4:
+                sharedBannerCreator.showCustomBanner(contentView: CustomBannerView(frame: CGRectDefault),
+                                                     duration: 2,
+                                                     dismissesOnTap: true,
+                                                     dropShadow: true,
+                                                     windowDimMode: .none,
+                                                     presentationContext: SwiftMessages.PresentationContext.viewController(self),
+                                                     presentationDirection: .top)
             default:
                 break
             }

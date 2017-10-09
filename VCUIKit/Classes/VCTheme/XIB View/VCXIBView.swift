@@ -12,7 +12,7 @@ open class VCXIBView: UIView {
     
     @IBOutlet open var contentView: UIView!
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         
         self.xibSetup()

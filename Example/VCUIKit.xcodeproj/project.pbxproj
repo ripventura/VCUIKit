@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		181315601ED8B25C00CE3B0D /* DemoXIBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1813155E1ED8B25C00CE3B0D /* DemoXIBView.swift */; };
 		181315611ED8B25C00CE3B0D /* DemoXIBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1813155F1ED8B25C00CE3B0D /* DemoXIBView.xib */; };
+		1871E34C1F8BB8FD0079D62D /* CustomBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1871E34B1F8BB8FD0079D62D /* CustomBannerView.xib */; };
+		1871E34E1F8BBA590079D62D /* CustomBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871E34D1F8BBA590079D62D /* CustomBannerView.swift */; };
 		18A643081F015C990035AB73 /* PullToRefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A643071F015C990035AB73 /* PullToRefreshViewController.swift */; };
 		18CAE0561F684DA200826982 /* AnimationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAE0551F684DA200826982 /* AnimationsViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -35,6 +37,8 @@
 		0D00D21A7A1A289BBF0CD6A8 /* Pods-VCUIKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCUIKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VCUIKit_Tests/Pods-VCUIKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1813155E1ED8B25C00CE3B0D /* DemoXIBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoXIBView.swift; sourceTree = "<group>"; };
 		1813155F1ED8B25C00CE3B0D /* DemoXIBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoXIBView.xib; sourceTree = "<group>"; };
+		1871E34B1F8BB8FD0079D62D /* CustomBannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomBannerView.xib; sourceTree = "<group>"; };
+		1871E34D1F8BBA590079D62D /* CustomBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerView.swift; sourceTree = "<group>"; };
 		18A643071F015C990035AB73 /* PullToRefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshViewController.swift; sourceTree = "<group>"; };
 		18CAE0551F684DA200826982 /* AnimationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsViewController.swift; sourceTree = "<group>"; };
 		2152430506066421E2FD1A36 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -88,6 +92,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1871E34F1F8BC3110079D62D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1871E34D1F8BBA590079D62D /* CustomBannerView.swift */,
+				1871E34B1F8BB8FD0079D62D /* CustomBannerView.xib */,
+				1813155E1ED8B25C00CE3B0D /* DemoXIBView.swift */,
+				1813155F1ED8B25C00CE3B0D /* DemoXIBView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +131,8 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				18A643071F015C990035AB73 /* PullToRefreshViewController.swift */,
 				18CAE0551F684DA200826982 /* AnimationsViewController.swift */,
-				1813155E1ED8B25C00CE3B0D /* DemoXIBView.swift */,
-				1813155F1ED8B25C00CE3B0D /* DemoXIBView.xib */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				1871E34F1F8BC3110079D62D /* Views */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -263,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				1871E34C1F8BB8FD0079D62D /* CustomBannerView.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				181315611ED8B25C00CE3B0D /* DemoXIBView.xib in Resources */,
@@ -398,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				181315601ED8B25C00CE3B0D /* DemoXIBView.swift in Sources */,
+				1871E34E1F8BBA590079D62D /* CustomBannerView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				18A643081F015C990035AB73 /* PullToRefreshViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
