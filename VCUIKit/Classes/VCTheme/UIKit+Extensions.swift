@@ -70,6 +70,23 @@ extension UIView {
         })
     }
     
+    /** Adds a UIMotionEffect translating X and Y axis for this view */
+    open func addTranslationMotionEffect(minX: CGFloat = -30, maxX: CGFloat = 30, minY: CGFloat = -30, maxY: CGFloat = 30) {
+        
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.x", type: .tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = minX
+        xMotion.maximumRelativeValue = maxX
+        
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = minY
+        yMotion.maximumRelativeValue = maxY
+        
+        let motionEffectGroup = UIMotionEffectGroup()
+        motionEffectGroup.motionEffects = [xMotion,yMotion]
+        
+        self.addMotionEffect(motionEffectGroup)
+    }
+    
     /** Applies the custom appearance on this UIView */
     @objc open func applyAppearance() -> Void {
         for subview in self.subviews {
@@ -78,7 +95,6 @@ extension UIView {
     }
     
     // MARK: - Animation
-    
     
     /** Shakes the view sideways */
     open func shake(duration: Float = 0.5, multiplier: Float = 1) {
