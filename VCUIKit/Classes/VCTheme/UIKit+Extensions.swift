@@ -266,7 +266,12 @@ extension UINavigationController {
         //Updates Navbar Background Color
         self.navigationBar.barTintColor = sharedAppearanceManager.appearance.navigationBarBackgroundColor
         
-        //Updates NavigationBar title font
+        // Updates the NavigationBar bottom border color if needed
+        if let color = sharedAppearanceManager.appearance.navigationBarBottomBorderColor {
+            self.navigationBar.bottomBorderColor = color
+        }
+        
+        //Updates NavBar title font
         var attributes: [NSAttributedStringKey:Any] = [
             NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor
         ]
@@ -279,5 +284,27 @@ extension UINavigationController {
                 NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor
             ]
         }
+    }
+}
+
+extension UINavigationBar {
+    @IBInspectable open var bottomBorderColor: UIColor {
+        get {
+            return self.bottomBorderColor;
+        }
+        set {
+            let bottomBorderRect = CGRect.zero;
+            let bottomBorderView = UIView(frame: bottomBorderRect);
+            bottomBorderView.backgroundColor = newValue;
+            addSubview(bottomBorderView);
+            
+            bottomBorderView.translatesAutoresizingMaskIntoConstraints = false;
+            
+            self.addConstraint(NSLayoutConstraint(item: bottomBorderView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0));
+            self.addConstraint(NSLayoutConstraint(item: bottomBorderView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0));
+            self.addConstraint(NSLayoutConstraint(item: bottomBorderView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0));
+            self.addConstraint(NSLayoutConstraint(item: bottomBorderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 0.5));
+        }
+        
     }
 }

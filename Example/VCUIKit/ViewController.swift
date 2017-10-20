@@ -22,6 +22,7 @@ class DemoViewController: VCTableViewController, VCCodeScannerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     // MARK: - UITableViewDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
