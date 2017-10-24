@@ -30,6 +30,21 @@ open class VCTabledViewController: VCViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        // If this viewController isTranslucent and doesn't includesRefreshControl
+        if self.navigationController?.navigationBar != nil &&
+            self.navigationController!.navigationBar.isTranslucent &&
+            !self.includesRefreshControl {
+            if #available(iOS 11, *) {
+            }
+            else {
+                // Adds an inset to compensate the translucent navigation bar on iOS 10-
+                self.tableView.contentInset = UIEdgeInsets(top: self.tableView.contentInset.top + 64,
+                                                           left: self.tableView.contentInset.left,
+                                                           bottom: self.tableView.contentInset.bottom,
+                                                           right: self.tableView.contentInset.right)
+            }
+        }
+        
         self.setupPlaceholders()
         self.setupSearchControl()
         self.setupRefreshControl()
