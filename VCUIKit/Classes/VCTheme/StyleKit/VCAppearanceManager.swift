@@ -68,7 +68,8 @@ open class VCAppearance {
     open var navigationBarTitleColor : UIColor
     open var navigationBarTitleFont : UIFont?
     open var navigationBarBackButtonTitle : String?
-    open var navigationBarItemsFont : UIFont?
+    open var navigationBarItemsPlainFont : UIFont?
+    open var navigationBarItemsDoneFont : UIFont?
     
     open var viewControllerViewTintColor : UIColor {
         didSet {

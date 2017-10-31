@@ -64,7 +64,7 @@ extension UIView {
     open func addTo(superView: UIView, withConstraint constraintInset: UIEdgeInsets) -> Void {
         
         superView.addSubview(self)
-
+        
         self.snp.makeConstraints({make in
             make.edges.equalTo(superView).inset(constraintInset)
         })
@@ -238,6 +238,41 @@ extension UIViewController {
     
     @objc open func applyAppearance() -> Void {
         self.view.applyAppearance()
+        
+        // UINavigationBar Items Font
+        self.navigationItem.leftBarButtonItems?.forEach({buttonItem in
+            if buttonItem.style == .plain {
+                if let customFont = sharedAppearanceManager.appearance.navigationBarItemsPlainFont {
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+            else if buttonItem.style == .done {
+                if let customFont = sharedAppearanceManager.appearance.navigationBarItemsDoneFont {
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+        })
+        self.navigationItem.rightBarButtonItems?.forEach({buttonItem in
+            if buttonItem.style == .plain {
+                if let customFont = sharedAppearanceManager.appearance.navigationBarItemsPlainFont {
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+            else if buttonItem.style == .done {
+                if let customFont = sharedAppearanceManager.appearance.navigationBarItemsDoneFont {
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+        })
+        
+        // UITabBar Items Font
+        if let customFont = sharedAppearanceManager.appearance.tabBarFont {
+            if let items = self.tabBarController?.tabBar.items {
+                for item in items {
+                    item.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+        }
     }
 }
 
@@ -247,14 +282,6 @@ extension UITabBarController {
         self.tabBar.tintColor = sharedAppearanceManager.appearance.tabBarTintColor
         
         self.tabBar.isTranslucent = sharedAppearanceManager.appearance.tabBarIsTranslucent
-        
-        if let customFont = sharedAppearanceManager.appearance.tabBarFont {
-            if let items = self.tabBar.items {
-                for item in items {
-                    item.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
-                }
-            }
-        }
     }
 }
 
@@ -279,15 +306,6 @@ extension UINavigationController {
                 NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor
             ]
         }
-        
-        if let customFont = sharedAppearanceManager.appearance.navigationBarItemsFont {
-            self.navigationItem.leftBarButtonItems?.forEach({buttonItem in
-                buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
-            })
-            self.navigationItem.rightBarButtonItems?.forEach({buttonItem in
-                buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
-            })
-        }
-        
     }
 }
+
