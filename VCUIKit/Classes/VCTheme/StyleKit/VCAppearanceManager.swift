@@ -36,6 +36,7 @@ open class VCAppearance {
     open var buttonFont : UIFont?
     
     open var segmentedControlTintColor : UIColor = .black
+    open var segmentedControlTitleFont : UIFont?
     
     open var progressViewTrackTintColor : UIColor = .lightGray
     open var progressViewProgressTintColor : UIColor = .black
@@ -67,6 +68,7 @@ open class VCAppearance {
     open var navigationBarTitleColor : UIColor
     open var navigationBarTitleFont : UIFont?
     open var navigationBarBackButtonTitle : String?
+    open var navigationBarItemsFont : UIFont?
     
     open var viewControllerViewTintColor : UIColor {
         didSet {
@@ -114,21 +116,14 @@ open class VCAppearance {
     public init() {
         // MARK: - VCLabel
         labelTextColor = VCUIKitStyleKit.labelTextColor
-        //labelFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
-        
-        // MARK: - VCButton
-        //buttonFont = UIFont.systemFont(ofSize: UIFont.buttonFontSize)
         
         // MARK: - VCTextField
-        textFieldTextFont = UIFont.systemFont(ofSize: 14)
         textFieldTextColor = VCUIKitStyleKit.labelTextColor
         
         // MARK: - VCTableViewCell
         tableViewCellBackgroundColor = VCUIKitStyleKit.white
         tableViewCellTitleTextColor = VCUIKitStyleKit.tableViewCellTitleTextColor
-        //tableViewCellTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tableViewCellDetailTextColor = VCUIKitStyleKit.tableViewDetailTextColor
-        //tableViewCellDetailFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         tableViewCellEstimatedHeight = 44
         
         // MARK: - VCTableView
@@ -142,7 +137,6 @@ open class VCAppearance {
         navigationBarTintColor = VCUIKitStyleKit.navigationBarTintColor
         navigationBarBackgroundColor = VCUIKitStyleKit.navigationBarBackgroundColor
         navigationBarTitleColor = VCUIKitStyleKit.white
-        //navigationBarTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         navigationBarBackButtonTitle = ""
         
         // MARK: - VCViewController
@@ -158,7 +152,6 @@ open class VCAppearance {
         // MARK: - UITabBar
         tabBarTintColor = VCUIKitStyleKit.tabBarTintColor
         tabBarBackgroundColor = VCUIKitStyleKit.viewControllerViewBackgroundColor
-        //tabBarFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         tabBarIsTranslucent = false
         
         // MARK: - VCBannerCreator

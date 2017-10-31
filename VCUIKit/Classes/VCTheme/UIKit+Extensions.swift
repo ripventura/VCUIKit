@@ -279,5 +279,15 @@ extension UINavigationController {
                 NSAttributedStringKey.foregroundColor: sharedAppearanceManager.appearance.navigationBarTitleColor
             ]
         }
+        
+        if let customFont = sharedAppearanceManager.appearance.navigationBarItemsFont {
+            self.navigationItem.leftBarButtonItems?.forEach({buttonItem in
+                buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+            })
+            self.navigationItem.rightBarButtonItems?.forEach({buttonItem in
+                buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+            })
+        }
+        
     }
 }
