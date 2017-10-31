@@ -41,9 +41,9 @@ import UIKit
         
         if !storyboardAppearance {
             self.tintColor = sharedAppearanceManager.appearance.segmentedControlTintColor
-            if let customFont = sharedAppearanceManager.appearance.navigationBarItemsFont {
-                self.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
-            }
+        }
+        if let customFont = sharedAppearanceManager.appearance.segmentedControlTitleFont {
+            self.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
         }
     }
 }
