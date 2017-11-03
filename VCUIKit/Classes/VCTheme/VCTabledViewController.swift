@@ -215,6 +215,14 @@ open class VCTabledViewController: VCViewController {
         super.applyAppearance()
         
         searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
+        
+        self.placeholderView.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextColor
+        self.placeholderView.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
+        self.placeholderView.placeHolderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
+        self.placeholderView.placeHolderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
+        self.placeholderView.placeHolderImageView.snp.updateConstraints({make in
+            make.size.equalTo(sharedAppearanceManager.appearance.tabledViewControllerPlaceholderImageSize)
+        })
     }
 }
 extension VCTabledViewController: UISearchResultsUpdating {
@@ -249,7 +257,7 @@ extension VCTabledViewController: UITableViewDelegate {
 open class VCPlaceholderView: VCView {
     open var placeHolderImageView : VCImageView = VCImageView()
     open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
-    open var placeholderTitleLabel : VCLabel = VCLabel()
+    open var placeHolderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
     open var placeHolderActionButton : VCButton = VCButton()
     
@@ -272,7 +280,7 @@ open class VCPlaceholderView: VCView {
                      activity: Bool = false,
                      buttonTitle: String? = nil) {
         self.isEnabled = enable
-        self.placeholderTitleLabel.text = title
+        self.placeHolderTitleLabel.text = title
         self.placeHolderTextLabel.text = text
         self.placeHolderImageView.image = image
         if activity {
@@ -306,13 +314,13 @@ open class VCPlaceholderView: VCView {
             make.centerY.equalTo(self.placeHolderImageView)
         })
         
-        self.placeholderTitleLabel = VCLabel(frame: CGRectDefault)
-        self.placeholderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
-        self.placeholderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
-        self.placeholderTitleLabel.textAlignment = .center
-        self.placeholderTitleLabel.numberOfLines = 0
-        self.addSubview(self.placeholderTitleLabel)
-        placeholderTitleLabel.snp.makeConstraints({make in
+        self.placeHolderTitleLabel = VCLabel(frame: CGRectDefault)
+        self.placeHolderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
+        self.placeHolderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
+        self.placeHolderTitleLabel.textAlignment = .center
+        self.placeHolderTitleLabel.numberOfLines = 0
+        self.addSubview(self.placeHolderTitleLabel)
+        placeHolderTitleLabel.snp.makeConstraints({make in
             make.left.equalTo(self)
             make.right.equalTo(self)
             make.top.equalTo(self.snp.centerY).offset(centerYOffset + 20)
@@ -328,7 +336,7 @@ open class VCPlaceholderView: VCView {
         placeHolderTextLabel.snp.makeConstraints({make in
             make.left.equalTo(self)
             make.right.equalTo(self)
-            make.top.equalTo(self.placeholderTitleLabel.snp.bottom)
+            make.top.equalTo(self.placeHolderTitleLabel.snp.bottom)
             make.height.greaterThanOrEqualTo(40)
         })
         
@@ -349,3 +357,4 @@ open class VCPlaceholderView: VCView {
         self.actionHandler?()
     }
 }
+
