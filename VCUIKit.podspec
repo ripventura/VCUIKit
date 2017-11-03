@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VCUIKit'
-  s.version          = '0.1.37'
+  s.version          = '0.2.0'
   s.summary          = 'A collection of classes and extensions written in Swift 4 to help you optimize your time when developing iOS applications.'
 
 # This description is used to generate tags and improve search results.
@@ -44,5 +44,5 @@ s.dependency 'SwiftMessages', '~> 4.0.0'
 s.dependency 'SnapKit', '~> 4.0.0'
 s.dependency 'FCAlertView', '~> 1.4'
 s.dependency 'SVProgressHUD', '~> 2.2.1'
-s.dependency 'VCSwiftToolkit'
+s.dependency 'VCSwiftToolkit', ' ~> 0.1.7'
 end

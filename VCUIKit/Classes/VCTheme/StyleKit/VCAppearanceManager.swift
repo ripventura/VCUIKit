@@ -82,6 +82,7 @@ open class VCAppearance {
     open var tabledViewControllerPlaceholderTextFont : UIFont
     open var tabledViewControllerPlaceholderTitleColor : UIColor
     open var tabledViewControllerPlaceholderTitleFont : UIFont
+    open var tabledViewControllerPlaceholderImageSize : CGSize
     
     open var tabBarTintColor : UIColor = .black
     open var tabBarBackgroundColor : UIColor
@@ -149,6 +150,7 @@ open class VCAppearance {
         tabledViewControllerPlaceholderTextFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
         tabledViewControllerPlaceholderTitleColor = VCUIKitStyleKit.labelTextColor
         tabledViewControllerPlaceholderTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        tabledViewControllerPlaceholderImageSize = CGSize(width: 100.0, height: 100.0)
         
         // MARK: - UITabBar
         tabBarTintColor = VCUIKitStyleKit.tabBarTintColor
