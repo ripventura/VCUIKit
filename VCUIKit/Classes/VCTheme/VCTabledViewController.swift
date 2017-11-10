@@ -86,7 +86,7 @@ open class VCTabledViewController: VCViewController {
     open func updatePlaceholders(enable: Bool,
                                  title: String? = nil,
                                  text: String? = nil,
-                                 image: UIImage? = nil,
+                                 drawer: VCDrawerProtocol? = nil,
                                  activity: Bool = false,
                                  buttonTitle: String? = nil) {
         self.tableView.refreshControl?.endRefreshing()
@@ -96,7 +96,7 @@ open class VCTabledViewController: VCViewController {
         self.placeholderView.update(enable: enable,
                                     title: title,
                                     text: text,
-                                    image: image,
+                                    drawer: drawer,
                                     activity: activity,
                                     buttonTitle: buttonTitle)
     }
@@ -220,7 +220,7 @@ open class VCTabledViewController: VCViewController {
         self.placeholderView.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
         self.placeholderView.placeHolderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
         self.placeholderView.placeHolderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
-        self.placeholderView.placeHolderImageView.snp.updateConstraints({make in
+        self.placeholderView.placeHolderDrawableView.snp.updateConstraints({make in
             make.size.equalTo(sharedAppearanceManager.appearance.tabledViewControllerPlaceholderImageSize)
         })
     }
@@ -255,7 +255,7 @@ extension VCTabledViewController: UITableViewDelegate {
 }
 
 open class VCPlaceholderView: VCView {
-    open var placeHolderImageView : VCImageView = VCImageView()
+    open var placeHolderDrawableView : VCDrawableView = VCDrawableView()
     open var placeHolderActivityIndicatorView : VCActivityIndicatorView = VCActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
     open var placeHolderTitleLabel : VCLabel = VCLabel()
     open var placeHolderTextLabel : VCLabel = VCLabel()
@@ -276,13 +276,13 @@ open class VCPlaceholderView: VCView {
     open func update(enable: Bool,
                      title: String? = nil,
                      text: String? = nil,
-                     image: UIImage? = nil,
+                     drawer: VCDrawerProtocol? = nil,
                      activity: Bool = false,
                      buttonTitle: String? = nil) {
         self.isEnabled = enable
         self.placeHolderTitleLabel.text = title
         self.placeHolderTextLabel.text = text
-        self.placeHolderImageView.image = image
+        self.placeHolderDrawableView.drawer = drawer
         if activity {
             self.placeHolderActivityIndicatorView.startAnimating()
         } else {
@@ -300,8 +300,8 @@ open class VCPlaceholderView: VCView {
         
         let centerYOffset = -80
         
-        self.addSubview(self.placeHolderImageView)
-        placeHolderImageView.snp.makeConstraints({make in
+        self.addSubview(self.placeHolderDrawableView)
+        placeHolderDrawableView.snp.makeConstraints({make in
             make.centerX.equalTo(self)
             make.bottom.equalTo(self.snp.centerY).offset(centerYOffset)
             make.size.equalTo(sharedAppearanceManager.appearance.tabledViewControllerPlaceholderImageSize)
@@ -310,8 +310,8 @@ open class VCPlaceholderView: VCView {
         self.addSubview(self.placeHolderActivityIndicatorView)
         self.placeHolderActivityIndicatorView.hidesWhenStopped = true
         placeHolderActivityIndicatorView.snp.makeConstraints({make in
-            make.centerX.equalTo(self.placeHolderImageView)
-            make.centerY.equalTo(self.placeHolderImageView)
+            make.centerX.equalTo(self.placeHolderDrawableView)
+            make.centerY.equalTo(self.placeHolderDrawableView)
         })
         
         self.placeHolderTitleLabel = VCLabel(frame: CGRectDefault)

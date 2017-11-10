@@ -1,5 +1,5 @@
 //
-//  VCImageView.swift
+//  VCDrawableView.swift
 //  VCUIKit
 //
 //  Created by Vitor Cesco on 23/10/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class VCImageView: UIImageView {
+open class VCDrawableView: VCView {
     @IBInspectable open var drawFillColor: UIColor = .black {
         didSet {
             self.setNeedsDisplay()
