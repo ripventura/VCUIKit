@@ -1,94 +1,43 @@
 //
 //  VCImageView.swift
-//  Pods
+//  VCUIKit
 //
-//  Created by Vitor Cesco on 27/06/17.
-//
+//  Created by Vitor Cesco on 23/10/17.
+//  Copyright © 2017 Vitor Cesco. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable open class VCImageView: UIImageView {
-    /** Manually set the Blur Effect Style on Storyboard.
-     
-     extraLight = 0
-     
-     light = 1
-     
-     dark = 2
-     
-     @available(iOS 10.0, *)
-     regular = 3 // Adapts to user interface style
-     
-     @available(iOS 10.0, *)
-     prominent = 4 // Adapts to user interface style
-     */
-    @IBInspectable open var blurEffectStyle: Int = -1 {
+open class VCImageView: UIImageView {
+    @IBInspectable open var drawFillColor: UIColor = .black {
         didSet {
-            if blurEffectStyle >= 0 {
-                self.applyBlurEffect(style: UIBlurEffectStyle(rawValue: blurEffectStyle)!)
-            }
+            self.setNeedsDisplay()
+        }
+    }
+    @IBInspectable open var drawBackgroundColor: UIColor = .clear {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
+    open var drawer: VCDrawerProtocol? {
+        didSet {
+            self.setNeedsDisplay()
         }
     }
     
-    var visualEffectView : UIVisualEffectView = UIVisualEffectView(effect: nil)
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.applyAppearance()
-    }
-    public override init(image: UIImage?) {
-        super.init(image: image)
-        
-        self.applyAppearance()
-    }
-    public override init(image: UIImage?, highlightedImage: UIImage?) {
-        super.init(image: image, highlightedImage: highlightedImage)
-        
-        self.applyAppearance()
-    }
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    open override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        self.applyAppearance()
-    }
-    open override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        
-        self.applyAppearance()
+    public convenience init(fillColor: UIColor, backgroundColor: UIColor, drawer: VCDrawerProtocol? = nil, frame: CGRect) {
+        self.init(frame: frame)
+        self.drawFillColor = fillColor
+        self.drawBackgroundColor = backgroundColor
+        self.drawer = drawer
     }
     
-    override open func applyAppearance() -> Void {
-        super.applyAppearance()
-        
-        if blurEffectStyle >= 0 {
-            self.applyBlurEffect(style: UIBlurEffectStyle(rawValue: blurEffectStyle)!)
-        }
-    }
-    
-    // MARK: Effects
-    
-    /** Applies a Blur Effect */
-    open func applyBlurEffect(style: UIBlurEffectStyle) -> Void {
-        self.applyEffect(effect: UIBlurEffect(style: style))
-    }
-    
-    // MARK: Helpers
-    
-    internal func applyEffect(effect: UIVisualEffect) {
-        self.visualEffectView.removeFromSuperview()
-        self.visualEffectView.removeConstraints(self.visualEffectView.constraints)
-        
-        self.visualEffectView = UIVisualEffectView(effect: effect)
-        
-        self.visualEffectView.addTo(superView: self,
-                                    withConstraint:  UIEdgeInsets(top: 0,
-                                                                  left: 0,
-                                                                  bottom: 0,
-                                                                  right: 0))
+    override open func draw(_ rect: CGRect) {
+        drawer?.draw(rect: rect, fillColor: self.drawFillColor, backgroundColor: self.drawBackgroundColor)
     }
 }
+
+public protocol VCDrawerProtocol {
+    func draw(rect: CGRect, fillColor: UIColor, backgroundColor: UIColor)
+}
+
