@@ -300,6 +300,7 @@ open class VCPlaceholderView: VCView {
         
         let centerYOffset = -80
         
+        self.placeHolderDrawableView.backgroundColor = .clear
         self.addSubview(self.placeHolderDrawableView)
         placeHolderDrawableView.snp.makeConstraints({make in
             make.centerX.equalTo(self)
