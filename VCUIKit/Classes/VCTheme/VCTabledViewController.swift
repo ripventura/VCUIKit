@@ -322,10 +322,10 @@ open class VCPlaceholderView: VCView {
         self.placeHolderTitleLabel.numberOfLines = 0
         self.addSubview(self.placeHolderTitleLabel)
         placeHolderTitleLabel.snp.makeConstraints({make in
-            make.left.equalTo(self)
-            make.right.equalTo(self)
+            make.left.equalTo(self).offset(48)
+            make.right.equalTo(self).offset(-48)
             make.top.equalTo(self.snp.centerY).offset(centerYOffset + 20)
-            make.height.greaterThanOrEqualTo(40)
+            make.height.greaterThanOrEqualTo(25)
         })
         
         self.placeHolderTextLabel = VCLabel(frame: CGRectDefault)
@@ -335,8 +335,8 @@ open class VCPlaceholderView: VCView {
         self.placeHolderTextLabel.numberOfLines = 0
         self.addSubview(self.placeHolderTextLabel)
         placeHolderTextLabel.snp.makeConstraints({make in
-            make.left.equalTo(self)
-            make.right.equalTo(self)
+            make.left.equalTo(self.placeHolderTitleLabel)
+            make.right.equalTo(self.placeHolderTitleLabel)
             make.top.equalTo(self.placeHolderTitleLabel.snp.bottom)
             make.height.greaterThanOrEqualTo(40)
         })
