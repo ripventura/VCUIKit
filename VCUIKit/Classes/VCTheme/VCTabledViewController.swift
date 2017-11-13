@@ -223,6 +223,8 @@ open class VCTabledViewController: VCViewController {
         self.placeholderView.placeHolderDrawableView.snp.updateConstraints({make in
             make.size.equalTo(sharedAppearanceManager.appearance.tabledViewControllerPlaceholderImageSize)
         })
+        self.placeholderView.placeHolderActionButton.tintColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderButtonTintColor
+        self.placeholderView.placeHolderActionButton.titleLabel?.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderButtonFont
     }
 }
 extension VCTabledViewController: UISearchResultsUpdating {

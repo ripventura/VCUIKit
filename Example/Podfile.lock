@@ -6,7 +6,7 @@ PODS:
   - SwiftMessages (4.0.0)
   - VCSwiftToolkit (0.1.7):
     - QRCode (= 2.0)
-  - VCUIKit (0.4.2):
+  - VCUIKit (0.4.3):
     - FCAlertView (~> 1.4)
     - SnapKit (~> 4.0.0)
     - SVProgressHUD (~> 2.2.1)
@@ -32,7 +32,7 @@ SPEC CHECKSUMS:
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
   SwiftMessages: cd565e0e7d095584be1770c012c6b5be4183b5ee
   VCSwiftToolkit: cc60a884b374eab40711ed67cdc10a78513328dc
-  VCUIKit: 54cb18908345f05b43fab500fdaf2a0a049fc1d1
+  VCUIKit: 769ffee2d9f083f92cf9f624b9d8d1d67e0a2897
 
 PODFILE CHECKSUM: 807a40742c6ddae293060a0170b1e4fb769dda70
 

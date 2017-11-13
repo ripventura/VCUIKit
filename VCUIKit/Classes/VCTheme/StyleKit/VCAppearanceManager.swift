@@ -83,6 +83,8 @@ open class VCAppearance {
     open var tabledViewControllerPlaceholderTitleColor : UIColor
     open var tabledViewControllerPlaceholderTitleFont : UIFont
     open var tabledViewControllerPlaceholderImageSize : CGSize
+    open var tabledViewControllerPlaceholderButtonTintColor : UIColor = .black
+    open var tabledViewControllerPlaceholderButtonFont : UIFont
     
     open var tabBarTintColor : UIColor = .black
     open var tabBarBackgroundColor : UIColor
@@ -151,6 +153,8 @@ open class VCAppearance {
         tabledViewControllerPlaceholderTitleColor = VCUIKitStyleKit.labelTextColor
         tabledViewControllerPlaceholderTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         tabledViewControllerPlaceholderImageSize = CGSize(width: 100.0, height: 100.0)
+        tabledViewControllerPlaceholderButtonTintColor = VCUIKitStyleKit.viewControllerViewTintColor
+        tabledViewControllerPlaceholderButtonFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         
         // MARK: - UITabBar
         tabBarTintColor = VCUIKitStyleKit.tabBarTintColor
@@ -204,6 +208,8 @@ open class VCAppearance {
         toolbarTintColor = self.viewControllerViewTintColor
         
         progressViewProgressTintColor = self.viewControllerViewTintColor
+        
+        tabledViewControllerPlaceholderButtonTintColor = self.viewControllerViewTintColor
     }
 }
 
