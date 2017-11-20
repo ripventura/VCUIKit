@@ -39,5 +39,18 @@ import UIKit
             print(sharedAppearanceManager.appearance.toolbarTintColor)
             self.tintColor = sharedAppearanceManager.appearance.toolbarTintColor
         }
+        
+        self.items?.forEach({buttonItem in
+            if buttonItem.style == .plain {
+                if let customFont = sharedAppearanceManager.appearance.navigationBarItemsPlainFont {
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+            else if buttonItem.style == .done {
+                if let customFont = sharedAppearanceManager.appearance.navigationBarItemsDoneFont {
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                }
+            }
+        })
     }
 }
