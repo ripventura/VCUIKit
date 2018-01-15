@@ -11,6 +11,9 @@ import UIKit
 open class VCTableView: UITableView {
     /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
+    /** Whether this TableView should react to keyboard notifications. Use only under a UIViewController.
+     UITableViewController already does this by default. */
+    @IBInspectable var reactToKeyboard: Bool = true
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -47,14 +50,18 @@ open class VCTableView: UITableView {
     
     // Listens for Keyboard notifications
     func setupNotifications() -> Void {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        if self.reactToKeyboard {
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidShow), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        }
     }
     
     // Removes Keyboard notifications
     func removeNotifications() -> Void {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        if self.reactToKeyboard {
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        }
     }
     
     @objc private func keyboardDidShow(notification : NSNotification) {
@@ -69,3 +76,4 @@ open class VCTableView: UITableView {
         self.contentInset = UIEdgeInsetsMake(self.contentInset.top, self.contentInset.left, self.contentInset.bottom >= keyboardHeight ? self.contentInset.bottom - keyboardHeight : self.contentInset.bottom, self.contentInset.right)
     }
 }
+
