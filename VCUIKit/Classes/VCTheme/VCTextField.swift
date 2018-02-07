@@ -10,8 +10,13 @@ import UIKit
 
 @IBDesignable open class VCTextField: UITextField {
     public struct ToolbarItem {
-        public let name: String
-        public let selector: () -> Void
+        public var name: String
+        public var selector: () -> Void
+        
+        public init(name: String, selector: @escaping () -> Void) {
+            self.name = name
+            self.selector = selector
+        }
     }
     /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable public var storyboardAppearance: Bool = false
