@@ -9,27 +9,6 @@
 import UIKit
 import SnapKit
 
-extension UITextField {
-    /** Sets a Done Toolbar as InputAccessoryView */
-    open func shouldUseDoneToolbar(shouldUse : Bool) {
-        if !shouldUse {
-            self.inputAccessoryView = nil
-        }
-        else {
-            let keyboardDoneButtonShow = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
-            keyboardDoneButtonShow.barStyle = .default
-            
-            let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(resignFirstResponder))
-            
-            let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-            
-            keyboardDoneButtonShow.setItems([flexSpace,doneButton], animated: false)
-            
-            self.inputAccessoryView = keyboardDoneButtonShow
-        }
-    }
-}
-
 extension UIImageView {
     
 }
