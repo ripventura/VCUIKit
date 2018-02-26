@@ -57,7 +57,7 @@
 		64559413EF572E520124CDC8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CE97D121FE0EF48CC738A40F /* Pods-VCUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCUIKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-VCUIKit_Example/Pods-VCUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D89C84CEF350101DA17AA0D0 /* Pods-VCUIKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VCUIKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VCUIKit_Tests/Pods-VCUIKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EAF4E526A9C272D7A70DE0CF /* VCUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VCUIKit.podspec; path = ../VCUIKit.podspec; sourceTree = "<group>"; };
+		EAF4E526A9C272D7A70DE0CF /* VCUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VCUIKit.podspec; path = ../VCUIKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F12629D73217965E30B599C1 /* Pods_VCUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VCUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 

@@ -61,6 +61,11 @@ open class VCAppearance {
     open var tableViewBackgroundColor : UIColor
     open var tableViewSeparatorColor : UIColor
     
+    open var collectionViewCellTintColor : UIColor = .black
+    open var collectionViewCellBackgroundColor : UIColor
+    
+    open var collectionViewBackgroundColor : UIColor
+    
     open var applicationStatusBarStyle : UIStatusBarStyle
     
     open var navigationBarTintColor : UIColor
@@ -134,6 +139,12 @@ open class VCAppearance {
         tableViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
         tableViewSeparatorColor = VCUIKitStyleKit.tableViewDetailTextColor
         
+        // MARK: - VCCollectionViewCell
+        collectionViewCellBackgroundColor = VCUIKitStyleKit.white
+        
+        // MARK: - VCCollectionView
+        collectionViewBackgroundColor = VCUIKitStyleKit.tableViewBackgroundColor
+        
         // MARK: - UIStatusBar
         applicationStatusBarStyle = UIStatusBarStyle.lightContent
         
@@ -204,6 +215,8 @@ open class VCAppearance {
         activityIndicatorTintColor = self.viewControllerViewTintColor
         
         tableViewCellTintColor = self.viewControllerViewTintColor
+        
+        collectionViewCellTintColor = self.viewControllerViewTintColor
         
         toolbarTintColor = self.viewControllerViewTintColor
         

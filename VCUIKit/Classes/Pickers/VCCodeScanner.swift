@@ -1,5 +1,5 @@
 //
-//  VCQRCodePicker.swift
+//  VCCodeScanner.swift
 //  VCUIKit
 //
 //  Created by Vitor Cesco on 12/04/17.
