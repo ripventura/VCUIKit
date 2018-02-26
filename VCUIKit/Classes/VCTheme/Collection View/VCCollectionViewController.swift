@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class VCCollectionViewController: UICollectionViewController {
+open class VCCollectionViewController: UICollectionViewController, RefreshControlManagerDelegate, SearchControlManagerDelegate {
     /** Whether the appearance is being set manually on Storyboard */
     @IBInspectable var storyboardAppearance: Bool = false
     /** Whether the CollectionView should have a RefreshControl */
@@ -56,6 +56,8 @@ open class VCCollectionViewController: UICollectionViewController {
         self.willSetDefaultStyles()
         super.applyAppearance()
         
+        self.collectionView?.backgroundColor = sharedAppearanceManager.appearance.collectionViewBackgroundColor
+        
         //Updates StatusBar Style
         UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
         
@@ -70,12 +72,12 @@ open class VCCollectionViewController: UICollectionViewController {
         //Updates TabBar colors
         self.tabBarController?.applyAppearance()
     }
-}
-extension VCCollectionViewController: RefreshControlManagerDelegate {
+
+    // MARK: - RefreshControlManagerDelegate
     public func refreshControlDidRefresh(manager: RefreshControlManager) {
     }
-}
-extension VCCollectionViewController: SearchControlManagerDelegate {
+    
+    // MARK: - SearchControlManagerDelegate
     public func searchControlDidBeginEditing(manager: SearchControlManager) {
         if self.disablesRefreshWhenSearching {
             // Disables the RefreshControl when searching
