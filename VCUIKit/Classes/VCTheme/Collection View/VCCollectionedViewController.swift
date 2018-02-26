@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, UICollectionViewDataSource, RefreshControlManagerDelegate, SearchControlManagerDelegate {
+open class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, UICollectionViewDataSource, RefreshControlManagerDelegate, SearchControlManagerDelegate {
     /** Whether the CollectionView should have a RefreshControl */
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the CollectionView should have a RefreshControl */
@@ -111,13 +111,13 @@ class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, 
     }
 
     // MARK: - UICollectionViewDataSource
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return UICollectionViewCell(frame: CGRect.zero)
     }
 }
