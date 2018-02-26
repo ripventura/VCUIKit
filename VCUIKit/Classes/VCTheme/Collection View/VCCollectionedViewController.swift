@@ -87,11 +87,11 @@ class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, 
     }
     
     // MARK: - RefreshControlManagerDelegate
-    public func refreshControlDidRefresh(manager: RefreshControlManager) {
+    open func refreshControlDidRefresh(manager: RefreshControlManager) {
     }
     
     // MARK: - SearchControlManagerDelegate
-    public func searchControlDidBeginEditing(manager: SearchControlManager) {
+    open func searchControlDidBeginEditing(manager: SearchControlManager) {
         if self.disablesRefreshWhenSearching {
             // Disables the RefreshControl when searching
             self.collectionView?.bounces = false
@@ -99,7 +99,7 @@ class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, 
         }
     }
     
-    public func searchControlCancelButtonPressed(manager: SearchControlManager) {
+    open func searchControlCancelButtonPressed(manager: SearchControlManager) {
         if self.disablesRefreshWhenSearching {
             // Enables back the RefreshControl
             self.collectionView?.bounces = true
@@ -107,7 +107,7 @@ class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, 
         }
     }
     
-    public func searchControl(manager: SearchControlManager, didSearch text: String?) {
+    open func searchControl(manager: SearchControlManager, didSearch text: String?) {
     }
 
     // MARK: - UICollectionViewDataSource
