@@ -1,24 +1,24 @@
 PODS:
+  - EFQRCode (4.2.0)
   - FCAlertView (1.4.0)
-  - QRCode (2.0)
   - SnapKit (4.0.0)
-  - SVProgressHUD (2.2.2)
-  - SwiftMessages (4.0.0)
-  - VCSwiftToolkit (0.1.7):
-    - QRCode (= 2.0)
-  - VCUIKit (0.5.1):
+  - SVProgressHUD (2.2.5)
+  - SwiftMessages (4.1.0)
+  - VCSwiftToolkit (0.1.9):
+    - EFQRCode (= 4.2)
+  - VCUIKit (0.5.2):
     - FCAlertView (~> 1.4)
-    - SnapKit (~> 4.0.0)
-    - SVProgressHUD (~> 2.2.1)
-    - SwiftMessages (~> 4.0.0)
-    - VCSwiftToolkit (~> 0.1.7)
+    - SnapKit (~> 4.0)
+    - SVProgressHUD (~> 2.2)
+    - SwiftMessages (~> 4.0)
+    - VCSwiftToolkit (~> 0.1)
 
 DEPENDENCIES:
   - FCAlertView (~> 1.4)
-  - SnapKit (~> 4.0.0)
-  - SVProgressHUD (~> 2.2.1)
-  - SwiftMessages (~> 4.0.0)
-  - VCSwiftToolkit (~> 0.1.7)
+  - SnapKit (~> 4.0)
+  - SVProgressHUD (~> 2.2)
+  - SwiftMessages (~> 4.0)
+  - VCSwiftToolkit (~> 0.1)
   - VCUIKit (from `../`)
 
 EXTERNAL SOURCES:
@@ -26,14 +26,14 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  EFQRCode: 1308651fdaa9e3d72b704cb23b32a3f6f8bb1ef1
   FCAlertView: fdddd63381898c1d1a5a20c9f084fbd2c6d12f8b
-  QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
-  SwiftMessages: cd565e0e7d095584be1770c012c6b5be4183b5ee
-  VCSwiftToolkit: cc60a884b374eab40711ed67cdc10a78513328dc
-  VCUIKit: d8764576a1c53367d469fae756aaf22aa2ae319f
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
+  VCSwiftToolkit: ab9a2e34a0047cd2fdde21b92442c49e6c90095e
+  VCUIKit: ec7e331edb84de94e678fa65cfde94767ddc05c8
 
-PODFILE CHECKSUM: 807a40742c6ddae293060a0170b1e4fb769dda70
+PODFILE CHECKSUM: 9d408996228b97183c1822c535b65b51eeef95d9
 
 COCOAPODS: 1.4.0

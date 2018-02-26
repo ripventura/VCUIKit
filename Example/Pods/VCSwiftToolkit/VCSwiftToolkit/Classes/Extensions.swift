@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QRCode
+import EFQRCode
 
 extension Dictionary {
     /** Appends another dictionary into this one */
@@ -221,12 +221,14 @@ extension String {
      * Returns a QRCode image from a String, with the given Size and Color
      */
     public func vcQRCode(size: CGSize, color: UIColor = .black, backgroundColor: UIColor = .white) -> UIImage? {
-        var qrCode = QRCode(self)
-        qrCode?.size = size
-        qrCode?.color = color.vcCIColor
-        qrCode?.backgroundColor = backgroundColor.vcCIColor
-        
-        return qrCode?.image
+        let generator = EFQRCodeGenerator(content: self, size: EFIntSize(width: Int(size.width), height: Int(size.height)))
+        generator.setMode(mode: EFQRCodeMode.none)
+        generator.setColors(backgroundColor: backgroundColor.vcCIColor, foregroundColor: color.vcCIColor)
+
+        if let cgImage = generator.generate() {
+             return UIImage(cgImage: cgImage)
+        }
+        return nil
     }
     
     /**
@@ -302,6 +304,15 @@ extension Date {
         case DateLongTime12ShortAMPMFormat = "MM/dd h:mm a"
         /** 9/6 7:59 AM */
         case DateShortTime12ShortAMPMFormat = "M/d h:mm a"
+        
+        /** 09/06 07:59 */
+        case DateLongTime24LongFormat = "MM/dd HH:mm"
+        /** 9/6 07:59 */
+        case DateShortTime24LongFormat = "M/d HH:mm"
+        /** 09/06 7:59 */
+        case DateLongTime24ShortFormat = "MM/dd H:mm"
+        /** 9/6 7:59 */
+        case DateShortTime24ShortFormat = "M/d H:mm"
         
         /** Wed 06, 09:00 AM */
         case WeekdayShortDayLongTime12LongAMPMFormat = "EEE dd, hh:mm a"
