@@ -17,14 +17,25 @@ open class SearchControlManager: NSObject {
     private var viewController: UIViewController?
     // Used on iOS <= 10 to hide rightBarButtonItems when searching
     private var rightButtonItems: [UIBarButtonItem]?
-
+    
     open var searchController: UISearchController = UISearchController(searchResultsController: nil)
     open var delegate: SearchControlManagerDelegate?
+    
+    /** Wheter or not the SearchController is active. Updating it will also activate / deactivate the SearchController */
+    open var isSearchActive: Bool = false {
+        didSet {
+            // If the SearchControl was active and is now being disabled
+            if self.searchController.isActive && !self.isSearchActive {
+                self.didCancelSearch()
+            }
+            self.searchController.isActive = self.isSearchActive
+        }
+    }
     
     /** Sets up the SearchController on the given ViewController */
     open func setupSearchControl(viewController: UIViewController) {
         self.viewController = viewController
-
+        
         self.searchController.searchBar.delegate = self
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false
@@ -43,15 +54,6 @@ open class SearchControlManager: NSObject {
         }
     }
     
-    /** Activates / Deactivates the SearchController */
-    func setSearchControl(active: Bool) {
-        // If the SearchControl was active and is now being disabled
-        if self.searchController.isActive && !active {
-            self.didCancelSearch()
-        }
-        self.searchController.isActive = active
-    }
-
     fileprivate func didCancelSearch() {
         if #available(iOS 11.0, *) {
         }
@@ -94,3 +96,4 @@ extension SearchControlManager: UISearchBarDelegate {
         self.didCancelSearch()
     }
 }
+
