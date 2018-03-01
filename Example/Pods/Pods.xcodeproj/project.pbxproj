@@ -31,6 +31,7 @@
 		16A476FB0200D71BB43762EAB6698F2B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099683A3D4D451DB44A89F114CEDCF3A /* Error.swift */; };
 		177F584E055CEC7D6908E02AA1EA6B4F /* MessageViewIOS8.xib in Resources */ = {isa = PBXBuildFile; fileRef = F220E5F89BFA7BDC2AB5C1FE9F953321 /* MessageViewIOS8.xib */; };
 		187DEF69194611E6DCDE38C3B0C8F81E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B4F69510D3D10E04AB5D03ED08A1DA /* SnapKit.framework */; };
+		188588F720484880003F8D5D /* VCPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188588F620484880003F8D5D /* VCPlaceholderView.swift */; };
 		18A09F00AE69403B1338DBB4F30FFF7E /* PassthroughWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C069525E49C1338C4ECDDC80D9050787 /* PassthroughWindow.swift */; };
 		18B7810F204497D000D07A0A /* VCCollectionedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B7810E204497D000D07A0A /* VCCollectionedViewController.swift */; };
 		1BC2C4A91D46B6B996F49F734C6515C7 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60681D0813F777A147677256FA1FD9 /* ConstraintLayoutSupportDSL.swift */; };
@@ -375,6 +376,7 @@
 		14E336768EA22F755EEF6DD5A2366751 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		16C1CDC8EFD18F1C59F924E58D91F3AD /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		170510616FE154963BF7FD25B2451C98 /* SwiftMessages-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftMessages-prefix.pch"; sourceTree = "<group>"; };
+		188588F620484880003F8D5D /* VCPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCPlaceholderView.swift; sourceTree = "<group>"; };
 		18B7810E204497D000D07A0A /* VCCollectionedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCollectionedViewController.swift; sourceTree = "<group>"; };
 		1A0E35CBDF8252F77034CB10450B38CD /* VCIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VCIcon.swift; sourceTree = "<group>"; };
 		1BCC5C82034AC7FBFA0A9FA6E5175BD8 /* Theme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = SwiftMessages/Theme.swift; sourceTree = "<group>"; };
@@ -736,6 +738,7 @@
 				18B7810D2044978500D07A0A /* Table View */,
 				18B7810C2044977900D07A0A /* Collection View */,
 				7CFB8F99AC39E8B3F0CEB004163B9839 /* VCActivityIndicatorView.swift */,
+				188588F620484880003F8D5D /* VCPlaceholderView.swift */,
 				9CE0601F063CBB6820BDDCECAB770468 /* VCButton.swift */,
 				DC7530DA236F6FA9AA3166C566BFDF33 /* VCDrawableView.swift */,
 				1A0E35CBDF8252F77034CB10450B38CD /* VCIcon.swift */,
@@ -1754,6 +1757,7 @@
 				74BBF18D6C2CF62A198371C23AE792C6 /* VCActivityIndicatorView.swift in Sources */,
 				C5BC43BC471CBD40BB4D3B95C50BA3A3 /* VCAlert.swift in Sources */,
 				99C526F1BFECCB6A251876A235FB1A94 /* VCAlertView.swift in Sources */,
+				188588F720484880003F8D5D /* VCPlaceholderView.swift in Sources */,
 				14A51365190E3994BB6B1AF6D55AADC1 /* VCAppearanceManager.swift in Sources */,
 				CFEAFE2798A2F9781A3B7F4C8062E3E7 /* VCBannerCreator.swift in Sources */,
 				204423E38D39BF97FE0DBE4ED39641D3 /* VCButton.swift in Sources */,

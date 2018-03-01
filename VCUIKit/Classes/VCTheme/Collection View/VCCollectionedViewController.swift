@@ -20,7 +20,7 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
     
     @IBOutlet open var collectionView: UICollectionView?
     
-    open var placeholderView: VCPlaceholderView = VCPlaceholderView()
+    @IBOutlet open var placeholderView: VCPlaceholderView?
 
     // MARK: - Lifecycle
     
@@ -46,18 +46,22 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
         super.applyAppearance()
         
         self.collectionView?.backgroundColor = sharedAppearanceManager.appearance.collectionViewBackgroundColor
+        
+        self.placeholderView?.applyAppearance()
     }
 
     // MARK: - Placeholders
     /** Sets up the placeholders */
     private func setupPlaceholders() {
-        placeholderView = VCPlaceholderView(frame: CGRectDefault)
-        self.view.addSubview(placeholderView)
-        self.view.sendSubview(toBack: placeholderView)
-        placeholderView.snp.makeConstraints({make in
-            make.edges.equalToSuperview()
-        })
-        placeholderView.setup(actionHandler: {
+        if self.placeholderView == nil {
+            placeholderView = VCPlaceholderView(frame: CGRectDefault)
+            self.view.addSubview(placeholderView!)
+            self.view.sendSubview(toBack: placeholderView!)
+            placeholderView!.snp.makeConstraints({make in
+                make.edges.equalToSuperview()
+            })
+        }
+        placeholderView!.setup(actionHandler: {
             self.placeholderActionButtonPressed()
         })
     }
@@ -73,7 +77,7 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
         
         self.collectionView?.isHidden = enable
         
-        self.placeholderView.update(enable: enable,
+        self.placeholderView?.update(enable: enable,
                                     title: title,
                                     text: text,
                                     drawer: drawer,

@@ -61,11 +61,15 @@ extension UIViewController {
             if buttonItem.style == .plain {
                 if let customFont = sharedAppearanceManager.appearance.navigationBarItemsPlainFont {
                     buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .focused)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .selected)
                 }
             }
             else if buttonItem.style == .done {
                 if let customFont = sharedAppearanceManager.appearance.navigationBarItemsDoneFont {
                     buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .focused)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .selected)
                 }
             }
         })
@@ -73,11 +77,15 @@ extension UIViewController {
             if buttonItem.style == .plain {
                 if let customFont = sharedAppearanceManager.appearance.navigationBarItemsPlainFont {
                     buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .focused)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .selected)
                 }
             }
             else if buttonItem.style == .done {
                 if let customFont = sharedAppearanceManager.appearance.navigationBarItemsDoneFont {
                     buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .focused)
+                    buttonItem.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .selected)
                 }
             }
         })
@@ -87,6 +95,8 @@ extension UIViewController {
             if let items = self.tabBarController?.tabBar.items {
                 for item in items {
                     item.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .normal)
+                    item.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .focused)
+                    item.setTitleTextAttributes([NSAttributedStringKey.font: customFont], for: .selected)
                 }
             }
         }

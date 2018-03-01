@@ -39,6 +39,8 @@ import UIKit
                 self.titleLabel?.font = customFont
             }
             self.setTitleColor(sharedAppearanceManager.appearance.buttonTintColor, for: .normal)
+            self.setTitleColor(sharedAppearanceManager.appearance.buttonTintColor, for: .focused)
+            self.setTitleColor(sharedAppearanceManager.appearance.buttonTintColor, for: .selected)
         }
     }
 }
