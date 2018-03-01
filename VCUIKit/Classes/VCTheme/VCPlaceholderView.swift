@@ -67,7 +67,7 @@ open class VCPlaceholderView: VCView {
         placeHolderDrawableView.snp.makeConstraints({make in
             make.centerX.equalTo(self)
             make.bottom.equalTo(self.placeHolderTitleLabel.snp.top).offset(-20)
-            make.size.equalTo(sharedAppearanceManager.appearance.tabledViewControllerPlaceholderImageSize)
+            make.size.equalTo(sharedAppearanceManager.appearance.placeholderViewImageSize)
         })
         
         self.addSubview(self.placeHolderActivityIndicatorView)
@@ -106,17 +106,19 @@ open class VCPlaceholderView: VCView {
     }
     
     override open func applyAppearance() {
-        self.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextColor
-        self.placeHolderTextLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTextFont
+        self.placeHolderTextLabel.textColor = sharedAppearanceManager.appearance.placeholderViewTextColor
+        self.placeHolderTextLabel.font = sharedAppearanceManager.appearance.placeholderViewTextFont
         
-        self.placeHolderTitleLabel.textColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleColor
-        self.placeHolderTitleLabel.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderTitleFont
+        self.placeHolderTitleLabel.textColor = sharedAppearanceManager.appearance.placeholderViewTitleColor
+        self.placeHolderTitleLabel.font = sharedAppearanceManager.appearance.placeholderViewTitleFont
         
         self.placeHolderDrawableView.snp.updateConstraints({make in
-            make.size.equalTo(sharedAppearanceManager.appearance.tabledViewControllerPlaceholderImageSize)
+            make.size.equalTo(sharedAppearanceManager.appearance.placeholderViewImageSize)
         })
         
-        self.placeHolderActionButton.tintColor = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderButtonTintColor
-        self.placeHolderActionButton.titleLabel?.font = sharedAppearanceManager.appearance.tabledViewControllerPlaceholderButtonFont
+        self.placeHolderActionButton.tintColor = sharedAppearanceManager.appearance.placeholderViewButtonTintColor
+        self.placeHolderActionButton.titleLabel?.font = sharedAppearanceManager.appearance.placeholderViewButtonFont
+        
+        self.placeHolderActivityIndicatorView.applyAppearance()
     }
 }

@@ -83,13 +83,13 @@ open class VCAppearance {
     }
     open var viewControllerViewBackgroundColor : UIColor
     
-    open var tabledViewControllerPlaceholderTextColor : UIColor
-    open var tabledViewControllerPlaceholderTextFont : UIFont
-    open var tabledViewControllerPlaceholderTitleColor : UIColor
-    open var tabledViewControllerPlaceholderTitleFont : UIFont
-    open var tabledViewControllerPlaceholderImageSize : CGSize
-    open var tabledViewControllerPlaceholderButtonTintColor : UIColor = .black
-    open var tabledViewControllerPlaceholderButtonFont : UIFont
+    open var placeholderViewTextColor : UIColor
+    open var placeholderViewTextFont : UIFont
+    open var placeholderViewTitleColor : UIColor
+    open var placeholderViewTitleFont : UIFont
+    open var placeholderViewImageSize : CGSize
+    open var placeholderViewButtonTintColor : UIColor = .black
+    open var placeholderViewButtonFont : UIFont
     
     open var tabBarTintColor : UIColor = .black
     open var tabBarBackgroundColor : UIColor
@@ -158,14 +158,14 @@ open class VCAppearance {
         viewControllerViewTintColor = VCUIKitStyleKit.viewControllerViewTintColor
         viewControllerViewBackgroundColor = VCUIKitStyleKit.viewControllerViewBackgroundColor
         
-        // MARK: - VCTabledViewController
-        tabledViewControllerPlaceholderTextColor = VCUIKitStyleKit.labelTextColor
-        tabledViewControllerPlaceholderTextFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
-        tabledViewControllerPlaceholderTitleColor = VCUIKitStyleKit.labelTextColor
-        tabledViewControllerPlaceholderTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
-        tabledViewControllerPlaceholderImageSize = CGSize(width: 100.0, height: 100.0)
-        tabledViewControllerPlaceholderButtonTintColor = VCUIKitStyleKit.viewControllerViewTintColor
-        tabledViewControllerPlaceholderButtonFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        // MARK: - VCPlaceholderView
+        placeholderViewTextColor = VCUIKitStyleKit.labelTextColor
+        placeholderViewTextFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+        placeholderViewTitleColor = VCUIKitStyleKit.labelTextColor
+        placeholderViewTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
+        placeholderViewImageSize = CGSize(width: 100.0, height: 100.0)
+        placeholderViewButtonTintColor = VCUIKitStyleKit.viewControllerViewTintColor
+        placeholderViewButtonFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         
         // MARK: - UITabBar
         tabBarTintColor = VCUIKitStyleKit.tabBarTintColor
@@ -222,7 +222,7 @@ open class VCAppearance {
         
         progressViewProgressTintColor = self.viewControllerViewTintColor
         
-        tabledViewControllerPlaceholderButtonTintColor = self.viewControllerViewTintColor
+        placeholderViewButtonTintColor = self.viewControllerViewTintColor
     }
 }
 
