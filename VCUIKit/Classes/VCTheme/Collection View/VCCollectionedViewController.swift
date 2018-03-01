@@ -23,7 +23,6 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
     @IBOutlet open var placeholderView: VCPlaceholderView?
 
     // MARK: - Lifecycle
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,8 +41,9 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
 
     // MARK: - Styling
     override open func applyAppearance() -> Void {
-        self.willSetDefaultStyles()
         super.applyAppearance()
+        
+        self.searchControlManager.searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
         
         self.collectionView?.backgroundColor = sharedAppearanceManager.appearance.collectionViewBackgroundColor
         
@@ -114,6 +114,13 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
     open func searchControl(manager: SearchControlManager, didSearch text: String?) {
     }
 
+    // MARK: - Data Loading
+    
+    /** Reloads CollectionView Data */
+    open func reloadData() {
+        self.collectionView?.reloadData()
+    }
+    
     // MARK: - UICollectionViewDataSource
     open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

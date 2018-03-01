@@ -14,7 +14,8 @@ class PullToRefreshViewController: VCTabledViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func didRefreshControl() {
+    
+    override func refreshControlDidRefresh(manager: RefreshControlManager) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
             
             self.updatePlaceholders(enable: true,
