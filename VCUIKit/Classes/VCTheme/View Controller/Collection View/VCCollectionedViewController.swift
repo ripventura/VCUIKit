@@ -41,7 +41,7 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
                                  text: text,
                                  drawer: drawer,
                                  activity: activity,
-                                 buttonTitle: title)
+                                 buttonTitle: buttonTitle)
     }
     
     // MARK: - SearchControlManagerDelegate

@@ -56,7 +56,7 @@ open class VCTabledViewController: VCViewController {
                                  text: text,
                                  drawer: drawer,
                                  activity: activity,
-                                 buttonTitle: title)
+                                 buttonTitle: buttonTitle)
     }
     
     // MARK: - SearchControlManagerDelegate
