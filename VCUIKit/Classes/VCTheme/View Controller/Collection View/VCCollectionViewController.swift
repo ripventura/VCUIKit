@@ -21,7 +21,6 @@ open class VCCollectionViewController: UICollectionViewController, RefreshContro
     open var searchControlManager: SearchControlManager = SearchControlManager()
 
     // MARK: - Lifecycle
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +36,6 @@ open class VCCollectionViewController: UICollectionViewController, RefreshContro
 
         self.updateBackButtonStyle()
     }
-    
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

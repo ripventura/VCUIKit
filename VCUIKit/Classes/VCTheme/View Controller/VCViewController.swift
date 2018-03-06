@@ -1,13 +1,16 @@
 //
-//  VCCollectionedViewController.swift
-//  VCUIKit
+//  View Controllers.swift
+//  VCLibrary
 //
-//  Created by Vitor Cesco on 26/02/18.
+//  Created by Vitor Cesco on 6/2/16.
+//  Copyright © 2016 Vitor Cesco. All rights reserved.
 //
 
 import UIKit
 
-open class VCCollectionedViewController: VCViewController, UICollectionViewDelegate, UICollectionViewDataSource, RefreshControlManagerDelegate, SearchControlManagerDelegate {
+open class VCViewController: UIViewController, RefreshControlManagerDelegate, SearchControlManagerDelegate {
+    /** Whether the appearance is being set manually on Storyboard */
+    @IBInspectable var storyboardAppearance: Bool = false
     /** Whether the CollectionView should have a RefreshControl */
     @IBInspectable open var includesRefreshControl: Bool = false
     /** Whether the CollectionView should have a RefreshControl */
@@ -18,18 +21,15 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
     open var refreshControlManager: RefreshControlManager = RefreshControlManager()
     open var searchControlManager: SearchControlManager = SearchControlManager()
     
-    @IBOutlet open var collectionView: UICollectionView?
-    
     @IBOutlet open var placeholderView: VCPlaceholderView?
-
+    
     // MARK: - Lifecycle
     open override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.updateBackButtonStyle()
+        
         self.refreshControlManager.delegate = self
-        if self.includesRefreshControl {
-            self.refreshControlManager.setupRefreshControl(scrollView: self.collectionView)
-        }
         
         self.searchControlManager.delegate = self
         if self.includesSearchControl {
@@ -38,18 +38,12 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
         
         self.setupPlaceholders()
     }
-
-    // MARK: - Styling
-    override open func applyAppearance() -> Void {
-        super.applyAppearance()
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.searchControlManager.searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
-        
-        self.collectionView?.backgroundColor = sharedAppearanceManager.appearance.collectionViewBackgroundColor
-        
-        self.placeholderView?.applyAppearance()
+        self.applyAppearance()
     }
-
+    
     // MARK: - Placeholders
     /** Sets up the placeholders */
     private func setupPlaceholders() {
@@ -73,16 +67,12 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
                                  drawer: VCDrawerProtocol? = nil,
                                  activity: Bool = false,
                                  buttonTitle: String? = nil) {
-        self.collectionView?.refreshControl?.endRefreshing()
-        
-        self.collectionView?.isHidden = enable
-        
         self.placeholderView?.update(enable: enable,
-                                    title: title,
-                                    text: text,
-                                    drawer: drawer,
-                                    activity: activity,
-                                    buttonTitle: buttonTitle)
+                                     title: title,
+                                     text: text,
+                                     drawer: drawer,
+                                     activity: activity,
+                                     buttonTitle: buttonTitle)
     }
     
     /** Called after the placeHolderActionButton is pressed */
@@ -96,39 +86,46 @@ open class VCCollectionedViewController: VCViewController, UICollectionViewDeleg
     
     // MARK: - SearchControlManagerDelegate
     open func searchControlDidBeginEditing(manager: SearchControlManager) {
-        if self.disablesRefreshWhenSearching {
-            // Disables the RefreshControl when searching
-            self.collectionView?.bounces = false
-            self.collectionView?.alwaysBounceVertical = false
-        }
     }
-    
     open func searchControlCancelButtonPressed(manager: SearchControlManager) {
-        if self.disablesRefreshWhenSearching {
-            // Enables back the RefreshControl
-            self.collectionView?.bounces = true
-            self.collectionView?.alwaysBounceVertical = true
-        }
     }
-    
     open func searchControl(manager: SearchControlManager, didSearch text: String?) {
     }
-
-    // MARK: - Data Loading
     
-    /** Reloads CollectionView Data */
-    open func reloadData() {
-        self.collectionView?.reloadData()
+    // MARK: - Styling
+    /** Override this if you want to change the Default Styles for this particular View Controller */
+    open func willSetDefaultStyles() {
+        sharedAppearanceManager.initializeDefaultAppearance?()
+        sharedAppearanceManager.appearance = defaultAppearance
     }
     
-    // MARK: - UICollectionViewDataSource
-    open func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
-    }
-    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell(frame: CGRect.zero)
+    override open func applyAppearance() -> Void {
+        self.willSetDefaultStyles()
+        super.applyAppearance()
+        
+        //Updates StatusBar Style
+        UIApplication.shared.statusBarStyle = sharedAppearanceManager.appearance.applicationStatusBarStyle
+        
+        //Updates NavigationBar appearance
+        self.navigationController?.applyAppearance()
+        
+        if !storyboardAppearance {
+            self.view.tintColor = sharedAppearanceManager.appearance.viewControllerViewTintColor
+            self.view.backgroundColor = sharedAppearanceManager.appearance.viewControllerViewBackgroundColor
+        }
+        
+        //Updates TabBar colors
+        self.tabBarController?.applyAppearance()
+        
+        self.searchControlManager.searchController.searchBar.tintColor = sharedAppearanceManager.appearance.navigationBarTintColor
+        
+        self.placeholderView?.applyAppearance()
     }
 }
+extension VCViewController: UITextFieldDelegate {
+    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+

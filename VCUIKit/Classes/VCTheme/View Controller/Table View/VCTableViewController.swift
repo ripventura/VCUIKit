@@ -16,13 +16,11 @@ open class VCTableViewController: UITableViewController {
     }
     
     // MARK: - Lifecycle
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         
         self.updateBackButtonStyle()
     }
-    
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

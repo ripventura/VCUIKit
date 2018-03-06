@@ -735,11 +735,13 @@
 		01682FBF8F2456FEC3D5CA32C7EE2667 /* VCTheme */ = {
 			isa = PBXGroup;
 			children = (
-				18B7810D2044978500D07A0A /* Table View */,
-				18B7810C2044977900D07A0A /* Collection View */,
+				1812E8CF204F00EF00169BEB /* View Controller */,
 				7CFB8F99AC39E8B3F0CEB004163B9839 /* VCActivityIndicatorView.swift */,
 				188588F620484880003F8D5D /* VCPlaceholderView.swift */,
 				9CE0601F063CBB6820BDDCECAB770468 /* VCButton.swift */,
+				4A6291DC2CE750631B8594F624CA8FCA /* VCTableView.swift */,
+				0F800D96E967C253ED66DE0DF9AA83F0 /* VCTableViewCell.swift */,
+				794F2EAD1C0C776FD0C3A83E167B0E39 /* VCCollectionViewCell.swift */,
 				DC7530DA236F6FA9AA3166C566BFDF33 /* VCDrawableView.swift */,
 				1A0E35CBDF8252F77034CB10450B38CD /* VCIcon.swift */,
 				9EB816245CD0631C01CEAF3B2167D41F /* VCLabel.swift */,
@@ -749,7 +751,6 @@
 				9DF1DB90FB9159D7A9D93E104CBDED5C /* VCTextField.swift */,
 				B03F7460E9DC00DD8872749CFF988411 /* VCToolbar.swift */,
 				44C785DE3BCDC026860898A9FF0C3A82 /* VCView.swift */,
-				2F2763A2E7A71532C456CE312446744C /* VCViewController.swift */,
 				3F2262D5D169EAC52712BB323FF80293 /* StyleKit */,
 				607C4DC875A58F95848950E9256E2694 /* UIKit+Extensions */,
 				56A9A850077C611640353580849DC8E7 /* XIB View */,
@@ -773,12 +774,21 @@
 			path = "../Target Support Files/FCAlertView";
 			sourceTree = "<group>";
 		};
+		1812E8CF204F00EF00169BEB /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F2763A2E7A71532C456CE312446744C /* VCViewController.swift */,
+				18B7810C2044977900D07A0A /* Collection View */,
+				18B7810D2044978500D07A0A /* Table View */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		18B7810C2044977900D07A0A /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
 				8B7B6743C7F442965033AA1B12A10828 /* VCCollectionViewController.swift */,
 				18B7810E204497D000D07A0A /* VCCollectionedViewController.swift */,
-				794F2EAD1C0C776FD0C3A83E167B0E39 /* VCCollectionViewCell.swift */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -788,8 +798,6 @@
 			children = (
 				6DC560DA73FCDA14B345CE1346560FBE /* VCTableViewController.swift */,
 				0EC909679A0747F62F510EF78508CF6E /* VCTabledViewController.swift */,
-				4A6291DC2CE750631B8594F624CA8FCA /* VCTableView.swift */,
-				0F800D96E967C253ED66DE0DF9AA83F0 /* VCTableViewCell.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
