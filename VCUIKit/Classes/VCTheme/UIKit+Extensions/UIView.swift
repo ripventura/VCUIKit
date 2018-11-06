@@ -15,7 +15,7 @@ extension UIImageView {
 
 extension UIView {
     /** View's Corner Radius */
-    @IBInspectable var cornerRadius: CGFloat {
+    @IBInspectable var _cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }

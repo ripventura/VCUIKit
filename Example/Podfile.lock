@@ -6,7 +6,7 @@ PODS:
   - SwiftMessages (4.1.0)
   - VCSwiftToolkit (0.1.9):
     - EFQRCode (= 4.2)
-  - VCUIKit (0.5.2):
+  - VCUIKit (0.5.11):
     - FCAlertView (~> 1.4)
     - SnapKit (~> 4.0)
     - SVProgressHUD (~> 2.2)
@@ -21,9 +21,18 @@ DEPENDENCIES:
   - VCSwiftToolkit (~> 0.1)
   - VCUIKit (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EFQRCode
+    - FCAlertView
+    - SnapKit
+    - SVProgressHUD
+    - SwiftMessages
+    - VCSwiftToolkit
+
 EXTERNAL SOURCES:
   VCUIKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   EFQRCode: 1308651fdaa9e3d72b704cb23b32a3f6f8bb1ef1
@@ -32,8 +41,8 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
   VCSwiftToolkit: ab9a2e34a0047cd2fdde21b92442c49e6c90095e
-  VCUIKit: ec7e331edb84de94e678fa65cfde94767ddc05c8
+  VCUIKit: 9a6d728329ec5b61e959c621e2b56021b3fed378
 
 PODFILE CHECKSUM: 9d408996228b97183c1822c535b65b51eeef95d9
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
